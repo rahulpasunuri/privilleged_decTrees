@@ -1,3 +1,21 @@
+@relation heart
+@attribute att1 NUMERIC
+@attribute att2 NUMERIC
+@attribute att3 NUMERIC
+@attribute att4 NUMERIC
+@attribute att5 NUMERIC
+@attribute att6 NUMERIC
+@attribute att7 NUMERIC
+@attribute att8 NUMERIC
+@attribute att9 NUMERIC
+@attribute att10 NUMERIC
+@attribute att11 NUMERIC
+@attribute att12 NUMERIC
+@attribute att13 NUMERIC
+@attribute 'Class' {0, 1}
+@data
+
+
 41.0,1.0,3.0,130.0,214.0,0.0,2.0,168.0,0.0,2.0,2.0,0.0,3.0,0
 53.0,0.0,4.0,130.0,264.0,0.0,2.0,143.0,0.0,0.4,2.0,0.0,3.0,0
 54.0,1.0,4.0,110.0,206.0,0.0,2.0,108.0,1.0,0.0,2.0,1.0,3.0,1

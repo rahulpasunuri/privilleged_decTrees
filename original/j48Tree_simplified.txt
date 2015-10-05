@@ -1,0 +1,93 @@
+=== Run information ===
+
+Scheme:weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     heart
+Instances:    297
+Attributes:   14
+              att1
+              att2
+              att3
+              att4
+              att5
+              att6
+              att7
+              att8
+              att9
+              att10
+              att11
+              att12
+              att13
+              Class
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+att13 <= 3
+|   att12 <= 0
+|   |   att4 <= 156: 0 (109.0/9.0)
+|   |   att4 > 156
+|   |   |   att1 <= 62: 1 (4.0)
+|   |   |   att1 > 62: 0 (2.0)
+|   att12 > 0
+|   |   att3 <= 3: 0 (29.0/7.0)
+|   |   att3 > 3
+|   |   |   att2 <= 0
+|   |   |   |   att11 <= 1: 0 (2.0)
+|   |   |   |   att11 > 1: 1 (4.0/1.0)
+|   |   |   att2 > 0: 1 (14.0)
+att13 > 3
+|   att3 <= 3
+|   |   att12 <= 0: 0 (27.0/8.0)
+|   |   att12 > 0
+|   |   |   att11 <= 1
+|   |   |   |   att7 <= 1: 0 (3.0)
+|   |   |   |   att7 > 1: 1 (2.0)
+|   |   |   att11 > 1: 1 (12.0/1.0)
+|   att3 > 3
+|   |   att10 <= 0.5
+|   |   |   att7 <= 1
+|   |   |   |   att10 <= 0.3
+|   |   |   |   |   att4 <= 136
+|   |   |   |   |   |   att5 <= 233: 0 (3.0)
+|   |   |   |   |   |   att5 > 233: 1 (4.0/1.0)
+|   |   |   |   |   att4 > 136: 1 (4.0)
+|   |   |   |   att10 > 0.3: 0 (3.0)
+|   |   |   att7 > 1: 1 (7.0/1.0)
+|   |   att10 > 0.5: 1 (68.0/2.0)
+
+Number of Leaves  : 	17
+
+Size of the tree : 	33
+
+
+Time taken to build model: 0.08 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         231               77.7778 %
+Incorrectly Classified Instances        66               22.2222 %
+Kappa statistic                          0.5515
+Mean absolute error                      0.2576
+Root mean squared error                  0.4449
+Relative absolute error                 51.833  %
+Root relative squared error             89.2487 %
+Total Number of Instances              297     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.813     0.263      0.783     0.813     0.798      0.765    0
+                 0.737     0.188      0.771     0.737     0.754      0.765    1
+Weighted Avg.    0.778     0.228      0.778     0.778     0.777      0.765
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 130  30 |   a = 0
+  36 101 |   b = 1
+
+
