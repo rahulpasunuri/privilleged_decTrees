@@ -8,7 +8,7 @@ class Node:
 			rightBranch -> This is the branch contains the nodes that pass the test criteria
 			criteria -> The test condition that is used to decide which samples go the left or right branches
 		'''
-		
+		self.clusterNum = 0
 		self.col = col
 		self.leafValues = leafValues
 		self.leftBranch = leftBranch

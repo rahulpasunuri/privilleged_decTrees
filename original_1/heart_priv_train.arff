@@ -1,10 +1,10 @@
 @relation heart
-@attribute att1 NUMERIC
-@attribute att3 NUMERIC
-@attribute att4 NUMERIC
-@attribute att6 NUMERIC
-@attribute att7 NUMERIC
-@attribute att8 NUMERIC
+@attribute att2 NUMERIC
+@attribute att5 NUMERIC
+@attribute att10 NUMERIC
+@attribute att11 NUMERIC
+@attribute att12 NUMERIC
+@attribute att13 NUMERIC
 @attribute 'Class' {0, 1}
 @data
 

@@ -3,8 +3,8 @@ import csv
 import random
 import decTree
 
-isSimplificationEnabled = False
-isSplitEnabled = False
+isSimplificationEnabled = True
+isSplitEnabled = True
 isPrivSplitEnabled = True
 
 if isSimplificationEnabled:
@@ -76,7 +76,7 @@ def split(orig, pruned, priv):
                 pruneInfo.append(words[i])
         privInfo.append(words[len(words) -1])
         priv.write(",".join(privInfo)+"\n")
-        pruneInfo.append(words[i])
+        #pruneInfo.append(words[i])
         pruned.write(",".join(pruneInfo)+"\n")
 
 
