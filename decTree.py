@@ -5,10 +5,6 @@ from math import log
 from Node import Node
 
 '''
-Now you have my permission to change the code.
-'''
-
-'''
 This program knows no difference between a number or a string, It considers everything as a string. (Either a string matches the criteria or it doesn't) 
 This makes it a Binary Tree. Ultimately entropy and informatin gain depends on the probability of a certain value.
 It does not matter what the value is .. 
@@ -20,18 +16,18 @@ The method readData, given a CSV file name, reads the data and returns the data 
 Each element in the list is a list.
 '''
 def readData(fileName):
-	data = []
-	myFile = open(fileName, 'rt')
-	try:
-		reader = csv.reader(myFile)
-		for row in reader:
-			data.append(row)
-	except:
-		print "Error opening File: "+fileName
-		exit()
-	finally:
-		myFile.close()
-	return data	
+    data = []
+    myFile = open(fileName, 'rt')
+    try:
+        reader = csv.reader(myFile)
+        for row in reader:
+            data.append(row)
+    except:
+        print "Error opening File: "+fileName
+        exit()
+    finally:
+        myFile.close()
+    return data
 
 '''
 The method calcEntropy takes a dataset as input and returns its entropy calculated on the basis of 
@@ -39,35 +35,34 @@ the number of occurences of each class label.
 Here is exactly where the use of the method countOccurenceOfClassLabel() comes into play.
 '''
 def calcEntropy(subDataSet):
-	classLablelCounts = countOccurenceOfClassLabel(subDataSet)
-	totalRows = len(subDataSet)
-	entropy = 0.0
+    classLablelCounts = countOccurenceOfClassLabel(subDataSet)
+    totalRows = len(subDataSet)
+    entropy = 0.0
 
-	for key in classLablelCounts:
-		p = float(classLablelCounts[key])/totalRows
-		entropy -= p*log(p,2)
+    for key in classLablelCounts:
+        p = float(classLablelCounts[key])/totalRows
+        entropy -= p*log(p,2)
 
-	return entropy	
+    return entropy
 
 cluster = {}
 
 def calcPrivEntropy(data):
-	classLabelCounts = {}
-	for row in data:
-	    c = cluster[",".join(row)]
-	    if c in classLabelCounts:
-	        classLabelCounts[c] += 1
-	    else:
-	        classLabelCounts[c] = 1
+    classLabelCounts = {}
+    for row in data:
+        c = cluster[",".join(row)]
+        if c in classLabelCounts:
+            classLabelCounts[c] += 1
+        else:
+            classLabelCounts[c] = 1
 
-	totalRows = len(data)
-	entropy = 0.0
+    totalRows = len(data)
+    entropy = 0.0
 
-	for key in classLabelCounts:
-		p = float(classLabelCounts[key])/totalRows
-		entropy -= p*log(p,2)
-
-	return entropy	
+    for key in classLabelCounts:
+        p = float(classLabelCounts[key])/totalRows
+        entropy -= p*log(p,2)
+    return entropy
 
 
 '''
@@ -76,134 +71,143 @@ We call createTree recursively until we reach the required depth or a good decis
 The method takes a sub part of the dataset as input and creates a tree based on the decision criteria.
 
 '''
-def createTree(subDataSet, depth=10,threshold=0.0, isPrivAvailable = False):
-	
-	#Counting the number of rows in the Dataset
-	numOfRows = len(subDataSet)
+def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False):
 
-	#if the required depth is > 0 and the dataset has some rows 
-	if depth > 0 and len(subDataSet) > 0:
-		'''
-		print "Current Depth : "+str(depth)
-		print ""
-		'''
-		#We first calculate the entropy for the entire data set
-		entropy = calcEntropy(subDataSet)
+    #Counting the number of rows in the Dataset
+    numOfRows = len(subDataSet)
 
-		#We initially set the best parameters to 0 and None
-		bestGain = threshold
-		bestSet = None
-		bestCriteria = None
-		bestColumn = None
+    #if the required depth is > 0 and the dataset has some rows 
+    if depth > 0 and len(subDataSet) > 0:
+        '''
+        print "Current Depth : "+str(depth)
+        print ""
+        '''
+        #We first calculate the entropy for the entire data set
+        entropy = calcEntropy(subDataSet)
 
-		#Lets first count the number of columns, excluding the last column (Ofcourse :p )
-		numberOfColumns = len(subDataSet[0])-1
+        #We initially set the best parameters to 0 and None
+        bestGain = threshold
+        bestSet = None
+        bestCriteria = None
+        bestColumn = None
 
-		#Now we iterate through each column to see which is the best column to split on
-		for col in range(0,numberOfColumns):
+        #Lets first count the number of columns, excluding the last column (Ofcourse :p )
+        numberOfColumns = len(subDataSet[0])-1
 
-			#We then see which values are present in the column, we will choose one vlalue as criteria to split into 2 datasets
-			valuesInColumn = {}
-			for row in subDataSet:
-				valuesInColumn[row[col]]=1
-			
-			#We are now iterating through each value in the current iteration of column to see which value serves as the best split
-			for value in valuesInColumn:
+        #Now we iterate through each column to see which is the best column to split on
+        for col in range(0,numberOfColumns):
 
-				#Split the dataset on the current value of column and value
-				(set1,set2) = splitData(subDataSet,col, value)
+            #We then see which values are present in the column, we will choose one vlalue as criteria to split into 2 datasets
+            valuesInColumn = {}
+            for row in subDataSet:
+                valuesInColumn[row[col]]=1  
 
-				#Calculate infoGain for each col and each value in the column
-				if isPrivAvailable == False:
-					infoGain = calcInfoGain(entropy, set1,set2)
-				else:
-					infoGain = calcPrivInfoGain(entropy, calcPrivEntropy(subDataSet), set1,set2)
-				#Choose the best col and value 
-				if infoGain > bestGain and len(set1) > 0 and len(set2) > 0 :
-					bestGain = infoGain
-					bestSet = (set1, set2)
-					bestCriteria = value
-					bestColumn = col
+            #We are now iterating through each value in the current iteration of column to see which value serves as the best split
+            for value in valuesInColumn:
 
-		if bestGain > threshold:
-			#Finally split the dataset and create the subtree based on the best values obtained above
-			'''
-			print "Splitting on Column : "+str(bestColumn)+" with criteria : "+str(bestCriteria)
-			
-			print "Best values : "
-			print "Best Gain : "+str(bestGain)
-			print "Best Criteria : "+str(bestCriteria)
-			print "Best Column : "+str(bestColumn)
-			print ""
-			'''
-			lBranch =  createTree(bestSet[0],depth-1,threshold)
-			rBranch = createTree(bestSet[1],depth-1,threshold)
-			return Node(col = bestColumn, leftBranch = lBranch,rightBranch= rBranch, criteria = bestCriteria)
+                #Split the dataset on the current value of column and value
+                (set1,set2) = splitData(subDataSet,col, value)
+                if len(set1) > 0 and len(set2) > 0:
+                    #Calculate infoGain for each col and each value in the column
+                    if isPrivAvailable == False:
+                        infoGain = calcInfoGain(entropy, set1,set2)
+                    else:
+                        infoGain = calcPrivInfoGain(entropy, calcPrivEntropy(subDataSet), set1,set2)
+                    #Choose the best col and value 
+                    if infoGain > bestGain and len(set1) > 0 and len(set2) > 0 :
+                        bestGain = infoGain
+                        bestSet = (set1, set2)
+                        bestCriteria = value
+                        bestColumn = col
 
-		else:
-			'''
-			print ""
-			print "No further branching possible "
-			print "Adding leaf values : "+str(valuesInColumn)
-			'''
-			return Node(leafValues= countOccurenceOfClassLabel(subDataSet))	
-	
-	#No further branching possible since depth has become 0, create a node with all the possible leaf values	
-	else : 
-		return Node(leafValues = countOccurenceOfClassLabel(subDataSet))	
+        if bestGain > threshold:
+            #Finally split the dataset and create the subtree based on the best values obtained above
+            '''
+            print "Splitting on Column : "+str(bestColumn)+" with criteria : "+str(bestCriteria)
+
+            print "Best values : "
+            print "Best Gain : "+str(bestGain)
+            print "Best Criteria : "+str(bestCriteria)
+            print "Best Column : "+str(bestColumn)
+            print ""
+            '''
+            lBranch =  createTree(bestSet[0],depth-1,threshold)
+            rBranch = createTree(bestSet[1],depth-1,threshold)
+            return Node(col = bestColumn, leftBranch = lBranch,rightBranch= rBranch, criteria = bestCriteria)
+
+        else:
+            '''
+            print ""
+            print "No further branching possible "
+            print "Adding leaf values : "+str(valuesInColumn)
+            '''
+            return Node(leafValues= countOccurenceOfClassLabel(subDataSet))
+
+    #No further branching possible since depth has become 0, create a node with all the possible leaf values
+    else : 
+        return Node(leafValues = countOccurenceOfClassLabel(subDataSet))
 
 '''
 The method calcInfoGain returns the Information Gain when passed with the current value of entropy, and dataset split on a particular value of a particular column.
 This used to find which is the best column to split the dataset on and subsequently decide what should the criteria be. 
 '''
 def calcInfoGain(currentEntropy, subDataSet1,subDataSet2):
-	p = float(len(subDataSet1))/(len(subDataSet1)+len(subDataSet2))
-	infoGain = currentEntropy - p*calcEntropy(subDataSet1) - (1-p)*calcEntropy(subDataSet2)
-	return infoGain
+    p = float(len(subDataSet1))/(len(subDataSet1)+len(subDataSet2))
+    infoGain = currentEntropy - p*calcEntropy(subDataSet1) - (1-p)*calcEntropy(subDataSet2)
+    return infoGain
 
 def calcPrivInfoGain(currentEntropy, clusterEntropy, subDataSet1,subDataSet2):
     normalGain = calcInfoGain(currentEntropy, subDataSet1, subDataSet2)
     p = float(len(subDataSet1))/(len(subDataSet1)+len(subDataSet2))
     privGain = clusterEntropy -p*calcPrivEntropy(subDataSet1) - (1-p)*calcPrivEntropy(subDataSet2)
+    '''
+    if privGain!=0:
+        print normalGain/privGain, "ratio"
+    else:
+        print normalGain
     #privGain = privGain/8 #TODO: check this 
+    '''
+    #print normalGain, privGain
     return normalGain + privGain
+    #return normalGain
+    
 '''
 The method countOccurenceOfClassLabel is called whenever we need to count how many times each class label occurs in a the subDataSet. 
 This will be used to calculate Entropy and Infogain
 It returns a dictionary that has keys as the class label and the values as the number of Occurences of that class label
-'''	
+'''
 def countOccurenceOfClassLabel(subDataSet):
-	countsOfLabels = {}
-	for row in subDataSet:
-		if row[len(row)-1] in countsOfLabels : 
-			countsOfLabels[row[len(row)-1]] += 1
-		else :
-			countsOfLabels[row[len(row)-1]] = 1
-	return countsOfLabels			
+    countsOfLabels = {}
+    for row in subDataSet:
+        if row[len(row)-1] in countsOfLabels : 
+            countsOfLabels[row[len(row)-1]] += 1    
+        else :
+            countsOfLabels[row[len(row)-1]] = 1
+    return countsOfLabels
 
 '''
 The method printTree takes a tree of the type Node and an indent value. It outputs the tree in a human interpretable form 
 by showing subsequent branches with indents. 
-'''	
+'''
 def printTree(tree, indent=''):
-	if tree.leafValues != None:
-		print "Leaf Node : "+str(tree.leafValues)
-	else:
-		print "Split on Column : "+str(tree.col)+" with criteria : "+str(tree.criteria)
-		print indent+"Left Branch -> ",
-		printTree(tree.leftBranch,indent="     "+indent)
-		print indent+"Right Branch -> ",
-		printTree(tree.rightBranch,indent="     "+indent)
+    if tree.leafValues != None:
+        print "Leaf Node : "+str(tree.leafValues)
+    else:
+        print "Split on Column : "+str(tree.col)+" with criteria : "+str(tree.criteria)
+        print indent+"Left Branch -> ",
+        printTree(tree.leftBranch,indent="     "+indent)
+        print indent+"Right Branch -> ",
+        printTree(tree.rightBranch,indent="     "+indent)
 
 '''
 The method write result will write the result of the classifier and the expected result in a CSV format.
 '''
 def writeResult(predictionsPlusExpectedValues,depth="",fileName="predictionsWithDepth"):
-	with open(fileName,'wb') as f:
-		csvWriter = csv.writer(f)
-		for row in predictionsPlusExpectedValues:
-			csvWriter.writerow(row)
-		f.close()	
+    with open(fileName,'wb') as f:
+        csvWriter = csv.writer(f)
+        for row in predictionsPlusExpectedValues:
+            csvWriter.writerow(row)
+        f.close()
 
 '''
 Given a tree and a dataset, the method classifyNewSample will output the predicted classification of each row in the dataset.
@@ -222,13 +226,13 @@ def classifyNewSample(tree, testData,depth,fileName):
 		#Handling the Special case of depth = 0 
 		if(depth == 0):
 			leaf = tree.leafValues
-		else:	
+		else:
 			#Recursively searching for the leaf node that martches the criteria
 			while(leaf == None):
 				if float(row[currentNode.col]) <= float(currentNode.criteria): 
 					currentNode = currentNode.rightBranch
 				else:
-					currentNode = currentNode.leftBranch				
+					currentNode = currentNode.leftBranch
 				leaf = currentNode.leafValues
 
 		# Counting the occurences of each possible class label in the leaf
@@ -316,28 +320,28 @@ def numLeaves(tree):
 
 
 def checkDecisionTree(trainingFileName, testFileName, depth=15, isPrintTree=False):
-	#Change the trhreshold value if you want to have a minimum information gain at each split, by default we assigned it 0
-	threshold=0.0
+    #Change the trhreshold value if you want to have a minimum information gain at each split, by default we assigned it 0
+    threshold=0.0
 
-	trainData = readData(trainingFileName)
-	testData = readData(testFileName)
-
-	#The variable tree will be an instance of the type Node
-	tree = createTree(trainData, depth)
-	if isPrintTree:
-	    print ""
-	    print ""
-	    print "Structure of the Tree : "
-	    print ""
-	    #Printing the tree in a form that helps visualize the structure better
-	    printTree(tree)
-	    print ""
+    trainData = readData(trainingFileName)
+    testData = readData(testFileName)
+    #isPrintTree = True
+    #The variable tree will be an instance of the type Node
+    tree = createTree(trainData, depth)
+    if isPrintTree:
+        print ""
+        print ""
+        print "Structure of the Tree : "
+        print ""
+        #Printing the tree in a form that helps visualize the structure better
+        printTree(tree)
+        print ""
         
-	#Now that we have the tree built,lets predict output on the test data
-	fileName="results/"+"PredictionOf"+testFileName.split('/')[1]
-	classifyNewSample(tree=tree, testData=testData,depth=depth,fileName=fileName)
-	print "Accuracy is: ",(1 - computeMisClassfication(fileName))
-	print "Number of Leaves in the tree is: ", numLeaves(tree)    
+    #Now that we have the tree built,lets predict output on the test data
+    fileName="results/"+"PredictionOf"+testFileName.split('/')[1]
+    classifyNewSample(tree=tree, testData=testData,depth=depth,fileName=fileName)
+    print "Accuracy is: ",(1 - computeMisClassfication(fileName))
+    print "Number of Leaves in the tree is: ", numLeaves(tree)    
 
 def getClusterValue(row, tree):
     currentNode = tree
@@ -354,10 +358,11 @@ def newLogic(train, test, priv_train, priv_depth):
     nodes = []    
     #construct a tree using priv information..
     
-    tree = createTree(readData(priv_train), priv_depth)
+    privTree = createTree(readData(priv_train), priv_depth)
+    #privTree = createTree(readData(priv_train)) #TODO: check the use of the priv_depth..
     #assign a new cluster number to each leaf node..
     index = 0
-    nodes.append(tree)
+    nodes.append(privTree)
     while len(nodes) != 0:
         node = nodes.pop()
         if node.leftBranch == None and node.rightBranch == None and node.clusterNum == 0:
@@ -375,10 +380,10 @@ def newLogic(train, test, priv_train, priv_depth):
     cluster = {}
     numRows = len(trainData)
     for i in range(numRows):
-        cluster[",".join(trainData[i])] = getClusterValue(privData[i], tree)
+        cluster[",".join(trainData[i])] = getClusterValue(privData[i], privTree)
         #print cluster[",".join(trainData[i])]
     threshold = 0
-    tree = createTree(trainData, 10, threshold, True)
+    tree = createTree(trainData, 15, threshold, True)
     '''
     print ""
     print ""
@@ -390,14 +395,15 @@ def newLogic(train, test, priv_train, priv_depth):
     '''
     #Now that we have the tree built,lets predict output on the test data
     fileName="results/"+"PredictionOf"+test.split('/')[1]
-    classifyNewSample(tree=tree, testData=testData,depth=10,fileName=fileName)
+    classifyNewSample(tree=tree, testData=testData,depth=15,fileName=fileName)
     print "Accuracy is: ",(1 - computeMisClassfication(fileName))
     print "Number of Leaves in the tree is: ", numLeaves(tree)   
             
-datasets = ["heart"]
+datasets = []
+datasets.append("heart")
+#datasets.append("breast")
 #The main function that calls all other functions, execution begins here
 def main():
-    datasetName = "heart"
     for datasetName in datasets:
         for part in range(5):
             print ""
@@ -416,10 +422,9 @@ def main():
             checkDecisionTree(datasetName+"/priv_train_"+str(part)+".csv", datasetName+"/priv_test_"+str(part)+".csv", 3, False)
 
             print "\nRunning the new logic.."
-            newLogic(datasetName+"/priv_train_"+str(part)+".csv", datasetName+"/priv_test_"+str(part)+".csv", datasetName+"/priv_train_"+str(part)+".csv", 3)
+            newLogic(datasetName+"/pruned_train_"+str(part)+".csv", datasetName+"/pruned_test_"+str(part)+".csv", datasetName+"/priv_train_"+str(part)+".csv", 3)
 
             print "#"*40
             print ""
 #Execution begins here
-if __name__ == "__main__" : main()	
-		
+if __name__ == "__main__" : main()
