@@ -117,7 +117,7 @@ def createTree(subDataSet, depth=10,threshold=0.0, isPrivAvailable = False):
 				if isPrivAvailable == False:
 					infoGain = calcInfoGain(entropy, set1,set2)
 				else:
-					infoGain = calcPrivInfoGain(entropy, set1,set2)
+					infoGain = calcPrivInfoGain(entropy, calcPrivEntropy(subDataSet), set1,set2)
 				#Choose the best col and value 
 				if infoGain > bestGain and len(set1) > 0 and len(set2) > 0 :
 					bestGain = infoGain
@@ -161,11 +161,11 @@ def calcInfoGain(currentEntropy, subDataSet1,subDataSet2):
 	infoGain = currentEntropy - p*calcEntropy(subDataSet1) - (1-p)*calcEntropy(subDataSet2)
 	return infoGain
 
-def calcPrivInfoGain(currentEntropy, subDataSet1,subDataSet2):
+def calcPrivInfoGain(currentEntropy, clusterEntropy, subDataSet1,subDataSet2):
     normalGain = calcInfoGain(currentEntropy, subDataSet1, subDataSet2)
     p = float(len(subDataSet1))/(len(subDataSet1)+len(subDataSet2))
-    privGain = -p*calcPrivEntropy(subDataSet1) - (1-p)*calcPrivEntropy(subDataSet2)
-    privGain = privGain/8 #TODO: check this 
+    privGain = clusterEntropy -p*calcPrivEntropy(subDataSet1) - (1-p)*calcPrivEntropy(subDataSet2)
+    #privGain = privGain/8 #TODO: check this 
     return normalGain + privGain
 '''
 The method countOccurenceOfClassLabel is called whenever we need to count how many times each class label occurs in a the subDataSet. 
@@ -347,7 +347,6 @@ def getClusterValue(row, tree):
             currentNode = currentNode.rightBranch
         else:
             currentNode = currentNode.leftBranch
-        leaf = currentNode.leafValues
     return currentNode.clusterNum
 
 def newLogic(train, test, priv_train, priv_depth):
@@ -372,11 +371,14 @@ def newLogic(train, test, priv_train, priv_depth):
     print "Total clusters is: ", index
     trainData = readData(train)
     testData = readData(test)
+    privData = readData(priv_train)
     cluster = {}
-    for row in trainData:
-        cluster[",".join(row)] = getClusterValue(row, tree)
-    print "#"*30
-    tree = createTree(trainData, 10, -5, True)
+    numRows = len(trainData)
+    for i in range(numRows):
+        cluster[",".join(trainData[i])] = getClusterValue(privData[i], tree)
+        #print cluster[",".join(trainData[i])]
+    threshold = 0
+    tree = createTree(trainData, 10, threshold, True)
     '''
     print ""
     print ""
@@ -391,23 +393,33 @@ def newLogic(train, test, priv_train, priv_depth):
     classifyNewSample(tree=tree, testData=testData,depth=10,fileName=fileName)
     print "Accuracy is: ",(1 - computeMisClassfication(fileName))
     print "Number of Leaves in the tree is: ", numLeaves(tree)   
-                                
+            
+datasets = ["heart"]
 #The main function that calls all other functions, execution begins here
 def main():
-    print "\nRunning only privileged information"
-    checkDecisionTree("original/heart_priv_train.csv", "original/heart_priv_test.csv")
+    datasetName = "heart"
+    for datasetName in datasets:
+        for part in range(5):
+            print ""
+            print "#"*40
+            print "Running "+datasetName+" with fold: ", part
+            print "\nRunning entire dataset"
+            checkDecisionTree(datasetName+"/complete_train_"+str(part)+".csv", datasetName+"/complete_test_"+str(part)+".csv")
+            
+            print "\nRunning only privileged information"
+            checkDecisionTree(datasetName+"/priv_train_"+str(part)+".csv", datasetName+"/priv_test_"+str(part)+".csv")
 
-    print "\nRunning entire dataset"
-    checkDecisionTree("original/heart_train.csv", "original/heart_test.csv")
+            print "\nRunning pruned dataset"
+            checkDecisionTree(datasetName+"/pruned_train_"+str(part)+".csv", datasetName+"/pruned_test_"+str(part)+".csv")
 
-    print "\nRunning pruned dataset"
-    checkDecisionTree("original/heart_pruned_train.csv", "original/heart_pruned_test.csv")
+            print "\nRunning only privileged information with max depth = 3"
+            checkDecisionTree(datasetName+"/priv_train_"+str(part)+".csv", datasetName+"/priv_test_"+str(part)+".csv", 3, False)
 
-    print "\nRunning only privileged information with max depth = 3"
-    checkDecisionTree("original/heart_priv_train.csv", "original/heart_priv_test.csv", 3, False)
+            print "\nRunning the new logic.."
+            newLogic(datasetName+"/priv_train_"+str(part)+".csv", datasetName+"/priv_test_"+str(part)+".csv", datasetName+"/priv_train_"+str(part)+".csv", 3)
 
-    print "\nRunning the new logic.."
-    newLogic("original/heart_priv_train.csv", "original/heart_priv_test.csv", "original/heart_priv_train.csv", 3)
+            print "#"*40
+            print ""
 #Execution begins here
 if __name__ == "__main__" : main()	
 		
