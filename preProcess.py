@@ -28,9 +28,14 @@ privilegedColumns = {}
 #below two parameters have to be set for every dataset..
 datasets = []
 datasets.append("heart")
-privilegedColumns["heart"] = [1, 4, 9, 10, 11, 12]
+#privilegedColumns["heart"] = [1, 4,9, 10, 12]
+privilegedColumns["heart"] = [1, 4,9, 10, 11, 12]
+
+datasets.append("heart_multi")
+privilegedColumns["heart_multi"] = [1, 4,9, 10]
 
 datasets.append("breast")
+#privilegedColumns["breast"] = [0, 2, 4, 6]
 privilegedColumns["breast"] = [1, 3, 5, 7]
 
 totalParts = 5
@@ -52,6 +57,15 @@ for datasetName in datasets:
                     
                 if words[classIndex] != "0":
                      words[classIndex] = "1"    
+            elif datasetName == "heart_multi":
+                words = l.strip().split(",")
+                classIndex = len(words) - 1 
+                if '?' in l:
+                    #ignore the rows with missing values..
+                    continue
+                    
+                #if words[classIndex] != "0":
+                #     words[classIndex] = "1" 
             elif datasetName == "breast":
                 cols = l.strip().split(",")
                 classIndex = 1
