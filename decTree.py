@@ -104,7 +104,6 @@ def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False):
 
             #We are now iterating through each value in the current iteration of column to see which value serves as the best split
             for value in valuesInColumn:
-
                 #Split the dataset on the current value of column and value
                 (set1,set2) = splitData(subDataSet,col, value)
                 if len(set1) > 0 and len(set2) > 0:
@@ -176,6 +175,7 @@ def reverseHarmonicMean(a1, a2):
         
 def calcPrivInfoGain(currentEntropy, clusterEntropy, subDataSet1,subDataSet2):
     global numClusters
+    global alpha
     normalGain = calcInfoGain(currentEntropy, subDataSet1, subDataSet2)
     p = float(len(subDataSet1))/(len(subDataSet1)+len(subDataSet2))
     privGain = clusterEntropy -p*calcPrivEntropy(subDataSet1) - (1-p)*calcPrivEntropy(subDataSet2)
@@ -186,13 +186,15 @@ def calcPrivInfoGain(currentEntropy, clusterEntropy, subDataSet1,subDataSet2):
     #return  geoMean(normalGain, privGain)
     #return normalGain + privGain
     #return min(normalGain, privGain)
-    #return normalGain
+    #return privGain
     #return max(normalGain, privGain)
     #return privGain
     #return harmonicMean(normalGain, privGain)
-    ratio =  normalGain/privGain
+    #ratio =  normalGain/privGain
+    #print alpha
+    #return alpha*normalGain + privGain
     #print ratio
-    if normalGain > privGain:
+    if normalGain < privGain:
         #return (normalGain + privGain)/2
         #return geoMean(normalGain, privGain)
         return reverseHarmonicMean(normalGain, privGain)
@@ -392,8 +394,8 @@ def newLogic(train, test, priv_train, priv_depth):
     nodes = []    
     #construct a tree using priv information..
     
-    privTree = createTree(readData(priv_train), priv_depth)
-    #privTree = createTree(readData(priv_train)) #TODO: check the use of the priv_depth..
+    #privTree = createTree(readData(priv_train), priv_depth)
+    privTree = createTree(readData(priv_train)) #TODO: check the use of the priv_depth..
     #assign a new cluster number to each leaf node..
     index = 0
     nodes.append(privTree)
@@ -424,29 +426,37 @@ def newLogic(train, test, priv_train, priv_depth):
     print "Structure of the Tree : "
     print ""
     #Printing the tree in a form that helps visualize the structure better
-    printTree(tree)
+    
     print ""
     '''
+    #printTree(tree)
     #Now that we have the tree built,lets predict output on the test data
     fileName="results/"+"PredictionOf"+test.split('/')[1]
     classifyNewSample(tree=tree, testData=testData,depth=15,fileName=fileName)
     print "Accuracy is: ",(1 - computeMisClassfication(fileName))
     print "Number of Leaves in the tree is: ", numLeaves(tree)   
             
+alpha = 0            
 datasets = []
+#datasets.append("random")
 #datasets.append("heart")
-datasets.append("breast")
+#datasets.append("breast")
 #datasets.append("heart_multi")
+#datasets.append("iris")
+datasets.append("diabetes")
 #The main function that calls all other functions, execution begins here
 def main():
+    global alpha
     for datasetName in datasets:
         for part in range(5):
+
             #if part != 1:
                 #continue #TODO: remove this..
+            #'''
             print ""
             print "#"*40
             print "Running "+datasetName+" with fold: ", part
-            #'''
+            
             print "\nRunning entire dataset"
             checkDecisionTree(datasetName+"/complete_train_"+str(part)+".csv", datasetName+"/complete_test_"+str(part)+".csv")
             
@@ -455,14 +465,14 @@ def main():
 
             print "\nRunning only privileged information with max depth = 3"
             checkDecisionTree(datasetName+"/priv_train_"+str(part)+".csv", datasetName+"/priv_test_"+str(part)+".csv", 3, False)
+            
             #'''
-
             print "\nRunning pruned dataset"
             checkDecisionTree(datasetName+"/pruned_train_"+str(part)+".csv", datasetName+"/pruned_test_"+str(part)+".csv")
-
-            print "\nRunning the new logic.."
+            #for run in range(1, 11):
+            #    alpha = run/10.0
+            print "\nRunning the new logic with alpha = ",alpha
             newLogic(datasetName+"/pruned_train_"+str(part)+".csv", datasetName+"/pruned_test_"+str(part)+".csv", datasetName+"/priv_train_"+str(part)+".csv", 3)
-
             print "#"*40
             print ""
 #Execution begins here

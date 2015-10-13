@@ -1,0 +1,280 @@
+
+Running pruned dataset
+Accuracy is:  0.505
+Number of Leaves in the tree is:  144
+
+Running the new logic with alpha =  0.1
+Total clusters is:  8
+Accuracy is:  0.545
+Number of Leaves in the tree is:  165
+
+Running the new logic with alpha =  0.2
+Total clusters is:  8
+Accuracy is:  0.545
+Number of Leaves in the tree is:  165
+
+Running the new logic with alpha =  0.3
+Total clusters is:  8
+Accuracy is:  0.545
+Number of Leaves in the tree is:  165
+
+Running the new logic with alpha =  0.4
+Total clusters is:  8
+Accuracy is:  0.545
+Number of Leaves in the tree is:  165
+
+Running the new logic with alpha =  0.5
+Total clusters is:  8
+Accuracy is:  0.465
+Number of Leaves in the tree is:  144
+
+Running the new logic with alpha =  0.6
+Total clusters is:  8
+Accuracy is:  0.465
+Number of Leaves in the tree is:  144
+
+Running the new logic with alpha =  0.7
+Total clusters is:  8
+Accuracy is:  0.465
+Number of Leaves in the tree is:  144
+
+Running the new logic with alpha =  0.8
+Total clusters is:  8
+Accuracy is:  0.465
+Number of Leaves in the tree is:  144
+
+Running the new logic with alpha =  0.9
+Total clusters is:  8
+Accuracy is:  0.465
+Number of Leaves in the tree is:  144
+
+Running the new logic with alpha =  1.0
+Total clusters is:  8
+Accuracy is:  0.465
+Number of Leaves in the tree is:  144
+########################################
+
+
+Running pruned dataset
+Accuracy is:  0.545
+Number of Leaves in the tree is:  100
+
+Running the new logic with alpha =  0.1
+Total clusters is:  5
+Accuracy is:  0.47
+Number of Leaves in the tree is:  127
+
+Running the new logic with alpha =  0.2
+Total clusters is:  5
+Accuracy is:  0.47
+Number of Leaves in the tree is:  127
+
+Running the new logic with alpha =  0.3
+Total clusters is:  5
+Accuracy is:  0.47
+Number of Leaves in the tree is:  127
+
+Running the new logic with alpha =  0.4
+Total clusters is:  5
+Accuracy is:  0.47
+Number of Leaves in the tree is:  127
+
+Running the new logic with alpha =  0.5
+Total clusters is:  5
+Accuracy is:  0.49
+Number of Leaves in the tree is:  124
+
+Running the new logic with alpha =  0.6
+Total clusters is:  5
+Accuracy is:  0.49
+Number of Leaves in the tree is:  124
+
+Running the new logic with alpha =  0.7
+Total clusters is:  5
+Accuracy is:  0.49
+Number of Leaves in the tree is:  124
+
+Running the new logic with alpha =  0.8
+Total clusters is:  5
+Accuracy is:  0.49
+Number of Leaves in the tree is:  124
+
+Running the new logic with alpha =  0.9
+Total clusters is:  5
+Accuracy is:  0.49
+Number of Leaves in the tree is:  124
+
+Running the new logic with alpha =  1.0
+Total clusters is:  5
+Accuracy is:  0.545
+Number of Leaves in the tree is:  100
+########################################
+
+
+Running pruned dataset
+Accuracy is:  0.435
+Number of Leaves in the tree is:  83
+
+Running the new logic with alpha =  0.1
+Total clusters is:  7
+Accuracy is:  0.49
+Number of Leaves in the tree is:  86
+
+Running the new logic with alpha =  0.2
+Total clusters is:  7
+Accuracy is:  0.49
+Number of Leaves in the tree is:  86
+
+Running the new logic with alpha =  0.3
+Total clusters is:  7
+Accuracy is:  0.49
+Number of Leaves in the tree is:  86
+
+Running the new logic with alpha =  0.4
+Total clusters is:  7
+Accuracy is:  0.495
+Number of Leaves in the tree is:  83
+
+Running the new logic with alpha =  0.5
+Total clusters is:  7
+Accuracy is:  0.495
+Number of Leaves in the tree is:  83
+
+Running the new logic with alpha =  0.6
+Total clusters is:  7
+Accuracy is:  0.495
+Number of Leaves in the tree is:  83
+
+Running the new logic with alpha =  0.7
+Total clusters is:  7
+Accuracy is:  0.495
+Number of Leaves in the tree is:  83
+
+Running the new logic with alpha =  0.8
+Total clusters is:  7
+Accuracy is:  0.435
+Number of Leaves in the tree is:  83
+
+Running the new logic with alpha =  0.9
+Total clusters is:  7
+Accuracy is:  0.435
+Number of Leaves in the tree is:  83
+
+Running the new logic with alpha =  1.0
+Total clusters is:  7
+Accuracy is:  0.435
+Number of Leaves in the tree is:  83
+########################################
+
+
+Running pruned dataset
+Accuracy is:  0.515
+Number of Leaves in the tree is:  138
+
+Running the new logic with alpha =  0.1
+Total clusters is:  8
+Accuracy is:  0.52
+Number of Leaves in the tree is:  133
+
+Running the new logic with alpha =  0.2
+Total clusters is:  8
+Accuracy is:  0.52
+Number of Leaves in the tree is:  133
+
+Running the new logic with alpha =  0.3
+Total clusters is:  8
+Accuracy is:  0.52
+Number of Leaves in the tree is:  133
+
+Running the new logic with alpha =  0.4
+Total clusters is:  8
+Accuracy is:  0.53
+Number of Leaves in the tree is:  175
+
+Running the new logic with alpha =  0.5
+Total clusters is:  8
+Accuracy is:  0.53
+Number of Leaves in the tree is:  175
+
+Running the new logic with alpha =  0.6
+Total clusters is:  8
+Accuracy is:  0.505
+Number of Leaves in the tree is:  123
+
+Running the new logic with alpha =  0.7
+Total clusters is:  8
+Accuracy is:  0.505
+Number of Leaves in the tree is:  123
+
+Running the new logic with alpha =  0.8
+Total clusters is:  8
+Accuracy is:  0.505
+Number of Leaves in the tree is:  123
+
+Running the new logic with alpha =  0.9
+Total clusters is:  8
+Accuracy is:  0.505
+Number of Leaves in the tree is:  123
+
+Running the new logic with alpha =  1.0
+Total clusters is:  8
+Accuracy is:  0.505
+Number of Leaves in the tree is:  123
+########################################
+
+
+Running pruned dataset
+Accuracy is:  0.505
+Number of Leaves in the tree is:  161
+
+Running the new logic with alpha =  0.1
+Total clusters is:  8
+Accuracy is:  0.52
+Number of Leaves in the tree is:  170
+
+Running the new logic with alpha =  0.2
+Total clusters is:  8
+Accuracy is:  0.52
+Number of Leaves in the tree is:  170
+
+Running the new logic with alpha =  0.3
+Total clusters is:  8
+Accuracy is:  0.52
+Number of Leaves in the tree is:  170
+
+Running the new logic with alpha =  0.4
+Total clusters is:  8
+Accuracy is:  0.52
+Number of Leaves in the tree is:  170
+
+Running the new logic with alpha =  0.5
+Total clusters is:  8
+Accuracy is:  0.52
+Number of Leaves in the tree is:  170
+
+Running the new logic with alpha =  0.6
+Total clusters is:  8
+Accuracy is:  0.52
+Number of Leaves in the tree is:  170
+
+Running the new logic with alpha =  0.7
+Total clusters is:  8
+Accuracy is:  0.52
+Number of Leaves in the tree is:  170
+
+Running the new logic with alpha =  0.8
+Total clusters is:  8
+Accuracy is:  0.565
+Number of Leaves in the tree is:  156
+
+Running the new logic with alpha =  0.9
+Total clusters is:  8
+Accuracy is:  0.565
+Number of Leaves in the tree is:  156
+
+Running the new logic with alpha =  1.0
+Total clusters is:  8
+Accuracy is:  0.515
+Number of Leaves in the tree is:  127
+########################################
+

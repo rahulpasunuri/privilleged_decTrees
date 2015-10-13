@@ -27,16 +27,38 @@ privilegedColumns = {}
 
 #below two parameters have to be set for every dataset..
 datasets = []
+'''
 datasets.append("heart")
-#privilegedColumns["heart"] = [1, 4,9, 10, 12]
-privilegedColumns["heart"] = [1, 4,9, 10, 11, 12]
+#privilegedColumns["heart"] = [1, 2, 3, 4, 5, 6]
+privilegedColumns["heart"] = [1, 3, 4, 6, 9, 10, 12]
+#privilegedColumns["heart"] = [1, 4,9, 10, 11, 12]
+'''
 
+'''
 datasets.append("heart_multi")
-privilegedColumns["heart_multi"] = [1, 4,9, 10]
+privilegedColumns["heart_multi"] = [1, 2, 3, 6, 9, 10, 12]
+'''
 
+'''
 datasets.append("breast")
-#privilegedColumns["breast"] = [0, 2, 4, 6]
-privilegedColumns["breast"] = [1, 3, 5, 7]
+privilegedColumns["breast"] = [1, 2, 7, 12, 13, 14, 24, 28]
+'''
+
+'''
+datasets.append("random")
+privilegedColumns["random"] = [1, 3, 5, 7, 8]
+'''
+'''
+datasets.append("iris")
+privilegedColumns["iris"] = [2,3]
+'''
+
+'''
+datasets.append("diabetes")
+#privilegedColumns["diabetes"] = [0,2,4,5]
+privilegedColumns["diabetes"] = [1,5,6,7]
+'''
+
 
 totalParts = 5
 for datasetName in datasets:
@@ -48,6 +70,9 @@ for datasetName in datasets:
         out = open(datasetName+"/dataset_simplified.csv", "w")
         lines = f.readlines()
         for l in lines:
+            l = l.strip()
+            if l == "":
+                continue # skip empty lines..
             if datasetName == "heart":
                 words = l.strip().split(",")
                 classIndex = len(words) - 1 
@@ -57,15 +82,6 @@ for datasetName in datasets:
                     
                 if words[classIndex] != "0":
                      words[classIndex] = "1"    
-            elif datasetName == "heart_multi":
-                words = l.strip().split(",")
-                classIndex = len(words) - 1 
-                if '?' in l:
-                    #ignore the rows with missing values..
-                    continue
-                    
-                #if words[classIndex] != "0":
-                #     words[classIndex] = "1" 
             elif datasetName == "breast":
                 cols = l.strip().split(",")
                 classIndex = 1
@@ -77,6 +93,25 @@ for datasetName in datasets:
                     words.append("1") #malignant..
                 else:
                     words.append("0") #benign case..
+            elif datasetName == "heart_multi":
+                words = l.strip().split(",")
+                classIndex = len(words) - 1 
+                if '?' in l:
+                    #ignore the rows with missing values..
+                    continue
+
+            elif datasetName == "iris":
+                words = l.strip().split(",")
+                classIndex = len(words) - 1
+                if "setosa" in words[classIndex]:
+                    words[classIndex] = '0'
+                elif "virginica" in words[classIndex]:
+                    words[classIndex] = '1'
+                elif "versicolor" in words[classIndex]:
+                    words[classIndex] = '2'
+            else:
+                words = l.strip().split(",")
+                classIndex = len(words) - 1 
                 
             out.write(",".join(words)+"\n")
         out.close()

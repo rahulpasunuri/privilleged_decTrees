@@ -1,130 +1,130 @@
 
 ########################################
-Running breast with fold:  0
+Running diabetes with fold:  0
 
 Running entire dataset
-Accuracy is:  0.955752212389
-Number of Leaves in the tree is:  16
+Accuracy is:  0.673202614379
+Number of Leaves in the tree is:  97
 
 Running only privileged information
-Accuracy is:  0.902654867257
-Number of Leaves in the tree is:  28
+Accuracy is:  0.718954248366
+Number of Leaves in the tree is:  109
 
 Running only privileged information with max depth = 3
-Accuracy is:  0.911504424779
+Accuracy is:  0.758169934641
 Number of Leaves in the tree is:  8
 
 Running pruned dataset
-Accuracy is:  0.955752212389
-Number of Leaves in the tree is:  16
+Accuracy is:  0.62091503268
+Number of Leaves in the tree is:  193
 
-Running the new logic..
-Total clusters is:  8
-Accuracy is:  0.946902654867
-Number of Leaves in the tree is:  16
+Running the new logic with alpha =  0
+Total clusters is:  109
+Accuracy is:  0.62091503268
+Number of Leaves in the tree is:  198
 ########################################
 
 
 ########################################
-Running breast with fold:  1
+Running diabetes with fold:  1
 
 Running entire dataset
-Accuracy is:  0.938053097345
-Number of Leaves in the tree is:  16
+Accuracy is:  0.673202614379
+Number of Leaves in the tree is:  97
 
 Running only privileged information
-Accuracy is:  0.946902654867
-Number of Leaves in the tree is:  33
+Accuracy is:  0.647058823529
+Number of Leaves in the tree is:  110
 
 Running only privileged information with max depth = 3
-Accuracy is:  0.938053097345
+Accuracy is:  0.699346405229
 Number of Leaves in the tree is:  8
 
 Running pruned dataset
-Accuracy is:  0.920353982301
-Number of Leaves in the tree is:  17
+Accuracy is:  0.601307189542
+Number of Leaves in the tree is:  186
 
-Running the new logic..
-Total clusters is:  8
-Accuracy is:  0.938053097345
-Number of Leaves in the tree is:  16
+Running the new logic with alpha =  0
+Total clusters is:  110
+Accuracy is:  0.588235294118
+Number of Leaves in the tree is:  198
 ########################################
 
 
 ########################################
-Running breast with fold:  2
+Running diabetes with fold:  2
 
 Running entire dataset
-Accuracy is:  0.87610619469
-Number of Leaves in the tree is:  15
+Accuracy is:  0.692810457516
+Number of Leaves in the tree is:  101
 
 Running only privileged information
-Accuracy is:  0.902654867257
-Number of Leaves in the tree is:  32
+Accuracy is:  0.686274509804
+Number of Leaves in the tree is:  124
 
 Running only privileged information with max depth = 3
-Accuracy is:  0.911504424779
+Accuracy is:  0.78431372549
 Number of Leaves in the tree is:  8
 
 Running pruned dataset
-Accuracy is:  0.87610619469
-Number of Leaves in the tree is:  16
+Accuracy is:  0.549019607843
+Number of Leaves in the tree is:  184
 
-Running the new logic..
-Total clusters is:  8
-Accuracy is:  0.87610619469
-Number of Leaves in the tree is:  16
+Running the new logic with alpha =  0
+Total clusters is:  124
+Accuracy is:  0.601307189542
+Number of Leaves in the tree is:  182
 ########################################
 
 
 ########################################
-Running breast with fold:  3
+Running diabetes with fold:  3
 
 Running entire dataset
-Accuracy is:  0.946902654867
-Number of Leaves in the tree is:  16
+Accuracy is:  0.718954248366
+Number of Leaves in the tree is:  104
 
 Running only privileged information
-Accuracy is:  0.911504424779
-Number of Leaves in the tree is:  30
+Accuracy is:  0.718954248366
+Number of Leaves in the tree is:  109
 
 Running only privileged information with max depth = 3
-Accuracy is:  0.87610619469
+Accuracy is:  0.777777777778
 Number of Leaves in the tree is:  8
 
 Running pruned dataset
-Accuracy is:  0.946902654867
-Number of Leaves in the tree is:  16
+Accuracy is:  0.542483660131
+Number of Leaves in the tree is:  195
 
-Running the new logic..
-Total clusters is:  8
-Accuracy is:  0.946902654867
-Number of Leaves in the tree is:  16
+Running the new logic with alpha =  0
+Total clusters is:  109
+Accuracy is:  0.59477124183
+Number of Leaves in the tree is:  200
 ########################################
 
 
 ########################################
-Running breast with fold:  4
+Running diabetes with fold:  4
 
 Running entire dataset
-Accuracy is:  0.957264957265
-Number of Leaves in the tree is:  16
+Accuracy is:  0.737179487179
+Number of Leaves in the tree is:  101
 
 Running only privileged information
-Accuracy is:  0.905982905983
-Number of Leaves in the tree is:  29
+Accuracy is:  0.679487179487
+Number of Leaves in the tree is:  111
 
 Running only privileged information with max depth = 3
-Accuracy is:  0.863247863248
-Number of Leaves in the tree is:  8
+Accuracy is:  0.717948717949
+Number of Leaves in the tree is:  7
 
 Running pruned dataset
-Accuracy is:  0.957264957265
-Number of Leaves in the tree is:  17
+Accuracy is:  0.564102564103
+Number of Leaves in the tree is:  160
 
-Running the new logic..
-Total clusters is:  8
-Accuracy is:  0.957264957265
-Number of Leaves in the tree is:  17
+Running the new logic with alpha =  0
+Total clusters is:  111
+Accuracy is:  0.621794871795
+Number of Leaves in the tree is:  161
 ########################################
 
