@@ -1,130 +1,133 @@
 
 ########################################
-Running diabetes with fold:  0
+Running random with fold:  0
 
 Running entire dataset
-Accuracy is:  0.673202614379
-Number of Leaves in the tree is:  97
+Accuracy is:  0.535
+Number of Leaves in the tree is:  69
 
 Running only privileged information
-Accuracy is:  0.718954248366
-Number of Leaves in the tree is:  109
+Accuracy is:  0.51
+Number of Leaves in the tree is:  88
 
 Running only privileged information with max depth = 3
-Accuracy is:  0.758169934641
-Number of Leaves in the tree is:  8
-
-Running pruned dataset
-Accuracy is:  0.62091503268
-Number of Leaves in the tree is:  193
-
-Running the new logic with alpha =  0
-Total clusters is:  109
-Accuracy is:  0.62091503268
-Number of Leaves in the tree is:  198
-########################################
-
-
-########################################
-Running diabetes with fold:  1
-
-Running entire dataset
-Accuracy is:  0.673202614379
-Number of Leaves in the tree is:  97
-
-Running only privileged information
-Accuracy is:  0.647058823529
-Number of Leaves in the tree is:  110
-
-Running only privileged information with max depth = 3
-Accuracy is:  0.699346405229
-Number of Leaves in the tree is:  8
-
-Running pruned dataset
-Accuracy is:  0.601307189542
-Number of Leaves in the tree is:  186
-
-Running the new logic with alpha =  0
-Total clusters is:  110
-Accuracy is:  0.588235294118
-Number of Leaves in the tree is:  198
-########################################
-
-
-########################################
-Running diabetes with fold:  2
-
-Running entire dataset
-Accuracy is:  0.692810457516
-Number of Leaves in the tree is:  101
-
-Running only privileged information
-Accuracy is:  0.686274509804
-Number of Leaves in the tree is:  124
-
-Running only privileged information with max depth = 3
-Accuracy is:  0.78431372549
-Number of Leaves in the tree is:  8
-
-Running pruned dataset
-Accuracy is:  0.549019607843
-Number of Leaves in the tree is:  184
-
-Running the new logic with alpha =  0
-Total clusters is:  124
-Accuracy is:  0.601307189542
-Number of Leaves in the tree is:  182
-########################################
-
-
-########################################
-Running diabetes with fold:  3
-
-Running entire dataset
-Accuracy is:  0.718954248366
-Number of Leaves in the tree is:  104
-
-Running only privileged information
-Accuracy is:  0.718954248366
-Number of Leaves in the tree is:  109
-
-Running only privileged information with max depth = 3
-Accuracy is:  0.777777777778
-Number of Leaves in the tree is:  8
-
-Running pruned dataset
-Accuracy is:  0.542483660131
-Number of Leaves in the tree is:  195
-
-Running the new logic with alpha =  0
-Total clusters is:  109
-Accuracy is:  0.59477124183
-Number of Leaves in the tree is:  200
-########################################
-
-
-########################################
-Running diabetes with fold:  4
-
-Running entire dataset
-Accuracy is:  0.737179487179
-Number of Leaves in the tree is:  101
-
-Running only privileged information
-Accuracy is:  0.679487179487
-Number of Leaves in the tree is:  111
-
-Running only privileged information with max depth = 3
-Accuracy is:  0.717948717949
+Accuracy is:  0.5
 Number of Leaves in the tree is:  7
 
 Running pruned dataset
-Accuracy is:  0.564102564103
-Number of Leaves in the tree is:  160
+Accuracy is:  0.46
+Number of Leaves in the tree is:  88
 
 Running the new logic with alpha =  0
-Total clusters is:  111
-Accuracy is:  0.621794871795
-Number of Leaves in the tree is:  161
+Total clusters is:  88
+Accuracy is:  0.485
+Number of Leaves in the tree is:  159
 ########################################
 
+
+########################################
+Running random with fold:  1
+
+Running entire dataset
+Accuracy is:  0.5
+Number of Leaves in the tree is:  107
+
+Running only privileged information
+Accuracy is:  0.535
+Number of Leaves in the tree is:  119
+
+Running only privileged information with max depth = 3
+Accuracy is:  0.53
+Number of Leaves in the tree is:  7
+
+Running pruned dataset
+Accuracy is:  0.505
+Number of Leaves in the tree is:  120
+
+Running the new logic with alpha =  0
+Total clusters is:  119
+Accuracy is:  0.525
+Number of Leaves in the tree is:  162
+########################################
+
+
+########################################
+Running random with fold:  2
+
+Running entire dataset
+Accuracy is:  0.485
+Number of Leaves in the tree is:  91
+
+Running only privileged information
+Accuracy is:  0.485
+Number of Leaves in the tree is:  102
+
+Running only privileged information with max depth = 3
+Accuracy is:  0.44
+Number of Leaves in the tree is:  8
+
+Running pruned dataset
+Accuracy is:  0.525
+Number of Leaves in the tree is:  106
+
+Running the new logic with alpha =  0
+Total clusters is:  102
+Accuracy is:  0.53
+Number of Leaves in the tree is:  145
+########################################
+
+
+########################################
+Running random with fold:  3
+
+Running entire dataset
+Accuracy is:  0.46
+Number of Leaves in the tree is:  90
+
+Running only privileged information
+Accuracy is:  0.56
+Number of Leaves in the tree is:  91
+
+Running only privileged information with max depth = 3
+Accuracy is:  0.505
+Number of Leaves in the tree is:  7
+
+Running pruned dataset
+Accuracy is:  0.53
+Number of Leaves in the tree is:  145
+
+Running the new logic with alpha =  0
+Total clusters is:  91
+Accuracy is:  0.54
+Number of Leaves in the tree is:  170
+########################################
+
+
+########################################
+Running random with fold:  4
+
+Running entire dataset
+Accuracy is:  0.495
+Number of Leaves in the tree is:  81
+
+Running only privileged information
+Accuracy is:  0.525
+Number of Leaves in the tree is:  86
+
+Running only privileged information with max depth = 3
+Accuracy is:  0.52
+Number of Leaves in the tree is:  7
+
+Running pruned dataset
+Accuracy is:  0.5
+Number of Leaves in the tree is:  87
+
+Running the new logic with alpha =  0
+Total clusters is:  86
+Accuracy is:  0.52
+Number of Leaves in the tree is:  142
+########################################
+
+Normal Accuracy is 0.504
+Privileged Accuracy is 0.523
+New Accuracy is 0.52

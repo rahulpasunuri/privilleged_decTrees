@@ -374,7 +374,8 @@ def checkDecisionTree(trainingFileName, testFileName, depth=15, isPrintTree=Fals
     fileName="results/"+"PredictionOf"+testFileName.split('/')[1]
     classifyNewSample(tree=tree, testData=testData,depth=depth,fileName=fileName)
     print "Accuracy is: ",(1 - computeMisClassfication(fileName))
-    print "Number of Leaves in the tree is: ", numLeaves(tree)    
+    print "Number of Leaves in the tree is: ", numLeaves(tree)   
+    return (1 - computeMisClassfication(fileName)) 
 
 def getClusterValue(row, tree):
     currentNode = tree
@@ -435,19 +436,22 @@ def newLogic(train, test, priv_train, priv_depth):
     classifyNewSample(tree=tree, testData=testData,depth=15,fileName=fileName)
     print "Accuracy is: ",(1 - computeMisClassfication(fileName))
     print "Number of Leaves in the tree is: ", numLeaves(tree)   
-            
+    return (1 - computeMisClassfication(fileName))        
 alpha = 0            
 datasets = []
-#datasets.append("random")
+datasets.append("random")
 #datasets.append("heart")
 #datasets.append("breast")
 #datasets.append("heart_multi")
 #datasets.append("iris")
-datasets.append("diabetes")
+#datasets.append("diabetes")
 #The main function that calls all other functions, execution begins here
 def main():
     global alpha
     for datasetName in datasets:
+        normalAcc = 0
+        privAcc = 0
+        newAcc = 0
         for part in range(5):
 
             #if part != 1:
@@ -461,19 +465,22 @@ def main():
             checkDecisionTree(datasetName+"/complete_train_"+str(part)+".csv", datasetName+"/complete_test_"+str(part)+".csv")
             
             print "\nRunning only privileged information"
-            checkDecisionTree(datasetName+"/priv_train_"+str(part)+".csv", datasetName+"/priv_test_"+str(part)+".csv")
+            privAcc += checkDecisionTree(datasetName+"/priv_train_"+str(part)+".csv", datasetName+"/priv_test_"+str(part)+".csv")
 
             print "\nRunning only privileged information with max depth = 3"
             checkDecisionTree(datasetName+"/priv_train_"+str(part)+".csv", datasetName+"/priv_test_"+str(part)+".csv", 3, False)
             
             #'''
             print "\nRunning pruned dataset"
-            checkDecisionTree(datasetName+"/pruned_train_"+str(part)+".csv", datasetName+"/pruned_test_"+str(part)+".csv")
+            normalAcc += checkDecisionTree(datasetName+"/pruned_train_"+str(part)+".csv", datasetName+"/pruned_test_"+str(part)+".csv")
             #for run in range(1, 11):
             #    alpha = run/10.0
             print "\nRunning the new logic with alpha = ",alpha
-            newLogic(datasetName+"/pruned_train_"+str(part)+".csv", datasetName+"/pruned_test_"+str(part)+".csv", datasetName+"/priv_train_"+str(part)+".csv", 3)
+            newAcc += newLogic(datasetName+"/pruned_train_"+str(part)+".csv", datasetName+"/pruned_test_"+str(part)+".csv", datasetName+"/priv_train_"+str(part)+".csv", 3)
             print "#"*40
             print ""
+        print "Normal Accuracy is", normalAcc/5.0
+        print "Privileged Accuracy is", privAcc/5.0
+        print "New Accuracy is", newAcc/5.0
 #Execution begins here
 if __name__ == "__main__" : main()
