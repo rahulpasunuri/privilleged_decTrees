@@ -5,13 +5,6 @@ from math import *
 from Node import Node
 
 '''
-This program knows no difference between a number or a string, It considers everything as a string. (Either a string matches the criteria or it doesn't) 
-This makes it a Binary Tree. Ultimately entropy and informatin gain depends on the probability of a certain value.
-It does not matter what the value is .. 
-I think this will work in most cases .. Lets see ... 
-'''
-
-'''
 The method readData, given a CSV file name, reads the data and returns the data set as a list of lists.
 Each element in the list is a list.
 '''
@@ -64,7 +57,17 @@ def calcPrivEntropy(data):
         entropy -= p*log(p,2)
     return entropy
 
-
+def combineGain(normalGain, privGain):
+    global alpha
+    privGain = alpha * privGain
+    #return normalGain
+    #return privGain + normalGain
+    #'''
+    if normalGain > privGain:
+        return reverseHarmonicMean(normalGain, privGain)
+    else:
+        return harmonicMean(normalGain, privGain)
+    #'''
 '''
 The createTree function is where all the magic happens, 
 We call createTree recursively until we reach the required depth or a good decision tree
@@ -102,6 +105,9 @@ def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False):
             for row in subDataSet:
                 valuesInColumn[row[col]]=1  
 
+            privGainList = []
+            normalAvg = 0
+            privAvg = 0
             #We are now iterating through each value in the current iteration of column to see which value serves as the best split
             for value in valuesInColumn:
                 #Split the dataset on the current value of column and value
@@ -110,14 +116,46 @@ def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False):
                     #Calculate infoGain for each col and each value in the column
                     if isPrivAvailable == False:
                         infoGain = calcInfoGain(entropy, set1,set2)
+                        #Choose the best col and value 
+                        if infoGain > bestGain and len(set1) > 0 and len(set2) > 0 :
+                            bestGain = infoGain
+                            bestSet = (set1, set2)
+                            bestCriteria = value
+                            bestColumn = col
                     else:
-                        infoGain = calcPrivInfoGain(entropy, calcPrivEntropy(subDataSet), set1,set2)
-                    #Choose the best col and value 
-                    if infoGain > bestGain and len(set1) > 0 and len(set2) > 0 :
-                        bestGain = infoGain
-                        bestSet = (set1, set2)
-                        bestCriteria = value
-                        bestColumn = col
+                        currGain, privGain = calcPrivInfoGain(entropy, calcPrivEntropy(subDataSet), set1,set2)
+                        privGainList.append((currGain, privGain, (set1, set2), value, col))
+                        normalAvg += currGain
+                        privAvg += privGain
+                
+            if isPrivAvailable == True:
+                #'''
+                normalAvg = normalAvg/len(privGainList)
+                privAvg = privAvg/len(privGainList)
+                shift = abs(normalAvg - privAvg)
+                #shift = 0
+                if privAvg > normalAvg:
+                    index = 0
+                else:
+                    index = 1
+                
+                for ind in range(len(privGainList)):
+                    currTuple = privGainList[ind]
+                    if index == 0:
+                        finalTuple = (currTuple[0]+ abs(shift), currTuple[1], currTuple[2], currTuple[3], currTuple[4])
+                    else:
+                        finalTuple = (currTuple[0], currTuple[1]+ abs(shift), currTuple[2], currTuple[3], currTuple[4])
+                    privGainList[ind] = finalTuple
+                #'''
+                #find the max threshold
+                for tup in privGainList:
+                    currGain = combineGain(tup[0], tup[1])
+                    if currGain > bestGain and len(tup[2][0]) > 0 and len(tup[2][1]) > 0:
+                        #print tup[0],"\t",tup[1],"\t", currGain
+                        bestSet = tup[2]
+                        bestCriteria = tup[3]
+                        bestColumn = tup[4]
+                        bestGain = currGain
 
         if bestGain > threshold:
             #Finally split the dataset and create the subtree based on the best values obtained above
@@ -194,6 +232,8 @@ def calcPrivInfoGain(currentEntropy, clusterEntropy, subDataSet1,subDataSet2):
     #print alpha
     #return alpha*normalGain + privGain
     #print ratio
+    return (normalGain, privGain)
+    '''
     if normalGain < privGain:
         #return (normalGain + privGain)/2
         #return geoMean(normalGain, privGain)
@@ -204,6 +244,7 @@ def calcPrivInfoGain(currentEntropy, clusterEntropy, subDataSet1,subDataSet2):
         return harmonicMean(normalGain, privGain)
     #return harmonicMean(normalGain, privGain)
     #
+    '''
 '''
 The method countOccurenceOfClassLabel is called whenever we need to count how many times each class label occurs in a the subDataSet. 
 This will be used to calculate Entropy and Infogain
@@ -373,8 +414,8 @@ def checkDecisionTree(trainingFileName, testFileName, depth=15, isPrintTree=Fals
     #Now that we have the tree built,lets predict output on the test data
     fileName="results/"+"PredictionOf"+testFileName.split('/')[1]
     classifyNewSample(tree=tree, testData=testData,depth=depth,fileName=fileName)
-    print "Accuracy is: ",(1 - computeMisClassfication(fileName))
-    print "Number of Leaves in the tree is: ", numLeaves(tree)   
+    #print "Accuracy is: ",(1 - computeMisClassfication(fileName))
+    #print "Number of Leaves in the tree is: ", numLeaves(tree)   
     return (1 - computeMisClassfication(fileName)) 
 
 def getClusterValue(row, tree):
@@ -410,7 +451,7 @@ def newLogic(train, test, priv_train, priv_depth):
         if node.rightBranch != None:
             nodes.append(node.rightBranch)
     numClusters = index
-    print "Total clusters is: ", index
+    #print "Total clusters is: ", index
     trainData = readData(train)
     testData = readData(test)
     privData = readData(priv_train)
@@ -434,53 +475,75 @@ def newLogic(train, test, priv_train, priv_depth):
     #Now that we have the tree built,lets predict output on the test data
     fileName="results/"+"PredictionOf"+test.split('/')[1]
     classifyNewSample(tree=tree, testData=testData,depth=15,fileName=fileName)
-    print "Accuracy is: ",(1 - computeMisClassfication(fileName))
-    print "Number of Leaves in the tree is: ", numLeaves(tree)   
+    #print "Accuracy is: ",(1 - computeMisClassfication(fileName))
+    #print "Number of Leaves in the tree is: ", numLeaves(tree)   
     return (1 - computeMisClassfication(fileName))        
 alpha = 0            
 datasets = []
 datasets.append("random")
-#datasets.append("heart")
-#datasets.append("breast")
-#datasets.append("heart_multi")
-#datasets.append("iris")
-#datasets.append("diabetes")
+datasets.append("heart")
+datasets.append("breast")
+datasets.append("heart_multi")
+datasets.append("iris")
+datasets.append("diabetes")
 #The main function that calls all other functions, execution begins here
 def main():
     global alpha
     for datasetName in datasets:
+        print ""
+        print "#"*40
+        print "Running "+datasetName+":"
         normalAcc = 0
         privAcc = 0
-        newAcc = 0
+        newAcc = []
         for part in range(5):
 
             #if part != 1:
                 #continue #TODO: remove this..
             #'''
-            print ""
-            print "#"*40
-            print "Running "+datasetName+" with fold: ", part
+            #print ""
+            #print "#"*40
+            #print "Running "+datasetName+" with fold: ", part
             
-            print "\nRunning entire dataset"
+            #print "\nRunning entire dataset"
             checkDecisionTree(datasetName+"/complete_train_"+str(part)+".csv", datasetName+"/complete_test_"+str(part)+".csv")
             
-            print "\nRunning only privileged information"
+            #print "\nRunning only privileged information"
             privAcc += checkDecisionTree(datasetName+"/priv_train_"+str(part)+".csv", datasetName+"/priv_test_"+str(part)+".csv")
-
-            print "\nRunning only privileged information with max depth = 3"
+            
+            #print "\nRunning only privileged information with max depth = 3"
             checkDecisionTree(datasetName+"/priv_train_"+str(part)+".csv", datasetName+"/priv_test_"+str(part)+".csv", 3, False)
             
             #'''
-            print "\nRunning pruned dataset"
-            normalAcc += checkDecisionTree(datasetName+"/pruned_train_"+str(part)+".csv", datasetName+"/pruned_test_"+str(part)+".csv")
-            #for run in range(1, 11):
-            #    alpha = run/10.0
-            print "\nRunning the new logic with alpha = ",alpha
-            newAcc += newLogic(datasetName+"/pruned_train_"+str(part)+".csv", datasetName+"/pruned_test_"+str(part)+".csv", datasetName+"/priv_train_"+str(part)+".csv", 3)
-            print "#"*40
-            print ""
+            #print "\nRunning pruned dataset"
+            currNormalAcc = checkDecisionTree(datasetName+"/pruned_train_"+str(part)+".csv", datasetName+"/pruned_test_"+str(part)+".csv")
+            normalAcc += currNormalAcc
+            #print currNormalAcc," ##" 
+            newAcc.append([])
+            for run in range(1, 21):
+                alpha = run/10.0
+                #print "\nRunning the new logic with alpha = ",alpha
+                currAcc = newLogic(datasetName+"/pruned_train_"+str(part)+".csv", datasetName+"/pruned_test_"+str(part)+".csv", datasetName+"/priv_train_"+str(part)+".csv", 3)     
+                #print currAcc,"\t",alpha
+                newAcc[part].append(currAcc)
+                
+            #print "#"*40
+            #print ""
         print "Normal Accuracy is", normalAcc/5.0
         print "Privileged Accuracy is", privAcc/5.0
-        print "New Accuracy is", newAcc/5.0
+        
+        avgAcc = [0 for i in range(20)]
+        for run in range(20):
+            for j in range(5):
+                avgAcc[run] += newAcc[j][run]
+        maxAvgAccuracy = 0
+        maxAlpha = 0
+        for i in range(20):
+            if  maxAvgAccuracy < avgAcc[i]:
+                maxAlpha = float(i+1)/10
+                maxAvgAccuracy = avgAcc[i]
+        #print avgAcc
+        #print n
+        print "New Accuracy is: ",maxAvgAccuracy/5.0, "for alpha: ",maxAlpha
 #Execution begins here
 if __name__ == "__main__" : main()
