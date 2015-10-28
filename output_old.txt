@@ -1,0 +1,133 @@
+
+########################################
+Running heart_multi with fold:  0
+
+Running entire dataset
+Accuracy is:  0.508474576271
+Number of Leaves in the tree is:  79
+
+Running only privileged information
+Accuracy is:  0.474576271186
+Number of Leaves in the tree is:  112
+
+Running only privileged information with max depth = 3
+Accuracy is:  0.542372881356
+Number of Leaves in the tree is:  8
+
+Running pruned dataset
+Accuracy is:  0.474576271186
+Number of Leaves in the tree is:  94
+
+Running the new logic with alpha =  0
+Total clusters is:  112
+Accuracy is:  0.474576271186
+Number of Leaves in the tree is:  92
+########################################
+
+
+########################################
+Running heart_multi with fold:  1
+
+Running entire dataset
+Accuracy is:  0.525423728814
+Number of Leaves in the tree is:  73
+
+Running only privileged information
+Accuracy is:  0.406779661017
+Number of Leaves in the tree is:  109
+
+Running only privileged information with max depth = 3
+Accuracy is:  0.542372881356
+Number of Leaves in the tree is:  8
+
+Running pruned dataset
+Accuracy is:  0.525423728814
+Number of Leaves in the tree is:  99
+
+Running the new logic with alpha =  0
+Total clusters is:  109
+Accuracy is:  0.491525423729
+Number of Leaves in the tree is:  98
+########################################
+
+
+########################################
+Running heart_multi with fold:  2
+
+Running entire dataset
+Accuracy is:  0.64406779661
+Number of Leaves in the tree is:  75
+
+Running only privileged information
+Accuracy is:  0.491525423729
+Number of Leaves in the tree is:  110
+
+Running only privileged information with max depth = 3
+Accuracy is:  0.627118644068
+Number of Leaves in the tree is:  8
+
+Running pruned dataset
+Accuracy is:  0.457627118644
+Number of Leaves in the tree is:  97
+
+Running the new logic with alpha =  0
+Total clusters is:  110
+Accuracy is:  0.525423728814
+Number of Leaves in the tree is:  94
+########################################
+
+
+########################################
+Running heart_multi with fold:  3
+
+Running entire dataset
+Accuracy is:  0.491525423729
+Number of Leaves in the tree is:  80
+
+Running only privileged information
+Accuracy is:  0.440677966102
+Number of Leaves in the tree is:  113
+
+Running only privileged information with max depth = 3
+Accuracy is:  0.542372881356
+Number of Leaves in the tree is:  8
+
+Running pruned dataset
+Accuracy is:  0.338983050847
+Number of Leaves in the tree is:  96
+
+Running the new logic with alpha =  0
+Total clusters is:  113
+Accuracy is:  0.406779661017
+Number of Leaves in the tree is:  90
+########################################
+
+
+########################################
+Running heart_multi with fold:  4
+
+Running entire dataset
+Accuracy is:  0.44262295082
+Number of Leaves in the tree is:  78
+
+Running only privileged information
+Accuracy is:  0.44262295082
+Number of Leaves in the tree is:  111
+
+Running only privileged information with max depth = 3
+Accuracy is:  0.508196721311
+Number of Leaves in the tree is:  8
+
+Running pruned dataset
+Accuracy is:  0.393442622951
+Number of Leaves in the tree is:  96
+
+Running the new logic with alpha =  0
+Total clusters is:  111
+Accuracy is:  0.55737704918
+Number of Leaves in the tree is:  96
+########################################
+
+Normal Accuracy is 0.438010558488
+Privileged Accuracy is 0.451236454571
+New Accuracy is 0.491136426785

@@ -1,0 +1,36 @@
+
+########################################
+Running random:
+Normal Accuracy is 0.504
+Privileged Accuracy is 0.523
+New Accuracy is:  0.513 for alpha:  0.7
+
+########################################
+Running heart:
+Normal Accuracy is 0.706974159489
+Privileged Accuracy is 0.669574881912
+New Accuracy is:  0.730702973048 for alpha:  1.2
+
+########################################
+Running breast:
+Normal Accuracy is 0.935178882082
+Privileged Accuracy is 0.948854095757
+New Accuracy is:  0.956054761364 for alpha:  0.2
+
+########################################
+Running heart_multi:
+Normal Accuracy is 0.438010558488
+Privileged Accuracy is 0.451236454571
+New Accuracy is:  0.497916087802 for alpha:  1.6
+
+########################################
+Running iris:
+Normal Accuracy is 0.693333333333
+Privileged Accuracy is 0.96
+New Accuracy is:  0.693333333333 for alpha:  0.1
+
+########################################
+Running diabetes:
+Normal Accuracy is 0.57556561086
+Privileged Accuracy is 0.690145801911
+New Accuracy is:  0.605404725993 for alpha:  1.3

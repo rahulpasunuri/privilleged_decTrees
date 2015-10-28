@@ -1,0 +1,6 @@
+
+########################################
+Running heart:
+Normal Accuracy is 0.706974159489
+Privileged Accuracy is 0.669574881912
+New Accuracy is:  0.770491803279 for alpha:  1.7
