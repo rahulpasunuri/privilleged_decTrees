@@ -440,9 +440,9 @@ def newLogic(train, test, priv_train, priv_depth):
 alpha = 0            
 datasets = []
 #datasets.append("random")
-#datasets.append("heart")
+datasets.append("heart")
 #datasets.append("breast")
-datasets.append("heart_multi")
+#datasets.append("heart_multi")
 #datasets.append("iris")
 #datasets.append("diabetes")
 #The main function that calls all other functions, execution begins here

@@ -1,0 +1,50 @@
+def computeStats(predictedLabels):
+    truePos = {}
+    trueNeg = {}
+    falsePos = {}
+    falseNeg = {}
+    
+    labels = []
+    predLabels = []
+    
+    for label in predictedLabels:
+        actual = label[1]
+        
+        if actual not in labels:
+            labels.append(actual)
+
+    for label in labels:
+        #initialize the value in all the dicts..
+        if label not in truePos:
+            truePos[label] = 0
+        if label not in trueNeg:
+            trueNeg[label] = 0
+        if label not in falsePos:
+            falsePos[label] = 0
+        if label not in falseNeg:
+            falseNeg[label] = 0        
+        
+    for label in predictedLabels:
+        actual = label[1]
+        predicted = label[0]
+        
+        #check false positives and true positives..
+        if actual == predicted:
+            truePos[actual] += 1
+            for curr in labels:
+                if curr != actual:
+                    trueNeg[curr] += 1 
+        else:
+            falsePos[predicted] += 1
+            falseNeg[actual] += 1    
+            
+    precision = {}
+    recall = {}
+    accuracy = {}
+    
+    for label in labels:
+        precision[label] = float(truePos[label])/(truePos[label] + falsePos[label])
+        accuracy[label] = float(truePos[label] + trueNeg[label])/len(predictedLabels)
+        recall[label] = float(truePos[label]) / (truePos[label] + falseNeg[label])
+    
+    return precision, recall, accuracy
