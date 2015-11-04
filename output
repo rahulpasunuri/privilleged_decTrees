@@ -1,0 +1,700 @@
+
+
+########################################
+########################################
+Printing results for split:  1
+########################################
+########################################
+
+########################################
+Running heart:
+
+Running pruned dataset
+Running the new logic with alpha =  0.1
+Running the new logic with alpha =  0.2
+Running the new logic with alpha =  0.3
+Running the new logic with alpha =  0.4
+Running the new logic with alpha =  0.5
+Running the new logic with alpha =  0.6
+Running the new logic with alpha =  0.7
+Running the new logic with alpha =  0.8
+Running the new logic with alpha =  0.9
+Running the new logic with alpha =  1.0
+Running the new logic with alpha =  1.1
+Running the new logic with alpha =  1.2
+Running the new logic with alpha =  1.3
+Running the new logic with alpha =  1.4
+Running the new logic with alpha =  1.5
+Running the new logic with alpha =  1.6
+Running the new logic with alpha =  1.7
+Running the new logic with alpha =  1.8
+Running the new logic with alpha =  1.9
+Running the new logic with alpha =  2.0
+
+Running pruned dataset
+Running the new logic with alpha =  0.1
+Running the new logic with alpha =  0.2
+Running the new logic with alpha =  0.3
+Running the new logic with alpha =  0.4
+Running the new logic with alpha =  0.5
+Running the new logic with alpha =  0.6
+Running the new logic with alpha =  0.7
+Running the new logic with alpha =  0.8
+Running the new logic with alpha =  0.9
+Running the new logic with alpha =  1.0
+Running the new logic with alpha =  1.1
+Running the new logic with alpha =  1.2
+Running the new logic with alpha =  1.3
+Running the new logic with alpha =  1.4
+Running the new logic with alpha =  1.5
+Running the new logic with alpha =  1.6
+Running the new logic with alpha =  1.7
+Running the new logic with alpha =  1.8
+Running the new logic with alpha =  1.9
+Running the new logic with alpha =  2.0
+
+Running pruned dataset
+Running the new logic with alpha =  0.1
+Running the new logic with alpha =  0.2
+Running the new logic with alpha =  0.3
+Running the new logic with alpha =  0.4
+Running the new logic with alpha =  0.5
+Running the new logic with alpha =  0.6
+Running the new logic with alpha =  0.7
+Running the new logic with alpha =  0.8
+Running the new logic with alpha =  0.9
+Running the new logic with alpha =  1.0
+Running the new logic with alpha =  1.1
+Running the new logic with alpha =  1.2
+Running the new logic with alpha =  1.3
+Running the new logic with alpha =  1.4
+Running the new logic with alpha =  1.5
+Running the new logic with alpha =  1.6
+Running the new logic with alpha =  1.7
+Running the new logic with alpha =  1.8
+Running the new logic with alpha =  1.9
+Running the new logic with alpha =  2.0
+
+Running pruned dataset
+Running the new logic with alpha =  0.1
+Running the new logic with alpha =  0.2
+Running the new logic with alpha =  0.3
+Running the new logic with alpha =  0.4
+Running the new logic with alpha =  0.5
+Running the new logic with alpha =  0.6
+Running the new logic with alpha =  0.7
+Running the new logic with alpha =  0.8
+Running the new logic with alpha =  0.9
+Running the new logic with alpha =  1.0
+Running the new logic with alpha =  1.1
+Running the new logic with alpha =  1.2
+Running the new logic with alpha =  1.3
+Running the new logic with alpha =  1.4
+Running the new logic with alpha =  1.5
+Running the new logic with alpha =  1.6
+Running the new logic with alpha =  1.7
+Running the new logic with alpha =  1.8
+Running the new logic with alpha =  1.9
+Running the new logic with alpha =  2.0
+
+Running pruned dataset
+Running the new logic with alpha =  0.1
+Running the new logic with alpha =  0.2
+Running the new logic with alpha =  0.3
+Running the new logic with alpha =  0.4
+Running the new logic with alpha =  0.5
+Running the new logic with alpha =  0.6
+Running the new logic with alpha =  0.7
+Running the new logic with alpha =  0.8
+Running the new logic with alpha =  0.9
+Running the new logic with alpha =  1.0
+Running the new logic with alpha =  1.1
+Running the new logic with alpha =  1.2
+Running the new logic with alpha =  1.3
+Running the new logic with alpha =  1.4
+Running the new logic with alpha =  1.5
+Running the new logic with alpha =  1.6
+Running the new logic with alpha =  1.7
+Running the new logic with alpha =  1.8
+Running the new logic with alpha =  1.9
+Running the new logic with alpha =  2.0
+
+Normal Accuracy is 0.710586273965
+Stats for label:  1
+	Precision is:  0.680527574278
+	Recall is:  0.694274044921
+------------------------------
+Stats for label:  0
+	Precision is:  0.736176880169
+	Recall is:  0.726469724857
+------------------------------
+
+New Accuracy is:  0.724145595999 for alpha:  0.5
+Stats for label:  0
+	Precision for the chosen alpha is:  0.714654558405
+	Recall for the chosen alpha is:  0.667001317648
+------------------------------
+Stats for label:  0
+	Precision for the chosen alpha is:  0.729410554441
+	Recall for the chosen alpha is:  0.764307562695
+------------------------------
+
+
+########################################
+########################################
+Printing results for split:  2
+########################################
+########################################
+
+########################################
+Running heart:
+
+Running pruned dataset
+Running the new logic with alpha =  0.1
+Running the new logic with alpha =  0.2
+Running the new logic with alpha =  0.3
+Running the new logic with alpha =  0.4
+Running the new logic with alpha =  0.5
+Running the new logic with alpha =  0.6
+Running the new logic with alpha =  0.7
+Running the new logic with alpha =  0.8
+Running the new logic with alpha =  0.9
+Running the new logic with alpha =  1.0
+Running the new logic with alpha =  1.1
+Running the new logic with alpha =  1.2
+Running the new logic with alpha =  1.3
+Running the new logic with alpha =  1.4
+Running the new logic with alpha =  1.5
+Running the new logic with alpha =  1.6
+Running the new logic with alpha =  1.7
+Running the new logic with alpha =  1.8
+Running the new logic with alpha =  1.9
+Running the new logic with alpha =  2.0
+
+Running pruned dataset
+Running the new logic with alpha =  0.1
+Running the new logic with alpha =  0.2
+Running the new logic with alpha =  0.3
+Running the new logic with alpha =  0.4
+Running the new logic with alpha =  0.5
+Running the new logic with alpha =  0.6
+Running the new logic with alpha =  0.7
+Running the new logic with alpha =  0.8
+Running the new logic with alpha =  0.9
+Running the new logic with alpha =  1.0
+Running the new logic with alpha =  1.1
+Running the new logic with alpha =  1.2
+Running the new logic with alpha =  1.3
+Running the new logic with alpha =  1.4
+Running the new logic with alpha =  1.5
+Running the new logic with alpha =  1.6
+Running the new logic with alpha =  1.7
+Running the new logic with alpha =  1.8
+Running the new logic with alpha =  1.9
+Running the new logic with alpha =  2.0
+
+Running pruned dataset
+Running the new logic with alpha =  0.1
+Running the new logic with alpha =  0.2
+Running the new logic with alpha =  0.3
+Running the new logic with alpha =  0.4
+Running the new logic with alpha =  0.5
+Running the new logic with alpha =  0.6
+Running the new logic with alpha =  0.7
+Running the new logic with alpha =  0.8
+Running the new logic with alpha =  0.9
+Running the new logic with alpha =  1.0
+Running the new logic with alpha =  1.1
+Running the new logic with alpha =  1.2
+Running the new logic with alpha =  1.3
+Running the new logic with alpha =  1.4
+Running the new logic with alpha =  1.5
+Running the new logic with alpha =  1.6
+Running the new logic with alpha =  1.7
+Running the new logic with alpha =  1.8
+Running the new logic with alpha =  1.9
+Running the new logic with alpha =  2.0
+
+Running pruned dataset
+Running the new logic with alpha =  0.1
+Running the new logic with alpha =  0.2
+Running the new logic with alpha =  0.3
+Running the new logic with alpha =  0.4
+Running the new logic with alpha =  0.5
+Running the new logic with alpha =  0.6
+Running the new logic with alpha =  0.7
+Running the new logic with alpha =  0.8
+Running the new logic with alpha =  0.9
+Running the new logic with alpha =  1.0
+Running the new logic with alpha =  1.1
+Running the new logic with alpha =  1.2
+Running the new logic with alpha =  1.3
+Running the new logic with alpha =  1.4
+Running the new logic with alpha =  1.5
+Running the new logic with alpha =  1.6
+Running the new logic with alpha =  1.7
+Running the new logic with alpha =  1.8
+Running the new logic with alpha =  1.9
+Running the new logic with alpha =  2.0
+
+Running pruned dataset
+Running the new logic with alpha =  0.1
+Running the new logic with alpha =  0.2
+Running the new logic with alpha =  0.3
+Running the new logic with alpha =  0.4
+Running the new logic with alpha =  0.5
+Running the new logic with alpha =  0.6
+Running the new logic with alpha =  0.7
+Running the new logic with alpha =  0.8
+Running the new logic with alpha =  0.9
+Running the new logic with alpha =  1.0
+Running the new logic with alpha =  1.1
+Running the new logic with alpha =  1.2
+Running the new logic with alpha =  1.3
+Running the new logic with alpha =  1.4
+Running the new logic with alpha =  1.5
+Running the new logic with alpha =  1.6
+Running the new logic with alpha =  1.7
+Running the new logic with alpha =  1.8
+Running the new logic with alpha =  1.9
+Running the new logic with alpha =  2.0
+
+Normal Accuracy is 0.724145595999
+Stats for label:  1
+	Precision is:  0.699840659341
+	Recall is:  0.668575757576
+------------------------------
+Stats for label:  0
+	Precision is:  0.737274707863
+	Recall is:  0.764846424922
+------------------------------
+
+New Accuracy is:  0.724256737983 for alpha:  0.1
+Stats for label:  0
+	Precision for the chosen alpha is:  0.699759259259
+	Recall for the chosen alpha is:  0.669168350168
+------------------------------
+Stats for label:  0
+	Precision for the chosen alpha is:  0.737731481481
+	Recall for the chosen alpha is:  0.764846424922
+------------------------------
+
+
+########################################
+########################################
+Printing results for split:  3
+########################################
+########################################
+
+########################################
+Running heart:
+
+Running pruned dataset
+Running the new logic with alpha =  0.1
+Running the new logic with alpha =  0.2
+Running the new logic with alpha =  0.3
+Running the new logic with alpha =  0.4
+Running the new logic with alpha =  0.5
+Running the new logic with alpha =  0.6
+Running the new logic with alpha =  0.7
+Running the new logic with alpha =  0.8
+Running the new logic with alpha =  0.9
+Running the new logic with alpha =  1.0
+Running the new logic with alpha =  1.1
+Running the new logic with alpha =  1.2
+Running the new logic with alpha =  1.3
+Running the new logic with alpha =  1.4
+Running the new logic with alpha =  1.5
+Running the new logic with alpha =  1.6
+Running the new logic with alpha =  1.7
+Running the new logic with alpha =  1.8
+Running the new logic with alpha =  1.9
+Running the new logic with alpha =  2.0
+
+Running pruned dataset
+Running the new logic with alpha =  0.1
+Running the new logic with alpha =  0.2
+Running the new logic with alpha =  0.3
+Running the new logic with alpha =  0.4
+Running the new logic with alpha =  0.5
+Running the new logic with alpha =  0.6
+Running the new logic with alpha =  0.7
+Running the new logic with alpha =  0.8
+Running the new logic with alpha =  0.9
+Running the new logic with alpha =  1.0
+Running the new logic with alpha =  1.1
+Running the new logic with alpha =  1.2
+Running the new logic with alpha =  1.3
+Running the new logic with alpha =  1.4
+Running the new logic with alpha =  1.5
+Running the new logic with alpha =  1.6
+Running the new logic with alpha =  1.7
+Running the new logic with alpha =  1.8
+Running the new logic with alpha =  1.9
+Running the new logic with alpha =  2.0
+
+Running pruned dataset
+Running the new logic with alpha =  0.1
+Running the new logic with alpha =  0.2
+Running the new logic with alpha =  0.3
+Running the new logic with alpha =  0.4
+Running the new logic with alpha =  0.5
+Running the new logic with alpha =  0.6
+Running the new logic with alpha =  0.7
+Running the new logic with alpha =  0.8
+Running the new logic with alpha =  0.9
+Running the new logic with alpha =  1.0
+Running the new logic with alpha =  1.1
+Running the new logic with alpha =  1.2
+Running the new logic with alpha =  1.3
+Running the new logic with alpha =  1.4
+Running the new logic with alpha =  1.5
+Running the new logic with alpha =  1.6
+Running the new logic with alpha =  1.7
+Running the new logic with alpha =  1.8
+Running the new logic with alpha =  1.9
+Running the new logic with alpha =  2.0
+
+Running pruned dataset
+Running the new logic with alpha =  0.1
+Running the new logic with alpha =  0.2
+Running the new logic with alpha =  0.3
+Running the new logic with alpha =  0.4
+Running the new logic with alpha =  0.5
+Running the new logic with alpha =  0.6
+Running the new logic with alpha =  0.7
+Running the new logic with alpha =  0.8
+Running the new logic with alpha =  0.9
+Running the new logic with alpha =  1.0
+Running the new logic with alpha =  1.1
+Running the new logic with alpha =  1.2
+Running the new logic with alpha =  1.3
+Running the new logic with alpha =  1.4
+Running the new logic with alpha =  1.5
+Running the new logic with alpha =  1.6
+Running the new logic with alpha =  1.7
+Running the new logic with alpha =  1.8
+Running the new logic with alpha =  1.9
+Running the new logic with alpha =  2.0
+
+Running pruned dataset
+Running the new logic with alpha =  0.1
+Running the new logic with alpha =  0.2
+Running the new logic with alpha =  0.3
+Running the new logic with alpha =  0.4
+Running the new logic with alpha =  0.5
+Running the new logic with alpha =  0.6
+Running the new logic with alpha =  0.7
+Running the new logic with alpha =  0.8
+Running the new logic with alpha =  0.9
+Running the new logic with alpha =  1.0
+Running the new logic with alpha =  1.1
+Running the new logic with alpha =  1.2
+Running the new logic with alpha =  1.3
+Running the new logic with alpha =  1.4
+Running the new logic with alpha =  1.5
+Running the new logic with alpha =  1.6
+Running the new logic with alpha =  1.7
+Running the new logic with alpha =  1.8
+Running the new logic with alpha =  1.9
+Running the new logic with alpha =  2.0
+
+Normal Accuracy is 0.673075854404
+Stats for label:  1
+	Precision is:  0.664838827839
+	Recall is:  0.59982932241
+------------------------------
+Stats for label:  0
+	Precision is:  0.68041325965
+	Recall is:  0.736386893467
+------------------------------
+
+New Accuracy is:  0.673298138372 for alpha:  0.6
+Stats for label:  0
+	Precision for the chosen alpha is:  0.655333333333
+	Recall for the chosen alpha is:  0.632236729817
+------------------------------
+Stats for label:  0
+	Precision for the chosen alpha is:  0.693923949023
+	Recall for the chosen alpha is:  0.713025548929
+------------------------------
+
+
+########################################
+########################################
+Printing results for split:  4
+########################################
+########################################
+
+########################################
+Running heart:
+
+Running pruned dataset
+Running the new logic with alpha =  0.1
+Running the new logic with alpha =  0.2
+Running the new logic with alpha =  0.3
+Running the new logic with alpha =  0.4
+Running the new logic with alpha =  0.5
+Running the new logic with alpha =  0.6
+Running the new logic with alpha =  0.7
+Running the new logic with alpha =  0.8
+Running the new logic with alpha =  0.9
+Running the new logic with alpha =  1.0
+Running the new logic with alpha =  1.1
+Running the new logic with alpha =  1.2
+Running the new logic with alpha =  1.3
+Running the new logic with alpha =  1.4
+Running the new logic with alpha =  1.5
+Running the new logic with alpha =  1.6
+Running the new logic with alpha =  1.7
+Running the new logic with alpha =  1.8
+Running the new logic with alpha =  1.9
+Running the new logic with alpha =  2.0
+
+Running pruned dataset
+Running the new logic with alpha =  0.1
+Running the new logic with alpha =  0.2
+Running the new logic with alpha =  0.3
+Running the new logic with alpha =  0.4
+Running the new logic with alpha =  0.5
+Running the new logic with alpha =  0.6
+Running the new logic with alpha =  0.7
+Running the new logic with alpha =  0.8
+Running the new logic with alpha =  0.9
+Running the new logic with alpha =  1.0
+Running the new logic with alpha =  1.1
+Running the new logic with alpha =  1.2
+Running the new logic with alpha =  1.3
+Running the new logic with alpha =  1.4
+Running the new logic with alpha =  1.5
+Running the new logic with alpha =  1.6
+Running the new logic with alpha =  1.7
+Running the new logic with alpha =  1.8
+Running the new logic with alpha =  1.9
+Running the new logic with alpha =  2.0
+
+Running pruned dataset
+Running the new logic with alpha =  0.1
+Running the new logic with alpha =  0.2
+Running the new logic with alpha =  0.3
+Running the new logic with alpha =  0.4
+Running the new logic with alpha =  0.5
+Running the new logic with alpha =  0.6
+Running the new logic with alpha =  0.7
+Running the new logic with alpha =  0.8
+Running the new logic with alpha =  0.9
+Running the new logic with alpha =  1.0
+Running the new logic with alpha =  1.1
+Running the new logic with alpha =  1.2
+Running the new logic with alpha =  1.3
+Running the new logic with alpha =  1.4
+Running the new logic with alpha =  1.5
+Running the new logic with alpha =  1.6
+Running the new logic with alpha =  1.7
+Running the new logic with alpha =  1.8
+Running the new logic with alpha =  1.9
+Running the new logic with alpha =  2.0
+
+Running pruned dataset
+Running the new logic with alpha =  0.1
+Running the new logic with alpha =  0.2
+Running the new logic with alpha =  0.3
+Running the new logic with alpha =  0.4
+Running the new logic with alpha =  0.5
+Running the new logic with alpha =  0.6
+Running the new logic with alpha =  0.7
+Running the new logic with alpha =  0.8
+Running the new logic with alpha =  0.9
+Running the new logic with alpha =  1.0
+Running the new logic with alpha =  1.1
+Running the new logic with alpha =  1.2
+Running the new logic with alpha =  1.3
+Running the new logic with alpha =  1.4
+Running the new logic with alpha =  1.5
+Running the new logic with alpha =  1.6
+Running the new logic with alpha =  1.7
+Running the new logic with alpha =  1.8
+Running the new logic with alpha =  1.9
+Running the new logic with alpha =  2.0
+
+Running pruned dataset
+Running the new logic with alpha =  0.1
+Running the new logic with alpha =  0.2
+Running the new logic with alpha =  0.3
+Running the new logic with alpha =  0.4
+Running the new logic with alpha =  0.5
+Running the new logic with alpha =  0.6
+Running the new logic with alpha =  0.7
+Running the new logic with alpha =  0.8
+Running the new logic with alpha =  0.9
+Running the new logic with alpha =  1.0
+Running the new logic with alpha =  1.1
+Running the new logic with alpha =  1.2
+Running the new logic with alpha =  1.3
+Running the new logic with alpha =  1.4
+Running the new logic with alpha =  1.5
+Running the new logic with alpha =  1.6
+Running the new logic with alpha =  1.7
+Running the new logic with alpha =  1.8
+Running the new logic with alpha =  1.9
+Running the new logic with alpha =  2.0
+
+Normal Accuracy is 0.733870519589
+Stats for label:  1
+	Precision is:  0.714124303233
+	Recall is:  0.707451278969
+------------------------------
+Stats for label:  0
+	Precision is:  0.750149822066
+	Recall is:  0.755050928046
+------------------------------
+
+New Accuracy is:  0.73048068908 for alpha:  0.4
+Stats for label:  0
+	Precision for the chosen alpha is:  0.70928099839
+	Recall for the chosen alpha is:  0.707451278969
+------------------------------
+Stats for label:  0
+	Precision for the chosen alpha is:  0.74901345843
+	Recall for the chosen alpha is:  0.749495372491
+------------------------------
+
+
+########################################
+########################################
+Printing results for split:  5
+########################################
+########################################
+
+########################################
+Running heart:
+
+Running pruned dataset
+Running the new logic with alpha =  0.1
+Running the new logic with alpha =  0.2
+Running the new logic with alpha =  0.3
+Running the new logic with alpha =  0.4
+Running the new logic with alpha =  0.5
+Running the new logic with alpha =  0.6
+Running the new logic with alpha =  0.7
+Running the new logic with alpha =  0.8
+Running the new logic with alpha =  0.9
+Running the new logic with alpha =  1.0
+Running the new logic with alpha =  1.1
+Running the new logic with alpha =  1.2
+Running the new logic with alpha =  1.3
+Running the new logic with alpha =  1.4
+Running the new logic with alpha =  1.5
+Running the new logic with alpha =  1.6
+Running the new logic with alpha =  1.7
+Running the new logic with alpha =  1.8
+Running the new logic with alpha =  1.9
+Running the new logic with alpha =  2.0
+
+Running pruned dataset
+Running the new logic with alpha =  0.1
+Running the new logic with alpha =  0.2
+Running the new logic with alpha =  0.3
+Running the new logic with alpha =  0.4
+Running the new logic with alpha =  0.5
+Running the new logic with alpha =  0.6
+Running the new logic with alpha =  0.7
+Running the new logic with alpha =  0.8
+Running the new logic with alpha =  0.9
+Running the new logic with alpha =  1.0
+Running the new logic with alpha =  1.1
+Running the new logic with alpha =  1.2
+Running the new logic with alpha =  1.3
+Running the new logic with alpha =  1.4
+Running the new logic with alpha =  1.5
+Running the new logic with alpha =  1.6
+Running the new logic with alpha =  1.7
+Running the new logic with alpha =  1.8
+Running the new logic with alpha =  1.9
+Running the new logic with alpha =  2.0
+
+Running pruned dataset
+Running the new logic with alpha =  0.1
+Running the new logic with alpha =  0.2
+Running the new logic with alpha =  0.3
+Running the new logic with alpha =  0.4
+Running the new logic with alpha =  0.5
+Running the new logic with alpha =  0.6
+Running the new logic with alpha =  0.7
+Running the new logic with alpha =  0.8
+Running the new logic with alpha =  0.9
+Running the new logic with alpha =  1.0
+Running the new logic with alpha =  1.1
+Running the new logic with alpha =  1.2
+Running the new logic with alpha =  1.3
+Running the new logic with alpha =  1.4
+Running the new logic with alpha =  1.5
+Running the new logic with alpha =  1.6
+Running the new logic with alpha =  1.7
+Running the new logic with alpha =  1.8
+Running the new logic with alpha =  1.9
+Running the new logic with alpha =  2.0
+
+Running pruned dataset
+Running the new logic with alpha =  0.1
+Running the new logic with alpha =  0.2
+Running the new logic with alpha =  0.3
+Running the new logic with alpha =  0.4
+Running the new logic with alpha =  0.5
+Running the new logic with alpha =  0.6
+Running the new logic with alpha =  0.7
+Running the new logic with alpha =  0.8
+Running the new logic with alpha =  0.9
+Running the new logic with alpha =  1.0
+Running the new logic with alpha =  1.1
+Running the new logic with alpha =  1.2
+Running the new logic with alpha =  1.3
+Running the new logic with alpha =  1.4
+Running the new logic with alpha =  1.5
+Running the new logic with alpha =  1.6
+Running the new logic with alpha =  1.7
+Running the new logic with alpha =  1.8
+Running the new logic with alpha =  1.9
+Running the new logic with alpha =  2.0
+
+Running pruned dataset
+Running the new logic with alpha =  0.1
+Running the new logic with alpha =  0.2
+Running the new logic with alpha =  0.3
+Running the new logic with alpha =  0.4
+Running the new logic with alpha =  0.5
+Running the new logic with alpha =  0.6
+Running the new logic with alpha =  0.7
+Running the new logic with alpha =  0.8
+Running the new logic with alpha =  0.9
+Running the new logic with alpha =  1.0
+Running the new logic with alpha =  1.1
+Running the new logic with alpha =  1.2
+Running the new logic with alpha =  1.3
+Running the new logic with alpha =  1.4
+Running the new logic with alpha =  1.5
+Running the new logic with alpha =  1.6
+Running the new logic with alpha =  1.7
+Running the new logic with alpha =  1.8
+Running the new logic with alpha =  1.9
+Running the new logic with alpha =  2.0
+
+Normal Accuracy is 0.707418727424
+Stats for label:  1
+	Precision is:  0.687538770297
+	Recall is:  0.662996385423
+------------------------------
+Stats for label:  0
+	Precision is:  0.71520860976
+	Recall is:  0.74259109972
+------------------------------
+
+New Accuracy is:  0.737371492081 for alpha:  0.7
+Stats for label:  0
+	Precision for the chosen alpha is:  0.70455219223
+	Recall for the chosen alpha is:  0.733651465637
+------------------------------
+Stats for label:  0
+	Precision for the chosen alpha is:  0.76064081677
+	Recall for the chosen alpha is:  0.740883737185
+------------------------------

@@ -2,12 +2,17 @@ import sys
 import csv
 import random
 import decTree
+import os
+from globalConstants import * #file containing all the global constants..
 
 isSimplificationEnabled = True
 isSplitEnabled = True
 isPrivSplitEnabled = True
 
 def split(orig, pruned, priv, privColumns):
+    global privilegedColumns
+    global datasets
+
     for l in orig:
         l=l.strip()
         words = l.split(",")
@@ -20,47 +25,8 @@ def split(orig, pruned, priv, privColumns):
                 pruneInfo.append(words[i])
         privInfo.append(words[len(words) -1])
         priv.write(",".join(privInfo)+"\n")
-        #pruneInfo.append(words[i])
         pruned.write(",".join(pruneInfo)+"\n")
 
-privilegedColumns = {}
-
-#below two parameters have to be set for every dataset..
-datasets = []
-'''
-datasets.append("heart")
-#privilegedColumns["heart"] = [1, 2, 3, 4, 5, 6]
-privilegedColumns["heart"] = [1, 3, 4, 6, 9, 10, 12]
-#privilegedColumns["heart"] = [1, 4,9, 10, 11, 12]
-'''
-
-'''
-datasets.append("heart_multi")
-privilegedColumns["heart_multi"] = [1, 2, 3, 6, 9, 10, 12]
-'''
-
-'''
-datasets.append("breast")
-privilegedColumns["breast"] = [1, 2, 7, 12, 13, 14, 24, 28]
-'''
-
-'''
-datasets.append("random")
-privilegedColumns["random"] = [1, 3, 5, 7, 8]
-'''
-'''
-datasets.append("iris")
-privilegedColumns["iris"] = [2,3]
-'''
-
-'''
-datasets.append("diabetes")
-#privilegedColumns["diabetes"] = [0,2,4,5]
-privilegedColumns["diabetes"] = [1,5,6,7]
-'''
-
-
-totalParts = 5
 for datasetName in datasets:
     if isSimplificationEnabled:
         ##############################PART-1##############################
@@ -116,59 +82,64 @@ for datasetName in datasets:
             out.write(",".join(words)+"\n")
         out.close()
 
-    if isSplitEnabled:
-        random.seed()
-        #split the data to folds..
-        inp = open(datasetName+"/dataset_simplified.csv", "r").readlines()
-        random.shuffle(inp)
-        numLines = len(inp)
-        foldLines = numLines/totalParts
-        folds = []
-        i = 0
-        print "Fold lines: ", foldLines
-        for part in range(totalParts):
-            newFold = []
-            for l in range(foldLines):
-                newFold.append( inp[i] )
-                i += 1
-            folds.append(newFold)
+    random.seed()
+    for split_num in range(splitCount):
+        dirName = getSplitName(split_num)
+        if not os.path.exists(datasetName+"/"+dirName):
+            os.makedirs(datasetName+"/"+dirName)
         
-        #append the remaining rows to the last fold..
-        while i < numLines:
-            folds[totalParts - 1].append( inp[i] ) 
-            i += 1
+        if isSplitEnabled:
+            #split the data to folds..
+            inp = open(datasetName+"/dataset_simplified.csv", "r").readlines()
+            random.shuffle(inp)
+            numLines = len(inp)
+            foldLines = numLines/totalParts
+            folds = []
+            i = 0
+            print "Fold lines: ", foldLines
+            for part in range(totalParts):
+                newFold = []
+                for l in range(foldLines):
+                    newFold.append( inp[i] )
+                    i += 1
+                folds.append(newFold)
             
-        for i in range(totalParts):
-            train = open(datasetName+"/complete_train_"+str(i)+".csv", "w")
-            test = open(datasetName+"/complete_test_"+str(i)+".csv", "w")  
-            
-            for j in range(totalParts):
-                if i == j:
-                    #this is the test set..
-                    for row in folds[j]:
-                        test.write(row)
-                else:
-                    #this is the training set..
-                    for row in folds[j]:
-                        train.write(row)
-            train.close()
-            test.close()
+            #append the remaining rows to the last fold..
+            while i < numLines:
+                folds[totalParts - 1].append( inp[i] ) 
+                i += 1
+                
+            for i in range(totalParts):
+                train = open(datasetName+"/"+dirName+"/complete_train_"+str(i)+".csv", "w")
+                test = open(datasetName+"/"+dirName+"/complete_test_"+str(i)+".csv", "w")  
+                
+                for j in range(totalParts):
+                    if i == j:
+                        #this is the test set..
+                        for row in folds[j]:
+                            test.write(row)
+                    else:
+                        #this is the training set..
+                        for row in folds[j]:
+                            train.write(row)
+                train.close()
+                test.close()
 
-    if isPrivSplitEnabled:
-        ##############################PART-III##############################
-        #create the privilleged datasets..
-        for i in range(totalParts):
-            print "Splitting the privilleged information!!"
-            train = open(datasetName+"/complete_train_"+str(i)+".csv", "r").readlines()
-            test = open(datasetName+"/complete_test_"+str(i)+".csv", "r").readlines()
-            
-            priv_train = open(datasetName+"/priv_train_"+str(i)+".csv", "w")
-            pruned_train = open(datasetName+"/pruned_train_"+str(i)+".csv", "w")
+        if isPrivSplitEnabled:
+            ##############################PART-III##############################
+            #create the privilleged datasets..
+            for i in range(totalParts):
+                print "Splitting the privilleged information!!"
+                train = open(datasetName+"/"+dirName+"/complete_train_"+str(i)+".csv", "r").readlines()
+                test = open(datasetName+"/"+dirName+"/complete_test_"+str(i)+".csv", "r").readlines()
+                
+                priv_train = open(datasetName+"/"+dirName+"/priv_train_"+str(i)+".csv", "w")
+                pruned_train = open(datasetName+"/"+dirName+"/pruned_train_"+str(i)+".csv", "w")
 
-            priv_test = open(datasetName+"/priv_test_"+str(i)+".csv", "w")
-            pruned_test = open(datasetName+"/pruned_test_"+str(i)+".csv", "w")
+                priv_test = open(datasetName+"/"+dirName+"/priv_test_"+str(i)+".csv", "w")
+                pruned_test = open(datasetName+"/"+dirName+"/pruned_test_"+str(i)+".csv", "w")
 
-            privColumns = privilegedColumns[datasetName]
-            split(train, pruned_train, priv_train, privColumns)
-            split(test, pruned_test, priv_test, privColumns)
+                privColumns = privilegedColumns[datasetName]
+                split(train, pruned_train, priv_train, privColumns)
+                split(test, pruned_test, priv_test, privColumns)
 

@@ -79,6 +79,8 @@ def svmplusQP_Predict(X,Xtest,alphas,bias):
     predicted = np.dot(K.T,alphas)+bias
     return predicted
     #return np.sign(predicted)
+
+#list of parameters
     
 if __name__ == "__main__":
     X = np.random.randn(10,9)
@@ -86,7 +88,7 @@ if __name__ == "__main__":
     Xstar = np.random.randn(10,3)
     Y = np.r_[[1]*5, [-1]*5]
     print X[0]
-    exit
+    exit()
     C = 0.1
     Cstar = 0.1
     duals,bias = svmplusQP(X,Y,Xstar,C,Cstar)

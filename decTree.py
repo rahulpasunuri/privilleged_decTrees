@@ -4,44 +4,19 @@ import csv
 from math import *
 from Node import Node
 from computeStats import *
+from globalConstants import *#file containing all the global constants..
 
-'''
-The method readData, given a CSV file name, reads the data and returns the data set as a list of lists.
-Each element in the list is a list.
-'''
-def readData(fileName):
-    data = []
-    myFile = open(fileName, 'rt')
-    try:
-        reader = csv.reader(myFile)
-        for row in reader:
-            data.append(row)
-    except:
-        print "Error opening File: "+fileName
-        exit()
-    finally:
-        myFile.close()
-    return data
-
-'''
-The method calcEntropy takes a dataset as input and returns its entropy calculated on the basis of 
-the number of occurences of each class label.
-Here is exactly where the use of the method countOccurenceOfClassLabel() comes into play.
-'''
-def calcEntropy(subDataSet):
-    classLablelCounts = countOccurenceOfClassLabel(subDataSet)
-    totalRows = len(subDataSet)
-    entropy = 0.0
-
-    for key in classLablelCounts:
-        p = float(classLablelCounts[key])/totalRows
-        entropy -= p*log(p,2)
-
-    return entropy
-
-cluster = {}
+def calcPrivInfoGain(currentEntropy, clusterEntropy, subDataSet1,subDataSet2):
+    global numClusters
+    global alpha
+    normalGain = calcInfoGain(currentEntropy, subDataSet1, subDataSet2)
+    p = float(len(subDataSet1))/(len(subDataSet1)+len(subDataSet2))
+    privGain = clusterEntropy -p*calcPrivEntropy(subDataSet1) - (1-p)*calcPrivEntropy(subDataSet2)
+    
+    return (normalGain, privGain)
 
 def calcPrivEntropy(data):
+    global cluster
     classLabelCounts = {}
     for row in data:
         c = cluster[",".join(row)]
@@ -58,35 +33,6 @@ def calcPrivEntropy(data):
         entropy -= p*log(p,2)
     return entropy
 
-def combineGain(normalGain, privGain):
-    global alpha
-    
-    privGain = alpha * privGain
-    #return normalGain
-    return privGain + normalGain
-
-    '''
-    #old logic..
-    if normalGain < privGain:
-        return reverseHarmonicMean(normalGain, privGain)
-    else:
-        return harmonicMean(normalGain, privGain)
-    '''
-    
-    '''
-    #Semi harmonic and linear logic..
-    if normalGain > privGain:
-        return (normalGain+privGain)/2.0
-    else:
-        return harmonicMean(normalGain, privGain)
-    '''
-
-    '''
-    if normalGain > privGain:
-        return reverseHarmonicMean(normalGain, privGain)
-    else:
-        return harmonicMean(normalGain, privGain)
-    '''
 '''
 The createTree function is where all the magic happens, 
 We call createTree recursively until we reach the required depth or a good decision tree
@@ -94,7 +40,7 @@ The method takes a sub part of the dataset as input and creates a tree based on 
 
 '''
 def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False):
-
+    global cluster
     #Counting the number of rows in the Dataset
     numOfRows = len(subDataSet)
 
@@ -142,6 +88,7 @@ def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False):
                             bestCriteria = value
                             bestColumn = col
                     else:
+                        #print cluster
                         currGain, privGain = calcPrivInfoGain(entropy, calcPrivEntropy(subDataSet), set1,set2)
                         privGainList.append((currGain, privGain, (set1, set2), value, col))
                         normalAvg += currGain
@@ -151,8 +98,8 @@ def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False):
                 #'''
                 normalAvg = normalAvg/len(privGainList)
                 privAvg = privAvg/len(privGainList)
-                shift = abs(normalAvg - privAvg)
-                #shift = 0 #TODO: check the usage of shift..
+                #shift = abs(normalAvg - privAvg)
+                shift = 0 #TODO: check the usage of shift..
                 if privAvg > normalAvg:
                     index = 0
                 else:
@@ -203,94 +150,6 @@ def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False):
     else : 
         return Node(leafValues = countOccurenceOfClassLabel(subDataSet))
 
-'''
-The method calcInfoGain returns the Information Gain when passed with the current value of entropy, and dataset split on a particular value of a particular column.
-This used to find which is the best column to split the dataset on and subsequently decide what should the criteria be. 
-'''
-def calcInfoGain(currentEntropy, subDataSet1,subDataSet2):
-    p = float(len(subDataSet1))/(len(subDataSet1)+len(subDataSet2))
-    infoGain = currentEntropy - p*calcEntropy(subDataSet1) - (1-p)*calcEntropy(subDataSet2)
-    return infoGain
-
-def harmonicMean(a1, a2):
-    if a1*a2 == 0:
-        return 0
-    else:
-        return (2*a1*a2)/(a1+a2)     
-
-def geoMean(a1, a2):
-    if a1*a2 == 0:
-        return 0
-    else:
-        return sqrt(a1*a2)     
-
-def reverseHarmonicMean(a1, a2):
-    if a1+a2 == 0:
-        return 0
-    else:
-        return (a1*a1 + a2*a2)/(a1+a2)
-        
-def calcPrivInfoGain(currentEntropy, clusterEntropy, subDataSet1,subDataSet2):
-    global numClusters
-    global alpha
-    normalGain = calcInfoGain(currentEntropy, subDataSet1, subDataSet2)
-    p = float(len(subDataSet1))/(len(subDataSet1)+len(subDataSet2))
-    privGain = clusterEntropy -p*calcPrivEntropy(subDataSet1) - (1-p)*calcPrivEntropy(subDataSet2)
-    
-    #privGain = log(numClusters,2)*privGain #TODO: check this 
-    #privGain = 1.0/numClusters*privGain #TODO: check this 
-    #print normalGain, privGain
-    #return  geoMean(normalGain, privGain)
-    #return normalGain + privGain
-    #return min(normalGain, privGain)
-    #return privGain
-    #return max(normalGain, privGain)
-    #return privGain
-    #return harmonicMean(normalGain, privGain)
-    #ratio =  normalGain/privGain
-    #print alpha
-    #return alpha*normalGain + privGain
-    #print ratio
-    return (normalGain, privGain)
-    '''
-    if normalGain < privGain:
-        #return (normalGain + privGain)/2
-        #return geoMean(normalGain, privGain)
-        return reverseHarmonicMean(normalGain, privGain)
-        #return harmonicMean(normalGain, privGain)
-    else:
-        #return (normalGain + privGain)/2
-        return harmonicMean(normalGain, privGain)
-    #return harmonicMean(normalGain, privGain)
-    #
-    '''
-'''
-The method countOccurenceOfClassLabel is called whenever we need to count how many times each class label occurs in a the subDataSet. 
-This will be used to calculate Entropy and Infogain
-It returns a dictionary that has keys as the class label and the values as the number of Occurences of that class label
-'''
-def countOccurenceOfClassLabel(subDataSet):
-    countsOfLabels = {}
-    for row in subDataSet:
-        if row[len(row)-1] in countsOfLabels : 
-            countsOfLabels[row[len(row)-1]] += 1    
-        else :
-            countsOfLabels[row[len(row)-1]] = 1
-    return countsOfLabels
-
-'''
-The method printTree takes a tree of the type Node and an indent value. It outputs the tree in a human interpretable form 
-by showing subsequent branches with indents. 
-'''
-def printTree(tree, indent=''):
-    if tree.leafValues != None:
-        print "Leaf Node : "+str(tree.leafValues)
-    else:
-        print "Split on Column : "+str(tree.col)+" with criteria : "+str(tree.criteria)
-        print indent+"Left Branch -> ",
-        printTree(tree.leftBranch,indent="     "+indent)
-        print indent+"Right Branch -> ",
-        printTree(tree.rightBranch,indent="     "+indent)
 
 '''
 The method write result will write the result of the classifier and the expected result in a CSV format.
@@ -375,43 +234,6 @@ def classifyNewSample(tree, testData,depth,fileName):
 	writeResult(predictionsPlusExpectedValues, depth, fileName)
 	return computeStats(predictionsPlusExpectedValues)
 
-'''
-The method splitData takes a dataset as input and splits it into 2 based on the criteria on the specified column and returns the resulting 2 datasets.
-Provide Column value as if counting from ZERO.
-'''	
-def splitData(subDataSet, column, criteria):
-	subDataSet1=[] #All samples that match the criteria
-	subDataSet2=[] #All samples that do not match the criteria
-	for row in subDataSet:
-		#Doing a <= and > split..
-		if(float(row[column]) <= float(criteria)):
-			subDataSet1.append(row) 
-		else:
-			subDataSet2.append(row)
-	return (subDataSet2,subDataSet1)
-
-def computeMisClassfication(filename):
-    f = open(filename,"r")
-    lines=f.readlines()
-    f.close()
-
-    totalCount=len(lines)
-    misClassificationCount=0
-    for t in lines:
-        words = t.strip().split(',')
-        if(words[0]!=words[1]):
-            misClassificationCount+=1
-    rate = float(misClassificationCount)/totalCount
-    return rate
-
-def numLeaves(tree):
-    if tree.leftBranch == None and tree.rightBranch == None:
-        return 1
-    elif tree == None:
-        return 0
-    else:
-        return numLeaves(tree.leftBranch) + numLeaves(tree.rightBranch)
-
 
 def checkDecisionTree(trainingFileName, testFileName, depth=15, isPrintTree=False):
     #Change the trhreshold value if you want to have a minimum information gain at each split, by default we assigned it 0
@@ -448,7 +270,6 @@ def getClusterValue(row, tree):
             currentNode = currentNode.leftBranch
     return currentNode.clusterNum
 
-numClusters = 0
 
 def newLogic(train, test, priv_train, priv_depth):
     global cluster
@@ -475,13 +296,14 @@ def newLogic(train, test, priv_train, priv_depth):
     trainData = readData(train)
     testData = readData(test)
     privData = readData(priv_train)
-    cluster = {}
+    cluster = {} #clear the previous cluster global variable..
     numRows = len(trainData)
     for i in range(numRows):
         cluster[",".join(trainData[i])] = getClusterValue(privData[i], privTree)
         #print cluster[",".join(trainData[i])]
     threshold = 0
     tree = createTree(trainData, 15, threshold, True)
+
     '''
     print ""
     print ""
@@ -498,122 +320,156 @@ def newLogic(train, test, priv_train, priv_depth):
     #print "Accuracy is: ",(1 - computeMisClassfication(fileName))
     #print "Number of Leaves in the tree is: ", numLeaves(tree)   
     return (1 - computeMisClassfication(fileName), precision, recall, accuracy)        
-alpha = 0            
-datasets = []
-datasets.append("random")
-datasets.append("heart")
-datasets.append("breast")
-datasets.append("heart_multi")
-datasets.append("iris")
-datasets.append("diabetes")
+
+def combineGain(normalGain, privGain):
+    global alpha
+    privGain = alpha * privGain
+    #return normalGain
+    #return privGain + normalGain
+
+    #'''
+    #old logic..
+    if normalGain < privGain:
+        return reverseHarmonicMean(normalGain, privGain)
+    else:
+        return harmonicMean(normalGain, privGain)
+    #'''
+    
+    '''
+    #Semi harmonic and linear logic..
+    if normalGain > privGain:
+        return (normalGain+privGain)/2.0
+    else:
+        return harmonicMean(normalGain, privGain)
+    '''
+
+    '''
+    if normalGain > privGain:
+        return reverseHarmonicMean(normalGain, privGain)
+    else:
+        return harmonicMean(normalGain, privGain)
+    '''
+
 #The main function that calls all other functions, execution begins here
 def main():
+    global datasets
     global alpha
-    for datasetName in datasets:
-        print ""
+    global totalParts
+    global splitCount
+    
+    for split in range(splitCount):
+        print "\n"
         print "#"*40
-        print "Running "+datasetName+":"
-        normalAcc = 0
-        privAcc = 0
-        newAcc = []
-        normalPrecision = {}
-        normalRecall = {}
-        normalAccuracy = {}
+        print "#"*40
+        print "Printing results for split: ",(split+1)
+        print "#"*40
+        print "#"*40
+        dirName = getSplitName(split)
+        for datasetName in datasets:
+            print ""
+            print "#"*40
+            print "Running "+datasetName+":"
+            normalAcc = 0
+            privAcc = 0
+            newAcc = []
+            normalPrecision = {}
+            normalRecall = {}
+            normalAccuracy = {}
 
-        newPrecision = []
-        newRecall = []
-        #normalAccuracy = {}
-        
-        for part in range(5):
+            newPrecision = []
+            newRecall = []
+            #normalAccuracy = {}
+            
+            for part in range(totalParts):
 
-            #if part != 1:
-                #continue #TODO: remove this..
-            #'''
-            #print ""
-            #print "#"*40
-            #print "Running "+datasetName+" with fold: ", part
-            
-            #print "\nRunning entire dataset"
-            #checkDecisionTree(datasetName+"/complete_train_"+str(part)+".csv", datasetName+"/complete_test_"+str(part)+".csv")
-            
-            #print "\nRunning only privileged information"
-            #privAccHolder, precision, recall, accuracy = checkDecisionTree(datasetName+"/priv_train_"+str(part)+".csv", datasetName+"/priv_test_"+str(part)+".csv")
-            #privAcc += privAccHolder
-                        
-            #print "\nRunning only privileged information with max depth = 3"
-            #checkDecisionTree(datasetName+"/priv_train_"+str(part)+".csv", datasetName+"/priv_test_"+str(part)+".csv", 3, False)
-            
-            #'''
-            print "\nRunning pruned dataset"
-            currNormalAcc, precision, recall, accuracy = checkDecisionTree(datasetName+"/pruned_train_"+str(part)+".csv", datasetName+"/pruned_test_"+str(part)+".csv")
-            normalAcc += currNormalAcc
-            for label in precision:
-                if label not in normalPrecision:
-                    normalPrecision[label] = 0
-                normalPrecision[label] += precision[label]
+                #if part != 1:
+                    #continue #TODO: remove this..
+                #'''
+                #print ""
+                #print "#"*40
+                #print "Running "+datasetName+" with fold: ", part
                 
-                if label not in normalRecall:
-                    normalRecall[label] = 0
-                normalRecall[label] += recall[label]
+                #print "\nRunning entire dataset"
+                #checkDecisionTree(datasetName+"/"+dirName+"/complete_train_"+str(part)+".csv", datasetName+"/"+dirName+"/complete_test_"+str(part)+".csv")
                 
-                if label not in normalAccuracy:
-                    normalAccuracy[label] = 0
-                normalAccuracy[label] += accuracy[label]
-
-
-            #print currNormalAcc," ##" 
-            newAcc.append([])
-            newPrecision.append([])
-            newRecall.append([])
-            for run in range(1, 21):
-                alpha = run/10.0
-                print "Running the new logic with alpha = ",alpha
-                currAcc, precision, recall, accuracy = newLogic(datasetName+"/pruned_train_"+str(part)+".csv", datasetName+"/pruned_test_"+str(part)+".csv", datasetName+"/priv_train_"+str(part)+".csv", 3)     
-                #print currAcc,"\t",alpha
-                newAcc[part].append(currAcc)
-                newPrecision[part].append(precision)
-                newRecall[part].append(recall)
-            #print "#"*40
-            #print ""
-        print "\nNormal Accuracy is", normalAcc/5.0
-        #print "Privileged Accuracy is", privAcc/5.0
-        for label in normalPrecision:
-            print "Stats for label: ",label
-            print "\tPrecision is: ", normalPrecision[label]/5.0
-            print "\tRecall is: ", normalRecall[label]/5.0
-
-            print "-"*30
-
-        avgAcc = [0 for i in range(20)]
-        avgPrecision = [ {} for i in range(20)]
-        avgRecall = [ {} for i in range(20) ]
-        for run in range(20):
-            for j in range(5):
-                avgAcc[run] += newAcc[j][run]
-                for lbl in newPrecision[j][run]:
-                    if lbl not in avgPrecision[run]:
-                         avgPrecision[run][lbl] = 0
-                    avgPrecision[run][lbl] += newPrecision[j][run][lbl]
+                #print "\nRunning only privileged information"
+                #privAccHolder, precision, recall, accuracy = checkDecisionTree(datasetName+"/"+dirName+"/priv_train_"+str(part)+".csv", datasetName+"/"+dirName+"/priv_test_"+str(part)+".csv")
+                #privAcc += privAccHolder
+                            
+                #print "\nRunning only privileged information with max depth = 3"
+                #checkDecisionTree(datasetName+"/"+dirName+"/priv_train_"+str(part)+".csv", datasetName+"/"+dirName+"/priv_test_"+str(part)+".csv", 3, False)
+                
+                #'''
+                print "\nRunning pruned dataset"
+                currNormalAcc, precision, recall, accuracy = checkDecisionTree(datasetName+"/"+dirName+"/pruned_train_"+str(part)+".csv", datasetName+"/"+dirName+"/pruned_test_"+str(part)+".csv")
+                normalAcc += currNormalAcc
+                for label in precision:
+                    if label not in normalPrecision:
+                        normalPrecision[label] = 0
+                    normalPrecision[label] += precision[label]
                     
-                    if lbl not in avgRecall[run]:
-                         avgRecall[run][lbl] = 0
-                    avgRecall[run][lbl] += newRecall[j][run][lbl]     
-                
-        maxAvgAccuracy = 0
-        maxAlpha = 0
-        chosenI = 0
-        for i in range(20):
-            #print "Accuracy for run - ",i,": ", avgAcc[i] 
-            if  maxAvgAccuracy < avgAcc[i]:
-                chosenI = i
-                maxAlpha = float(i+1)/10
-                maxAvgAccuracy = avgAcc[i]
+                    if label not in normalRecall:
+                        normalRecall[label] = 0
+                    normalRecall[label] += recall[label]
+                    
+                    if label not in normalAccuracy:
+                        normalAccuracy[label] = 0
+                    normalAccuracy[label] += accuracy[label]
 
-        print "\nNew Accuracy is: ",maxAvgAccuracy/5.0, "for alpha: ",maxAlpha
-        for lbl in normalAccuracy:
-            print "Stats for label: ",label
-            print "\tPrecision for the chosen alpha is: ", avgPrecision[chosenI][lbl]/5.0
-            print "\tRecall for the chosen alpha is: ", avgRecall[chosenI][lbl]/5.0
-            print "-"*30
+
+                #print currNormalAcc," ##" 
+                newAcc.append([])
+                newPrecision.append([])
+                newRecall.append([])
+                for run in range(1, 21):
+                    alpha = run/10.0
+                    print "Running the new logic with alpha = ",alpha
+                    currAcc, precision, recall, accuracy = newLogic(datasetName+"/"+dirName+"/pruned_train_"+str(part)+".csv", datasetName+"/"+dirName+"/pruned_test_"+str(part)+".csv", datasetName+"/"+dirName+"/priv_train_"+str(part)+".csv", 3)     
+                    #print currAcc,"\t",alpha
+                    newAcc[part].append(currAcc)
+                    newPrecision[part].append(precision)
+                    newRecall[part].append(recall)
+                #print "#"*40
+                #print ""
+            print "\nNormal Accuracy is", normalAcc/float(totalParts)
+            #print "Privileged Accuracy is", privAcc/float(totalParts)
+            for label in normalPrecision:
+                print "Stats for label: ",label
+                print "\tPrecision is: ", normalPrecision[label]/float(totalParts)
+                print "\tRecall is: ", normalRecall[label]/float(totalParts)
+
+                print "-"*30
+
+            avgAcc = [0 for i in range(20)]
+            avgPrecision = [ {} for i in range(20)]
+            avgRecall = [ {} for i in range(20) ]
+            for run in range(20):
+                for j in range(totalParts):
+                    avgAcc[run] += newAcc[j][run]
+                    for lbl in newPrecision[j][run]:
+                        if lbl not in avgPrecision[run]:
+                             avgPrecision[run][lbl] = 0
+                        avgPrecision[run][lbl] += newPrecision[j][run][lbl]
+                        
+                        if lbl not in avgRecall[run]:
+                             avgRecall[run][lbl] = 0
+                        avgRecall[run][lbl] += newRecall[j][run][lbl]     
+                    
+            maxAvgAccuracy = 0
+            maxAlpha = 0
+            chosenI = 0
+            for i in range(20):
+                #print "Accuracy for run - ",i,": ", avgAcc[i] 
+                if  maxAvgAccuracy < avgAcc[i]:
+                    chosenI = i
+                    maxAlpha = float(i+1)/10
+                    maxAvgAccuracy = avgAcc[i]
+
+            print "\nNew Accuracy is: ",maxAvgAccuracy/float(totalParts), "for alpha: ",maxAlpha
+            for lbl in normalAccuracy:
+                print "Stats for label: ",label
+                print "\tPrecision for the chosen alpha is: ", avgPrecision[chosenI][lbl]/float(totalParts)
+                print "\tRecall for the chosen alpha is: ", avgRecall[chosenI][lbl]/float(totalParts)
+                print "-"*30
 #Execution begins here
 if __name__ == "__main__" : main()

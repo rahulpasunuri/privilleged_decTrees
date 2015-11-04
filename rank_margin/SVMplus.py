@@ -79,6 +79,8 @@ def svmplusQP_Predict(X,Xtest,alphas,bias):
     predicted = np.dot(K.T,alphas)+bias
     return predicted
     #return np.sign(predicted)
+
+
     
 if __name__ == "__main__":
     X = np.random.randn(10,9)
