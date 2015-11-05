@@ -129,14 +129,14 @@ Stats for label:  0
 	Recall is:  0.726469724857
 ------------------------------
 
-New Accuracy is:  0.724145595999 for alpha:  0.5
+New Accuracy is:  0.727535426507 for alpha:  0.1
 Stats for label:  0
-	Precision for the chosen alpha is:  0.714654558405
-	Recall for the chosen alpha is:  0.667001317648
+	Precision for the chosen alpha is:  0.71147995523
+	Recall for the chosen alpha is:  0.68518313583
 ------------------------------
 Stats for label:  0
-	Precision for the chosen alpha is:  0.729410554441
-	Recall for the chosen alpha is:  0.764307562695
+	Precision for the chosen alpha is:  0.736855997317
+	Recall for the chosen alpha is:  0.758902157289
 ------------------------------
 
 
@@ -269,14 +269,14 @@ Stats for label:  0
 	Recall is:  0.764846424922
 ------------------------------
 
-New Accuracy is:  0.724256737983 for alpha:  0.1
+New Accuracy is:  0.710475131981 for alpha:  0.4
 Stats for label:  0
-	Precision for the chosen alpha is:  0.699759259259
-	Recall for the chosen alpha is:  0.669168350168
+	Precision for the chosen alpha is:  0.671783154122
+	Recall for the chosen alpha is:  0.674004329004
 ------------------------------
 Stats for label:  0
-	Precision for the chosen alpha is:  0.737731481481
-	Recall for the chosen alpha is:  0.764846424922
+	Precision for the chosen alpha is:  0.737468876439
+	Recall for the chosen alpha is:  0.73372688033
 ------------------------------
 
 
@@ -409,14 +409,14 @@ Stats for label:  0
 	Recall is:  0.736386893467
 ------------------------------
 
-New Accuracy is:  0.673298138372 for alpha:  0.6
+New Accuracy is:  0.666518477355 for alpha:  0.5
 Stats for label:  0
-	Precision for the chosen alpha is:  0.655333333333
-	Recall for the chosen alpha is:  0.632236729817
+	Precision for the chosen alpha is:  0.651743589744
+	Recall for the chosen alpha is:  0.607236729817
 ------------------------------
 Stats for label:  0
-	Precision for the chosen alpha is:  0.693923949023
-	Recall for the chosen alpha is:  0.713025548929
+	Precision for the chosen alpha is:  0.679921859159
+	Recall for the chosen alpha is:  0.718739834644
 ------------------------------
 
 
@@ -549,14 +549,14 @@ Stats for label:  0
 	Recall is:  0.755050928046
 ------------------------------
 
-New Accuracy is:  0.73048068908 for alpha:  0.4
+New Accuracy is:  0.733870519589 for alpha:  0.1
 Stats for label:  0
-	Precision for the chosen alpha is:  0.70928099839
+	Precision for the chosen alpha is:  0.714124303233
 	Recall for the chosen alpha is:  0.707451278969
 ------------------------------
 Stats for label:  0
-	Precision for the chosen alpha is:  0.74901345843
-	Recall for the chosen alpha is:  0.749495372491
+	Precision for the chosen alpha is:  0.750149822066
+	Recall for the chosen alpha is:  0.755050928046
 ------------------------------
 
 
@@ -689,12 +689,12 @@ Stats for label:  0
 	Recall is:  0.74259109972
 ------------------------------
 
-New Accuracy is:  0.737371492081 for alpha:  0.7
+New Accuracy is:  0.713642678522 for alpha:  0.9
 Stats for label:  0
-	Precision for the chosen alpha is:  0.70455219223
-	Recall for the chosen alpha is:  0.733651465637
+	Precision for the chosen alpha is:  0.6835711388
+	Recall for the chosen alpha is:  0.691405476332
 ------------------------------
 Stats for label:  0
-	Precision for the chosen alpha is:  0.76064081677
-	Recall for the chosen alpha is:  0.740883737185
+	Precision for the chosen alpha is:  0.731698199748
+	Recall for the chosen alpha is:  0.724883737185
 ------------------------------

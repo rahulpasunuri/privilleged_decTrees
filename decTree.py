@@ -98,8 +98,8 @@ def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False):
                 #'''
                 normalAvg = normalAvg/len(privGainList)
                 privAvg = privAvg/len(privGainList)
-                #shift = abs(normalAvg - privAvg)
-                shift = 0 #TODO: check the usage of shift..
+                shift = abs(normalAvg - privAvg)
+                #shift = 0 #TODO: check the usage of shift..
                 if privAvg > normalAvg:
                     index = 0
                 else:
@@ -325,10 +325,11 @@ def combineGain(normalGain, privGain):
     global alpha
     privGain = alpha * privGain
     #return normalGain
-    #return privGain + normalGain
+    return privGain + normalGain
 
     #'''
     #old logic..
+    '''
     if normalGain < privGain:
         return reverseHarmonicMean(normalGain, privGain)
     else:

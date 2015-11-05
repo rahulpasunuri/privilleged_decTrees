@@ -325,10 +325,11 @@ def combineGain(normalGain, privGain):
     global alpha
     privGain = alpha * privGain
     #return normalGain
-    #return privGain + normalGain
+    return privGain + normalGain
 
     #'''
     #old logic..
+    '''
     if normalGain < privGain:
         return reverseHarmonicMean(normalGain, privGain)
     else:
@@ -401,7 +402,7 @@ def main():
                 
                 #'''
                 print "\nRunning pruned dataset"
-                currNormalAcc, precision, recall, accuracy = checkDecisionTree(datasetName+"/"+dirName+"/pruned_train_"+str(part)+".csv", datasetName+"/pruned_test_"+str(part)+".csv")
+                currNormalAcc, precision, recall, accuracy = checkDecisionTree(datasetName+"/"+dirName+"/pruned_train_"+str(part)+".csv", datasetName+"/"+dirName+"/pruned_test_"+str(part)+".csv")
                 normalAcc += currNormalAcc
                 for label in precision:
                     if label not in normalPrecision:
