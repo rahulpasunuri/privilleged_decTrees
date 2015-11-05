@@ -7,6 +7,16 @@ from cvxopt import matrix
 from cvxopt.solvers import qp
 from vector import CGaussKernel,CLinearKernel,CRBFKernel
 import numpy as np
+
+import sys
+import os
+
+currPath = os.getcwd()
+baseName = os.path.basename(currPath)
+
+sys.path.insert(0, currPath[:-len(baseName)])
+from globalConstants import *
+
 #import pdb
 def svmplusQP(X,Y,Xstar,C,Cstar):
     n = X.shape[0]
@@ -83,16 +93,52 @@ def svmplusQP_Predict(X,Xtest,alphas,bias):
 
     
 if __name__ == "__main__":
+
+    C = 0.1
+    Cstar = 0.1
+    
+    #'''
     X = np.random.randn(10,9)
     Xtest = np.random.randn(5,9)
     Xstar = np.random.randn(10,3)
     Y = np.r_[[1]*5, [-1]*5]
-    print X[0]
-    exit()
-    C = 0.1
-    Cstar = 0.1
-    duals,bias = svmplusQP(X,Y,Xstar,C,Cstar)
-    predicted = svmplusQP_Predict(X,Xtest,duals,bias)
-    print X
-    print predicted
+    
+    #'''
+    #exit()
+    for dataset in datasets:
+        for split_num in range(splitCount):
+            for part in range(totalParts):
+                trainFile = open("../"+dataset+"/"+getSplitName(split_num)+"/pruned_train_"+str(part)+".csv", "r").readlines()
+                testFile = open("../"+dataset+"/"+getSplitName(split_num)+"/pruned_test_"+str(part)+".csv", "r").readlines()
+                privFile = open("../"+dataset+"/"+getSplitName(split_num)+"/priv_train_"+str(part)+".csv", "r").readlines()
+                
+                X = []
+                Y = []
+                Xtest = []
+                Xstar = []
+                for row in trainFile:
+                    row = row.split(",")
+                    row = [ float(r) for r in row]
+                    X.append(np.array(row[:-1]))
+                    Y.append(row[len(row) - 1])
+                
+                for row in privFile:
+                    row = row.split(",")
+                    row = [ float(r) for r in row]
+                    Xstar.append(np.array(row[:-1]))
+                
+                for row in testFile:
+                    row = row.split(",")
+                    row = [ float(r) for r in row]
+                    Xtest.append(np.array(row[:-1]))
+                
+                X = np.array(X)
+                Y = np.array(Y)
+                Xstar = np.array(Xstar)
+                Xtest = np.array(Xtest)
+                
+                duals,bias = svmplusQP(X,Y,Xstar,C,Cstar)
+                predicted = svmplusQP_Predict(X,Xtest,duals,bias)
+                
+                print predicted
 #    pdb.set_trace() 
