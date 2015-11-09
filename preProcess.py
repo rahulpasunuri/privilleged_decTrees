@@ -36,6 +36,7 @@ for datasetName in datasets:
         out = open(datasetName+"/dataset_simplified.csv", "w")
         lines = f.readlines()
         lineNum = 0
+        countMissing = 0
         for l in lines:
             lineNum += 1
             l = l.strip()
@@ -103,8 +104,7 @@ for datasetName in datasets:
                     print lineNum
                     print words
                     print "ERROR!!!!  "*4
-                    exit()
-                    
+                    exit()                    
             elif datasetName == "census":
                 words = l.strip().split(",")
                 words = [ wor.strip() for wor in words]
@@ -114,17 +114,64 @@ for datasetName in datasets:
                     words[classIndex] = '0'
                 elif words[classIndex] == ">50K":
                     words[classIndex] = '1'
+
+            elif datasetName == "credit":
+                if "?" in l:
+                    #skip rows which have missing values..
+                    countMissing += 1
+                    continue
+                words = l.strip().split(",")
+                words = [ wor.strip() for wor in words]
+                classIndex = len(words) - 1
+                #TODO: fix this..
+                #convert the class index..
+                if words[classIndex] == "+":
+                    words[classIndex] = '1'
+                elif words[classIndex] == "-":
+                    words[classIndex] = '0'
                 else:
                     print lineNum
                     print words
                     print "ERROR!!!!  "*4
                     exit()
+            elif datasetName == "ecoli":
+                words = l.strip().split(",")
+                words = [ wor.strip() for wor in words]
+                classIndex = len(words) - 1
+                #TODO: fix this..
+                #convert the class index..
+                if words[classIndex] == "<=50K":
+                    words[classIndex] = '0'
+                elif words[classIndex] == ">50K":
+                    words[classIndex] = '1'
+                else:
+                    print lineNum
+                    print words
+                    print "ERROR!!!!  "*4
+                    exit()                    
+            elif datasetName == "hepatitis":
+                words = l.strip().split(",")
+                words = [ wor.strip() for wor in words]
+                classIndex = len(words) - 1
+                #TODO: fix this..
+                #convert the class index..
+                if words[classIndex] == "<=50K":
+                    words[classIndex] = '0'
+                elif words[classIndex] == ">50K":
+                    words[classIndex] = '1'
+                else:
+                    print lineNum
+                    print words
+                    print "ERROR!!!!  "*4
+                    exit()                                        
+                    
             else:
                 words = l.strip().split(",")
                 classIndex = len(words) - 1 
                 
             out.write(",".join(words)+"\n")
         out.close()
+        print "Missing values in the Dataset: "+datasetName+" is: ", countMissing
 
     random.seed()
     for split_num in range(splitCount):

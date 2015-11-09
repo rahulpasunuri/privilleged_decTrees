@@ -18,8 +18,8 @@ datasets = []
 #datasets.append("car")
 #datasets.append("census")
 datasets.append("credit")
-datasets.append("ecoli")
-datasets.append("hepatitis")
+#datasets.append("ecoli")
+#datasets.append("hepatitis")
 
 
 splitCount = 5
@@ -75,6 +75,7 @@ nominalColumns["diabetes"] = [] #on nominal columns
 nominalColumns["glass_binary"] = [] #on nominal columns
 nominalColumns["car"] = [0,1,2,3,4,5] #on nominal columns
 nominalColumns["census"] = [1,3,5,6,7,8,9,13] #on nominal columns
+nominalColumns["credit"] = [0, 3,4,5,6,8,9,11,12] #on nominal columns
 
 '''
 The method readData, given a CSV file name, reads the data and returns the data set as a list of lists.
