@@ -7,17 +7,25 @@ from computeStats import *
 
 datasets = []
 #datasets.append("random")
-datasets.append("heart")
+#datasets.append("heart")
 #datasets.append("breast")
 #datasets.append("heart_multi")
 #datasets.append("iris")
 #datasets.append("diabetes")
 
+#----new datasets (yet to complete) ---
+#datasets.append("glass_binary")
+#datasets.append("car")
+#datasets.append("census")
+datasets.append("credit")
+datasets.append("ecoli")
+datasets.append("hepatitis")
+
+
 splitCount = 5
 totalParts = 5
 numClusters = 0
-alpha = 0       
-cluster = {}
+alpha = 0
 
 privilegedColumns = {}
 
@@ -38,6 +46,35 @@ privilegedColumns["iris"] = [2,3]
 #privilegedColumns["diabetes"] = [0,2,4,5]
 privilegedColumns["diabetes"] = [1,5,6,7]
 
+#TODO: get privileged columns for the glass dataset..
+privilegedColumns["glass_binary"] = [1,2,3]
+
+#TODO: get privileged columns for the car dataset..
+privilegedColumns["car"] = [1,2,3]
+
+#TODO: get privileged columns for the census dataset..
+privilegedColumns["census"] = [1,2,3]
+
+#TODO: get privileged columns for the credit dataset..
+privilegedColumns["credit"] = [1,2,3]
+
+#TODO: get privileged columns for the ecoli dataset..
+privilegedColumns["ecoli"] = [1,2,3]
+
+#TODO: get privileged columns for the hepatitis dataset..
+privilegedColumns["hepatitis"] = [1,2,3]
+
+
+#lists all the nominal columns in every dataset..
+nominalColumns = {}
+nominalColumns["heart"] = [] #on nominal columns
+nominalColumns["heart_multi"] = [] #on nominal columns
+nominalColumns["breast"] = [] #on nominal columns
+nominalColumns["iris"] = [] #on nominal columns
+nominalColumns["diabetes"] = [] #on nominal columns
+nominalColumns["glass_binary"] = [] #on nominal columns
+nominalColumns["car"] = [0,1,2,3,4,5] #on nominal columns
+nominalColumns["census"] = [1,3,5,6,7,8,9,13] #on nominal columns
 
 '''
 The method readData, given a CSV file name, reads the data and returns the data set as a list of lists.
@@ -62,9 +99,18 @@ def readData(fileName):
 The method calcInfoGain returns the Information Gain when passed with the current value of entropy, and dataset split on a particular value of a particular column.
 This used to find which is the best column to split the dataset on and subsequently decide what should the criteria be. 
 '''
-def calcInfoGain(currentEntropy, subDataSet1,subDataSet2):
-    p = float(len(subDataSet1))/(len(subDataSet1)+len(subDataSet2))
-    infoGain = currentEntropy - p*calcEntropy(subDataSet1) - (1-p)*calcEntropy(subDataSet2)
+def calcInfoGain(currentEntropy, subDataSet1, subDataSet2, isClassifier):
+    len1 = len(subDataSet1)
+    len2 = len(subDataSet2)
+    totalLen = len1 + len2
+
+    p = float(len1)/totalLen
+
+    if isClassifier:
+        infoGain = currentEntropy - p*calcEntropy(subDataSet1) - (1-p)*calcEntropy(subDataSet2)
+    else:
+        infoGain = currentEntropy*totalLen - len1*calcVariane(subDataSet1) - len2*calcVariance(subDataSet2)
+
     return infoGain
 
 def harmonicMean(a1, a2):
@@ -133,9 +179,9 @@ It returns a dictionary that has keys as the class label and the values as the n
 def countOccurenceOfClassLabel(subDataSet):
     countsOfLabels = {}
     for row in subDataSet:
-        if row[len(row)-1] in countsOfLabels : 
+        if row[len(row)-1] in countsOfLabels: 
             countsOfLabels[row[len(row)-1]] += 1    
-        else :
+        else:
             countsOfLabels[row[len(row)-1]] = 1
     return countsOfLabels
 
@@ -149,17 +195,24 @@ the number of occurences of each class label.
 Here is exactly where the use of the method countOccurenceOfClassLabel() comes into play.
 '''
 def calcEntropy(subDataSet):
-    classLablelCounts = countOccurenceOfClassLabel(subDataSet)
     totalRows = len(subDataSet)
     entropy = 0.0
-
+    
+    classLablelCounts = countOccurenceOfClassLabel(subDataSet)
     for key in classLablelCounts:
         p = float(classLablelCounts[key])/totalRows
         entropy -= p*log(p,2)
 
     return entropy
 
-
+def calcVariance(subDataSet):
+    #TODO: complete this method..
+    mean = 0
+    for row in subDataSet:
+        mean += row[len(row) - 1]
+    mean = mean/len(subDataSet)
+    
+    return 0
     
 def computeMisClassfication(filename):
     f = open(filename,"r")

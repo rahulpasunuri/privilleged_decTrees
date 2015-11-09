@@ -35,7 +35,9 @@ for datasetName in datasets:
         f = open(datasetName+"/dataset.csv", "r")
         out = open(datasetName+"/dataset_simplified.csv", "w")
         lines = f.readlines()
+        lineNum = 0
         for l in lines:
+            lineNum += 1
             l = l.strip()
             if l == "":
                 continue # skip empty lines..
@@ -75,6 +77,48 @@ for datasetName in datasets:
                     words[classIndex] = '1'
                 elif "versicolor" in words[classIndex]:
                     words[classIndex] = '2'
+
+            elif datasetName == "glass_binary":
+                words = l.strip().split(",")
+                classIndex = len(words) - 1
+                
+                #building glasses vs. non building glasses.
+                if words[classIndex] == "0" or words[classIndex] == "1":
+                    words[classIndex] = '0'
+                else:
+                    words[classIndex] = '0'
+            elif datasetName == "car":
+                words = l.strip().split(",")
+                classIndex = len(words) - 1
+                #convert the class index..
+                if words[classIndex] == "unacc":
+                    words[classIndex] = '0'
+                elif words[classIndex] == "acc":
+                    words[classIndex] = '1'
+                elif words[classIndex] == "good":
+                    words[classIndex] = '2'
+                elif words[classIndex] == "vgood":
+                    words[classIndex] = '3'
+                else:
+                    print lineNum
+                    print words
+                    print "ERROR!!!!  "*4
+                    exit()
+                    
+            elif datasetName == "census":
+                words = l.strip().split(",")
+                words = [ wor.strip() for wor in words]
+                classIndex = len(words) - 1
+                #convert the class index..
+                if words[classIndex] == "<=50K":
+                    words[classIndex] = '0'
+                elif words[classIndex] == ">50K":
+                    words[classIndex] = '1'
+                else:
+                    print lineNum
+                    print words
+                    print "ERROR!!!!  "*4
+                    exit()
             else:
                 words = l.strip().split(",")
                 classIndex = len(words) - 1 

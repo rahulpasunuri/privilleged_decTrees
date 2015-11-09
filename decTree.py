@@ -6,17 +6,16 @@ from Node import Node
 from computeStats import *
 from globalConstants import *#file containing all the global constants..
 
-def calcPrivInfoGain(currentEntropy, clusterEntropy, subDataSet1,subDataSet2):
+def calcPrivInfoGain(currentEntropy, clusterEntropy, subDataSet1,subDataSet2, isClassifier, cluster):
     global numClusters
     global alpha
-    normalGain = calcInfoGain(currentEntropy, subDataSet1, subDataSet2)
+    normalGain = calcInfoGain(currentEntropy, subDataSet1, subDataSet2, isClassifier)
     p = float(len(subDataSet1))/(len(subDataSet1)+len(subDataSet2))
-    privGain = clusterEntropy -p*calcPrivEntropy(subDataSet1) - (1-p)*calcPrivEntropy(subDataSet2)
+    privGain = clusterEntropy -p*calcPrivEntropy(subDataSet1, cluster) - (1-p)*calcPrivEntropy(subDataSet2, cluster)
     
     return (normalGain, privGain)
 
-def calcPrivEntropy(data):
-    global cluster
+def calcPrivEntropy(data, cluster):
     classLabelCounts = {}
     for row in data:
         c = cluster[",".join(row)]
@@ -39,20 +38,19 @@ We call createTree recursively until we reach the required depth or a good decis
 The method takes a sub part of the dataset as input and creates a tree based on the decision criteria.
 
 '''
-def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False):
-    global cluster
+def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False, isClassifier = True, cluster = {}):
     #Counting the number of rows in the Dataset
     numOfRows = len(subDataSet)
 
     #if the required depth is > 0 and the dataset has some rows 
     if depth > 0 and len(subDataSet) > 0:
-        '''
-        print "Current Depth : "+str(depth)
-        print ""
-        '''
-        #We first calculate the entropy for the entire data set
-        entropy = calcEntropy(subDataSet)
 
+        #We first calculate the entropy for the entire data set
+        if isClassifier:
+            entropy = calcEntropy(subDataSet)
+        else:
+            entropy = calcVariance(subDataSet)
+        
         #We initially set the best parameters to 0 and None
         bestGain = threshold
         bestSet = None
@@ -80,7 +78,7 @@ def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False):
                 if len(set1) > 0 and len(set2) > 0:
                     #Calculate infoGain for each col and each value in the column
                     if isPrivAvailable == False:
-                        infoGain = calcInfoGain(entropy, set1,set2)
+                        infoGain = calcInfoGain(entropy, set1,set2, isClassifier)
                         #Choose the best col and value 
                         if infoGain > bestGain and len(set1) > 0 and len(set2) > 0 :
                             bestGain = infoGain
@@ -88,8 +86,8 @@ def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False):
                             bestCriteria = value
                             bestColumn = col
                     else:
-                        #print cluster
-                        currGain, privGain = calcPrivInfoGain(entropy, calcPrivEntropy(subDataSet), set1,set2)
+                        #TODO: check priv entropy vs. variance..
+                        currGain, privGain = calcPrivInfoGain(entropy, calcPrivEntropy(subDataSet, cluster), set1,set2, isClassifier, cluster)
                         privGainList.append((currGain, privGain, (set1, set2), value, col))
                         normalAvg += currGain
                         privAvg += privGain
@@ -112,10 +110,11 @@ def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False):
                     else:
                         finalTuple = (currTuple[0], currTuple[1]+ abs(shift), currTuple[2], currTuple[3], currTuple[4])
                     privGainList[ind] = finalTuple
+                
                 #'''
                 #find the max threshold
                 for tup in privGainList:
-                    currGain = combineGain(tup[0], tup[1])
+                    currGain = combineGain(tup[0], tup[1], isClassifier)
                     if currGain > bestGain and len(tup[2][0]) > 0 and len(tup[2][1]) > 0:
                         #print tup[0],"\t",tup[1],"\t", currGain
                         bestSet = tup[2]
@@ -134,8 +133,8 @@ def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False):
             print "Best Column : "+str(bestColumn)
             print ""
             '''
-            lBranch =  createTree(bestSet[0],depth-1,threshold)
-            rBranch = createTree(bestSet[1],depth-1,threshold)
+            lBranch =  createTree(bestSet[0],depth-1,threshold, cluster = cluster)
+            rBranch = createTree(bestSet[1],depth-1,threshold, cluster = cluster)
             return Node(col = bestColumn, leftBranch = lBranch,rightBranch= rBranch, criteria = bestCriteria)
 
         else:
@@ -272,7 +271,7 @@ def getClusterValue(row, tree):
 
 
 def newLogic(train, test, priv_train, priv_depth):
-    global cluster
+    
     global numClusters
     nodes = []    
     #construct a tree using priv information..
@@ -301,19 +300,10 @@ def newLogic(train, test, priv_train, priv_depth):
     for i in range(numRows):
         cluster[",".join(trainData[i])] = getClusterValue(privData[i], privTree)
         #print cluster[",".join(trainData[i])]
-    threshold = 0
-    tree = createTree(trainData, 15, threshold, True)
 
-    '''
-    print ""
-    print ""
-    print "Structure of the Tree : "
-    print ""
-    #Printing the tree in a form that helps visualize the structure better
-    
-    print ""
-    '''
-    #printTree(tree)
+    threshold = 0
+    tree = createTree(trainData, 15, threshold, True, cluster = cluster)
+
     #Now that we have the tree built,lets predict output on the test data
     fileName="results/"+"PredictionOf"+test.split('/')[1]
     precision, recall, accuracy = classifyNewSample(tree=tree, testData=testData,depth=15,fileName=fileName)
@@ -321,12 +311,18 @@ def newLogic(train, test, priv_train, priv_depth):
     #print "Number of Leaves in the tree is: ", numLeaves(tree)   
     return (1 - computeMisClassfication(fileName), precision, recall, accuracy)        
 
-def combineGain(normalGain, privGain):
+def combineGain(normalGain, privGain, isClassifier):
     global alpha
-    privGain = alpha * privGain
-    #return normalGain
-    return privGain + normalGain
-
+    
+    if isClassifier:
+        privGain = alpha * privGain
+        #return normalGain
+        return privGain + normalGain
+    else:
+        #TODO: replace this logic with a new logic..
+        privGain = alpha * privGain
+        #return normalGain
+        return privGain + normalGain        
     #'''
     #old logic..
     '''
