@@ -1,0 +1,80 @@
+21,22c21,22
+< #datasets.append("ecoli_binary")
+< #datasets.append("hepatitis") #TODO: has a lot of missing values.. how to support them ???
+---
+> #datasets.append("ecoli")
+> #datasets.append("hepatitis")
+62c62
+< privilegedColumns["ecoli_binary"] = [1,2,3]
+---
+> privilegedColumns["ecoli"] = [1,2,3]
+69d68
+< #NOTE: ******The columns in the below variable must be ordered in an ascending order..
+79,83d77
+< nominalColumns["credit"] = [0, 3,4,5,6,8,9,11,12] #on nominal columns
+< nominalColumns["ecoli_binary"] = [0] #on nominal columns
+< 
+< prunedNominalColumns = {}
+< privNominalColumns = {}
+160c154
+< def splitData(subDataSet, column, criteria, nominalColumns):
+---
+> def splitData(subDataSet, column, criteria):
+165,169c159,160
+< 		if column in nominalColumns:
+< 		    if row[column] <= criteria:
+< 			    subDataSet1.append(row) 
+< 		    else:
+< 			    subDataSet2.append(row)
+---
+> 		if(float(row[column]) <= float(criteria)):
+> 			subDataSet1.append(row) 
+171,174c162
+< 		    if row[column] == criteria:
+< 			    subDataSet1.append(row) 
+< 		    else:
+< 			    subDataSet2.append(row)
+---
+> 			subDataSet2.append(row)
+242,282d229
+< 
+< def init():
+<     computeFinalNominalColumns()
+<     
+< def computeFinalNominalColumns():
+<     global prunedNominalColumns
+<     global privNominalColumns
+<     
+<     for datasetName in datasets:
+<         #initialize the global variables..
+<         prunedNominalColumns[datasetName] = []
+<         privNominalColumns[datasetName] = []
+<     
+<         origNominalCols = nominalColumns[datasetName]
+<         privColumns = privilegedColumns[datasetName]
+<         
+<         if len(origNominalCols) == 0:
+<             continue # no nominal columns in the dataset..
+<         
+<         max_orig_nominal = origNominalCols[len(origNominalCols) - 1]
+<         prunedColCount = 0
+<         privColCount = 0
+<         
+<         for col_num in range(max_orig_nominal+1):
+<             if col_num in privColumns:
+<                 if col_num in origNominalCols:
+<                     privNominalColumns[datasetName].append(privColCount)
+<                 privColCount += 1
+<             else: # this column is not a privileged column..
+<                 if col_num in origNominalCols:
+<                     prunedNominalColumns[datasetName].append(prunedColCount)
+<                 prunedColCount += 1  
+<                                 
+< def getTreeDepth(tree):
+<     if tree == None:
+<         return 0
+< 
+<     if tree.leftBranch == None and tree.leftBranch == None:
+<         return 1
+<     return max(getTreeDepth(tree.leftBranch), getTreeDepth(tree.rightBranch)) + 1
+< 

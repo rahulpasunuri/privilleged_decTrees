@@ -100,8 +100,8 @@ def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False, isCl
                     continue # if all the rows have the same value for this column... (very very rare..)
                 normalAvg = normalAvg/len(privGainList)
                 privAvg = privAvg/len(privGainList)
-                shift = abs(normalAvg - privAvg)
-                #shift = 0 #TODO: check the usage of shift..
+                #shift = abs(normalAvg - privAvg)
+                shift = 0 #TODO: check the usage of shift..
                 if privAvg > normalAvg:
                     index = 0
                 else:
@@ -128,8 +128,8 @@ def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False, isCl
 
         if bestGain > threshold:
             #Finally split the dataset and create the subtree based on the best values obtained above
+            #print "Splitting on Column : "+str(bestColumn)+" with criteria : "+str(bestCriteria)
             '''
-            print "Splitting on Column : "+str(bestColumn)+" with criteria : "+str(bestCriteria)
 
             print "Best values : "
             print "Best Gain : "+str(bestGain)
@@ -332,7 +332,11 @@ def combineGain(normalGain, privGain, isClassifier):
     if isClassifier:
         privGain = alpha * privGain
         #return normalGain
-        return privGain + normalGain
+        #return privGain + normalGain
+        if normalGain < privGain:
+            return reverseHarmonicMean(normalGain, privGain)
+        else:
+            return harmonicMean(normalGain, privGain)
     else:
         #TODO: replace this logic with a new logic..
         privGain = alpha * privGain
@@ -361,8 +365,6 @@ def combineGain(normalGain, privGain, isClassifier):
     else:
         return harmonicMean(normalGain, privGain)
     '''
-
-
 
 #The main function that calls all other functions, execution begins here
 def main():
@@ -393,7 +395,7 @@ def main():
         splitOldRecall[datasetName] = {}
 
     init() #inits some global variables required for the execution..
-
+    
     for split in range(splitCount):
         print "\n"
         print "#"*40
@@ -439,6 +441,7 @@ def main():
                 #'''
                 print "\nRunning pruned dataset"
                 currNormalAcc, precision, recall, accuracy = checkDecisionTree(datasetName+"/"+dirName+"/pruned_train_"+str(part)+".csv", datasetName+"/"+dirName+"/pruned_test_"+str(part)+".csv", nominalColumns = prunedNominalColumns[datasetName])
+                
                 normalAcc += currNormalAcc
                 for label in precision:
                     if label not in normalPrecision:

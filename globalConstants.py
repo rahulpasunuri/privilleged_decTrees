@@ -116,7 +116,7 @@ def calcInfoGain(currentEntropy, subDataSet1, subDataSet2, isClassifier):
         infoGain = currentEntropy - p*calcEntropy(subDataSet1) - (1-p)*calcEntropy(subDataSet2)
     else:
         infoGain = currentEntropy*totalLen - len1*calcVariane(subDataSet1) - len2*calcVariance(subDataSet2)
-
+    
     return infoGain
 
 def harmonicMean(a1, a2):
@@ -162,13 +162,13 @@ def splitData(subDataSet, column, criteria, nominalColumns):
 	subDataSet2=[] #All samples that do not match the criteria
 	for row in subDataSet:
 		#Doing a <= and > split..
-		if column in nominalColumns:
-		    if row[column] <= criteria:
+		if column not in nominalColumns:
+		    if float(row[column]) <= float(criteria):
 			    subDataSet1.append(row) 
 		    else:
 			    subDataSet2.append(row)
 		else:
-		    if row[column] == criteria:
+		    if row[column].strip() == criteria.strip():
 			    subDataSet1.append(row) 
 		    else:
 			    subDataSet2.append(row)

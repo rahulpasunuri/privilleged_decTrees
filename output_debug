@@ -124,24 +124,24 @@ Running the new logic with alpha =  1.8
 Running the new logic with alpha =  1.9
 Running the new logic with alpha =  2.0
 
-Normal Accuracy is 0.38455126424
+Normal Accuracy is 0.703250903029
 Stats for label:  1
-	Precision is:  0.42597810686
-	Recall is:  0.397949823165
+	Precision is:  0.672907772304
+	Recall is:  0.694507073386
 ------------------------------
 Stats for label:  0
-	Precision is:  0.398666666667
-	Recall is:  0.405411856662
+	Precision is:  0.728569822194
+	Recall is:  0.709724627225
 ------------------------------
 
-New Accuracy is:  0.374381772715 for alpha:  0.1
+New Accuracy is:  0.716810225063 for alpha:  0.8
 Stats for label:  1
-	Precision for the chosen alpha is:  0.422849195722
-	Recall for the chosen alpha is:  0.436411361627
+	Precision for the chosen alpha is:  0.6984002109
+	Recall for the chosen alpha is:  0.686173740053
 ------------------------------
 Stats for label:  0
-	Precision for the chosen alpha is:  0.386666666667
-	Recall for the chosen alpha is:  0.356927008177
+	Precision for the chosen alpha is:  0.73038489585
+	Recall for the chosen alpha is:  0.739681337181
 ------------------------------
 
 
@@ -269,24 +269,24 @@ Running the new logic with alpha =  1.8
 Running the new logic with alpha =  1.9
 Running the new logic with alpha =  2.0
 
-Normal Accuracy is 0.455293136982
+Normal Accuracy is 0.6772436788
 Stats for label:  1
-	Precision is:  0.460224089636
-	Recall is:  0.263996001999
+	Precision is:  0.668009852217
+	Recall is:  0.562048975512
 ------------------------------
 Stats for label:  0
-	Precision is:  0.451713040463
-	Recall is:  0.622122838012
+	Precision is:  0.679099877471
+	Recall is:  0.768365504155
 ------------------------------
 
-New Accuracy is:  0.472242289525 for alpha:  0.6
+New Accuracy is:  0.693637121423 for alpha:  0.7
 Stats for label:  1
-	Precision for the chosen alpha is:  0.485714285714
-	Recall for the chosen alpha is:  0.33356121939
+	Precision for the chosen alpha is:  0.680701363604
+	Recall for the chosen alpha is:  0.625003498251
 ------------------------------
 Stats for label:  0
-	Precision for the chosen alpha is:  0.465427326177
-	Recall for the chosen alpha is:  0.605456171345
+	Precision for the chosen alpha is:  0.703896268185
+	Recall for the chosen alpha is:  0.751426857729
 ------------------------------
 
 
@@ -414,24 +414,24 @@ Running the new logic with alpha =  1.8
 Running the new logic with alpha =  1.9
 Running the new logic with alpha =  2.0
 
-Normal Accuracy is 0.366712975827
+Normal Accuracy is 0.693192553487
 Stats for label:  1
-	Precision is:  0.333301162512
-	Recall is:  0.4271287214
+	Precision is:  0.673502431477
+	Recall is:  0.678826160862
 ------------------------------
 Stats for label:  0
-	Precision is:  0.373142857143
-	Recall is:  0.302779767094
+	Precision is:  0.719863516114
+	Recall is:  0.714127693362
 ------------------------------
 
-New Accuracy is:  0.370102806335 for alpha:  1.8
+New Accuracy is:  0.693303695471 for alpha:  1.1
 Stats for label:  1
-	Precision for the chosen alpha is:  0.335025300443
-	Recall for the chosen alpha is:  0.4271287214
+	Precision for the chosen alpha is:  0.671202279202
+	Recall for the chosen alpha is:  0.692978810832
 ------------------------------
 Stats for label:  0
-	Precision for the chosen alpha is:  0.377658986175
-	Recall for the chosen alpha is:  0.309231379998
+	Precision for the chosen alpha is:  0.728027255312
+	Recall for the chosen alpha is:  0.705602347739
 ------------------------------
 
 
@@ -559,24 +559,24 @@ Running the new logic with alpha =  1.8
 Running the new logic with alpha =  1.9
 Running the new logic with alpha =  2.0
 
-Normal Accuracy is 0.497916087802
+Normal Accuracy is 0.70358432898
 Stats for label:  1
-	Precision is:  0.5314678854
-	Recall is:  0.417891443167
+	Precision is:  0.675142857143
+	Recall is:  0.706569923372
 ------------------------------
 Stats for label:  0
-	Precision is:  0.501801522835
-	Recall is:  0.589500466853
+	Precision is:  0.734951895451
+	Recall is:  0.705284391534
 ------------------------------
 
-New Accuracy is:  0.514865240345 for alpha:  1.6
+New Accuracy is:  0.704028896916 for alpha:  0.5
 Stats for label:  1
-	Precision for the chosen alpha is:  0.5414678854
-	Recall for the chosen alpha is:  0.449141443167
+	Precision for the chosen alpha is:  0.679904761905
+	Recall for the chosen alpha is:  0.691483716475
 ------------------------------
 Stats for label:  0
-	Precision for the chosen alpha is:  0.515787536821
-	Recall for the chosen alpha is:  0.589500466853
+	Precision for the chosen alpha is:  0.732130305533
+	Recall for the chosen alpha is:  0.720099206349
 ------------------------------
 
 
@@ -704,42 +704,42 @@ Running the new logic with alpha =  1.8
 Running the new logic with alpha =  1.9
 Running the new logic with alpha =  2.0
 
-Normal Accuracy is 0.343651014171
+Normal Accuracy is 0.751041956099
 Stats for label:  1
-	Precision is:  0.35871287976
-	Recall is:  0.53712962963
+	Precision is:  0.740996031746
+	Recall is:  0.715138888889
 ------------------------------
 Stats for label:  0
-	Precision is:  0.323816425121
-	Recall is:  0.185507582343
+	Precision is:  0.76080847054
+	Recall is:  0.782081200296
 ------------------------------
 
-New Accuracy is:  0.47924423451 for alpha:  1.7
+New Accuracy is:  0.751041956099 for alpha:  0.2
 Stats for label:  1
-	Precision for the chosen alpha is:  0.503950974998
-	Recall for the chosen alpha is:  0.582546296296
+	Precision for the chosen alpha is:  0.740996031746
+	Recall for the chosen alpha is:  0.715138888889
 ------------------------------
 Stats for label:  0
-	Precision for the chosen alpha is:  0.476166760988
-	Recall for the chosen alpha is:  0.418713201756
+	Precision for the chosen alpha is:  0.76080847054
+	Recall for the chosen alpha is:  0.782081200296
 ------------------------------
 ----------------------------------------
 ----------------------------------------
 ----------------------------------------
 Printing Results for Dataset:  heart
-Avg Old Accuracy:  0.409624895804 +-  0.0577989546108
-Avg. New Accuracy:  0.442167268686 +-  0.0589107181325
+Avg Old Accuracy:  0.705662684079 +-  0.0246274586381
+Avg. New Accuracy:  0.711764378994 +-  0.021435580757
 Stats for label:  1
-	 Old Avg. Precision is:  0.421936824834 +-  0.0711798394225
-	 New Avg. Precision is:  0.457801528455 +-  0.0723942269065
+	 Old Avg. Precision is:  0.686111788977 +-  0.0275449437729
+	 New Avg. Precision is:  0.694240929471 +-  0.0249918553186
 
-	 Old Avg. Recall is:  0.408819123872 +-  0.0871470166485
-	 New Avg. Recall is:  0.445757808376 +-  0.0796806286877
+	 Old Avg. Recall is:  0.671418204404 +-  0.0560298911588
+	 New Avg. Recall is:  0.6821557309 +-  0.0302475161934
 
 Stats for label:  0
-	 Old Avg. Precision is:  0.409828102446 +-  0.061776778159
-	 New Avg. Precision is:  0.444341455366 +-  0.0535442611863
+	 Old Avg. Precision is:  0.724658716354 +-  0.0265580600128
+	 New Avg. Precision is:  0.731049439084 +-  0.0180756085808
 
-	 Old Avg. Recall is:  0.421064502193 +-  0.166444269924
-	 New Avg. Recall is:  0.455965645626 +-  0.120752893755
+	 Old Avg. Recall is:  0.735916683314 +-  0.0325060295551
+	 New Avg. Recall is:  0.739778189859 +-  0.0263836923579
 
