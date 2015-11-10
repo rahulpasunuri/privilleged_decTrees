@@ -123,7 +123,6 @@ for datasetName in datasets:
                 words = l.strip().split(",")
                 words = [ wor.strip() for wor in words]
                 classIndex = len(words) - 1
-                #TODO: fix this..
                 #convert the class index..
                 if words[classIndex] == "+":
                     words[classIndex] = '1'
@@ -135,20 +134,20 @@ for datasetName in datasets:
                     print "ERROR!!!!  "*4
                     exit()
             elif datasetName == "ecoli":
-                words = l.strip().split(",")
-                words = [ wor.strip() for wor in words]
+                words = []
+                words_extra = l.strip().split(" ")
+                for wor in words_extra:
+                    wor = wor.strip()
+                    if wor != "":
+                        words.append(wor)
+                #different set of classes = [ "cp", "im", "imS", "imL", "imU", "om", "omL", "pp"]
+                #"cp" has the highest number of class occurrences, so lets do cp vs. non cp..
                 classIndex = len(words) - 1
-                #TODO: fix this..
-                #convert the class index..
-                if words[classIndex] == "<=50K":
+                if words[classIndex] == "cp":
                     words[classIndex] = '0'
-                elif words[classIndex] == ">50K":
-                    words[classIndex] = '1'
                 else:
-                    print lineNum
-                    print words
-                    print "ERROR!!!!  "*4
-                    exit()                    
+                    words[classIndex] = '1'
+
             elif datasetName == "hepatitis":
                 words = l.strip().split(",")
                 words = [ wor.strip() for wor in words]

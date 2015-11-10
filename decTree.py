@@ -38,7 +38,7 @@ We call createTree recursively until we reach the required depth or a good decis
 The method takes a sub part of the dataset as input and creates a tree based on the decision criteria.
 
 '''
-def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False, isClassifier = True, cluster = {}):
+def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False, isClassifier = True, cluster = {}, nominalColumns = []):
     #Counting the number of rows in the Dataset
     numOfRows = len(subDataSet)
 
@@ -74,7 +74,7 @@ def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False, isCl
             #We are now iterating through each value in the current iteration of column to see which value serves as the best split
             for value in valuesInColumn:
                 #Split the dataset on the current value of column and value
-                (set1,set2) = splitData(subDataSet,col, value)
+                (set1,set2) = splitData(subDataSet,col, value, nominalColumns)
                 if len(set1) > 0 and len(set2) > 0:
                     #Calculate infoGain for each col and each value in the column
                     if isPrivAvailable == False:
@@ -94,6 +94,8 @@ def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False, isCl
                 
             if isPrivAvailable == True:
                 #'''
+                if len(privGainList) == 0:
+                    continue # if all the rows have the same value for this column... (very very rare..)
                 normalAvg = normalAvg/len(privGainList)
                 privAvg = privAvg/len(privGainList)
                 shift = abs(normalAvg - privAvg)
@@ -133,8 +135,8 @@ def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False, isCl
             print "Best Column : "+str(bestColumn)
             print ""
             '''
-            lBranch =  createTree(bestSet[0],depth-1,threshold, cluster = cluster)
-            rBranch = createTree(bestSet[1],depth-1,threshold, cluster = cluster)
+            lBranch =  createTree(bestSet[0],depth-1,threshold, cluster = cluster, nominalColumns = nominalColumns)
+            rBranch = createTree(bestSet[1],depth-1,threshold, cluster = cluster, nominalColumns = nominalColumns)
             return Node(col = bestColumn, leftBranch = lBranch,rightBranch= rBranch, criteria = bestCriteria)
 
         else:
@@ -163,7 +165,7 @@ def writeResult(predictionsPlusExpectedValues,depth="",fileName="predictionsWith
 '''
 Given a tree and a dataset, the method classifyNewSample will output the predicted classification of each row in the dataset.
 '''
-def classifyNewSample(tree, testData,depth,fileName):
+def classifyNewSample(tree, testData,depth,fileName, nominalColumns):
 	
 	predictionsPlusExpectedValues = []
 
@@ -180,10 +182,19 @@ def classifyNewSample(tree, testData,depth,fileName):
 		else:
 			#Recursively searching for the leaf node that martches the criteria
 			while(leaf == None):
-				if float(row[currentNode.col]) <= float(currentNode.criteria): 
-					currentNode = currentNode.rightBranch
+				if currentNode.col not in nominalColumns:
+					#current node is a nominal column..      
+					#print currentNode.col, currentNode.criteria
+					if float(row[currentNode.col]) <= float(currentNode.criteria): 
+					    currentNode = currentNode.rightBranch
+					else:
+					    currentNode = currentNode.leftBranch
 				else:
-					currentNode = currentNode.leftBranch
+					#current node is a continuous column..                    
+					if row[currentNode.col] == currentNode.criteria: 
+						currentNode = currentNode.rightBranch
+					else:
+						currentNode = currentNode.leftBranch
 				leaf = currentNode.leafValues
 
 		# Counting the occurences of each possible class label in the leaf
@@ -234,7 +245,7 @@ def classifyNewSample(tree, testData,depth,fileName):
 	return computeStats(predictionsPlusExpectedValues)
 
 
-def checkDecisionTree(trainingFileName, testFileName, depth=15, isPrintTree=False):
+def checkDecisionTree(trainingFileName, testFileName, depth=15, isPrintTree=False, nominalColumns = []):
     #Change the trhreshold value if you want to have a minimum information gain at each split, by default we assigned it 0
     threshold=0.0
 
@@ -242,7 +253,7 @@ def checkDecisionTree(trainingFileName, testFileName, depth=15, isPrintTree=Fals
     testData = readData(testFileName)
     #isPrintTree = True
     #The variable tree will be an instance of the type Node
-    tree = createTree(trainData, depth)
+    tree = createTree(trainData, depth, nominalColumns = nominalColumns)
     if isPrintTree:
         print ""
         print ""
@@ -254,30 +265,37 @@ def checkDecisionTree(trainingFileName, testFileName, depth=15, isPrintTree=Fals
         
     #Now that we have the tree built,lets predict output on the test data
     fileName="results/"+"PredictionOf"+testFileName.split('/')[1]
-    precision, recall, accuracy = classifyNewSample(tree=tree, testData=testData,depth=depth,fileName=fileName)
+    precision, recall, accuracy = classifyNewSample(tree=tree, testData=testData,depth=depth,fileName=fileName, nominalColumns = nominalColumns)
     #print "Accuracy is: ",(1 - computeMisClassfication(fileName))
     #print "Number of Leaves in the tree is: ", numLeaves(tree)   
     return (1 - computeMisClassfication(fileName), precision, recall, accuracy)
 
-def getClusterValue(row, tree):
+def getClusterValue(row, tree, nominalColumns):
     currentNode = tree
     #Recursively searching for the leaf node that martches the criteria
     while (currentNode.leafValues == None):
-        if float(row[currentNode.col]) <= float(currentNode.criteria): 
-            currentNode = currentNode.rightBranch
+        if currentNode.col in nominalColumns:
+            # current column is a nominal column
+            if row[currentNode.col] == currentNode.criteria: 
+                currentNode = currentNode.rightBranch
+            else:
+                currentNode = currentNode.leftBranch
         else:
-            currentNode = currentNode.leftBranch
+            # current column is a not nominal column
+            if float(row[currentNode.col]) <= float(currentNode.criteria): 
+                currentNode = currentNode.rightBranch
+            else:
+                currentNode = currentNode.leftBranch       
     return currentNode.clusterNum
 
 
-def newLogic(train, test, priv_train, priv_depth):
-    
+def newLogic(train, test, priv_train, priv_depth, privNominalColumns, prunedNominalColumns):
     global numClusters
     nodes = []    
     #construct a tree using priv information..
     
-    #privTree = createTree(readData(priv_train), priv_depth)
-    privTree = createTree(readData(priv_train)) #TODO: check the use of the priv_depth..
+    #privTree = createTree(readData(priv_train), priv_depth, nominalColumns = nominalColumns)
+    privTree = createTree(readData(priv_train), nominalColumns = privNominalColumns) #TODO: check the use of the priv_depth..
     #assign a new cluster number to each leaf node..
     index = 0
     nodes.append(privTree)
@@ -298,15 +316,15 @@ def newLogic(train, test, priv_train, priv_depth):
     cluster = {} #clear the previous cluster global variable..
     numRows = len(trainData)
     for i in range(numRows):
-        cluster[",".join(trainData[i])] = getClusterValue(privData[i], privTree)
+        cluster[",".join(trainData[i])] = getClusterValue(privData[i], privTree, privNominalColumns)
         #print cluster[",".join(trainData[i])]
 
     threshold = 0
-    tree = createTree(trainData, 15, threshold, True, cluster = cluster)
+    tree = createTree(trainData, 15, threshold, True, cluster = cluster, nominalColumns = prunedNominalColumns)
 
     #Now that we have the tree built,lets predict output on the test data
     fileName="results/"+"PredictionOf"+test.split('/')[1]
-    precision, recall, accuracy = classifyNewSample(tree=tree, testData=testData,depth=15,fileName=fileName)
+    precision, recall, accuracy = classifyNewSample(tree=tree, testData=testData,depth=15,fileName=fileName, nominalColumns = prunedNominalColumns)
     #print "Accuracy is: ",(1 - computeMisClassfication(fileName))
     #print "Number of Leaves in the tree is: ", numLeaves(tree)   
     return (1 - computeMisClassfication(fileName), precision, recall, accuracy)        
@@ -347,18 +365,26 @@ def combineGain(normalGain, privGain, isClassifier):
         return harmonicMean(normalGain, privGain)
     '''
 
+
+
 #The main function that calls all other functions, execution begins here
 def main():
+
+    global prunedNominalColumns
+    global privNominalColumns
+
     global datasets
     global alpha
     global totalParts
     global splitCount
     
+    init() #inits some global variables required for the execution..
+
     for split in range(splitCount):
         print "\n"
         print "#"*40
         print "#"*40
-        print "Printing results for split: ",(split+1)
+        print "Printing results for split: ",split
         print "#"*40
         print "#"*40
         dirName = getSplitName(split)
@@ -378,13 +404,13 @@ def main():
             #normalAccuracy = {}
             
             for part in range(totalParts):
-
+                
                 #if part != 1:
                     #continue #TODO: remove this..
                 #'''
                 #print ""
                 #print "#"*40
-                #print "Running "+datasetName+" with fold: ", part
+                print "Running "+datasetName+" with fold: ", part
                 
                 #print "\nRunning entire dataset"
                 #checkDecisionTree(datasetName+"/"+dirName+"/complete_train_"+str(part)+".csv", datasetName+"/"+dirName+"/complete_test_"+str(part)+".csv")
@@ -398,7 +424,7 @@ def main():
                 
                 #'''
                 print "\nRunning pruned dataset"
-                currNormalAcc, precision, recall, accuracy = checkDecisionTree(datasetName+"/"+dirName+"/pruned_train_"+str(part)+".csv", datasetName+"/"+dirName+"/pruned_test_"+str(part)+".csv")
+                currNormalAcc, precision, recall, accuracy = checkDecisionTree(datasetName+"/"+dirName+"/pruned_train_"+str(part)+".csv", datasetName+"/"+dirName+"/pruned_test_"+str(part)+".csv", nominalColumns = prunedNominalColumns[datasetName])
                 normalAcc += currNormalAcc
                 for label in precision:
                     if label not in normalPrecision:
@@ -421,7 +447,7 @@ def main():
                 for run in range(1, 21):
                     alpha = run/10.0
                     print "Running the new logic with alpha = ",alpha
-                    currAcc, precision, recall, accuracy = newLogic(datasetName+"/"+dirName+"/pruned_train_"+str(part)+".csv", datasetName+"/"+dirName+"/pruned_test_"+str(part)+".csv", datasetName+"/"+dirName+"/priv_train_"+str(part)+".csv", 3)     
+                    currAcc, precision, recall, accuracy = newLogic(datasetName+"/"+dirName+"/pruned_train_"+str(part)+".csv", datasetName+"/"+dirName+"/pruned_test_"+str(part)+".csv", datasetName+"/"+dirName+"/priv_train_"+str(part)+".csv", 3, privNominalColumns = privNominalColumns[datasetName], prunedNominalColumns = prunedNominalColumns[datasetName])     
                     #print currAcc,"\t",alpha
                     newAcc[part].append(currAcc)
                     newPrecision[part].append(precision)
@@ -451,7 +477,7 @@ def main():
                         if lbl not in avgRecall[run]:
                              avgRecall[run][lbl] = 0
                         avgRecall[run][lbl] += newRecall[j][run][lbl]     
-                    
+
             maxAvgAccuracy = 0
             maxAlpha = 0
             chosenI = 0
@@ -464,7 +490,7 @@ def main():
 
             print "\nNew Accuracy is: ",maxAvgAccuracy/float(totalParts), "for alpha: ",maxAlpha
             for lbl in normalAccuracy:
-                print "Stats for label: ",label
+                print "Stats for label: ",lbl
                 print "\tPrecision for the chosen alpha is: ", avgPrecision[chosenI][lbl]/float(totalParts)
                 print "\tRecall for the chosen alpha is: ", avgRecall[chosenI][lbl]/float(totalParts)
                 print "-"*30

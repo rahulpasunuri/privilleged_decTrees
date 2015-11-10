@@ -14,12 +14,12 @@ datasets = []
 #datasets.append("diabetes")
 
 #----new datasets (yet to complete) ---
-#datasets.append("glass_binary")
+datasets.append("glass_binary")
 #datasets.append("car")
 #datasets.append("census")
-datasets.append("credit")
-#datasets.append("ecoli")
-#datasets.append("hepatitis")
+#datasets.append("credit")
+#datasets.append("ecoli_binary")
+#datasets.append("hepatitis") #TODO: has a lot of missing values.. how to support them ???
 
 
 splitCount = 5
@@ -59,13 +59,14 @@ privilegedColumns["census"] = [1,2,3]
 privilegedColumns["credit"] = [1,2,3]
 
 #TODO: get privileged columns for the ecoli dataset..
-privilegedColumns["ecoli"] = [1,2,3]
+privilegedColumns["ecoli_binary"] = [1,2,3]
 
 #TODO: get privileged columns for the hepatitis dataset..
 privilegedColumns["hepatitis"] = [1,2,3]
 
 
 #lists all the nominal columns in every dataset..
+#NOTE: ******The columns in the below variable must be ordered in an ascending order..
 nominalColumns = {}
 nominalColumns["heart"] = [] #on nominal columns
 nominalColumns["heart_multi"] = [] #on nominal columns
@@ -76,6 +77,10 @@ nominalColumns["glass_binary"] = [] #on nominal columns
 nominalColumns["car"] = [0,1,2,3,4,5] #on nominal columns
 nominalColumns["census"] = [1,3,5,6,7,8,9,13] #on nominal columns
 nominalColumns["credit"] = [0, 3,4,5,6,8,9,11,12] #on nominal columns
+nominalColumns["ecoli_binary"] = [0] #on nominal columns
+
+prunedNominalColumns = {}
+privNominalColumns = {}
 
 '''
 The method readData, given a CSV file name, reads the data and returns the data set as a list of lists.
@@ -152,15 +157,21 @@ def printTree(tree, indent=''):
 The method splitData takes a dataset as input and splits it into 2 based on the criteria on the specified column and returns the resulting 2 datasets.
 Provide Column value as if counting from ZERO.
 '''	
-def splitData(subDataSet, column, criteria):
+def splitData(subDataSet, column, criteria, nominalColumns):
 	subDataSet1=[] #All samples that match the criteria
 	subDataSet2=[] #All samples that do not match the criteria
 	for row in subDataSet:
 		#Doing a <= and > split..
-		if(float(row[column]) <= float(criteria)):
-			subDataSet1.append(row) 
+		if column in nominalColumns:
+		    if row[column] <= criteria:
+			    subDataSet1.append(row) 
+		    else:
+			    subDataSet2.append(row)
 		else:
-			subDataSet2.append(row)
+		    if row[column] == criteria:
+			    subDataSet1.append(row) 
+		    else:
+			    subDataSet2.append(row)
 	return (subDataSet2,subDataSet1)
 	
 	
@@ -228,3 +239,36 @@ def computeMisClassfication(filename):
             misClassificationCount+=1
     rate = float(misClassificationCount)/totalCount
     return rate
+
+def init():
+    computeFinalNominalColumns()
+    
+def computeFinalNominalColumns():
+    global prunedNominalColumns
+    global privNominalColumns
+    
+    for datasetName in datasets:
+        #initialize the global variables..
+        prunedNominalColumns[datasetName] = []
+        privNominalColumns[datasetName] = []
+    
+        origNominalCols = nominalColumns[datasetName]
+        privColumns = privilegedColumns[datasetName]
+        
+        if len(origNominalCols) == 0:
+            continue # no nominal columns in the dataset..
+        
+        max_orig_nominal = origNominalCols[len(origNominalCols) - 1]
+        prunedColCount = 0
+        privColCount = 0
+        
+        for col_num in range(max_orig_nominal+1):
+            if col_num in privColumns:
+                if col_num in origNominalCols:
+                    privNominalColumns[datasetName].append(privColCount)
+                privColCount += 1
+            else: # this column is not a privileged column..
+                if col_num in origNominalCols:
+                    prunedNominalColumns[datasetName].append(prunedColCount)
+                prunedColCount += 1  
+
