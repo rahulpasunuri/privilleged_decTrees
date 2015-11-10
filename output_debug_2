@@ -727,19 +727,19 @@ Stats for label:  0
 ----------------------------------------
 ----------------------------------------
 Printing Results for Dataset:  heart
-Avg Old Accuracy:  0.409624895804 +-  0.0577989546108
-Avg. New Accuracy:  0.442167268686 +-  0.0589107181325
+Avg. Old Accuracy:  0.442167268686 +-  0.0589107181325
+Avg New Accuracy:  0.409624895804 +-  0.0577989546108
 Stats for label:  1
-	 Old Avg. Precision is:  0.421936824834 +-  0.0711798394225
-	 New Avg. Precision is:  0.457801528455 +-  0.0723942269065
+	 Old Avg. Precision is:  0.35871287976 +-  0.0
+	 New Avg. Precision is:  0.503950974998 +-  0.0
 
-	 Old Avg. Recall is:  0.408819123872 +-  0.0871470166485
-	 New Avg. Recall is:  0.445757808376 +-  0.0796806286877
+	 Old Avg. Recall is:  0.53712962963 +-  0.0
+	 New Avg. Recall is:  0.582546296296 +-  0.0
 
 Stats for label:  0
-	 Old Avg. Precision is:  0.409828102446 +-  0.061776778159
-	 New Avg. Precision is:  0.444341455366 +-  0.0535442611863
+	 Old Avg. Precision is:  0.323816425121 +-  0.0
+	 New Avg. Precision is:  0.476166760988 +-  0.0
 
-	 Old Avg. Recall is:  0.421064502193 +-  0.166444269924
-	 New Avg. Recall is:  0.455965645626 +-  0.120752893755
+	 Old Avg. Recall is:  0.185507582343 +-  0.0
+	 New Avg. Recall is:  0.418713201756 +-  0.0
 

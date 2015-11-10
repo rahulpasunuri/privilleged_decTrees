@@ -479,9 +479,9 @@ def main():
 
                 print "-"*30
                 
-                if label not in splitPrecision:
+                if label not in splitPrecision[datasetName]:
                     splitOldPrecision[datasetName][label] = []
-                if label not in splitRecall:
+                if label not in splitRecall[datasetName]:
                     splitOldRecall[datasetName][label] = []
                 
                 splitOldPrecision[datasetName][label].append(normalPrecision[label]/float(totalParts))
@@ -520,9 +520,9 @@ def main():
                 print "\tPrecision for the chosen alpha is: ", avgPrecision[chosenI][lbl]/float(totalParts)
                 print "\tRecall for the chosen alpha is: ", avgRecall[chosenI][lbl]/float(totalParts)
                 print "-"*30
-                if lbl not in splitPrecision:
+                if lbl not in splitPrecision[datasetName]:
                     splitPrecision[datasetName][lbl] = []
-                if lbl not in splitRecall:
+                if lbl not in splitRecall[datasetName]:
                     splitRecall[datasetName][lbl] = []
                 splitPrecision[datasetName][lbl].append(avgPrecision[chosenI][lbl]/float(totalParts))
                 splitRecall[datasetName][lbl].append(avgRecall[chosenI][lbl]/float(totalParts))
@@ -532,8 +532,8 @@ def main():
     print "-"*40            
     for datasetName in datasets:
         print "Printing Results for Dataset: ", datasetName
-        print "Avg. Old Accuracy: ", numpy.mean(splitAccuracy[datasetName]), "+- ", numpy.std(splitAccuracy[datasetName])
-        print "Avg New Accuracy: ", numpy.mean(splitOldAccuracy[datasetName]), "+- ", numpy.std(splitOldAccuracy[datasetName])
+        print "Avg Old Accuracy: ", numpy.mean(splitOldAccuracy[datasetName]), "+- ", numpy.std(splitOldAccuracy[datasetName])
+        print "Avg. New Accuracy: ", numpy.mean(splitAccuracy[datasetName]), "+- ", numpy.std(splitAccuracy[datasetName])
         
         for lbl in splitPrecision[datasetName]:
             print "Stats for label: ", lbl
