@@ -87,7 +87,7 @@ for datasetName in datasets:
                 if words[classIndex] == "0" or words[classIndex] == "1":
                     words[classIndex] = '0'
                 else:
-                    words[classIndex] = '0'
+                    words[classIndex] = '1'
             elif datasetName == "car":
                 words = l.strip().split(",")
                 classIndex = len(words) - 1

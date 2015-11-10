@@ -5,6 +5,8 @@ from math import *
 from Node import Node
 from computeStats import *
 from globalConstants import *#file containing all the global constants..
+import numpy
+
 
 def calcPrivInfoGain(currentEntropy, clusterEntropy, subDataSet1,subDataSet2, isClassifier, cluster):
     global numClusters
@@ -155,7 +157,7 @@ def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False, isCl
 '''
 The method write result will write the result of the classifier and the expected result in a CSV format.
 '''
-def writeResult(predictionsPlusExpectedValues,depth="",fileName="predictionsWithDepth"):
+def writeResult(predictionsPlusExpectedValues, fileName="predictionsWithDepth"):
     with open(fileName,'wb') as f:
         csvWriter = csv.writer(f)
         for row in predictionsPlusExpectedValues:
@@ -165,8 +167,8 @@ def writeResult(predictionsPlusExpectedValues,depth="",fileName="predictionsWith
 '''
 Given a tree and a dataset, the method classifyNewSample will output the predicted classification of each row in the dataset.
 '''
-def classifyNewSample(tree, testData,depth,fileName, nominalColumns):
-	
+def classifyNewSample(tree, testData, fileName, nominalColumns):
+
 	predictionsPlusExpectedValues = []
 
 	for row in testData:
@@ -175,27 +177,23 @@ def classifyNewSample(tree, testData,depth,fileName, nominalColumns):
 		leaf = None
 		predictedLabel = None
 		currentPredictionPlusExpectedValues = []
-
 		#Handling the Special case of depth = 0 
-		if(depth == 0):
-			leaf = tree.leafValues
-		else:
-			#Recursively searching for the leaf node that martches the criteria
-			while(leaf == None):
-				if currentNode.col not in nominalColumns:
-					#current node is a nominal column..      
-					#print currentNode.col, currentNode.criteria
-					if float(row[currentNode.col]) <= float(currentNode.criteria): 
-					    currentNode = currentNode.rightBranch
-					else:
-					    currentNode = currentNode.leftBranch
+		#Recursively searching for the leaf node that martches the criteria
+		while(leaf == None):
+			if currentNode.col not in nominalColumns:
+				#current node is a nominal column..      
+				#print currentNode.col, currentNode.criteria
+				if float(row[currentNode.col]) <= float(currentNode.criteria): 
+				    currentNode = currentNode.rightBranch
 				else:
-					#current node is a continuous column..                    
-					if row[currentNode.col] == currentNode.criteria: 
-						currentNode = currentNode.rightBranch
-					else:
-						currentNode = currentNode.leftBranch
-				leaf = currentNode.leafValues
+				    currentNode = currentNode.leftBranch
+			else:
+				#current node is a continuous column..                    
+				if row[currentNode.col] == currentNode.criteria: 
+					currentNode = currentNode.rightBranch
+				else:
+					currentNode = currentNode.leftBranch
+			leaf = currentNode.leafValues
 
 		# Counting the occurences of each possible class label in the leaf
 		labelCount = len(leaf)
@@ -241,7 +239,7 @@ def classifyNewSample(tree, testData,depth,fileName, nominalColumns):
 		#List of lists containing the prediction vs expected values
 		predictionsPlusExpectedValues.append(currentPredictionPlusExpectedValues)
 	 
-	writeResult(predictionsPlusExpectedValues, depth, fileName)
+	writeResult(predictionsPlusExpectedValues, fileName)
 	return computeStats(predictionsPlusExpectedValues)
 
 
@@ -265,7 +263,7 @@ def checkDecisionTree(trainingFileName, testFileName, depth=15, isPrintTree=Fals
         
     #Now that we have the tree built,lets predict output on the test data
     fileName="results/"+"PredictionOf"+testFileName.split('/')[1]
-    precision, recall, accuracy = classifyNewSample(tree=tree, testData=testData,depth=depth,fileName=fileName, nominalColumns = nominalColumns)
+    precision, recall, accuracy = classifyNewSample(tree=tree, testData=testData, fileName=fileName, nominalColumns = nominalColumns)
     #print "Accuracy is: ",(1 - computeMisClassfication(fileName))
     #print "Number of Leaves in the tree is: ", numLeaves(tree)   
     return (1 - computeMisClassfication(fileName), precision, recall, accuracy)
@@ -324,14 +322,13 @@ def newLogic(train, test, priv_train, priv_depth, privNominalColumns, prunedNomi
 
     #Now that we have the tree built,lets predict output on the test data
     fileName="results/"+"PredictionOf"+test.split('/')[1]
-    precision, recall, accuracy = classifyNewSample(tree=tree, testData=testData,depth=15,fileName=fileName, nominalColumns = prunedNominalColumns)
+    precision, recall, accuracy = classifyNewSample(tree=tree, testData=testData, fileName=fileName, nominalColumns = prunedNominalColumns)
     #print "Accuracy is: ",(1 - computeMisClassfication(fileName))
     #print "Number of Leaves in the tree is: ", numLeaves(tree)   
     return (1 - computeMisClassfication(fileName), precision, recall, accuracy)        
 
 def combineGain(normalGain, privGain, isClassifier):
     global alpha
-    
     if isClassifier:
         privGain = alpha * privGain
         #return normalGain
@@ -377,7 +374,24 @@ def main():
     global alpha
     global totalParts
     global splitCount
+
+    splitOldAccuracy = {}
+    splitOldPrecision = {}
+    splitOldRecall = {}
     
+    splitAccuracy = {}
+    splitPrecision = {}
+    splitRecall = {}
+
+    for datasetName in datasets:
+        splitAccuracy[datasetName] = []
+        splitPrecision[datasetName] = {}
+        splitRecall[datasetName] = {}
+        
+        splitOldAccuracy[datasetName] = []
+        splitOldPrecision[datasetName] = {}
+        splitOldRecall[datasetName] = {}
+
     init() #inits some global variables required for the execution..
 
     for split in range(splitCount):
@@ -455,6 +469,8 @@ def main():
                 #print "#"*40
                 #print ""
             print "\nNormal Accuracy is", normalAcc/float(totalParts)
+            splitOldAccuracy[datasetName].append(normalAcc/float(totalParts))
+            
             #print "Privileged Accuracy is", privAcc/float(totalParts)
             for label in normalPrecision:
                 print "Stats for label: ",label
@@ -462,7 +478,15 @@ def main():
                 print "\tRecall is: ", normalRecall[label]/float(totalParts)
 
                 print "-"*30
-
+                
+                if label not in splitPrecision:
+                    splitOldPrecision[datasetName][label] = []
+                if label not in splitRecall:
+                    splitOldRecall[datasetName][label] = []
+                
+                splitOldPrecision[datasetName][label].append(normalPrecision[label]/float(totalParts))
+                splitOldRecall[datasetName][label].append(normalRecall[label]/float(totalParts))
+                
             avgAcc = [0 for i in range(20)]
             avgPrecision = [ {} for i in range(20)]
             avgRecall = [ {} for i in range(20) ]
@@ -489,10 +513,35 @@ def main():
                     maxAvgAccuracy = avgAcc[i]
 
             print "\nNew Accuracy is: ",maxAvgAccuracy/float(totalParts), "for alpha: ",maxAlpha
+            splitAccuracy[datasetName].append(maxAvgAccuracy/float(totalParts))
+            
             for lbl in normalAccuracy:
                 print "Stats for label: ",lbl
                 print "\tPrecision for the chosen alpha is: ", avgPrecision[chosenI][lbl]/float(totalParts)
                 print "\tRecall for the chosen alpha is: ", avgRecall[chosenI][lbl]/float(totalParts)
                 print "-"*30
+                if lbl not in splitPrecision:
+                    splitPrecision[datasetName][lbl] = []
+                if lbl not in splitRecall:
+                    splitRecall[datasetName][lbl] = []
+                splitPrecision[datasetName][lbl].append(avgPrecision[chosenI][lbl]/float(totalParts))
+                splitRecall[datasetName][lbl].append(avgRecall[chosenI][lbl]/float(totalParts))
+               
+    print "-"*40
+    print "-"*40
+    print "-"*40            
+    for datasetName in datasets:
+        print "Printing Results for Dataset: ", datasetName
+        print "Avg. Old Accuracy: ", numpy.mean(splitAccuracy[datasetName]), "+- ", numpy.std(splitAccuracy[datasetName])
+        print "Avg New Accuracy: ", numpy.mean(splitOldAccuracy[datasetName]), "+- ", numpy.std(splitOldAccuracy[datasetName])
+        
+        for lbl in splitPrecision[datasetName]:
+            print "Stats for label: ", lbl
+            print "\t Old Avg. Precision is: ", numpy.mean(splitOldPrecision[datasetName][lbl]), "+- ", numpy.std(splitOldPrecision[datasetName][lbl])
+            print "\t New Avg. Precision is: ", numpy.mean(splitPrecision[datasetName][lbl]), "+- ", numpy.std(splitPrecision[datasetName][lbl])
+            print
+            print "\t Old Avg. Recall is: ", numpy.mean(splitOldRecall[datasetName][lbl]), "+- ", numpy.std(splitOldRecall[datasetName][lbl])
+            print "\t New Avg. Recall is: ", numpy.mean(splitRecall[datasetName][lbl]), "+- ", numpy.std(splitRecall[datasetName][lbl])
+            print
 #Execution begins here
 if __name__ == "__main__" : main()

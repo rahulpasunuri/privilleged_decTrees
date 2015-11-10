@@ -14,11 +14,11 @@ datasets = []
 #datasets.append("diabetes")
 
 #----new datasets (yet to complete) ---
-#datasets.append("glass_binary")
+datasets.append("glass_binary")
 #datasets.append("car")
 #datasets.append("census")
 #datasets.append("credit")
-#datasets.append("ecoli_binary")
+datasets.append("ecoli_binary")
 #datasets.append("hepatitis") #TODO: has a lot of missing values.. how to support them ???
 
 
@@ -271,4 +271,12 @@ def computeFinalNominalColumns():
                 if col_num in origNominalCols:
                     prunedNominalColumns[datasetName].append(prunedColCount)
                 prunedColCount += 1  
+                                
+def getTreeDepth(tree):
+    if tree == None:
+        return 0
+
+    if tree.leftBranch == None and tree.leftBranch == None:
+        return 1
+    return max(getTreeDepth(tree.leftBranch), getTreeDepth(tree.rightBranch)) + 1
 

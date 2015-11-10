@@ -1,0 +1,154 @@
+
+
+########################################
+########################################
+Printing results for split:  0
+########################################
+########################################
+
+Normal Accuracy is 0.630640913082
+Stats for label:  1
+	Precision is:  0.668040442947
+	Recall is:  0.873333333333
+------------------------------
+Stats for label:  0
+	Precision is:  0.25472972973
+	Recall is:  0.313665389527
+------------------------------
+
+New Accuracy is:  0.630640913082 for alpha:  0.1
+Stats for label:  1
+	Precision for the chosen alpha is:  0.668040442947
+	Recall for the chosen alpha is:  0.873333333333
+------------------------------
+Stats for label:  0
+	Precision for the chosen alpha is:  0.25472972973
+	Recall for the chosen alpha is:  0.313665389527
+------------------------------
+
+
+########################################
+########################################
+Printing results for split:  1
+########################################
+########################################
+
+Normal Accuracy is 0.607023705004
+Stats for label:  1
+	Precision is:  0.725258153676
+	Recall is:  0.681010452962
+------------------------------
+Stats for label:  0
+	Precision is:  0.326713124274
+	Recall is:  0.513338513339
+------------------------------
+
+New Accuracy is:  0.607023705004 for alpha:  0.1
+Stats for label:  1
+	Precision for the chosen alpha is:  0.725258153676
+	Recall for the chosen alpha is:  0.681010452962
+------------------------------
+Stats for label:  0
+	Precision for the chosen alpha is:  0.326713124274
+	Recall for the chosen alpha is:  0.513338513339
+------------------------------
+
+
+########################################
+########################################
+Printing results for split:  2
+########################################
+########################################
+
+########################################
+
+Normal Accuracy is 0.640035118525
+Stats for label:  1
+	Precision is:  0.709059947011
+	Recall is:  0.792264808362
+------------------------------
+Stats for label:  0
+	Precision is:  0.407142857143
+	Recall is:  0.462980769231
+------------------------------
+
+New Accuracy is:  0.672870939421 for alpha:  0.1
+Stats for label:  1
+	Precision for the chosen alpha is:  0.781516522693
+	Recall for the chosen alpha is:  0.683693379791
+------------------------------
+Stats for label:  0
+	Precision for the chosen alpha is:  0.518253968254
+	Recall for the chosen alpha is:  0.650480769231
+------------------------------
+
+
+########################################
+########################################
+Printing results for split:  3
+########################################
+########################################
+
+########################################
+
+Normal Accuracy is 0.600877963126
+Stats for label:  1
+	Precision is:  0.625218733917
+	Recall is:  0.923076923077
+------------------------------
+Stats for label:  0
+	Precision is:  0.123076923077
+	Recall is:  0.165517241379
+------------------------------
+
+New Accuracy is:  0.579982440737 for alpha:  0.1
+Stats for label:  1
+	Precision for the chosen alpha is:  0.622572872316
+	Recall for the chosen alpha is:  0.851648351648
+------------------------------
+Stats for label:  0
+	Precision for the chosen alpha is:  0.192642140468
+	Recall for the chosen alpha is:  0.229517241379
+------------------------------
+
+
+########################################
+########################################
+Printing results for split:  4
+########################################
+########################################
+
+Normal Accuracy is 0.699429323968
+Stats for label:  1
+	Precision is:  0.73052007763
+	Recall is:  0.837513977798
+------------------------------
+Stats for label:  0
+	Precision is:  0.616720142602
+	Recall is:  0.515690559441
+------------------------------
+
+New Accuracy is:  0.67853380158 for alpha:  0.1
+Stats for label:  1
+	Precision for the chosen alpha is:  0.68240769835
+	Recall for the chosen alpha is:  0.897979094077
+------------------------------
+Stats for label:  0
+	Precision for the chosen alpha is:  0.49550802139
+	Recall for the chosen alpha is:  0.349023892774
+------------------------------
+----------------------------------------
+----------------------------------------
+----------------------------------------
+Printing Results for Dataset:  ecoli_binary
+Avg. Old Accuracy:  0.633810359965 +-  0.0378178007378
+Avg New Accuracy:  0.635601404741 +-  0.0350447425106
+Stats for each label
+	 Old Avg. Precision for Label:  1  is:  0.73052007763 +-  0.0
+	 New Avg. Precision for Label:  1  is:  0.68240769835 +-  0.0
+	 Old Avg. Recall for Label:  1  is:  0.837513977798 +-  0.0
+	 New Avg. Recall for Label:  1  is:  0.897979094077 +-  0.0
+	 Old Avg. Precision for Label:  0  is:  0.616720142602 +-  0.0
+	 New Avg. Precision for Label:  0  is:  0.49550802139 +-  0.0
+	 Old Avg. Recall for Label:  0  is:  0.515690559441 +-  0.0
+	 New Avg. Recall for Label:  0  is:  0.349023892774 +-  0.0

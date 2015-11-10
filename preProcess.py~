@@ -87,7 +87,7 @@ for datasetName in datasets:
                 if words[classIndex] == "0" or words[classIndex] == "1":
                     words[classIndex] = '0'
                 else:
-                    words[classIndex] = '0'
+                    words[classIndex] = '1'
             elif datasetName == "car":
                 words = l.strip().split(",")
                 classIndex = len(words) - 1
@@ -133,7 +133,7 @@ for datasetName in datasets:
                     print words
                     print "ERROR!!!!  "*4
                     exit()
-            elif datasetName == "ecoli":
+            elif datasetName == "ecoli_binary":
                 words = []
                 words_extra = l.strip().split(" ")
                 for wor in words_extra:
