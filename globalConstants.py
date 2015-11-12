@@ -7,7 +7,7 @@ from computeStats import *
 
 datasets = []
 #datasets.append("random")
-datasets.append("heart")
+#datasets.append("heart")
 #datasets.append("breast")
 #datasets.append("heart_multi")
 #datasets.append("iris")
@@ -15,10 +15,11 @@ datasets.append("heart")
 
 #----new datasets (yet to complete) ---
 #datasets.append("glass_binary")
-#datasets.append("car")
+datasets.append("car")
+#datasets.append("ecoli_binary")
+
 #datasets.append("census")
 #datasets.append("credit")
-#datasets.append("ecoli_binary")
 #datasets.append("hepatitis") #TODO: has a lot of missing values.. how to support them ???
 
 
@@ -50,7 +51,7 @@ privilegedColumns["diabetes"] = [1,5,6,7]
 privilegedColumns["glass_binary"] = [1,2,3]
 
 #TODO: get privileged columns for the car dataset..
-privilegedColumns["car"] = [1,2,3]
+privilegedColumns["car"] = [0, 1, 2, 3, 5]
 
 #TODO: get privileged columns for the census dataset..
 privilegedColumns["census"] = [1,2,3]
@@ -74,10 +75,10 @@ nominalColumns["breast"] = [] #on nominal columns
 nominalColumns["iris"] = [] #on nominal columns
 nominalColumns["diabetes"] = [] #on nominal columns
 nominalColumns["glass_binary"] = [] #on nominal columns
-nominalColumns["car"] = [0,1,2,3,4,5] #on nominal columns
+nominalColumns["car"] = [0, 1, 4, 5] #on nominal columns
 nominalColumns["census"] = [1,3,5,6,7,8,9,13] #on nominal columns
 nominalColumns["credit"] = [0, 3,4,5,6,8,9,11,12] #on nominal columns
-nominalColumns["ecoli_binary"] = [0] #on nominal columns
+nominalColumns["ecoli_binary"] = [] #on nominal columns
 
 prunedNominalColumns = {}
 privNominalColumns = {}

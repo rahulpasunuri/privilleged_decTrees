@@ -7,7 +7,7 @@ from computeStats import *
 
 datasets = []
 #datasets.append("random")
-datasets.append("heart")
+#datasets.append("heart")
 #datasets.append("breast")
 #datasets.append("heart_multi")
 #datasets.append("iris")
@@ -15,10 +15,11 @@ datasets.append("heart")
 
 #----new datasets (yet to complete) ---
 #datasets.append("glass_binary")
-#datasets.append("car")
+datasets.append("car")
+#datasets.append("ecoli_binary")
+
 #datasets.append("census")
 #datasets.append("credit")
-#datasets.append("ecoli_binary")
 #datasets.append("hepatitis") #TODO: has a lot of missing values.. how to support them ???
 
 
@@ -50,7 +51,7 @@ privilegedColumns["diabetes"] = [1,5,6,7]
 privilegedColumns["glass_binary"] = [1,2,3]
 
 #TODO: get privileged columns for the car dataset..
-privilegedColumns["car"] = [1,2,3]
+privilegedColumns["car"] = [0, 1,2, 3, 5]
 
 #TODO: get privileged columns for the census dataset..
 privilegedColumns["census"] = [1,2,3]
@@ -74,10 +75,10 @@ nominalColumns["breast"] = [] #on nominal columns
 nominalColumns["iris"] = [] #on nominal columns
 nominalColumns["diabetes"] = [] #on nominal columns
 nominalColumns["glass_binary"] = [] #on nominal columns
-nominalColumns["car"] = [0,1,2,3,4,5] #on nominal columns
+nominalColumns["car"] = [0, 1, 4, 5] #on nominal columns
 nominalColumns["census"] = [1,3,5,6,7,8,9,13] #on nominal columns
 nominalColumns["credit"] = [0, 3,4,5,6,8,9,11,12] #on nominal columns
-nominalColumns["ecoli_binary"] = [0] #on nominal columns
+nominalColumns["ecoli_binary"] = [] #on nominal columns
 
 prunedNominalColumns = {}
 privNominalColumns = {}
@@ -116,7 +117,7 @@ def calcInfoGain(currentEntropy, subDataSet1, subDataSet2, isClassifier):
         infoGain = currentEntropy - p*calcEntropy(subDataSet1) - (1-p)*calcEntropy(subDataSet2)
     else:
         infoGain = currentEntropy*totalLen - len1*calcVariane(subDataSet1) - len2*calcVariance(subDataSet2)
-
+    
     return infoGain
 
 def harmonicMean(a1, a2):
@@ -162,13 +163,13 @@ def splitData(subDataSet, column, criteria, nominalColumns):
 	subDataSet2=[] #All samples that do not match the criteria
 	for row in subDataSet:
 		#Doing a <= and > split..
-		if column in nominalColumns:
-		    if row[column] <= criteria:
+		if column not in nominalColumns:
+		    if float(row[column]) <= float(criteria):
 			    subDataSet1.append(row) 
 		    else:
 			    subDataSet2.append(row)
 		else:
-		    if row[column] == criteria:
+		    if row[column].strip() == criteria.strip():
 			    subDataSet1.append(row) 
 		    else:
 			    subDataSet2.append(row)
@@ -270,4 +271,13 @@ def computeFinalNominalColumns():
             else: # this column is not a privileged column..
                 if col_num in origNominalCols:
                     prunedNominalColumns[datasetName].append(prunedColCount)
-                prunedColCount += 1 
+                prunedColCount += 1  
+                                
+def getTreeDepth(tree):
+    if tree == None:
+        return 0
+
+    if tree.leftBranch == None and tree.leftBranch == None:
+        return 1
+    return max(getTreeDepth(tree.leftBranch), getTreeDepth(tree.rightBranch)) + 1
+

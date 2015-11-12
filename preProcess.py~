@@ -81,6 +81,8 @@ for datasetName in datasets:
 
             elif datasetName == "glass_binary":
                 words = l.strip().split(",")
+                #ignore the first columns, which is just the id of the rows..
+                words = words[1:]
                 classIndex = len(words) - 1
                 
                 #building glasses vs. non building glasses.
@@ -89,6 +91,9 @@ for datasetName in datasets:
                 else:
                     words[classIndex] = '1'
             elif datasetName == "car":
+                #data cleaning..replacing the below string to make the feature numeric..
+                l = l.replace("5more", "5")
+                l = l.replace("more", "5") # replcaing "more" string with the number 5 
                 words = l.strip().split(",")
                 classIndex = len(words) - 1
                 #convert the class index..
@@ -136,6 +141,8 @@ for datasetName in datasets:
             elif datasetName == "ecoli_binary":
                 words = []
                 words_extra = l.strip().split(" ")
+                #ignore column 1, because it is too specific..
+                words_extra = words_extra[1:]
                 for wor in words_extra:
                     wor = wor.strip()
                     if wor != "":
