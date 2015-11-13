@@ -5,9 +5,13 @@ from Node import Node
 from computeStats import *
 #list of parameters
 
+
+limitGainBounds = False
+
+
 datasets = []
 #datasets.append("random")
-#datasets.append("heart")
+datasets.append("heart")
 #datasets.append("breast")
 #datasets.append("heart_multi")
 #datasets.append("iris")
@@ -15,7 +19,7 @@ datasets = []
 
 #----new datasets (yet to complete) ---
 #datasets.append("glass_binary")
-datasets.append("car")
+#datasets.append("car")
 #datasets.append("ecoli_binary")
 
 #datasets.append("census")
@@ -51,7 +55,7 @@ privilegedColumns["diabetes"] = [1,5,6,7]
 privilegedColumns["glass_binary"] = [1,2,3]
 
 #TODO: get privileged columns for the car dataset..
-privilegedColumns["car"] = [0, 1, 2, 3, 5]
+privilegedColumns["car"] = [ 2, 3]
 
 #TODO: get privileged columns for the census dataset..
 privilegedColumns["census"] = [1,2,3]
@@ -121,7 +125,7 @@ def calcInfoGain(currentEntropy, subDataSet1, subDataSet2, isClassifier):
     return infoGain
 
 def harmonicMean(a1, a2):
-    if a1*a2 == 0:
+    if a1+a2 == 0:
         return 0
     else:
         return (2*a1*a2)/(a1+a2)     
@@ -255,6 +259,11 @@ def computeFinalNominalColumns():
     
         origNominalCols = nominalColumns[datasetName]
         privColumns = privilegedColumns[datasetName]
+
+        '''
+        print origNominalCols
+        print privColumns
+        '''
         
         if len(origNominalCols) == 0:
             continue # no nominal columns in the dataset..
@@ -272,7 +281,12 @@ def computeFinalNominalColumns():
                 if col_num in origNominalCols:
                     prunedNominalColumns[datasetName].append(prunedColCount)
                 prunedColCount += 1  
-                                
+    '''
+    print prunedNominalColumns
+    print privNominalColumns
+    exit()
+    '''
+    
 def getTreeDepth(tree):
     if tree == None:
         return 0

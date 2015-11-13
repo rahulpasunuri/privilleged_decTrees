@@ -11,6 +11,7 @@ import numpy
 def calcPrivInfoGain(currentEntropy, clusterEntropy, subDataSet1,subDataSet2, isClassifier, cluster):
     global numClusters
     global alpha
+
     normalGain = calcInfoGain(currentEntropy, subDataSet1, subDataSet2, isClassifier)
     p = float(len(subDataSet1))/(len(subDataSet1)+len(subDataSet2))
     privGain = clusterEntropy -p*calcPrivEntropy(subDataSet1, cluster) - (1-p)*calcPrivEntropy(subDataSet2, cluster)
@@ -41,6 +42,9 @@ The method takes a sub part of the dataset as input and creates a tree based on 
 
 '''
 def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False, isClassifier = True, cluster = {}, nominalColumns = []):
+    global limitGainBounds
+    global allowShift
+    #print nominalColumns
     #Counting the number of rows in the Dataset
     numOfRows = len(subDataSet)
 
@@ -73,6 +77,13 @@ def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False, isCl
             privGainList = []
             normalAvg = 0
             privAvg = 0
+            
+            normalMax = 0
+            normalMin = 0
+            
+            privMax = 0
+            privMin = 0
+            
             #We are now iterating through each value in the current iteration of column to see which value serves as the best split
             for value in valuesInColumn:
                 #Split the dataset on the current value of column and value
@@ -92,6 +103,20 @@ def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False, isCl
                         currGain, privGain = calcPrivInfoGain(entropy, calcPrivEntropy(subDataSet, cluster), set1,set2, isClassifier, cluster)
                         privGainList.append((currGain, privGain, (set1, set2), value, col))
                         normalAvg += currGain
+                        
+                        
+                        #update the min and max of the training Gains..
+                        if currGain > normalMax:
+                            normalMax = currGain
+                        elif currGain < normalMin:
+                            normalMin = currGain
+                            
+                        #update the min and max of the priv Gains...
+                        if privGain > privMax:
+                            privMax = privGain
+                        elif privGain < privMin:
+                            privMin = privGain
+                         
                         privAvg += privGain
                 
             if isPrivAvailable == True:
@@ -100,19 +125,33 @@ def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False, isCl
                     continue # if all the rows have the same value for this column... (very very rare..)
                 normalAvg = normalAvg/len(privGainList)
                 privAvg = privAvg/len(privGainList)
+
                 shift = abs(normalAvg - privAvg)
-                #shift = 0 #TODO: check the usage of shift..
+                    
                 if privAvg > normalAvg:
                     index = 0
                 else:
                     index = 1
-                
+                normalRange = normalMax - normalMin
+                privRange = privMax - privMin
                 for ind in range(len(privGainList)):
                     currTuple = privGainList[ind]
-                    if index == 0:
-                        finalTuple = (currTuple[0]+ abs(shift), currTuple[1], currTuple[2], currTuple[3], currTuple[4])
-                    else:
-                        finalTuple = (currTuple[0], currTuple[1]+ abs(shift), currTuple[2], currTuple[3], currTuple[4])
+                    #limit the bounds of the gains..
+                    if limitGainBounds:
+                        if normalMin == normalMax:
+                            finalTuple = (0.5, currTuple[1], currTuple[2], currTuple[3], currTuple[4])
+                        else:
+                            finalTuple = ( float( currTuple[0] - normalMin)/normalRange, currTuple[1], currTuple[2], currTuple[3], currTuple[4])
+                        if privMin == privMax:
+                            finalTuple = (currTuple[0], 0.5, currTuple[2], currTuple[3], currTuple[4])
+                        else:
+                            finalTuple = ( currTuple[0], float( currTuple[1] - privMin)/privRange, currTuple[2], currTuple[3], currTuple[4])
+                    else:                                            
+                        if index == 0:
+                            finalTuple = (currTuple[0]+ abs(shift), currTuple[1], currTuple[2], currTuple[3], currTuple[4])
+                        else:
+                            finalTuple = (currTuple[0], currTuple[1]+ abs(shift), currTuple[2], currTuple[3], currTuple[4])
+
                     privGainList[ind] = finalTuple
                 
                 #'''
@@ -128,8 +167,8 @@ def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False, isCl
 
         if bestGain > threshold:
             #Finally split the dataset and create the subtree based on the best values obtained above
+            #print "Splitting on Column : "+str(bestColumn)+" with criteria : "+str(bestCriteria)
             '''
-            print "Splitting on Column : "+str(bestColumn)+" with criteria : "+str(bestCriteria)
 
             print "Best values : "
             print "Best Gain : "+str(bestGain)
@@ -329,10 +368,15 @@ def newLogic(train, test, priv_train, priv_depth, privNominalColumns, prunedNomi
 
 def combineGain(normalGain, privGain, isClassifier):
     global alpha
+
     if isClassifier:
         privGain = alpha * privGain
         #return normalGain
-        return privGain + normalGain
+        #return privGain + normalGain
+        if normalGain < privGain:
+            return reverseHarmonicMean(normalGain, privGain)
+        else:
+            return harmonicMean(normalGain, privGain)
     else:
         #TODO: replace this logic with a new logic..
         privGain = alpha * privGain
@@ -361,8 +405,6 @@ def combineGain(normalGain, privGain, isClassifier):
     else:
         return harmonicMean(normalGain, privGain)
     '''
-
-
 
 #The main function that calls all other functions, execution begins here
 def main():
@@ -393,7 +435,9 @@ def main():
         splitOldRecall[datasetName] = {}
 
     init() #inits some global variables required for the execution..
-
+    #print prunedNominalColumns
+    #print privNominalColumns 
+    
     for split in range(splitCount):
         print "\n"
         print "#"*40
@@ -439,6 +483,7 @@ def main():
                 #'''
                 print "\nRunning pruned dataset"
                 currNormalAcc, precision, recall, accuracy = checkDecisionTree(datasetName+"/"+dirName+"/pruned_train_"+str(part)+".csv", datasetName+"/"+dirName+"/pruned_test_"+str(part)+".csv", nominalColumns = prunedNominalColumns[datasetName])
+                print currNormalAcc
                 normalAcc += currNormalAcc
                 for label in precision:
                     if label not in normalPrecision:
@@ -458,11 +503,11 @@ def main():
                 newAcc.append([])
                 newPrecision.append([])
                 newRecall.append([])
-                for run in range(1, 21):
-                    alpha = run/10.0
+                for run in range(20):
+                    alpha = (run + 1)/10.0
                     print "Running the new logic with alpha = ",alpha
                     currAcc, precision, recall, accuracy = newLogic(datasetName+"/"+dirName+"/pruned_train_"+str(part)+".csv", datasetName+"/"+dirName+"/pruned_test_"+str(part)+".csv", datasetName+"/"+dirName+"/priv_train_"+str(part)+".csv", 3, privNominalColumns = privNominalColumns[datasetName], prunedNominalColumns = prunedNominalColumns[datasetName])     
-                    #print currAcc,"\t",alpha
+                    print currAcc,"\t",alpha
                     newAcc[part].append(currAcc)
                     newPrecision[part].append(precision)
                     newRecall[part].append(recall)
