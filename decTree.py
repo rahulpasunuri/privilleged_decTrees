@@ -78,11 +78,11 @@ def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False, isCl
             normalAvg = 0
             privAvg = 0
             
-            normalMax = 0
-            normalMin = 0
+            normalMax = -1000
+            normalMin = 100000
             
-            privMax = 0
-            privMin = 0
+            privMax = -1000
+            privMin = 100000
             
             #We are now iterating through each value in the current iteration of column to see which value serves as the best split
             for value in valuesInColumn:
@@ -102,22 +102,24 @@ def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False, isCl
                         #TODO: check priv entropy vs. variance..
                         currGain, privGain = calcPrivInfoGain(entropy, calcPrivEntropy(subDataSet, cluster), set1,set2, isClassifier, cluster)
                         privGainList.append((currGain, privGain, (set1, set2), value, col))
-                        normalAvg += currGain
                         
-                        
-                        #update the min and max of the training Gains..
-                        if currGain > normalMax:
-                            normalMax = currGain
-                        elif currGain < normalMin:
-                            normalMin = currGain
+                        if currGain >= threshold: #only decent gains are included in the calculation..
+                            normalAvg += currGain
                             
-                        #update the min and max of the priv Gains...
-                        if privGain > privMax:
-                            privMax = privGain
-                        elif privGain < privMin:
-                            privMin = privGain
-                         
-                        privAvg += privGain
+                            
+                            #update the min and max of the training Gains..
+                            if currGain > normalMax:
+                                normalMax = currGain
+                            if currGain < normalMin:
+                                normalMin = currGain
+                                
+                            #update the min and max of the priv Gains...
+                            if privGain > privMax:
+                                privMax = privGain
+                            if privGain < privMin:
+                                privMin = privGain
+                             
+                            privAvg += privGain
                 
             if isPrivAvailable == True:
                 #'''
@@ -134,6 +136,7 @@ def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False, isCl
                     index = 1
                 normalRange = normalMax - normalMin
                 privRange = privMax - privMin
+                #print normalRange, privRange
                 for ind in range(len(privGainList)):
                     currTuple = privGainList[ind]
                     #limit the bounds of the gains..
@@ -373,10 +376,11 @@ def combineGain(normalGain, privGain, isClassifier):
         privGain = alpha * privGain
         #return normalGain
         #return privGain + normalGain
-        if normalGain > privGain:
-            return reverseHarmonicMean(normalGain, privGain)
-        else:
-            return harmonicMean(normalGain, privGain)
+        #if normalGain > privGain:
+        #    return reverseHarmonicMean(normalGain, privGain)
+        #else:
+        return reverseHarmonicMean(normalGain, privGain)
+        #return harmonicMean(normalGain, privGain)
     else:
         #TODO: replace this logic with a new logic..
         privGain = alpha * privGain

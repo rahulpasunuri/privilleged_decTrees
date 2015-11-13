@@ -6,7 +6,7 @@ from computeStats import *
 #list of parameters
 
 
-limitGainBounds = False
+limitGainBounds = True
 
 
 datasets = []
@@ -37,7 +37,8 @@ privilegedColumns = {}
 #below two parameters have to be set for every dataset..
 
 #privilegedColumns["heart"] = [1, 2, 3, 4, 5, 6]
-privilegedColumns["heart"] = [1, 3, 4, 6, 9, 10, 12]
+#privilegedColumns["heart"] = [1, 3, 4, 6, 9, 10, 12]
+privilegedColumns["heart"] = [1, 3, 4, 6, 9]
 #privilegedColumns["heart"] = [1, 4,9, 10, 11, 12]
 
 privilegedColumns["heart_multi"] = [1, 2, 3, 6, 9, 10, 12]
