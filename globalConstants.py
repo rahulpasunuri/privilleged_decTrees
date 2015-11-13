@@ -11,14 +11,14 @@ limitGainBounds = True
 
 datasets = []
 #datasets.append("random")
-datasets.append("heart")
+#datasets.append("heart")
 #datasets.append("breast")
 #datasets.append("heart_multi")
 #datasets.append("iris")
 #datasets.append("diabetes")
 
 #----new datasets (yet to complete) ---
-#datasets.append("glass_binary")
+datasets.append("glass_binary")
 #datasets.append("car")
 #datasets.append("ecoli_binary")
 
@@ -37,8 +37,8 @@ privilegedColumns = {}
 #below two parameters have to be set for every dataset..
 
 #privilegedColumns["heart"] = [1, 2, 3, 4, 5, 6]
-#privilegedColumns["heart"] = [1, 3, 4, 6, 9, 10, 12]
-privilegedColumns["heart"] = [1, 3, 4, 6, 9]
+privilegedColumns["heart"] = [1, 3, 4, 6, 9, 10, 12]
+#privilegedColumns["heart"] = [1, 3, 4, 6, 9]
 #privilegedColumns["heart"] = [1, 4,9, 10, 11, 12]
 
 privilegedColumns["heart_multi"] = [1, 2, 3, 6, 9, 10, 12]
@@ -53,7 +53,7 @@ privilegedColumns["iris"] = [2,3]
 privilegedColumns["diabetes"] = [1,5,6,7]
 
 #TODO: get privileged columns for the glass dataset..
-privilegedColumns["glass_binary"] = [1,2,3]
+privilegedColumns["glass_binary"] = [1, 2, 3, 4]
 
 #TODO: get privileged columns for the car dataset..
 privilegedColumns["car"] = [ 2, 3]

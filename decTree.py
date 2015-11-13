@@ -139,23 +139,22 @@ def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False, isCl
                 #print normalRange, privRange
                 for ind in range(len(privGainList)):
                     currTuple = privGainList[ind]
+
                     #limit the bounds of the gains..
                     if limitGainBounds:
                         if normalMin == normalMax:
-                            finalTuple = (0.5, currTuple[1], currTuple[2], currTuple[3], currTuple[4])
+                            currTuple = (0.5, currTuple[1], currTuple[2], currTuple[3], currTuple[4])
                         else:
-                            finalTuple = ( float( currTuple[0] - normalMin)/normalRange, currTuple[1], currTuple[2], currTuple[3], currTuple[4])
+                            currTuple = ( float( currTuple[0] - normalMin)/normalRange, currTuple[1], currTuple[2], currTuple[3], currTuple[4])
                         if privMin == privMax:
-                            finalTuple = (currTuple[0], 0.5, currTuple[2], currTuple[3], currTuple[4])
+                            currTuple = (currTuple[0], 0.5, currTuple[2], currTuple[3], currTuple[4])
                         else:
-                            finalTuple = ( currTuple[0], float( currTuple[1] - privMin)/privRange, currTuple[2], currTuple[3], currTuple[4])
+                            currTuple = ( currTuple[0], float( currTuple[1] - privMin)/privRange, currTuple[2], currTuple[3], currTuple[4])
                     else:                                            
                         if index == 0:
-                            finalTuple = (currTuple[0]+ abs(shift), currTuple[1], currTuple[2], currTuple[3], currTuple[4])
+                            currTuple = (currTuple[0]+ abs(shift), currTuple[1], currTuple[2], currTuple[3], currTuple[4])
                         else:
-                            finalTuple = (currTuple[0], currTuple[1]+ abs(shift), currTuple[2], currTuple[3], currTuple[4])
-
-                    privGainList[ind] = finalTuple
+                            currTuple = (currTuple[0], currTuple[1]+ abs(shift), currTuple[2], currTuple[3], currTuple[4])
                 
                 #'''
                 #find the max threshold
@@ -373,13 +372,17 @@ def combineGain(normalGain, privGain, isClassifier):
     global alpha
 
     if isClassifier:
+        #print normalGain, privGain
+        #return privGain
         privGain = alpha * privGain
+        return privGain
         #return normalGain
-        #return privGain + normalGain
+        #
         #if normalGain > privGain:
         #    return reverseHarmonicMean(normalGain, privGain)
         #else:
-        return reverseHarmonicMean(normalGain, privGain)
+        #return privGain + normalGain
+        #return reverseHarmonicMean(normalGain, privGain)
         #return harmonicMean(normalGain, privGain)
     else:
         #TODO: replace this logic with a new logic..

@@ -1,4 +1,5 @@
 def computeStats(predictedLabels):
+    print predictedLabels
     truePos = {}
     trueNeg = {}
     falsePos = {}

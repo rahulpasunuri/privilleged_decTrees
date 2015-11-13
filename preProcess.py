@@ -14,6 +14,7 @@ def split(orig, pruned, priv, privColumns):
     global datasets
 
     for l in orig:
+        
         l=l.strip()
         words = l.split(",")
         privInfo = []
@@ -26,6 +27,7 @@ def split(orig, pruned, priv, privColumns):
         privInfo.append(words[len(words) -1])
         priv.write(",".join(privInfo)+"\n")
         pruned.write(",".join(pruneInfo)+"\n")
+
 
 for datasetName in datasets:
     if isSimplificationEnabled:
