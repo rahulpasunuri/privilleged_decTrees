@@ -373,7 +373,7 @@ def combineGain(normalGain, privGain, isClassifier):
 
     if isClassifier:
         #print normalGain, privGain
-        return privGain
+        #return privGain
         privGain = alpha * privGain
         #return privGain + normalGain
         #return normalGain
@@ -517,6 +517,7 @@ def main():
                     print "Running the new logic with alpha = ",alpha
                     currAcc, precision, recall, accuracy = newLogic(datasetName+"/"+dirName+"/pruned_train_"+str(part)+".csv", datasetName+"/"+dirName+"/pruned_test_"+str(part)+".csv", datasetName+"/"+dirName+"/priv_train_"+str(part)+".csv", 3, privNominalColumns = privNominalColumns[datasetName], prunedNominalColumns = prunedNominalColumns[datasetName])     
                     print currAcc,"\t",alpha
+                    #break
                     newAcc[part].append(currAcc)
                     newPrecision[part].append(precision)
                     newRecall[part].append(recall)

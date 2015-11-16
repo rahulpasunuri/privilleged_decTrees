@@ -11,16 +11,16 @@ limitGainBounds = True
 
 datasets = []
 #datasets.append("random")
-#datasets.append("heart")
+datasets.append("heart")
 #datasets.append("breast")
 #datasets.append("heart_multi")
-#datasets.append("iris")
-#datasets.append("diabetes")
+datasets.append("iris")
+datasets.append("diabetes")
 
 #----new datasets (yet to complete) ---
-#datasets.append("glass_binary")
+datasets.append("glass_binary")
 #datasets.append("car") #TODO: no difference with any kind of splits...
-#datasets.append("ecoli_binary")
+datasets.append("ecoli_binary")
 
 #datasets.append("census") #TODO: takes a lot of time..
 datasets.append("credit")
@@ -67,8 +67,7 @@ privilegedColumns["car"] = [ 3]
 #TODO: get privileged columns for the census dataset..
 privilegedColumns["census"] = [1,2,3]
 
-#TODO: get privileged columns for the credit dataset..
-privilegedColumns["credit"] = [1, 2, 3, 4, 5, 6, 7]
+privilegedColumns["credit"] = [1, 3, 6, 8, 9, 13, 10] # reduces acc..
 
 privilegedColumns["ecoli_binary"] = [1, 2, 3]
 

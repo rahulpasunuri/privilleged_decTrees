@@ -1,0 +1,87 @@
+=== Run information ===
+
+Scheme:weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     data
+Instances:    653
+Attributes:   16
+              att0
+              att1
+              att2
+              att3
+              att4
+              att5
+              att6
+              att7
+              att8
+              att9
+              att10
+              att11
+              att12
+              att13
+              att14
+              Class
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+att8 = t
+|   att9 = t: 1 (223.0/21.0)
+|   att9 = f
+|   |   att14 <= 444
+|   |   |   att3 = u
+|   |   |   |   att13 <= 75: 1 (18.0/1.0)
+|   |   |   |   att13 > 75
+|   |   |   |   |   att6 = v
+|   |   |   |   |   |   att13 <= 360: 1 (30.0/13.0)
+|   |   |   |   |   |   att13 > 360: 0 (6.0)
+|   |   |   |   |   att6 = h: 1 (15.0/4.0)
+|   |   |   |   |   att6 = bb
+|   |   |   |   |   |   att1 <= 27: 1 (2.0)
+|   |   |   |   |   |   att1 > 27: 0 (5.0)
+|   |   |   |   |   att6 = ff: 0 (2.0)
+|   |   |   |   |   att6 = j: 0 (1.0)
+|   |   |   |   |   att6 = z: 0 (0.0)
+|   |   |   |   |   att6 = o: 0 (0.0)
+|   |   |   |   |   att6 = dd: 0 (0.0)
+|   |   |   |   |   att6 = n: 0 (0.0)
+|   |   |   att3 = y: 0 (26.0/9.0)
+|   |   |   att3 = l: 1 (0.0)
+|   |   att14 > 444: 1 (21.0/1.0)
+att8 = f: 0 (304.0/18.0)
+
+Number of Leaves  : 	17
+
+Size of the tree : 	25
+
+
+Time taken to build model: 0.01 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         557               85.2986 %
+Incorrectly Classified Instances        96               14.7014 %
+Kappa statistic                          0.7032
+Mean absolute error                      0.2021
+Root mean squared error                  0.3487
+Relative absolute error                 40.7643 %
+Root relative squared error             70.0416 %
+Total Number of Instances              653     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.868     0.166      0.864     0.868     0.866      0.857    0
+                 0.834     0.132      0.84      0.834     0.837      0.857    1
+Weighted Avg.    0.853     0.15       0.853     0.853     0.853      0.857
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 310  47 |   a = 0
+  49 247 |   b = 1
+
+
