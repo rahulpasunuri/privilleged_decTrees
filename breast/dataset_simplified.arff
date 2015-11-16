@@ -1,4 +1,5 @@
 @relation data
+@attribute att0 numeric
 @attribute att1 numeric
 @attribute att2 numeric
 @attribute att3 numeric
@@ -29,7 +30,7 @@
 @attribute att28 numeric
 @attribute att29 numeric
 @attribute att30 numeric
-@attribute att31 numeric
+
 @attribute 'Class' {'0','1'}
 @data
 

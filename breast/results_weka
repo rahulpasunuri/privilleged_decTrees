@@ -1,0 +1,103 @@
+=== Run information ===
+
+Scheme:weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     data
+Instances:    569
+Attributes:   32
+              att0
+              att1
+              att2
+              att3
+              att4
+              att5
+              att6
+              att7
+              att8
+              att9
+              att10
+              att11
+              att12
+              att13
+              att14
+              att15
+              att16
+              att17
+              att18
+              att19
+              att20
+              att21
+              att22
+              att23
+              att24
+              att25
+              att26
+              att27
+              att28
+              att29
+              att30
+              Class
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+att24 <= 880.8
+|   att28 <= 0.1357
+|   |   att14 <= 36.46: 0 (319.0/3.0)
+|   |   att14 > 36.46
+|   |   |   att1 <= 14.97
+|   |   |   |   att12 <= 1.978: 0 (11.0)
+|   |   |   |   att12 > 1.978
+|   |   |   |   |   att12 <= 2.239: 1 (2.0)
+|   |   |   |   |   att12 > 2.239: 0 (3.0)
+|   |   |   att1 > 14.97: 1 (2.0)
+|   att28 > 0.1357
+|   |   att22 <= 27.37
+|   |   |   att28 <= 0.1789
+|   |   |   |   att14 <= 21.91: 0 (12.0)
+|   |   |   |   att14 > 21.91
+|   |   |   |   |   att13 <= 2.615: 1 (6.0/1.0)
+|   |   |   |   |   att13 > 2.615: 0 (6.0)
+|   |   |   att28 > 0.1789: 1 (4.0)
+|   |   att22 > 27.37: 1 (21.0)
+att24 > 880.8
+|   att7 <= 0.0716
+|   |   att2 <= 19.54: 0 (9.0/1.0)
+|   |   att2 > 19.54: 1 (10.0)
+|   att7 > 0.0716: 1 (164.0)
+
+Number of Leaves  : 	13
+
+Size of the tree : 	25
+
+
+Time taken to build model: 0.03 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         529               92.9701 %
+Incorrectly Classified Instances        40                7.0299 %
+Kappa statistic                          0.8502
+Mean absolute error                      0.0758
+Root mean squared error                  0.2608
+Relative absolute error                 16.2103 %
+Root relative squared error             53.9333 %
+Total Number of Instances              569     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.938     0.085      0.949     0.938     0.944      0.923    0
+                 0.915     0.062      0.898     0.915     0.907      0.923    1
+Weighted Avg.    0.93      0.076      0.93      0.93      0.93       0.923
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 335  22 |   a = 0
+  18 194 |   b = 1
+
+

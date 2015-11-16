@@ -18,12 +18,12 @@ datasets = []
 #datasets.append("diabetes")
 
 #----new datasets (yet to complete) ---
-datasets.append("glass_binary")
-#datasets.append("car")
+#datasets.append("glass_binary")
+#datasets.append("car") #TODO: no difference with any kind of splits...
 #datasets.append("ecoli_binary")
 
-#datasets.append("census")
-#datasets.append("credit")
+#datasets.append("census") #TODO: takes a lot of time..
+datasets.append("credit")
 #datasets.append("hepatitis") #TODO: has a lot of missing values.. how to support them ???
 
 
@@ -36,36 +36,41 @@ privilegedColumns = {}
 
 #below two parameters have to be set for every dataset..
 
-#privilegedColumns["heart"] = [1, 2, 3, 4, 5, 6]
-privilegedColumns["heart"] = [1, 3, 4, 6, 9, 10, 12]
+#privilegedColumns["heart"] = [1, 2, 3, 4, 5, 6, 7, 8]
+#privilegedColumns["heart"] = [1, 3, 4, 6, 9, 10, 12]
+
+#below three give good results..
+#privilegedColumns["heart"] = [1, 2, 3, 11, 12]
+privilegedColumns["heart"] = [2, 3, 4, 6, 9, 11, 12]
 #privilegedColumns["heart"] = [1, 3, 4, 6, 9]
+
 #privilegedColumns["heart"] = [1, 4,9, 10, 11, 12]
 
 privilegedColumns["heart_multi"] = [1, 2, 3, 6, 9, 10, 12]
 
-privilegedColumns["breast"] = [1, 2, 7, 12, 13, 14, 24, 28]
+#privilegedColumns["breast"] = [1, 2, 7, 12, 13, 14, 24, 28] #OLD
+privilegedColumns["breast"] = [1, 2, 7, 12, 13, 14, 22, 23, 24, 25, 27, 28]
 
 privilegedColumns["random"] = [1, 3, 5, 7, 8]
 
 privilegedColumns["iris"] = [2,3]
 
 #privilegedColumns["diabetes"] = [0,2,4,5]
-privilegedColumns["diabetes"] = [1,5,6,7]
+#privilegedColumns["diabetes"] = [1,2, 5, 7]
+privilegedColumns["diabetes"] = [0, 3, 4, 6]
 
-#TODO: get privileged columns for the glass dataset..
-privilegedColumns["glass_binary"] = [1, 2, 3, 4]
+privilegedColumns["glass_binary"] = [5, 6, 7, 8]
 
 #TODO: get privileged columns for the car dataset..
-privilegedColumns["car"] = [ 2, 3]
+privilegedColumns["car"] = [ 3]
 
 #TODO: get privileged columns for the census dataset..
 privilegedColumns["census"] = [1,2,3]
 
 #TODO: get privileged columns for the credit dataset..
-privilegedColumns["credit"] = [1,2,3]
+privilegedColumns["credit"] = [1, 2, 3, 4, 5, 6, 7]
 
-#TODO: get privileged columns for the ecoli dataset..
-privilegedColumns["ecoli_binary"] = [1,2,3]
+privilegedColumns["ecoli_binary"] = [1, 2, 3]
 
 #TODO: get privileged columns for the hepatitis dataset..
 privilegedColumns["hepatitis"] = [1,2,3]

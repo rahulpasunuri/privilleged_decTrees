@@ -375,13 +375,16 @@ def combineGain(normalGain, privGain, isClassifier):
         #print normalGain, privGain
         #return privGain
         privGain = alpha * privGain
+        #return privGain + normalGain
         #return normalGain
         #
-        #if normalGain > privGain:
-        #    return reverseHarmonicMean(normalGain, privGain)
-        #else:
-        #return privGain + normalGain
-        #return reverseHarmonicMean(normalGain, privGain)
+        #'''
+        if normalGain < privGain:
+            return reverseHarmonicMean(normalGain, privGain)
+        else:
+            return harmonicMean(normalGain, privGain)
+        #'''
+        return reverseHarmonicMean(normalGain, privGain)
         #return harmonicMean(normalGain, privGain)
     else:
         #TODO: replace this logic with a new logic..
@@ -510,7 +513,7 @@ def main():
                 newPrecision.append([])
                 newRecall.append([])
                 for run in range(20):
-                    alpha = (run + 1)/10.0
+                    alpha = (run+1)/10.0
                     print "Running the new logic with alpha = ",alpha
                     currAcc, precision, recall, accuracy = newLogic(datasetName+"/"+dirName+"/pruned_train_"+str(part)+".csv", datasetName+"/"+dirName+"/pruned_test_"+str(part)+".csv", datasetName+"/"+dirName+"/priv_train_"+str(part)+".csv", 3, privNominalColumns = privNominalColumns[datasetName], prunedNominalColumns = prunedNominalColumns[datasetName])     
                     print currAcc,"\t",alpha

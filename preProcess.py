@@ -101,6 +101,9 @@ for datasetName in datasets:
                 #convert the class index..
                 if words[classIndex] == "unacc":
                     words[classIndex] = '0'
+                else:
+                    words[classIndex] = '1'
+                '''
                 elif words[classIndex] == "acc":
                     words[classIndex] = '1'
                 elif words[classIndex] == "good":
@@ -112,6 +115,7 @@ for datasetName in datasets:
                     print words
                     print "ERROR!!!!  "*4
                     exit()                    
+                '''
             elif datasetName == "census":
                 words = l.strip().split(",")
                 words = [ wor.strip() for wor in words]

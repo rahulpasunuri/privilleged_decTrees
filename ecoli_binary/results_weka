@@ -1,0 +1,71 @@
+=== Run information ===
+
+Scheme:weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     data
+Instances:    336
+Attributes:   8
+              att0
+              att1
+              att2
+              att3
+              att4
+              att5
+              att6
+              Class
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+att5 <= 0.38
+|   att1 <= 0.56: 0 (114.0/2.0)
+|   att1 > 0.56
+|   |   att0 <= 0.46: 0 (2.0)
+|   |   att0 > 0.46: 1 (11.0/1.0)
+att5 > 0.38
+|   att0 <= 0.44
+|   |   att5 <= 0.56: 0 (29.0/4.0)
+|   |   att5 > 0.56: 1 (28.0)
+|   att0 > 0.44
+|   |   att0 <= 0.59
+|   |   |   att5 <= 0.48
+|   |   |   |   att1 <= 0.58: 0 (3.0)
+|   |   |   |   att1 > 0.58: 1 (2.0)
+|   |   |   att5 > 0.48: 1 (26.0)
+|   |   att0 > 0.59: 1 (121.0)
+
+Number of Leaves  : 	9
+
+Size of the tree : 	17
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         318               94.6429 %
+Incorrectly Classified Instances        18                5.3571 %
+Kappa statistic                          0.8904
+Mean absolute error                      0.072 
+Root mean squared error                  0.2243
+Relative absolute error                 14.7222 %
+Root relative squared error             45.3719 %
+Total Number of Instances              336     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.937     0.047      0.937     0.937     0.937      0.958    0
+                 0.953     0.063      0.953     0.953     0.953      0.958    1
+Weighted Avg.    0.946     0.056      0.946     0.946     0.946      0.958
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 134   9 |   a = 0
+   9 184 |   b = 1
+
+
