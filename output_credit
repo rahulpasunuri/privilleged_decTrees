@@ -1,0 +1,1270 @@
+
+
+########################################
+########################################
+Printing results for split:  0
+########################################
+########################################
+
+########################################
+Running credit:
+Running credit with fold:  0
+
+Running pruned dataset
+0.623076923077
+Running the new logic with alpha =  0.1
+0.646153846154 	0.1
+Running the new logic with alpha =  0.2
+0.623076923077 	0.2
+Running the new logic with alpha =  0.3
+0.623076923077 	0.3
+Running the new logic with alpha =  0.4
+0.623076923077 	0.4
+Running the new logic with alpha =  0.5
+0.646153846154 	0.5
+Running the new logic with alpha =  0.6
+0.646153846154 	0.6
+Running the new logic with alpha =  0.7
+0.646153846154 	0.7
+Running the new logic with alpha =  0.8
+0.646153846154 	0.8
+Running the new logic with alpha =  0.9
+0.646153846154 	0.9
+Running the new logic with alpha =  1.0
+0.646153846154 	1.0
+Running the new logic with alpha =  1.1
+0.646153846154 	1.1
+Running the new logic with alpha =  1.2
+0.646153846154 	1.2
+Running the new logic with alpha =  1.3
+0.646153846154 	1.3
+Running the new logic with alpha =  1.4
+0.646153846154 	1.4
+Running the new logic with alpha =  1.5
+0.646153846154 	1.5
+Running the new logic with alpha =  1.6
+0.646153846154 	1.6
+Running the new logic with alpha =  1.7
+0.646153846154 	1.7
+Running the new logic with alpha =  1.8
+0.646153846154 	1.8
+Running the new logic with alpha =  1.9
+0.646153846154 	1.9
+Running the new logic with alpha =  2.0
+0.646153846154 	2.0
+Running credit with fold:  1
+
+Running pruned dataset
+0.684615384615
+Running the new logic with alpha =  0.1
+0.692307692308 	0.1
+Running the new logic with alpha =  0.2
+0.692307692308 	0.2
+Running the new logic with alpha =  0.3
+0.692307692308 	0.3
+Running the new logic with alpha =  0.4
+0.692307692308 	0.4
+Running the new logic with alpha =  0.5
+0.692307692308 	0.5
+Running the new logic with alpha =  0.6
+0.692307692308 	0.6
+Running the new logic with alpha =  0.7
+0.692307692308 	0.7
+Running the new logic with alpha =  0.8
+0.692307692308 	0.8
+Running the new logic with alpha =  0.9
+0.692307692308 	0.9
+Running the new logic with alpha =  1.0
+0.692307692308 	1.0
+Running the new logic with alpha =  1.1
+0.692307692308 	1.1
+Running the new logic with alpha =  1.2
+0.692307692308 	1.2
+Running the new logic with alpha =  1.3
+0.692307692308 	1.3
+Running the new logic with alpha =  1.4
+0.692307692308 	1.4
+Running the new logic with alpha =  1.5
+0.692307692308 	1.5
+Running the new logic with alpha =  1.6
+0.692307692308 	1.6
+Running the new logic with alpha =  1.7
+0.692307692308 	1.7
+Running the new logic with alpha =  1.8
+0.692307692308 	1.8
+Running the new logic with alpha =  1.9
+0.692307692308 	1.9
+Running the new logic with alpha =  2.0
+0.692307692308 	2.0
+Running credit with fold:  2
+
+Running pruned dataset
+0.692307692308
+Running the new logic with alpha =  0.1
+0.669230769231 	0.1
+Running the new logic with alpha =  0.2
+0.669230769231 	0.2
+Running the new logic with alpha =  0.3
+0.669230769231 	0.3
+Running the new logic with alpha =  0.4
+0.669230769231 	0.4
+Running the new logic with alpha =  0.5
+0.684615384615 	0.5
+Running the new logic with alpha =  0.6
+0.684615384615 	0.6
+Running the new logic with alpha =  0.7
+0.684615384615 	0.7
+Running the new logic with alpha =  0.8
+0.684615384615 	0.8
+Running the new logic with alpha =  0.9
+0.684615384615 	0.9
+Running the new logic with alpha =  1.0
+0.684615384615 	1.0
+Running the new logic with alpha =  1.1
+0.684615384615 	1.1
+Running the new logic with alpha =  1.2
+0.684615384615 	1.2
+Running the new logic with alpha =  1.3
+0.684615384615 	1.3
+Running the new logic with alpha =  1.4
+0.684615384615 	1.4
+Running the new logic with alpha =  1.5
+0.684615384615 	1.5
+Running the new logic with alpha =  1.6
+0.730769230769 	1.6
+Running the new logic with alpha =  1.7
+0.730769230769 	1.7
+Running the new logic with alpha =  1.8
+0.730769230769 	1.8
+Running the new logic with alpha =  1.9
+0.730769230769 	1.9
+Running the new logic with alpha =  2.0
+0.730769230769 	2.0
+Running credit with fold:  3
+
+Running pruned dataset
+0.607692307692
+Running the new logic with alpha =  0.1
+0.607692307692 	0.1
+Running the new logic with alpha =  0.2
+0.607692307692 	0.2
+Running the new logic with alpha =  0.3
+0.607692307692 	0.3
+Running the new logic with alpha =  0.4
+0.607692307692 	0.4
+Running the new logic with alpha =  0.5
+0.638461538462 	0.5
+Running the new logic with alpha =  0.6
+0.638461538462 	0.6
+Running the new logic with alpha =  0.7
+0.638461538462 	0.7
+Running the new logic with alpha =  0.8
+0.638461538462 	0.8
+Running the new logic with alpha =  0.9
+0.638461538462 	0.9
+Running the new logic with alpha =  1.0
+0.638461538462 	1.0
+Running the new logic with alpha =  1.1
+0.638461538462 	1.1
+Running the new logic with alpha =  1.2
+0.638461538462 	1.2
+Running the new logic with alpha =  1.3
+0.638461538462 	1.3
+Running the new logic with alpha =  1.4
+0.638461538462 	1.4
+Running the new logic with alpha =  1.5
+0.638461538462 	1.5
+Running the new logic with alpha =  1.6
+0.638461538462 	1.6
+Running the new logic with alpha =  1.7
+0.638461538462 	1.7
+Running the new logic with alpha =  1.8
+0.638461538462 	1.8
+Running the new logic with alpha =  1.9
+0.638461538462 	1.9
+Running the new logic with alpha =  2.0
+0.638461538462 	2.0
+Running credit with fold:  4
+
+Running pruned dataset
+0.646616541353
+Running the new logic with alpha =  0.1
+0.654135338346 	0.1
+Running the new logic with alpha =  0.2
+0.654135338346 	0.2
+Running the new logic with alpha =  0.3
+0.624060150376 	0.3
+Running the new logic with alpha =  0.4
+0.624060150376 	0.4
+Running the new logic with alpha =  0.5
+0.624060150376 	0.5
+Running the new logic with alpha =  0.6
+0.624060150376 	0.6
+Running the new logic with alpha =  0.7
+0.624060150376 	0.7
+Running the new logic with alpha =  0.8
+0.624060150376 	0.8
+Running the new logic with alpha =  0.9
+0.624060150376 	0.9
+Running the new logic with alpha =  1.0
+0.624060150376 	1.0
+Running the new logic with alpha =  1.1
+0.624060150376 	1.1
+Running the new logic with alpha =  1.2
+0.624060150376 	1.2
+Running the new logic with alpha =  1.3
+0.624060150376 	1.3
+Running the new logic with alpha =  1.4
+0.624060150376 	1.4
+Running the new logic with alpha =  1.5
+0.624060150376 	1.5
+Running the new logic with alpha =  1.6
+0.624060150376 	1.6
+Running the new logic with alpha =  1.7
+0.624060150376 	1.7
+Running the new logic with alpha =  1.8
+0.624060150376 	1.8
+Running the new logic with alpha =  1.9
+0.624060150376 	1.9
+Running the new logic with alpha =  2.0
+0.624060150376 	2.0
+
+Normal Accuracy is 0.650861769809
+Stats for label:  1
+	Precision is:  0.60528922684
+	Recall is:  0.663199910424
+------------------------------
+Stats for label:  0
+	Precision is:  0.698496439808
+	Recall is:  0.644494162092
+------------------------------
+
+New Accuracy is:  0.666350491614 for alpha:  1.6
+Stats for label:  1
+	Precision for the chosen alpha is:  0.635393866314
+	Recall for the chosen alpha is:  0.608092816618
+------------------------------
+Stats for label:  0
+	Precision for the chosen alpha is:  0.688768448231
+	Recall for the chosen alpha is:  0.714960413419
+------------------------------
+
+
+########################################
+########################################
+Printing results for split:  1
+########################################
+########################################
+
+########################################
+Running credit:
+Running credit with fold:  0
+
+Running pruned dataset
+0.6
+Running the new logic with alpha =  0.1
+0.684615384615 	0.1
+Running the new logic with alpha =  0.2
+0.684615384615 	0.2
+Running the new logic with alpha =  0.3
+0.684615384615 	0.3
+Running the new logic with alpha =  0.4
+0.723076923077 	0.4
+Running the new logic with alpha =  0.5
+0.684615384615 	0.5
+Running the new logic with alpha =  0.6
+0.684615384615 	0.6
+Running the new logic with alpha =  0.7
+0.684615384615 	0.7
+Running the new logic with alpha =  0.8
+0.684615384615 	0.8
+Running the new logic with alpha =  0.9
+0.684615384615 	0.9
+Running the new logic with alpha =  1.0
+0.684615384615 	1.0
+Running the new logic with alpha =  1.1
+0.684615384615 	1.1
+Running the new logic with alpha =  1.2
+0.684615384615 	1.2
+Running the new logic with alpha =  1.3
+0.684615384615 	1.3
+Running the new logic with alpha =  1.4
+0.684615384615 	1.4
+Running the new logic with alpha =  1.5
+0.684615384615 	1.5
+Running the new logic with alpha =  1.6
+0.684615384615 	1.6
+Running the new logic with alpha =  1.7
+0.684615384615 	1.7
+Running the new logic with alpha =  1.8
+0.684615384615 	1.8
+Running the new logic with alpha =  1.9
+0.684615384615 	1.9
+Running the new logic with alpha =  2.0
+0.684615384615 	2.0
+Running credit with fold:  1
+
+Running pruned dataset
+0.715384615385
+Running the new logic with alpha =  0.1
+0.715384615385 	0.1
+Running the new logic with alpha =  0.2
+0.715384615385 	0.2
+Running the new logic with alpha =  0.3
+0.715384615385 	0.3
+Running the new logic with alpha =  0.4
+0.715384615385 	0.4
+Running the new logic with alpha =  0.5
+0.715384615385 	0.5
+Running the new logic with alpha =  0.6
+0.715384615385 	0.6
+Running the new logic with alpha =  0.7
+0.715384615385 	0.7
+Running the new logic with alpha =  0.8
+0.684615384615 	0.8
+Running the new logic with alpha =  0.9
+0.684615384615 	0.9
+Running the new logic with alpha =  1.0
+0.684615384615 	1.0
+Running the new logic with alpha =  1.1
+0.684615384615 	1.1
+Running the new logic with alpha =  1.2
+0.684615384615 	1.2
+Running the new logic with alpha =  1.3
+0.684615384615 	1.3
+Running the new logic with alpha =  1.4
+0.684615384615 	1.4
+Running the new logic with alpha =  1.5
+0.661538461538 	1.5
+Running the new logic with alpha =  1.6
+0.661538461538 	1.6
+Running the new logic with alpha =  1.7
+0.661538461538 	1.7
+Running the new logic with alpha =  1.8
+0.661538461538 	1.8
+Running the new logic with alpha =  1.9
+0.661538461538 	1.9
+Running the new logic with alpha =  2.0
+0.661538461538 	2.0
+Running credit with fold:  2
+
+Running pruned dataset
+0.707692307692
+Running the new logic with alpha =  0.1
+0.653846153846 	0.1
+Running the new logic with alpha =  0.2
+0.653846153846 	0.2
+Running the new logic with alpha =  0.3
+0.653846153846 	0.3
+Running the new logic with alpha =  0.4
+0.653846153846 	0.4
+Running the new logic with alpha =  0.5
+0.653846153846 	0.5
+Running the new logic with alpha =  0.6
+0.653846153846 	0.6
+Running the new logic with alpha =  0.7
+0.707692307692 	0.7
+Running the new logic with alpha =  0.8
+0.707692307692 	0.8
+Running the new logic with alpha =  0.9
+0.707692307692 	0.9
+Running the new logic with alpha =  1.0
+0.707692307692 	1.0
+Running the new logic with alpha =  1.1
+0.707692307692 	1.1
+Running the new logic with alpha =  1.2
+0.707692307692 	1.2
+Running the new logic with alpha =  1.3
+0.707692307692 	1.3
+Running the new logic with alpha =  1.4
+0.707692307692 	1.4
+Running the new logic with alpha =  1.5
+0.707692307692 	1.5
+Running the new logic with alpha =  1.6
+0.707692307692 	1.6
+Running the new logic with alpha =  1.7
+0.707692307692 	1.7
+Running the new logic with alpha =  1.8
+0.707692307692 	1.8
+Running the new logic with alpha =  1.9
+0.707692307692 	1.9
+Running the new logic with alpha =  2.0
+0.707692307692 	2.0
+Running credit with fold:  3
+
+Running pruned dataset
+0.669230769231
+Running the new logic with alpha =  0.1
+0.676923076923 	0.1
+Running the new logic with alpha =  0.2
+0.676923076923 	0.2
+Running the new logic with alpha =  0.3
+0.676923076923 	0.3
+Running the new logic with alpha =  0.4
+0.676923076923 	0.4
+Running the new logic with alpha =  0.5
+0.676923076923 	0.5
+Running the new logic with alpha =  0.6
+0.676923076923 	0.6
+Running the new logic with alpha =  0.7
+0.676923076923 	0.7
+Running the new logic with alpha =  0.8
+0.676923076923 	0.8
+Running the new logic with alpha =  0.9
+0.676923076923 	0.9
+Running the new logic with alpha =  1.0
+0.676923076923 	1.0
+Running the new logic with alpha =  1.1
+0.676923076923 	1.1
+Running the new logic with alpha =  1.2
+0.676923076923 	1.2
+Running the new logic with alpha =  1.3
+0.676923076923 	1.3
+Running the new logic with alpha =  1.4
+0.676923076923 	1.4
+Running the new logic with alpha =  1.5
+0.676923076923 	1.5
+Running the new logic with alpha =  1.6
+0.676923076923 	1.6
+Running the new logic with alpha =  1.7
+0.676923076923 	1.7
+Running the new logic with alpha =  1.8
+0.676923076923 	1.8
+Running the new logic with alpha =  1.9
+0.676923076923 	1.9
+Running the new logic with alpha =  2.0
+0.676923076923 	2.0
+Running credit with fold:  4
+
+Running pruned dataset
+0.639097744361
+Running the new logic with alpha =  0.1
+0.616541353383 	0.1
+Running the new logic with alpha =  0.2
+0.616541353383 	0.2
+Running the new logic with alpha =  0.3
+0.616541353383 	0.3
+Running the new logic with alpha =  0.4
+0.616541353383 	0.4
+Running the new logic with alpha =  0.5
+0.616541353383 	0.5
+Running the new logic with alpha =  0.6
+0.684210526316 	0.6
+Running the new logic with alpha =  0.7
+0.684210526316 	0.7
+Running the new logic with alpha =  0.8
+0.684210526316 	0.8
+Running the new logic with alpha =  0.9
+0.684210526316 	0.9
+Running the new logic with alpha =  1.0
+0.684210526316 	1.0
+Running the new logic with alpha =  1.1
+0.684210526316 	1.1
+Running the new logic with alpha =  1.2
+0.684210526316 	1.2
+Running the new logic with alpha =  1.3
+0.684210526316 	1.3
+Running the new logic with alpha =  1.4
+0.684210526316 	1.4
+Running the new logic with alpha =  1.5
+0.684210526316 	1.5
+Running the new logic with alpha =  1.6
+0.661654135338 	1.6
+Running the new logic with alpha =  1.7
+0.661654135338 	1.7
+Running the new logic with alpha =  1.8
+0.661654135338 	1.8
+Running the new logic with alpha =  1.9
+0.661654135338 	1.9
+Running the new logic with alpha =  2.0
+0.661654135338 	2.0
+
+Normal Accuracy is 0.666281087334
+Stats for label:  1
+	Precision is:  0.635179241376
+	Recall is:  0.633353963059
+------------------------------
+Stats for label:  0
+	Precision is:  0.698122161945
+	Recall is:  0.700556391569
+------------------------------
+
+New Accuracy is:  0.693765182186 for alpha:  0.7
+Stats for label:  1
+	Precision for the chosen alpha is:  0.676303623902
+	Recall for the chosen alpha is:  0.635291390067
+------------------------------
+Stats for label:  0
+	Precision for the chosen alpha is:  0.712343983766
+	Recall for the chosen alpha is:  0.748501755628
+------------------------------
+
+
+########################################
+########################################
+Printing results for split:  2
+########################################
+########################################
+
+########################################
+Running credit:
+Running credit with fold:  0
+
+Running pruned dataset
+0.661538461538
+Running the new logic with alpha =  0.1
+0.646153846154 	0.1
+Running the new logic with alpha =  0.2
+0.646153846154 	0.2
+Running the new logic with alpha =  0.3
+0.653846153846 	0.3
+Running the new logic with alpha =  0.4
+0.653846153846 	0.4
+Running the new logic with alpha =  0.5
+0.653846153846 	0.5
+Running the new logic with alpha =  0.6
+0.653846153846 	0.6
+Running the new logic with alpha =  0.7
+0.653846153846 	0.7
+Running the new logic with alpha =  0.8
+0.653846153846 	0.8
+Running the new logic with alpha =  0.9
+0.653846153846 	0.9
+Running the new logic with alpha =  1.0
+0.653846153846 	1.0
+Running the new logic with alpha =  1.1
+0.653846153846 	1.1
+Running the new logic with alpha =  1.2
+0.653846153846 	1.2
+Running the new logic with alpha =  1.3
+0.653846153846 	1.3
+Running the new logic with alpha =  1.4
+0.653846153846 	1.4
+Running the new logic with alpha =  1.5
+0.653846153846 	1.5
+Running the new logic with alpha =  1.6
+0.653846153846 	1.6
+Running the new logic with alpha =  1.7
+0.653846153846 	1.7
+Running the new logic with alpha =  1.8
+0.653846153846 	1.8
+Running the new logic with alpha =  1.9
+0.653846153846 	1.9
+Running the new logic with alpha =  2.0
+0.653846153846 	2.0
+Running credit with fold:  1
+
+Running pruned dataset
+0.669230769231
+Running the new logic with alpha =  0.1
+0.607692307692 	0.1
+Running the new logic with alpha =  0.2
+0.607692307692 	0.2
+Running the new logic with alpha =  0.3
+0.607692307692 	0.3
+Running the new logic with alpha =  0.4
+0.707692307692 	0.4
+Running the new logic with alpha =  0.5
+0.707692307692 	0.5
+Running the new logic with alpha =  0.6
+0.707692307692 	0.6
+Running the new logic with alpha =  0.7
+0.707692307692 	0.7
+Running the new logic with alpha =  0.8
+0.707692307692 	0.8
+Running the new logic with alpha =  0.9
+0.707692307692 	0.9
+Running the new logic with alpha =  1.0
+0.707692307692 	1.0
+Running the new logic with alpha =  1.1
+0.707692307692 	1.1
+Running the new logic with alpha =  1.2
+0.707692307692 	1.2
+Running the new logic with alpha =  1.3
+0.707692307692 	1.3
+Running the new logic with alpha =  1.4
+0.707692307692 	1.4
+Running the new logic with alpha =  1.5
+0.707692307692 	1.5
+Running the new logic with alpha =  1.6
+0.707692307692 	1.6
+Running the new logic with alpha =  1.7
+0.707692307692 	1.7
+Running the new logic with alpha =  1.8
+0.707692307692 	1.8
+Running the new logic with alpha =  1.9
+0.707692307692 	1.9
+Running the new logic with alpha =  2.0
+0.707692307692 	2.0
+Running credit with fold:  2
+
+Running pruned dataset
+0.669230769231
+Running the new logic with alpha =  0.1
+0.676923076923 	0.1
+Running the new logic with alpha =  0.2
+0.676923076923 	0.2
+Running the new logic with alpha =  0.3
+0.676923076923 	0.3
+Running the new logic with alpha =  0.4
+0.676923076923 	0.4
+Running the new logic with alpha =  0.5
+0.676923076923 	0.5
+Running the new logic with alpha =  0.6
+0.676923076923 	0.6
+Running the new logic with alpha =  0.7
+0.676923076923 	0.7
+Running the new logic with alpha =  0.8
+0.676923076923 	0.8
+Running the new logic with alpha =  0.9
+0.676923076923 	0.9
+Running the new logic with alpha =  1.0
+0.676923076923 	1.0
+Running the new logic with alpha =  1.1
+0.676923076923 	1.1
+Running the new logic with alpha =  1.2
+0.676923076923 	1.2
+Running the new logic with alpha =  1.3
+0.676923076923 	1.3
+Running the new logic with alpha =  1.4
+0.676923076923 	1.4
+Running the new logic with alpha =  1.5
+0.676923076923 	1.5
+Running the new logic with alpha =  1.6
+0.676923076923 	1.6
+Running the new logic with alpha =  1.7
+0.676923076923 	1.7
+Running the new logic with alpha =  1.8
+0.676923076923 	1.8
+Running the new logic with alpha =  1.9
+0.676923076923 	1.9
+Running the new logic with alpha =  2.0
+0.676923076923 	2.0
+Running credit with fold:  3
+
+Running pruned dataset
+0.661538461538
+Running the new logic with alpha =  0.1
+0.676923076923 	0.1
+Running the new logic with alpha =  0.2
+0.676923076923 	0.2
+Running the new logic with alpha =  0.3
+0.669230769231 	0.3
+Running the new logic with alpha =  0.4
+0.676923076923 	0.4
+Running the new logic with alpha =  0.5
+0.676923076923 	0.5
+Running the new logic with alpha =  0.6
+0.676923076923 	0.6
+Running the new logic with alpha =  0.7
+0.676923076923 	0.7
+Running the new logic with alpha =  0.8
+0.676923076923 	0.8
+Running the new logic with alpha =  0.9
+0.676923076923 	0.9
+Running the new logic with alpha =  1.0
+0.676923076923 	1.0
+Running the new logic with alpha =  1.1
+0.676923076923 	1.1
+Running the new logic with alpha =  1.2
+0.676923076923 	1.2
+Running the new logic with alpha =  1.3
+0.676923076923 	1.3
+Running the new logic with alpha =  1.4
+0.676923076923 	1.4
+Running the new logic with alpha =  1.5
+0.676923076923 	1.5
+Running the new logic with alpha =  1.6
+0.676923076923 	1.6
+Running the new logic with alpha =  1.7
+0.676923076923 	1.7
+Running the new logic with alpha =  1.8
+0.676923076923 	1.8
+Running the new logic with alpha =  1.9
+0.676923076923 	1.9
+Running the new logic with alpha =  2.0
+0.676923076923 	2.0
+Running credit with fold:  4
+
+Running pruned dataset
+0.699248120301
+Running the new logic with alpha =  0.1
+0.684210526316 	0.1
+Running the new logic with alpha =  0.2
+0.684210526316 	0.2
+Running the new logic with alpha =  0.3
+0.669172932331 	0.3
+Running the new logic with alpha =  0.4
+0.684210526316 	0.4
+Running the new logic with alpha =  0.5
+0.684210526316 	0.5
+Running the new logic with alpha =  0.6
+0.684210526316 	0.6
+Running the new logic with alpha =  0.7
+0.684210526316 	0.7
+Running the new logic with alpha =  0.8
+0.706766917293 	0.8
+Running the new logic with alpha =  0.9
+0.706766917293 	0.9
+Running the new logic with alpha =  1.0
+0.706766917293 	1.0
+Running the new logic with alpha =  1.1
+0.706766917293 	1.1
+Running the new logic with alpha =  1.2
+0.706766917293 	1.2
+Running the new logic with alpha =  1.3
+0.706766917293 	1.3
+Running the new logic with alpha =  1.4
+0.706766917293 	1.4
+Running the new logic with alpha =  1.5
+0.706766917293 	1.5
+Running the new logic with alpha =  1.6
+0.706766917293 	1.6
+Running the new logic with alpha =  1.7
+0.706766917293 	1.7
+Running the new logic with alpha =  1.8
+0.706766917293 	1.8
+Running the new logic with alpha =  1.9
+0.706766917293 	1.9
+Running the new logic with alpha =  2.0
+0.706766917293 	2.0
+
+Normal Accuracy is 0.672157316368
+Stats for label:  1
+	Precision is:  0.633505957644
+	Recall is:  0.658180257741
+------------------------------
+Stats for label:  0
+	Precision is:  0.707338480014
+	Recall is:  0.682628720163
+------------------------------
+
+New Accuracy is:  0.684430306536 for alpha:  0.8
+Stats for label:  1
+	Precision for the chosen alpha is:  0.650894584127
+	Recall for the chosen alpha is:  0.644972509421
+------------------------------
+Stats for label:  0
+	Precision for the chosen alpha is:  0.711414395397
+	Recall for the chosen alpha is:  0.713798384757
+------------------------------
+
+
+########################################
+########################################
+Printing results for split:  3
+########################################
+########################################
+
+########################################
+Running credit:
+Running credit with fold:  0
+
+Running pruned dataset
+0.623076923077
+Running the new logic with alpha =  0.1
+0.646153846154 	0.1
+Running the new logic with alpha =  0.2
+0.646153846154 	0.2
+Running the new logic with alpha =  0.3
+0.646153846154 	0.3
+Running the new logic with alpha =  0.4
+0.646153846154 	0.4
+Running the new logic with alpha =  0.5
+0.646153846154 	0.5
+Running the new logic with alpha =  0.6
+0.646153846154 	0.6
+Running the new logic with alpha =  0.7
+0.592307692308 	0.7
+Running the new logic with alpha =  0.8
+0.592307692308 	0.8
+Running the new logic with alpha =  0.9
+0.592307692308 	0.9
+Running the new logic with alpha =  1.0
+0.592307692308 	1.0
+Running the new logic with alpha =  1.1
+0.592307692308 	1.1
+Running the new logic with alpha =  1.2
+0.592307692308 	1.2
+Running the new logic with alpha =  1.3
+0.592307692308 	1.3
+Running the new logic with alpha =  1.4
+0.592307692308 	1.4
+Running the new logic with alpha =  1.5
+0.592307692308 	1.5
+Running the new logic with alpha =  1.6
+0.592307692308 	1.6
+Running the new logic with alpha =  1.7
+0.592307692308 	1.7
+Running the new logic with alpha =  1.8
+0.592307692308 	1.8
+Running the new logic with alpha =  1.9
+0.592307692308 	1.9
+Running the new logic with alpha =  2.0
+0.592307692308 	2.0
+Running credit with fold:  1
+
+Running pruned dataset
+0.661538461538
+Running the new logic with alpha =  0.1
+0.7 	0.1
+Running the new logic with alpha =  0.2
+0.7 	0.2
+Running the new logic with alpha =  0.3
+0.661538461538 	0.3
+Running the new logic with alpha =  0.4
+0.707692307692 	0.4
+Running the new logic with alpha =  0.5
+0.707692307692 	0.5
+Running the new logic with alpha =  0.6
+0.707692307692 	0.6
+Running the new logic with alpha =  0.7
+0.707692307692 	0.7
+Running the new logic with alpha =  0.8
+0.707692307692 	0.8
+Running the new logic with alpha =  0.9
+0.707692307692 	0.9
+Running the new logic with alpha =  1.0
+0.707692307692 	1.0
+Running the new logic with alpha =  1.1
+0.707692307692 	1.1
+Running the new logic with alpha =  1.2
+0.707692307692 	1.2
+Running the new logic with alpha =  1.3
+0.707692307692 	1.3
+Running the new logic with alpha =  1.4
+0.707692307692 	1.4
+Running the new logic with alpha =  1.5
+0.707692307692 	1.5
+Running the new logic with alpha =  1.6
+0.707692307692 	1.6
+Running the new logic with alpha =  1.7
+0.707692307692 	1.7
+Running the new logic with alpha =  1.8
+0.707692307692 	1.8
+Running the new logic with alpha =  1.9
+0.707692307692 	1.9
+Running the new logic with alpha =  2.0
+0.707692307692 	2.0
+Running credit with fold:  2
+
+Running pruned dataset
+0.653846153846
+Running the new logic with alpha =  0.1
+0.646153846154 	0.1
+Running the new logic with alpha =  0.2
+0.646153846154 	0.2
+Running the new logic with alpha =  0.3
+0.661538461538 	0.3
+Running the new logic with alpha =  0.4
+0.653846153846 	0.4
+Running the new logic with alpha =  0.5
+0.684615384615 	0.5
+Running the new logic with alpha =  0.6
+0.684615384615 	0.6
+Running the new logic with alpha =  0.7
+0.684615384615 	0.7
+Running the new logic with alpha =  0.8
+0.684615384615 	0.8
+Running the new logic with alpha =  0.9
+0.684615384615 	0.9
+Running the new logic with alpha =  1.0
+0.684615384615 	1.0
+Running the new logic with alpha =  1.1
+0.684615384615 	1.1
+Running the new logic with alpha =  1.2
+0.684615384615 	1.2
+Running the new logic with alpha =  1.3
+0.684615384615 	1.3
+Running the new logic with alpha =  1.4
+0.684615384615 	1.4
+Running the new logic with alpha =  1.5
+0.684615384615 	1.5
+Running the new logic with alpha =  1.6
+0.684615384615 	1.6
+Running the new logic with alpha =  1.7
+0.684615384615 	1.7
+Running the new logic with alpha =  1.8
+0.684615384615 	1.8
+Running the new logic with alpha =  1.9
+0.684615384615 	1.9
+Running the new logic with alpha =  2.0
+0.684615384615 	2.0
+Running credit with fold:  3
+
+Running pruned dataset
+0.630769230769
+Running the new logic with alpha =  0.1
+0.630769230769 	0.1
+Running the new logic with alpha =  0.2
+0.630769230769 	0.2
+Running the new logic with alpha =  0.3
+0.630769230769 	0.3
+Running the new logic with alpha =  0.4
+0.630769230769 	0.4
+Running the new logic with alpha =  0.5
+0.653846153846 	0.5
+Running the new logic with alpha =  0.6
+0.653846153846 	0.6
+Running the new logic with alpha =  0.7
+0.653846153846 	0.7
+Running the new logic with alpha =  0.8
+0.653846153846 	0.8
+Running the new logic with alpha =  0.9
+0.653846153846 	0.9
+Running the new logic with alpha =  1.0
+0.653846153846 	1.0
+Running the new logic with alpha =  1.1
+0.653846153846 	1.1
+Running the new logic with alpha =  1.2
+0.653846153846 	1.2
+Running the new logic with alpha =  1.3
+0.653846153846 	1.3
+Running the new logic with alpha =  1.4
+0.653846153846 	1.4
+Running the new logic with alpha =  1.5
+0.653846153846 	1.5
+Running the new logic with alpha =  1.6
+0.653846153846 	1.6
+Running the new logic with alpha =  1.7
+0.653846153846 	1.7
+Running the new logic with alpha =  1.8
+0.653846153846 	1.8
+Running the new logic with alpha =  1.9
+0.653846153846 	1.9
+Running the new logic with alpha =  2.0
+0.653846153846 	2.0
+Running credit with fold:  4
+
+Running pruned dataset
+0.669172932331
+Running the new logic with alpha =  0.1
+0.669172932331 	0.1
+Running the new logic with alpha =  0.2
+0.676691729323 	0.2
+Running the new logic with alpha =  0.3
+0.676691729323 	0.3
+Running the new logic with alpha =  0.4
+0.676691729323 	0.4
+Running the new logic with alpha =  0.5
+0.676691729323 	0.5
+Running the new logic with alpha =  0.6
+0.676691729323 	0.6
+Running the new logic with alpha =  0.7
+0.676691729323 	0.7
+Running the new logic with alpha =  0.8
+0.676691729323 	0.8
+Running the new logic with alpha =  0.9
+0.676691729323 	0.9
+Running the new logic with alpha =  1.0
+0.676691729323 	1.0
+Running the new logic with alpha =  1.1
+0.676691729323 	1.1
+Running the new logic with alpha =  1.2
+0.676691729323 	1.2
+Running the new logic with alpha =  1.3
+0.676691729323 	1.3
+Running the new logic with alpha =  1.4
+0.676691729323 	1.4
+Running the new logic with alpha =  1.5
+0.676691729323 	1.5
+Running the new logic with alpha =  1.6
+0.676691729323 	1.6
+Running the new logic with alpha =  1.7
+0.676691729323 	1.7
+Running the new logic with alpha =  1.8
+0.676691729323 	1.8
+Running the new logic with alpha =  1.9
+0.676691729323 	1.9
+Running the new logic with alpha =  2.0
+0.676691729323 	2.0
+
+Normal Accuracy is 0.647680740312
+Stats for label:  1
+	Precision is:  0.617824836454
+	Recall is:  0.602671438276
+------------------------------
+Stats for label:  0
+	Precision is:  0.67558374194
+	Recall is:  0.68678067984
+------------------------------
+
+New Accuracy is:  0.673799884326 for alpha:  0.5
+Stats for label:  1
+	Precision for the chosen alpha is:  0.646497585004
+	Recall for the chosen alpha is:  0.62951952549
+------------------------------
+Stats for label:  0
+	Precision for the chosen alpha is:  0.698626040626
+	Recall for the chosen alpha is:  0.712352486941
+------------------------------
+
+
+########################################
+########################################
+Printing results for split:  4
+########################################
+########################################
+
+########################################
+Running credit:
+Running credit with fold:  0
+
+Running pruned dataset
+0.7
+Running the new logic with alpha =  0.1
+0.661538461538 	0.1
+Running the new logic with alpha =  0.2
+0.661538461538 	0.2
+Running the new logic with alpha =  0.3
+0.661538461538 	0.3
+Running the new logic with alpha =  0.4
+0.661538461538 	0.4
+Running the new logic with alpha =  0.5
+0.661538461538 	0.5
+Running the new logic with alpha =  0.6
+0.661538461538 	0.6
+Running the new logic with alpha =  0.7
+0.661538461538 	0.7
+Running the new logic with alpha =  0.8
+0.723076923077 	0.8
+Running the new logic with alpha =  0.9
+0.723076923077 	0.9
+Running the new logic with alpha =  1.0
+0.723076923077 	1.0
+Running the new logic with alpha =  1.1
+0.723076923077 	1.1
+Running the new logic with alpha =  1.2
+0.723076923077 	1.2
+Running the new logic with alpha =  1.3
+0.723076923077 	1.3
+Running the new logic with alpha =  1.4
+0.723076923077 	1.4
+Running the new logic with alpha =  1.5
+0.723076923077 	1.5
+Running the new logic with alpha =  1.6
+0.723076923077 	1.6
+Running the new logic with alpha =  1.7
+0.723076923077 	1.7
+Running the new logic with alpha =  1.8
+0.723076923077 	1.8
+Running the new logic with alpha =  1.9
+0.723076923077 	1.9
+Running the new logic with alpha =  2.0
+0.723076923077 	2.0
+Running credit with fold:  1
+
+Running pruned dataset
+0.638461538462
+Running the new logic with alpha =  0.1
+0.669230769231 	0.1
+Running the new logic with alpha =  0.2
+0.684615384615 	0.2
+Running the new logic with alpha =  0.3
+0.684615384615 	0.3
+Running the new logic with alpha =  0.4
+0.684615384615 	0.4
+Running the new logic with alpha =  0.5
+0.684615384615 	0.5
+Running the new logic with alpha =  0.6
+0.684615384615 	0.6
+Running the new logic with alpha =  0.7
+0.684615384615 	0.7
+Running the new logic with alpha =  0.8
+0.684615384615 	0.8
+Running the new logic with alpha =  0.9
+0.684615384615 	0.9
+Running the new logic with alpha =  1.0
+0.684615384615 	1.0
+Running the new logic with alpha =  1.1
+0.684615384615 	1.1
+Running the new logic with alpha =  1.2
+0.684615384615 	1.2
+Running the new logic with alpha =  1.3
+0.684615384615 	1.3
+Running the new logic with alpha =  1.4
+0.684615384615 	1.4
+Running the new logic with alpha =  1.5
+0.684615384615 	1.5
+Running the new logic with alpha =  1.6
+0.684615384615 	1.6
+Running the new logic with alpha =  1.7
+0.684615384615 	1.7
+Running the new logic with alpha =  1.8
+0.684615384615 	1.8
+Running the new logic with alpha =  1.9
+0.684615384615 	1.9
+Running the new logic with alpha =  2.0
+0.684615384615 	2.0
+Running credit with fold:  2
+
+Running pruned dataset
+0.692307692308
+Running the new logic with alpha =  0.1
+0.676923076923 	0.1
+Running the new logic with alpha =  0.2
+0.676923076923 	0.2
+Running the new logic with alpha =  0.3
+0.676923076923 	0.3
+Running the new logic with alpha =  0.4
+0.684615384615 	0.4
+Running the new logic with alpha =  0.5
+0.684615384615 	0.5
+Running the new logic with alpha =  0.6
+0.684615384615 	0.6
+Running the new logic with alpha =  0.7
+0.684615384615 	0.7
+Running the new logic with alpha =  0.8
+0.684615384615 	0.8
+Running the new logic with alpha =  0.9
+0.684615384615 	0.9
+Running the new logic with alpha =  1.0
+0.684615384615 	1.0
+Running the new logic with alpha =  1.1
+0.684615384615 	1.1
+Running the new logic with alpha =  1.2
+0.684615384615 	1.2
+Running the new logic with alpha =  1.3
+0.684615384615 	1.3
+Running the new logic with alpha =  1.4
+0.684615384615 	1.4
+Running the new logic with alpha =  1.5
+0.684615384615 	1.5
+Running the new logic with alpha =  1.6
+0.684615384615 	1.6
+Running the new logic with alpha =  1.7
+0.684615384615 	1.7
+Running the new logic with alpha =  1.8
+0.684615384615 	1.8
+Running the new logic with alpha =  1.9
+0.684615384615 	1.9
+Running the new logic with alpha =  2.0
+0.684615384615 	2.0
+Running credit with fold:  3
+
+Running pruned dataset
+0.661538461538
+Running the new logic with alpha =  0.1
+0.661538461538 	0.1
+Running the new logic with alpha =  0.2
+0.661538461538 	0.2
+Running the new logic with alpha =  0.3
+0.661538461538 	0.3
+Running the new logic with alpha =  0.4
+0.661538461538 	0.4
+Running the new logic with alpha =  0.5
+0.661538461538 	0.5
+Running the new logic with alpha =  0.6
+0.661538461538 	0.6
+Running the new logic with alpha =  0.7
+0.661538461538 	0.7
+Running the new logic with alpha =  0.8
+0.661538461538 	0.8
+Running the new logic with alpha =  0.9
+0.661538461538 	0.9
+Running the new logic with alpha =  1.0
+0.661538461538 	1.0
+Running the new logic with alpha =  1.1
+0.661538461538 	1.1
+Running the new logic with alpha =  1.2
+0.661538461538 	1.2
+Running the new logic with alpha =  1.3
+0.661538461538 	1.3
+Running the new logic with alpha =  1.4
+0.661538461538 	1.4
+Running the new logic with alpha =  1.5
+0.661538461538 	1.5
+Running the new logic with alpha =  1.6
+0.661538461538 	1.6
+Running the new logic with alpha =  1.7
+0.661538461538 	1.7
+Running the new logic with alpha =  1.8
+0.661538461538 	1.8
+Running the new logic with alpha =  1.9
+0.661538461538 	1.9
+Running the new logic with alpha =  2.0
+0.661538461538 	2.0
+Running credit with fold:  4
+
+Running pruned dataset
+0.691729323308
+Running the new logic with alpha =  0.1
+0.759398496241 	0.1
+Running the new logic with alpha =  0.2
+0.759398496241 	0.2
+Running the new logic with alpha =  0.3
+0.759398496241 	0.3
+Running the new logic with alpha =  0.4
+0.736842105263 	0.4
+Running the new logic with alpha =  0.5
+0.736842105263 	0.5
+Running the new logic with alpha =  0.6
+0.736842105263 	0.6
+Running the new logic with alpha =  0.7
+0.736842105263 	0.7
+Running the new logic with alpha =  0.8
+0.736842105263 	0.8
+Running the new logic with alpha =  0.9
+0.736842105263 	0.9
+Running the new logic with alpha =  1.0
+0.736842105263 	1.0
+Running the new logic with alpha =  1.1
+0.736842105263 	1.1
+Running the new logic with alpha =  1.2
+0.736842105263 	1.2
+Running the new logic with alpha =  1.3
+0.736842105263 	1.3
+Running the new logic with alpha =  1.4
+0.736842105263 	1.4
+Running the new logic with alpha =  1.5
+0.736842105263 	1.5
+Running the new logic with alpha =  1.6
+0.736842105263 	1.6
+Running the new logic with alpha =  1.7
+0.736842105263 	1.7
+Running the new logic with alpha =  1.8
+0.736842105263 	1.8
+Running the new logic with alpha =  1.9
+0.736842105263 	1.9
+Running the new logic with alpha =  2.0
+0.736842105263 	2.0
+
+Normal Accuracy is 0.676807403123
+Stats for label:  1
+	Precision is:  0.641208314515
+	Recall is:  0.641157534504
+------------------------------
+Stats for label:  0
+	Precision is:  0.700316273233
+	Recall is:  0.701687123177
+------------------------------
+
+New Accuracy is:  0.698137651822 for alpha:  0.8
+Stats for label:  1
+	Precision for the chosen alpha is:  0.662197662764
+	Recall for the chosen alpha is:  0.683835779113
+------------------------------
+Stats for label:  0
+	Precision for the chosen alpha is:  0.726560276409
+	Recall for the chosen alpha is:  0.707120899033
+------------------------------
+----------------------------------------
+----------------------------------------
+----------------------------------------
+Printing Results for Dataset:  credit
+Avg Old Accuracy:  0.662757663389 +-  0.0115497971631
+Avg. New Accuracy:  0.683296703297 +-  0.0119037096794
+Stats for label:  1
+	 Old Avg. Precision is:  0.626601515366 +-  0.0131594150553
+	 New Avg. Precision is:  0.654257464422 +-  0.0139745477464
+
+	 Old Avg. Recall is:  0.639712620801 +-  0.021481507837
+	 New Avg. Recall is:  0.640342404142 +-  0.0248829053056
+
+Stats for label:  0
+	 Old Avg. Precision is:  0.695971419388 +-  0.0107214423993
+	 New Avg. Precision is:  0.707542628886 +-  0.0128972082824
+
+	 Old Avg. Recall is:  0.683229415368 +-  0.0207571830568
+	 New Avg. Recall is:  0.719346787956 +-  0.0148218069496
+
