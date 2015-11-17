@@ -1,0 +1,94 @@
+=== Run information ===
+
+Scheme:weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     data
+Instances:    768
+Attributes:   9
+              att0
+              att1
+              att2
+              att3
+              att4
+              att5
+              att6
+              att7
+              Class
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+att1 <= 127
+|   att5 <= 26.4: 0 (132.0/3.0)
+|   att5 > 26.4
+|   |   att7 <= 28: 0 (180.0/22.0)
+|   |   att7 > 28
+|   |   |   att1 <= 99: 0 (55.0/10.0)
+|   |   |   att1 > 99
+|   |   |   |   att6 <= 0.561: 0 (84.0/34.0)
+|   |   |   |   att6 > 0.561
+|   |   |   |   |   att0 <= 6
+|   |   |   |   |   |   att7 <= 30: 1 (4.0)
+|   |   |   |   |   |   att7 > 30
+|   |   |   |   |   |   |   att7 <= 34: 0 (7.0/1.0)
+|   |   |   |   |   |   |   att7 > 34
+|   |   |   |   |   |   |   |   att5 <= 33.1: 1 (6.0)
+|   |   |   |   |   |   |   |   att5 > 33.1: 0 (4.0/1.0)
+|   |   |   |   |   att0 > 6: 1 (13.0)
+att1 > 127
+|   att5 <= 29.9
+|   |   att1 <= 145: 0 (41.0/6.0)
+|   |   att1 > 145
+|   |   |   att7 <= 25: 0 (4.0)
+|   |   |   att7 > 25
+|   |   |   |   att7 <= 61
+|   |   |   |   |   att5 <= 27.1: 1 (12.0/1.0)
+|   |   |   |   |   att5 > 27.1
+|   |   |   |   |   |   att2 <= 82
+|   |   |   |   |   |   |   att6 <= 0.396: 1 (8.0/1.0)
+|   |   |   |   |   |   |   att6 > 0.396: 0 (3.0)
+|   |   |   |   |   |   att2 > 82: 0 (4.0)
+|   |   |   |   att7 > 61: 0 (4.0)
+|   att5 > 29.9
+|   |   att1 <= 157
+|   |   |   att2 <= 61: 1 (15.0/1.0)
+|   |   |   att2 > 61
+|   |   |   |   att7 <= 30: 0 (40.0/13.0)
+|   |   |   |   att7 > 30: 1 (60.0/17.0)
+|   |   att1 > 157: 1 (92.0/12.0)
+
+Number of Leaves  : 	20
+
+Size of the tree : 	39
+
+
+Time taken to build model: 0.01 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         567               73.8281 %
+Incorrectly Classified Instances       201               26.1719 %
+Kappa statistic                          0.4164
+Mean absolute error                      0.3158
+Root mean squared error                  0.4463
+Relative absolute error                 69.4841 %
+Root relative squared error             93.6293 %
+Total Number of Instances              768     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.814     0.403      0.79      0.814     0.802      0.751    0
+                 0.597     0.186      0.632     0.597     0.614      0.751    1
+Weighted Avg.    0.738     0.327      0.735     0.738     0.736      0.751
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 407  93 |   a = 0
+ 108 160 |   b = 1
+
+
