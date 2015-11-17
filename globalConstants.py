@@ -11,7 +11,7 @@ limitGainBounds = True
 
 datasets = []
 #datasets.append("random")
-#datasets.append("heart")
+datasets.append("heart")
 #datasets.append("breast")
 #datasets.append("heart_multi")
 #datasets.append("iris")
@@ -23,7 +23,7 @@ datasets = []
 #datasets.append("ecoli_binary")
 
 #datasets.append("census") #TODO: takes a lot of time..
-datasets.append("credit")
+#datasets.append("credit")
 #datasets.append("hepatitis") #TODO: has a lot of missing values.. how to support them ???
 
 
