@@ -373,13 +373,13 @@ def combineGain(normalGain, privGain, isClassifier):
 
     if isClassifier:
         #print normalGain, privGain
-        #return privGain
+        return privGain
         privGain = alpha * privGain
         #return privGain + normalGain
         #return normalGain
         #
         #'''
-        if normalGain > privGain:
+        if normalGain < privGain:
             return reverseHarmonicMean(normalGain, privGain)
         else:
             return harmonicMean(normalGain, privGain)
