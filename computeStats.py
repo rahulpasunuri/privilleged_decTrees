@@ -9,7 +9,7 @@ def computeStats(predictedLabels):
     predLabels = []
     
     for label in predictedLabels:
-        actual = label[1]
+        actual = float(label[1])
         
         if actual not in labels:
             labels.append(actual)
@@ -26,8 +26,8 @@ def computeStats(predictedLabels):
             falseNeg[label] = 0        
         
     for label in predictedLabels:
-        actual = label[1]
-        predicted = label[0]
+        actual = float(label[1])
+        predicted = float(label[0])
         
         #check false positives and true positives..
         if actual == predicted:
@@ -57,3 +57,11 @@ def computeStats(predictedLabels):
             recall[label] = 0
 
     return precision, recall, accuracy
+    
+def computeAccuracy(predictedLabels):
+    correct = 0
+    for row in predictedLabels:
+        if float(row[0]) == float(row[1]):
+            correct+=1
+    return float(correct)/len(predictedLabels)
+

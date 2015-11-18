@@ -5,7 +5,6 @@ from math import *
 from Node import Node
 from computeStats import *
 from globalConstants import *#file containing all the global constants..
-import numpy
 
 
 def calcPrivInfoGain(currentEntropy, clusterEntropy, subDataSet1,subDataSet2, isClassifier, cluster):
@@ -178,8 +177,8 @@ def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False, isCl
             print "Best Column : "+str(bestColumn)
             print ""
             '''
-            lBranch =  createTree(bestSet[0],depth-1,threshold, cluster = cluster, nominalColumns = nominalColumns)
-            rBranch = createTree(bestSet[1],depth-1,threshold, cluster = cluster, nominalColumns = nominalColumns)
+            lBranch =  createTree(bestSet[0],depth-1,threshold, cluster = cluster, nominalColumns = nominalColumns, isClassifier = isClassifier)
+            rBranch = createTree(bestSet[1],depth-1,threshold, cluster = cluster, nominalColumns = nominalColumns, isClassifier = isClassifier)
             return Node(col = bestColumn, leftBranch = lBranch,rightBranch= rBranch, criteria = bestCriteria)
 
         else:
@@ -188,7 +187,13 @@ def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False, isCl
             print "No further branching possible "
             print "Adding leaf values : "+str(valuesInColumn)
             '''
-            return Node(leafValues= countOccurenceOfClassLabel(subDataSet))
+            if isClassifier:
+                return Node(leafValues= countOccurenceOfClassLabel(subDataSet))
+            else:
+                regValues = []
+                for row in subDataSet:
+                    regValues.append(float(row[len(row) - 1]))
+                return Node(leafValues = regValues)
 
     #No further branching possible since depth has become 0, create a node with all the possible leaf values
     else : 
@@ -205,83 +210,88 @@ def writeResult(predictionsPlusExpectedValues, fileName="predictionsWithDepth"):
             csvWriter.writerow(row)
         f.close()
 
+
+def getRelevantLeafNode(tree, row):
+    currentNode = tree
+
+    #Handling the Special case of depth = 0 
+    #Recursively searching for the leaf node that martches the criteria
+    while(currentNode.leafValues == None):
+        if currentNode.col not in nominalColumns:
+            #current node is a nominal column..      
+            #print currentNode.col, currentNode.criteria
+            if float(row[currentNode.col]) <= float(currentNode.criteria): 
+                currentNode = currentNode.rightBranch
+            else:
+                currentNode = currentNode.leftBranch
+        else:
+            #current node is a continuous column..                    
+            if row[currentNode.col] == currentNode.criteria: 
+                currentNode = currentNode.rightBranch
+            else:
+                currentNode = currentNode.leftBranch
+
+    return currentNode
+
 '''
 Given a tree and a dataset, the method classifyNewSample will output the predicted classification of each row in the dataset.
 '''
 def classifyNewSample(tree, testData, fileName, nominalColumns):
 
-	predictionsPlusExpectedValues = []
+    predictionsPlusExpectedValues = []
 
-	for row in testData:
+    for row in testData:
+        leaf = getRelevantLeafNode(tree, row).leafValues
 
-		currentNode = tree
-		leaf = None
-		predictedLabel = None
-		currentPredictionPlusExpectedValues = []
-		#Handling the Special case of depth = 0 
-		#Recursively searching for the leaf node that martches the criteria
-		while(leaf == None):
-			if currentNode.col not in nominalColumns:
-				#current node is a nominal column..      
-				#print currentNode.col, currentNode.criteria
-				if float(row[currentNode.col]) <= float(currentNode.criteria): 
-				    currentNode = currentNode.rightBranch
-				else:
-				    currentNode = currentNode.leftBranch
-			else:
-				#current node is a continuous column..                    
-				if row[currentNode.col] == currentNode.criteria: 
-					currentNode = currentNode.rightBranch
-				else:
-					currentNode = currentNode.leftBranch
-			leaf = currentNode.leafValues
+        predictedLabel = None
+        currentPredictionPlusExpectedValues = []
+    
+        # Counting the occurences of each possible class label in the leaf
+        labelCount = len(leaf)
 
-		# Counting the occurences of each possible class label in the leaf
-		labelCount = len(leaf)
+        #if there is only one label then classify as that label
+        if(labelCount == 1):
+            predictedLabel = leaf.keys()
 
-		#if there is only one label then classify as that label
-		if(labelCount == 1):
-			predictedLabel = leaf.keys()
-		
-		#Else we count the number of occurences of each label and assign the label which has a greater number of occurences
-		else:
-			probabilityOfClassLabels = {}
-			#Counting the total number of occurences of each label
-			totalNumberOfLabels = 0
-			for key in leaf.keys():
-				totalNumberOfLabels += leaf[key]
+        #Else we count the number of occurences of each label and assign the label which has a greater number of occurences
+        else:
+            probabilityOfClassLabels = {}
+            #Counting the total number of occurences of each label
+            totalNumberOfLabels = 0
+            for key in leaf.keys():
+                totalNumberOfLabels += leaf[key]
 
-			#Calculating and assigning the probability of each key to the dictionary probabilityOfClassLabels
-			for key in leaf.keys():
-				probabilityOfClassLabels[key] = float(leaf[key])/totalNumberOfLabels
+            #Calculating and assigning the probability of each key to the dictionary probabilityOfClassLabels
+            for key in leaf.keys():
+                probabilityOfClassLabels[key] = float(leaf[key])/totalNumberOfLabels
 
-			maxProbability = 0.0
-			bestKey = None
-		
-			'''
-			Getting the label with Max Probability, if 2 labels are equally probable then the selection
-			depends on the order in which the keys are stored, which is generally random, because the dict in Python stores the dict in an unordered manner 
-			2 runs of the program will never have keys in the same order. 
-			'''
-			for key in leaf.keys():
-				if probabilityOfClassLabels[key] > maxProbability:
-					maxProbability = probabilityOfClassLabels[key]
-					bestKey = key
-			predictedLabel = bestKey
+            maxProbability = 0.0
+            bestKey = None
 
-		#Handles the case where the label is of the type list, this happens when there are multiple labels in one Node
-		if(type(predictedLabel) == list):	
-			currentPredictionPlusExpectedValues.append(str(predictedLabel[0]))
-		else: # No issue when there is just one label per node 
-			currentPredictionPlusExpectedValues.append(str(predictedLabel))
+            '''
+            Getting the label with Max Probability, if 2 labels are equally probable then the selection
+            depends on the order in which the keys are stored, which is generally random, because the dict in Python stores the dict in an unordered manner 
+            2 runs of the program will never have keys in the same order. 
+            '''
+            for key in leaf.keys():
+                if probabilityOfClassLabels[key] > maxProbability:
+                    maxProbability = probabilityOfClassLabels[key]
+                    bestKey = key
+            predictedLabel = bestKey
 
-		#appending the expected result from testData	
-		currentPredictionPlusExpectedValues.append(row[len(row)-1])
-		#List of lists containing the prediction vs expected values
-		predictionsPlusExpectedValues.append(currentPredictionPlusExpectedValues)
-	 
-	writeResult(predictionsPlusExpectedValues, fileName)
-	return computeStats(predictionsPlusExpectedValues)
+        #Handles the case where the label is of the type list, this happens when there are multiple labels in one Node
+        if(type(predictedLabel) == list):
+            currentPredictionPlusExpectedValues.append(str(predictedLabel[0]))
+        else: # No issue when there is just one label per node 
+            currentPredictionPlusExpectedValues.append(str(predictedLabel))
+
+        #appending the expected result from testData
+        currentPredictionPlusExpectedValues.append(row[len(row)-1])
+        #List of lists containing the prediction vs expected values
+        predictionsPlusExpectedValues.append(currentPredictionPlusExpectedValues)
+ 
+    writeResult(predictionsPlusExpectedValues, fileName)
+    return computeStats(predictionsPlusExpectedValues)
 
 
 def checkDecisionTree(trainingFileName, testFileName, depth=15, isPrintTree=False, nominalColumns = []):
@@ -373,7 +383,7 @@ def combineGain(normalGain, privGain, isClassifier):
 
     if isClassifier:
         #print normalGain, privGain
-        return privGain
+        #return privGain
         privGain = alpha * privGain
         #return privGain + normalGain
         #return normalGain
@@ -587,16 +597,16 @@ def main():
     print "-"*40            
     for datasetName in datasets:
         print "Printing Results for Dataset: ", datasetName
-        print "Avg Old Accuracy: ", numpy.mean(splitOldAccuracy[datasetName]), "+- ", numpy.std(splitOldAccuracy[datasetName])
-        print "Avg. New Accuracy: ", numpy.mean(splitAccuracy[datasetName]), "+- ", numpy.std(splitAccuracy[datasetName])
+        print "Avg Old Accuracy: ", round(numpy.mean(splitOldAccuracy[datasetName]), 4), "+- ", round(numpy.std(splitOldAccuracy[datasetName]), 4)
+        print "Avg. New Accuracy: ", round(numpy.mean(splitAccuracy[datasetName]), 4), "+- ", round(numpy.std(splitAccuracy[datasetName]), 4)
         
         for lbl in splitPrecision[datasetName]:
             print "Stats for label: ", lbl
-            print "\t Old Avg. Precision is: ", numpy.mean(splitOldPrecision[datasetName][lbl]), "+- ", numpy.std(splitOldPrecision[datasetName][lbl])
-            print "\t New Avg. Precision is: ", numpy.mean(splitPrecision[datasetName][lbl]), "+- ", numpy.std(splitPrecision[datasetName][lbl])
+            print "\t Old Avg. Precision is: ", round(numpy.mean(splitOldPrecision[datasetName][lbl]), 4), "+- ", round(numpy.std(splitOldPrecision[datasetName][lbl]), 4)
+            print "\t New Avg. Precision is: ", round(numpy.mean(splitPrecision[datasetName][lbl]), 4), "+- ", round(numpy.std(splitPrecision[datasetName][lbl]), 4)
             print
-            print "\t Old Avg. Recall is: ", numpy.mean(splitOldRecall[datasetName][lbl]), "+- ", numpy.std(splitOldRecall[datasetName][lbl])
-            print "\t New Avg. Recall is: ", numpy.mean(splitRecall[datasetName][lbl]), "+- ", numpy.std(splitRecall[datasetName][lbl])
+            print "\t Old Avg. Recall is: ", round(numpy.mean(splitOldRecall[datasetName][lbl]), 4), "+- ", round(numpy.std(splitOldRecall[datasetName][lbl]), 4)
+            print "\t New Avg. Recall is: ", round(numpy.mean(splitRecall[datasetName][lbl]), 4), "+- ", round(numpy.std(splitRecall[datasetName][lbl]), 4)
             print
 #Execution begins here
 if __name__ == "__main__" : main()

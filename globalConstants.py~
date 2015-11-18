@@ -2,9 +2,9 @@ import sys
 import csv
 from math import *
 from Node import Node
+import numpy
 from computeStats import *
 #list of parameters
-
 
 limitGainBounds = True
 
@@ -25,6 +25,33 @@ datasets = []
 #datasets.append("census") #TODO: takes a lot of time..
 #datasets.append("credit")
 #datasets.append("hepatitis") #TODO: has a lot of missing values.. how to support them ???
+
+
+classLabels = {}
+#TODO: check whether the below labels are assigned correctly or not..
+classLabels["heart"] = [0, 1]
+
+classLabels["breast"] = [0, 1]
+
+classLabels["random"] = [0, 1]
+
+classLabels["iris"] = [0, 1, 2]
+
+classLabels["diabetes"] = [0, 1]
+
+classLabels["glass_binary"] = [0, 1]
+
+classLabels["car"] = [0, 1]
+
+classLabels["census"] = [0, 1]
+
+classLabels["credit"] = [0, 1]
+
+classLabels["ecoli_binary"] = [0, 1]
+
+classLabels["hepatitis"] = [0, 1]
+
+
 
 
 splitCount = 5
@@ -128,7 +155,7 @@ def calcInfoGain(currentEntropy, subDataSet1, subDataSet2, isClassifier):
     if isClassifier:
         infoGain = currentEntropy - p*calcEntropy(subDataSet1) - (1-p)*calcEntropy(subDataSet2)
     else:
-        infoGain = currentEntropy*totalLen - len1*calcVariane(subDataSet1) - len2*calcVariance(subDataSet2)
+        infoGain = currentEntropy*totalLen - len1*calcVariance(subDataSet1) - len2*calcVariance(subDataSet2)
     
     return infoGain
 
@@ -231,13 +258,10 @@ def calcEntropy(subDataSet):
     return entropy
 
 def calcVariance(subDataSet):
-    #TODO: complete this method..
-    mean = 0
+    vals = []
     for row in subDataSet:
-        mean += row[len(row) - 1]
-    mean = mean/len(subDataSet)
-    
-    return 0
+        vals.append(float(row[len(row)-1]))
+    return numpy.var(vals)
     
 def computeMisClassfication(filename):
     f = open(filename,"r")
