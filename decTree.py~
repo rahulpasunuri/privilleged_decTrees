@@ -40,7 +40,7 @@ We call createTree recursively until we reach the required depth or a good decis
 The method takes a sub part of the dataset as input and creates a tree based on the decision criteria.
 
 '''
-def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False, isClassifier = True, cluster = {}, nominalColumns = []):
+def createTree(subDataSet, depth=10,threshold=0.0, isPrivAvailable = False, isClassifier = True, cluster = {}, nominalColumns = []):
     global limitGainBounds
     global allowShift
     #print nominalColumns
@@ -193,12 +193,19 @@ def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False, isCl
                 regValues = []
                 for row in subDataSet:
                     regValues.append(float(row[len(row) - 1]))
+                #print regValues
                 return Node(leafValues = regValues)
 
     #No further branching possible since depth has become 0, create a node with all the possible leaf values
-    else : 
-        return Node(leafValues = countOccurenceOfClassLabel(subDataSet))
-
+    else :
+        if isClassifier: 
+            return Node(leafValues = countOccurenceOfClassLabel(subDataSet))
+        else:
+            regValues = []
+            for row in subDataSet:
+                regValues.append(float(row[len(row) - 1]))
+            
+            return Node(leafValues = regValues)
 
 '''
 The method write result will write the result of the classifier and the expected result in a CSV format.

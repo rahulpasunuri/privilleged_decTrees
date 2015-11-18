@@ -150,9 +150,8 @@ def calcInfoGain(currentEntropy, subDataSet1, subDataSet2, isClassifier):
     len2 = len(subDataSet2)
     totalLen = len1 + len2
 
-    p = float(len1)/totalLen
-
     if isClassifier:
+        p = float(len1)/totalLen
         infoGain = currentEntropy - p*calcEntropy(subDataSet1) - (1-p)*calcEntropy(subDataSet2)
     else:
         infoGain = currentEntropy*totalLen - len1*calcVariance(subDataSet1) - len2*calcVariance(subDataSet2)
@@ -261,6 +260,7 @@ def calcVariance(subDataSet):
     vals = []
     for row in subDataSet:
         vals.append(float(row[len(row)-1]))
+
     return numpy.var(vals)
     
 def computeMisClassfication(filename):
