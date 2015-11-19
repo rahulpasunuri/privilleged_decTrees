@@ -6,7 +6,7 @@ import copy
 
 numBoostTrees = 5
 
-def boosting(trainData, datasetName, clusters, isSimple, isOffline):
+def boosting(trainData, datasetName, clusters, isSimple, isOffline, alpha = 0):
 
     global prunedNominalColumns    
     gradThreshold = 0.1
@@ -22,7 +22,7 @@ def boosting(trainData, datasetName, clusters, isSimple, isOffline):
             currTree = decTree.createTree(trainData, depth = 7, isClassifier = False, nominalColumns = prunedNominalColumns[datasetName])
         elif isOffline:
             #TODO//fix this..
-            currTree = decTree.createTree(trainData, depth = 7, isClassifier = False, isPrivAvailable = True, cluster = clusters, nominalColumns = prunedNominalColumns[datasetName])
+            currTree = decTree.createTree(trainData, depth = 7, isClassifier = False, isPrivAvailable = True, cluster = clusters, nominalColumns = prunedNominalColumns[datasetName], alpha = alpha)
         #printTree(currTree)
         #compute the gradients with the new tree..
         newData = []
@@ -44,10 +44,10 @@ def boosting(trainData, datasetName, clusters, isSimple, isOffline):
 
 #just does the boosting on the training space, ignoring any kind of privileged information..
 def simpleBoost(trainData, datasetName):
-    return boosting(trainData = trainData, datasetName = datasetName, isSimple = True, isOffline = False, clusters = [])
+    return boosting(trainData = trainData, datasetName = datasetName, isSimple = True, isOffline = False, clusters = [], alpha = 0)
 
-def offlineClusterBoost(trainData, clusters, datasetName):
-    return boosting(trainData = trainData, datasetName = datasetName, isSimple = False, isOffline = True,  clusters = clusters)
+def offlineClusterBoost(trainData, clusters, datasetName, alpha):
+    return boosting(trainData = trainData, datasetName = datasetName, isSimple = False, isOffline = True,  clusters = clusters, alpha = alpha)
 
 def onlineClusterBoost(trainData, privTrainData):
     boostedTrees = []
@@ -180,9 +180,9 @@ def main():
                     alpha = (run+1)/10.0
                     print "Running the new logic with alpha = ",alpha
                     if isOffline:
-                        boostedTrees = offlineClusterBoost(trainData, clusters, datasetName)
+                        boostedTrees = offlineClusterBoost(trainData, clusters, datasetName, alpha)
                     else:
-                        boostedTrees = onlineClusterBoost(trainData, privTrainData)
+                        boostedTrees = onlineClusterBoost(trainData, privTrainData, alpha)
 
                     currAcc, precision, recall, accuracy = getBoostResults(testData, boostedTrees, classLabels[datasetName])   
                     print currAcc,"\t",alpha

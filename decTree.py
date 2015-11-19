@@ -7,9 +7,8 @@ from computeStats import *
 from globalConstants import *#file containing all the global constants..
 
 
-def calcPrivInfoGain(currentEntropy, clusterEntropy, subDataSet1,subDataSet2, isClassifier, cluster):
+def calcPrivInfoGain(currentEntropy, clusterEntropy, subDataSet1,subDataSet2, isClassifier, cluster, alpha):
     global numClusters
-    global alpha
 
     normalGain = calcInfoGain(currentEntropy, subDataSet1, subDataSet2, isClassifier)
     p = float(len(subDataSet1))/(len(subDataSet1)+len(subDataSet2))
@@ -42,7 +41,7 @@ We call createTree recursively until we reach the required depth or a good decis
 The method takes a sub part of the dataset as input and creates a tree based on the decision criteria.
 
 '''
-def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False, isClassifier = True, cluster = {}, nominalColumns = []):
+def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False, isClassifier = True, cluster = {}, nominalColumns = [], alpha = 0):
     global limitGainBounds
     global allowShift
     #print nominalColumns
@@ -101,7 +100,7 @@ def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False, isCl
                             bestColumn = col
                     else:
                         #TODO: check priv entropy vs. variance..
-                        currGain, privGain = calcPrivInfoGain(entropy, calcPrivEntropy(subDataSet, cluster), set1,set2, isClassifier, cluster)
+                        currGain, privGain = calcPrivInfoGain(entropy, calcPrivEntropy(subDataSet, cluster), set1,set2, isClassifier, cluster, alpha = alpha)
                         privGainList.append((currGain, privGain, (set1, set2), value, col))
                         
                         if currGain >= threshold: #only decent gains are included in the calculation..
@@ -160,7 +159,7 @@ def createTree(subDataSet, depth=15,threshold=0.0, isPrivAvailable = False, isCl
                 #'''
                 #find the max threshold
                 for tup in privGainList:
-                    currGain = combineGain(tup[0], tup[1], isClassifier)
+                    currGain = combineGain(tup[0], tup[1], isClassifier, alpha)
                     if currGain > bestGain and len(tup[2][0]) > 0 and len(tup[2][1]) > 0:
                         #print tup[0],"\t",tup[1],"\t", currGain
                         bestSet = tup[2]
@@ -347,7 +346,7 @@ def getClusterValue(row, tree, nominalColumns):
     return currentNode.clusterNum
 
 
-def newLogic(train, test, priv_train, priv_depth, privNominalColumns, prunedNominalColumns):
+def newLogic(train, test, priv_train, priv_depth, privNominalColumns, prunedNominalColumns, alpha):
     global numClusters
     nodes = []    
     #construct a tree using priv information..
@@ -378,7 +377,7 @@ def newLogic(train, test, priv_train, priv_depth, privNominalColumns, prunedNomi
         #print cluster[",".join(trainData[i])]
 
     threshold = 0
-    tree = createTree(trainData, 15, threshold, True, cluster = cluster, nominalColumns = prunedNominalColumns)
+    tree = createTree(trainData, 15, threshold, True, cluster = cluster, nominalColumns = prunedNominalColumns, alpha = alpha)
 
     #Now that we have the tree built,lets predict output on the test data
     fileName="results/"+"PredictionOf"+test.split('/')[1]
@@ -387,8 +386,7 @@ def newLogic(train, test, priv_train, priv_depth, privNominalColumns, prunedNomi
     #print "Number of Leaves in the tree is: ", numLeaves(tree)   
     return (1 - computeMisClassfication(fileName), precision, recall, accuracy)        
 
-def combineGain(normalGain, privGain, isClassifier):
-    global alpha
+def combineGain(normalGain, privGain, isClassifier, alpha):
     privGain = alpha * privGain
     if isClassifier:
         #print normalGain, privGain
@@ -408,8 +406,7 @@ def combineGain(normalGain, privGain, isClassifier):
         #return harmonicMean(normalGain, privGain)
     else:
         #TODO: replace this logic with a new logic..
-        print alpha
-        return privGain + normalGain
+        #return privGain + normalGain
         
         if normalGain < privGain:
             return reverseHarmonicMean(normalGain, privGain)
@@ -541,7 +538,7 @@ def main():
                 for run in range(20):
                     alpha = (run+1)/10.0
                     print "Running the new logic with alpha = ",alpha
-                    currAcc, precision, recall, accuracy = newLogic(datasetName+"/"+dirName+"/pruned_train_"+str(part)+".csv", datasetName+"/"+dirName+"/pruned_test_"+str(part)+".csv", datasetName+"/"+dirName+"/priv_train_"+str(part)+".csv", 3, privNominalColumns = privNominalColumns[datasetName], prunedNominalColumns = prunedNominalColumns[datasetName])     
+                    currAcc, precision, recall, accuracy = newLogic(datasetName+"/"+dirName+"/pruned_train_"+str(part)+".csv", datasetName+"/"+dirName+"/pruned_test_"+str(part)+".csv", datasetName+"/"+dirName+"/priv_train_"+str(part)+".csv", 3, privNominalColumns = privNominalColumns[datasetName], prunedNominalColumns = prunedNominalColumns[datasetName], alpha = alpha)     
                     print currAcc,"\t",alpha
                     #break
                     newAcc[part].append(currAcc)
