@@ -20,6 +20,8 @@ def calcPrivInfoGain(currentEntropy, clusterEntropy, subDataSet1,subDataSet2, is
 def calcPrivEntropy(data, cluster):
     classLabelCounts = {}
     for row in data:
+        #row = [str(c) for c in row]
+        row = row[:-1]
         c = cluster[",".join(row)]
         if c in classLabelCounts:
             classLabelCounts[c] += 1
@@ -372,7 +374,7 @@ def newLogic(train, test, priv_train, priv_depth, privNominalColumns, prunedNomi
     cluster = {} #clear the previous cluster global variable..
     numRows = len(trainData)
     for i in range(numRows):
-        cluster[",".join(trainData[i])] = getClusterValue(privData[i], privTree, privNominalColumns)
+        cluster[",".join(trainData[i][:-1])] = getClusterValue(privData[i], privTree, privNominalColumns)
         #print cluster[",".join(trainData[i])]
 
     threshold = 0
@@ -387,15 +389,16 @@ def newLogic(train, test, priv_train, priv_depth, privNominalColumns, prunedNomi
 
 def combineGain(normalGain, privGain, isClassifier):
     global alpha
-
+    privGain = alpha * privGain
     if isClassifier:
         #print normalGain, privGain
         #return privGain
-        privGain = alpha * privGain
+        
         #return privGain + normalGain
         #return normalGain
         #
         #'''
+        
         if normalGain < privGain:
             return reverseHarmonicMean(normalGain, privGain)
         else:
@@ -405,9 +408,15 @@ def combineGain(normalGain, privGain, isClassifier):
         #return harmonicMean(normalGain, privGain)
     else:
         #TODO: replace this logic with a new logic..
-        privGain = alpha * privGain
-        #return normalGain
-        return privGain + normalGain        
+        print alpha
+        return privGain + normalGain
+        
+        if normalGain < privGain:
+            return reverseHarmonicMean(normalGain, privGain)
+        else:
+            return harmonicMean(normalGain, privGain)
+        #'''
+        return reverseHarmonicMean(normalGain, privGain)
     #'''
     #old logic..
     '''

@@ -11,10 +11,10 @@ limitGainBounds = True
 
 datasets = []
 #datasets.append("random")
-#datasets.append("heart")
+datasets.append("heart")
 #datasets.append("breast")
 #datasets.append("heart_multi")
-datasets.append("iris")
+#datasets.append("iris")
 #datasets.append("diabetes")
 
 #----new datasets (yet to complete) ---
