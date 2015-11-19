@@ -219,7 +219,7 @@ def writeResult(predictionsPlusExpectedValues, fileName="predictionsWithDepth"):
         f.close()
 
 
-def getRelevantLeafNode(tree, row):
+def getRelevantLeafNode(tree, row, nominalColumns):
     currentNode = tree
 
     #Handling the Special case of depth = 0 
@@ -249,7 +249,7 @@ def classifyNewSample(tree, testData, fileName, nominalColumns):
     predictionsPlusExpectedValues = []
 
     for row in testData:
-        leaf = getRelevantLeafNode(tree, row).leafValues
+        leaf = getRelevantLeafNode(tree, row, nominalColumns).leafValues
 
         predictedLabel = None
         currentPredictionPlusExpectedValues = []
@@ -388,55 +388,21 @@ def newLogic(train, test, priv_train, priv_depth, privNominalColumns, prunedNomi
 
 def combineGain(normalGain, privGain, isClassifier, alpha):
     privGain = alpha * privGain
-    if isClassifier:
-        #print normalGain, privGain
-        #return privGain
-        
-        #return privGain + normalGain
-        #return normalGain
-        #
-        #'''
-        
-        if normalGain < privGain:
-            return reverseHarmonicMean(normalGain, privGain)
-        else:
-            return harmonicMean(normalGain, privGain)
-        #'''
-        return reverseHarmonicMean(normalGain, privGain)
-        #return harmonicMean(normalGain, privGain)
-    else:
-        #TODO: replace this logic with a new logic..
-        #return privGain + normalGain
-        
-        if normalGain < privGain:
-            return reverseHarmonicMean(normalGain, privGain)
-        else:
-            return harmonicMean(normalGain, privGain)
-        #'''
-        return reverseHarmonicMean(normalGain, privGain)
+    #print normalGain, privGain
+    #return privGain
+    
+    #return privGain + normalGain
+    #return normalGain
+    #
     #'''
-    #old logic..
-    '''
+    
     if normalGain < privGain:
         return reverseHarmonicMean(normalGain, privGain)
     else:
         return harmonicMean(normalGain, privGain)
     #'''
-    
-    '''
-    #Semi harmonic and linear logic..
-    if normalGain > privGain:
-        return (normalGain+privGain)/2.0
-    else:
-        return harmonicMean(normalGain, privGain)
-    '''
-
-    '''
-    if normalGain > privGain:
-        return reverseHarmonicMean(normalGain, privGain)
-    else:
-        return harmonicMean(normalGain, privGain)
-    '''
+    return reverseHarmonicMean(normalGain, privGain)
+    #return harmonicMean(normalGain, privGain)
 
 #The main function that calls all other functions, execution begins here
 def main():

@@ -6,7 +6,7 @@ import copy
 
 numBoostTrees = 5
 stepSize = 0.1
-def boosting(trainData, datasetName, clusters, isSimple, isOffline, alpha = 0):
+def boosting(trainData, datasetName, clusters, isSimple, isOffline, nominalColumns, alpha = 0):
     global stepSize
     prevError = 10000000000
     currError = None
@@ -23,16 +23,16 @@ def boosting(trainData, datasetName, clusters, isSimple, isOffline, alpha = 0):
         #print "Getting a new Tree: ", len(boostedTrees)
         stopBoosting = True
         if isSimple:
-            currTree = decTree.createTree(trainData, depth = 7, isClassifier = False, nominalColumns = prunedNominalColumns[datasetName])
+            currTree = decTree.createTree(trainData, depth = 4, isClassifier = False, nominalColumns = prunedNominalColumns[datasetName])
         elif isOffline:
             #TODO//fix this..
-            currTree = decTree.createTree(trainData, depth = 7, isClassifier = False, isPrivAvailable = True, cluster = clusters, nominalColumns = prunedNominalColumns[datasetName], alpha = alpha)
+            currTree = decTree.createTree(trainData, depth = 4, isClassifier = False, isPrivAvailable = True, cluster = clusters, nominalColumns = prunedNominalColumns[datasetName], alpha = alpha)
         #printTree(currTree)
         #compute the gradients with the new tree..
         newData = []
         count = 0
         for row in trainData:
-            currValue = getRegressionValueOfTree(currTree, row)
+            currValue = getRegressionValueOfTree(currTree, row, nominalColumns)
             #compute the gradients..
 
             row[len(row)-1] = float(row[len(row)-1]) - stepSize*currValue
@@ -61,27 +61,28 @@ def boosting(trainData, datasetName, clusters, isSimple, isOffline, alpha = 0):
 
 #just does the boosting on the training space, ignoring any kind of privileged information..
 def simpleBoost(trainData, datasetName):
-    return boosting(trainData = trainData, datasetName = datasetName, isSimple = True, isOffline = False, clusters = [], alpha = 0)
+    global prunedNominalColumns
+    return boosting(trainData = trainData, datasetName = datasetName, isSimple = True, isOffline = False, clusters = [], nominalColumns = prunedNominalColumns[datasetName], alpha = 0)
 
 def offlineClusterBoost(trainData, clusters, datasetName, alpha):
-    return boosting(trainData = trainData, datasetName = datasetName, isSimple = False, isOffline = True,  clusters = clusters, alpha = alpha)
+    return boosting(trainData = trainData, datasetName = datasetName, isSimple = False, isOffline = True, nominalColumns = prunedNominalColumns[datasetName], clusters = clusters, alpha = alpha)
 
 def onlineClusterBoost(trainData, privTrainData):
     boostedTrees = []
 
     return boostedTrees
 
-def getRegressionValueOfTree(tree, row):
-    leaf = decTree.getRelevantLeafNode(tree, row)
+def getRegressionValueOfTree(tree, row, nominalColumns):
+    leaf = decTree.getRelevantLeafNode(tree, row, nominalColumns)
     return numpy.mean(leaf.leafValues)
     
-def getBoostResults(testData, boostedTrees, totalLabels):
+def getBoostResults(testData, boostedTrees, totalLabels, nominalColumns):
     global stepSize
     predictions = []
     for row in testData:
         res = 0
         for tree in boostedTrees:
-           res += stepSize*getRegressionValueOfTree(tree, row)
+           res += stepSize*getRegressionValueOfTree(tree, row, nominalColumns)
         
         closestLabel = None
         closestDistance = 1000000000000000
@@ -161,7 +162,7 @@ def main():
                 testData = readData(datasetName+"/"+dirName+"/pruned_test_"+str(part)+".csv")
 
                 boostedTrees = simpleBoost(trainData, datasetName)
-                currNormalAcc, precision, recall, accuracy = getBoostResults(testData, boostedTrees, classLabels[datasetName])
+                currNormalAcc, precision, recall, accuracy = getBoostResults(testData, boostedTrees, classLabels[datasetName], prunedNominalColumns[datasetName])
                 print currNormalAcc
                 normalAcc += currNormalAcc
                 for label in precision:
@@ -202,7 +203,7 @@ def main():
                     else:
                         boostedTrees = onlineClusterBoost(trainData, privTrainData, alpha)
 
-                    currAcc, precision, recall, accuracy = getBoostResults(testData, boostedTrees, classLabels[datasetName])   
+                    currAcc, precision, recall, accuracy = getBoostResults(testData, boostedTrees, classLabels[datasetName], prunedNominalColumns[datasetName])   
                     print currAcc,"\t",alpha
                     #break
                     newAcc[part].append(currAcc)
