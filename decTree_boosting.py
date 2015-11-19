@@ -5,18 +5,22 @@ import decTree
 import copy
 
 numBoostTrees = 5
-
+stepSize = 0.1
 def boosting(trainData, datasetName, clusters, isSimple, isOffline, alpha = 0):
-
+    global stepSize
+    prevError = 10000000000
+    currError = None
     global prunedNominalColumns    
     gradThreshold = 0.1
-    
+    origData = trainData
     boostedTrees = []
     treeCount = 0
     trainData = copy.deepcopy(trainData) # make a deep copy of the original data, so that we are not changing the original data..
     stopBoosting = False
+    classIndex = len(origData[0]) - 1
+    predictions = [ 0 for p in range(len(origData))]
     while not stopBoosting:
-        print "Getting a new Tree: ", len(boostedTrees)
+        #print "Getting a new Tree: ", len(boostedTrees)
         stopBoosting = True
         if isSimple:
             currTree = decTree.createTree(trainData, depth = 7, isClassifier = False, nominalColumns = prunedNominalColumns[datasetName])
@@ -26,17 +30,30 @@ def boosting(trainData, datasetName, clusters, isSimple, isOffline, alpha = 0):
         #printTree(currTree)
         #compute the gradients with the new tree..
         newData = []
+        count = 0
         for row in trainData:
             currValue = getRegressionValueOfTree(currTree, row)
             #compute the gradients..
-            row[len(row)-1] = float(row[len(row)-1]) - currValue
-            
+
+            row[len(row)-1] = float(row[len(row)-1]) - stepSize*currValue
+            predictions[count] += stepSize*currValue
+            '''
             if row[len(row)-1] > gradThreshold:
                 stopBoosting = False
+            '''
             newData.append(row)
-
+            count += 1
         #update the variable used for learning..
         trainData = newData
+        
+        #compute overall error..
+        currError = 0
+        for index in range(len(origData)):
+            currError = currError + ((float(origData[index][classIndex]) - float(predictions[index]))*(float(origData[index][classIndex]) - float(predictions[index])))
+        #print currError
+        if abs(prevError - currError) > 0.01*len(origData):
+            stopBoosting = False
+        prevError = currError
         treeCount += 1
         boostedTrees.append(currTree)
     print "Length of boostedTrees: ", len(boostedTrees)
@@ -59,11 +76,12 @@ def getRegressionValueOfTree(tree, row):
     return numpy.mean(leaf.leafValues)
     
 def getBoostResults(testData, boostedTrees, totalLabels):
+    global stepSize
     predictions = []
     for row in testData:
         res = 0
         for tree in boostedTrees:
-           res += getRegressionValueOfTree(tree, row)
+           res += stepSize*getRegressionValueOfTree(tree, row)
         
         closestLabel = None
         closestDistance = 1000000000000000
