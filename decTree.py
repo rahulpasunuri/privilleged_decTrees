@@ -9,7 +9,7 @@ from globalConstants import *#file containing all the global constants..
 
 def calcPrivInfoGain(currentEntropy, clusterEntropy, subDataSet1,subDataSet2, isClassifier, cluster, alpha):
     global numClusters
-
+    
     normalGain = calcInfoGain(currentEntropy, subDataSet1, subDataSet2, isClassifier)
     p = float(len(subDataSet1))/(len(subDataSet1)+len(subDataSet2))
     privGain = clusterEntropy -p*calcPrivEntropy(subDataSet1, cluster) - (1-p)*calcPrivEntropy(subDataSet2, cluster)
@@ -26,13 +26,15 @@ def calcPrivEntropy(data, cluster):
             classLabelCounts[c] += 1
         else:
             classLabelCounts[c] = 1
-
+    
     totalRows = len(data)
     entropy = 0.0
-
+    
     for key in classLabelCounts:
+        #print "what??"
         p = float(classLabelCounts[key])/totalRows
         entropy -= p*log(p,2)
+    #print entropy
     return entropy
 
 '''
@@ -346,15 +348,10 @@ def getClusterValue(row, tree, nominalColumns):
     return currentNode.clusterNum
 
 
-def newLogic(train, test, priv_train, priv_depth, privNominalColumns, prunedNominalColumns, alpha):
-    global numClusters
-    nodes = []    
-    #construct a tree using priv information..
-    
-    #privTree = createTree(readData(priv_train), priv_depth, nominalColumns = nominalColumns)
-    privTree = createTree(readData(priv_train), nominalColumns = privNominalColumns) #TODO: check the use of the priv_depth..
+def assignClustersToLeaves(privTree):
     #assign a new cluster number to each leaf node..
-    index = 0
+    index = 0    
+    nodes = []    
     nodes.append(privTree)
     while len(nodes) != 0:
         node = nodes.pop()
@@ -366,6 +363,18 @@ def newLogic(train, test, priv_train, priv_depth, privNominalColumns, prunedNomi
         if node.rightBranch != None:
             nodes.append(node.rightBranch)
     numClusters = index
+    
+    return index
+
+def newLogic(train, test, priv_train, priv_depth, privNominalColumns, prunedNominalColumns, alpha):
+    global numClusters
+
+    #construct a tree using priv information..
+    
+    #privTree = createTree(readData(priv_train), priv_depth, nominalColumns = nominalColumns)
+    privTree = createTree(readData(priv_train), nominalColumns = privNominalColumns) #TODO: check the use of the priv_depth..
+    
+    index = assignClustersToLeaves(privTree)
     #print "Total clusters is: ", index
     trainData = readData(train)
     testData = readData(test)
@@ -387,6 +396,7 @@ def newLogic(train, test, priv_train, priv_depth, privNominalColumns, prunedNomi
     return (1 - computeMisClassfication(fileName), precision, recall, accuracy)        
 
 def combineGain(normalGain, privGain, isClassifier, alpha):
+    #print alpha
     privGain = alpha * privGain
     #print normalGain, privGain
     #return privGain

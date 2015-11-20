@@ -184,14 +184,22 @@ def main():
                 #get clusters for the training data using the privileged tree..                
                  #"\nConstructing the privileged tree.."
                 privTrainData = readData(datasetName+"/"+dirName+"/priv_train_"+str(part)+".csv")
-                privTree = decTree.createTree(privTrainData)
+                privTree = decTree.createTree(privTrainData, nominalColumns = privNominalColumns[datasetName])
+                decTree.assignClustersToLeaves(privTree)
+                
                 clusters = {}
-
+                diffClusters = []
                 for rowIndex in range(len(trainData)):
                     prunedRow = trainData[rowIndex]
                     prunedRow = prunedRow[:-1] #remove the class label from the row..
                     clusters[",".join(prunedRow)] = decTree.getClusterValue(privTrainData[rowIndex], privTree, privNominalColumns[datasetName])
-
+                
+                
+                for key in clusters:
+                    if clusters[key] not in diffClusters:
+                        diffClusters.append(clusters[key])
+                print "Total Number of clusters: ", len(diffClusters)
+                
                 newAcc.append([])
                 newPrecision.append([])
                 newRecall.append([])
