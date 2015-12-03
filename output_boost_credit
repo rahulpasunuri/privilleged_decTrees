@@ -1,0 +1,1820 @@
+
+
+########################################
+########################################
+Printing results for split:  0
+########################################
+########################################
+
+########################################
+Running credit:
+Running credit with fold:  0
+
+Running pruned dataset
+Length of boostedTrees:  12
+0.715384615385
+Total Number of clusters:  77
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  11
+0.723076923077 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  11
+0.723076923077 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  11
+0.723076923077 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  11
+0.723076923077 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  11
+0.723076923077 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  11
+0.723076923077 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  11
+0.723076923077 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  11
+0.723076923077 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  11
+0.723076923077 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  11
+0.723076923077 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  11
+0.723076923077 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  11
+0.723076923077 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  11
+0.723076923077 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  11
+0.723076923077 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  11
+0.723076923077 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  11
+0.723076923077 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.723076923077 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.723076923077 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.723076923077 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.723076923077 	2.0
+Running credit with fold:  1
+
+Running pruned dataset
+Length of boostedTrees:  11
+0.746153846154
+Total Number of clusters:  86
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  11
+0.730769230769 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  11
+0.730769230769 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  11
+0.730769230769 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  11
+0.730769230769 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  11
+0.730769230769 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  11
+0.730769230769 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  11
+0.730769230769 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  11
+0.730769230769 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  11
+0.730769230769 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  11
+0.730769230769 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  11
+0.730769230769 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  11
+0.730769230769 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  11
+0.730769230769 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  11
+0.730769230769 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  11
+0.730769230769 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  11
+0.730769230769 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.730769230769 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.730769230769 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.730769230769 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.730769230769 	2.0
+Running credit with fold:  2
+
+Running pruned dataset
+Length of boostedTrees:  11
+0.746153846154
+Total Number of clusters:  92
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  11
+0.753846153846 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  11
+0.723076923077 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  11
+0.707692307692 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  11
+0.707692307692 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  11
+0.707692307692 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  11
+0.715384615385 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  11
+0.723076923077 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  11
+0.723076923077 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  11
+0.730769230769 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  11
+0.730769230769 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  11
+0.738461538462 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  11
+0.738461538462 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  11
+0.738461538462 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  11
+0.723076923077 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  11
+0.723076923077 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  11
+0.723076923077 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.723076923077 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.723076923077 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.723076923077 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.707692307692 	2.0
+Running credit with fold:  3
+
+Running pruned dataset
+Length of boostedTrees:  11
+0.715384615385
+Total Number of clusters:  90
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  11
+0.7 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  11
+0.7 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  11
+0.7 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  11
+0.684615384615 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  11
+0.7 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  11
+0.707692307692 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  11
+0.7 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  11
+0.723076923077 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  11
+0.723076923077 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  11
+0.723076923077 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  11
+0.707692307692 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  11
+0.707692307692 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  11
+0.707692307692 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  11
+0.707692307692 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  11
+0.707692307692 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  11
+0.707692307692 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.692307692308 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.692307692308 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.715384615385 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.715384615385 	2.0
+Running credit with fold:  4
+
+Running pruned dataset
+Length of boostedTrees:  11
+0.661654135338
+Total Number of clusters:  90
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  11
+0.669172932331 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  11
+0.669172932331 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  11
+0.654135338346 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  11
+0.661654135338 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  11
+0.676691729323 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  11
+0.676691729323 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  11
+0.676691729323 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  11
+0.661654135338 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  11
+0.661654135338 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  11
+0.661654135338 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  11
+0.661654135338 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  11
+0.661654135338 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  11
+0.661654135338 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  10
+0.639097744361 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  11
+0.654135338346 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  10
+0.646616541353 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  10
+0.646616541353 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  10
+0.646616541353 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  10
+0.646616541353 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  10
+0.646616541353 	2.0
+
+Normal Accuracy is 0.716946211683
+Stats for label:  0.0
+	Precision is:  0.675146659124
+	Recall is:  0.931267747393
+------------------------------
+Stats for label:  1.0
+	Precision is:  0.841798269813
+	Recall is:  0.459455424476
+------------------------------
+
+New Accuracy is:  0.715373048005 for alpha:  0.1
+Stats for label:  0.0
+	Precision for the chosen alpha is:  0.674473496183
+	Recall for the chosen alpha is:  0.928855050855
+------------------------------
+Stats for label:  1.0
+	Precision for the chosen alpha is:  0.837389722347
+	Recall for the chosen alpha is:  0.459715456804
+------------------------------
+
+
+########################################
+########################################
+Printing results for split:  1
+########################################
+########################################
+
+########################################
+Running credit:
+Running credit with fold:  0
+
+Running pruned dataset
+Length of boostedTrees:  11
+0.7
+Total Number of clusters:  88
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  11
+0.707692307692 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  11
+0.707692307692 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  11
+0.707692307692 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  11
+0.707692307692 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  11
+0.707692307692 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  11
+0.707692307692 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  11
+0.707692307692 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  11
+0.707692307692 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  11
+0.707692307692 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  11
+0.707692307692 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  11
+0.715384615385 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  11
+0.715384615385 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  11
+0.715384615385 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  11
+0.715384615385 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  11
+0.715384615385 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  11
+0.715384615385 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.715384615385 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.715384615385 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.715384615385 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.715384615385 	2.0
+Running credit with fold:  1
+
+Running pruned dataset
+Length of boostedTrees:  11
+0.684615384615
+Total Number of clusters:  83
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  11
+0.707692307692 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  11
+0.707692307692 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  11
+0.707692307692 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  11
+0.707692307692 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  11
+0.707692307692 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  11
+0.707692307692 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  11
+0.707692307692 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  11
+0.707692307692 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  11
+0.692307692308 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  11
+0.692307692308 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  11
+0.707692307692 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  11
+0.707692307692 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  11
+0.707692307692 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  11
+0.7 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  11
+0.7 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  11
+0.7 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.7 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.7 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.7 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.7 	2.0
+Running credit with fold:  2
+
+Running pruned dataset
+Length of boostedTrees:  11
+0.761538461538
+Total Number of clusters:  88
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  11
+0.753846153846 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  11
+0.753846153846 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  11
+0.753846153846 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  11
+0.753846153846 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  11
+0.753846153846 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  11
+0.753846153846 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  11
+0.753846153846 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  11
+0.753846153846 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  11
+0.753846153846 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  11
+0.753846153846 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  11
+0.753846153846 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  11
+0.753846153846 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  11
+0.753846153846 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  11
+0.753846153846 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  11
+0.753846153846 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  11
+0.753846153846 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.753846153846 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.753846153846 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.753846153846 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.753846153846 	2.0
+Running credit with fold:  3
+
+Running pruned dataset
+Length of boostedTrees:  11
+0.723076923077
+Total Number of clusters:  74
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  12
+0.730769230769 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  12
+0.730769230769 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  12
+0.730769230769 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  12
+0.730769230769 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  12
+0.730769230769 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  12
+0.730769230769 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  12
+0.730769230769 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  12
+0.730769230769 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  12
+0.730769230769 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  12
+0.730769230769 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  12
+0.730769230769 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  12
+0.730769230769 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  12
+0.730769230769 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  12
+0.730769230769 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  12
+0.730769230769 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  12
+0.730769230769 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  12
+0.730769230769 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  12
+0.730769230769 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  12
+0.730769230769 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  12
+0.730769230769 	2.0
+Running credit with fold:  4
+
+Running pruned dataset
+Length of boostedTrees:  11
+0.669172932331
+Total Number of clusters:  87
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  11
+0.654135338346 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  11
+0.654135338346 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  11
+0.654135338346 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  11
+0.654135338346 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  11
+0.654135338346 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  11
+0.654135338346 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  11
+0.654135338346 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  11
+0.654135338346 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  11
+0.654135338346 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  11
+0.654135338346 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  11
+0.654135338346 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  11
+0.654135338346 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  11
+0.654135338346 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  11
+0.654135338346 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  11
+0.654135338346 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  11
+0.654135338346 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.654135338346 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.654135338346 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.654135338346 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.654135338346 	2.0
+
+Normal Accuracy is 0.707680740312
+Stats for label:  0.0
+	Precision is:  0.669746100683
+	Recall is:  0.925832905491
+------------------------------
+Stats for label:  1.0
+	Precision is:  0.834309409888
+	Recall is:  0.449618753457
+------------------------------
+
+New Accuracy is:  0.712365529208 for alpha:  1.1
+Stats for label:  0.0
+	Precision for the chosen alpha is:  0.67348982932
+	Recall for the chosen alpha is:  0.932503280124
+------------------------------
+Stats for label:  1.0
+	Precision for the chosen alpha is:  0.852656898657
+	Recall for the chosen alpha is:  0.455027813633
+------------------------------
+
+
+########################################
+########################################
+Printing results for split:  2
+########################################
+########################################
+
+########################################
+Running credit:
+Running credit with fold:  0
+
+Running pruned dataset
+Length of boostedTrees:  11
+0.7
+Total Number of clusters:  91
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  11
+0.730769230769 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  11
+0.730769230769 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  11
+0.730769230769 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  11
+0.730769230769 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  11
+0.730769230769 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  11
+0.730769230769 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  11
+0.730769230769 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  11
+0.730769230769 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  11
+0.730769230769 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  11
+0.730769230769 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  11
+0.723076923077 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  11
+0.723076923077 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  11
+0.723076923077 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  11
+0.723076923077 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  11
+0.723076923077 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  11
+0.723076923077 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.723076923077 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.723076923077 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.715384615385 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.715384615385 	2.0
+Running credit with fold:  1
+
+Running pruned dataset
+Length of boostedTrees:  10
+0.684615384615
+Total Number of clusters:  94
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  10
+0.669230769231 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  10
+0.669230769231 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  10
+0.676923076923 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  10
+0.676923076923 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  11
+0.669230769231 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  11
+0.669230769231 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  10
+0.669230769231 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  10
+0.669230769231 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  10
+0.669230769231 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  10
+0.646153846154 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  11
+0.684615384615 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  11
+0.684615384615 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  11
+0.684615384615 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  11
+0.684615384615 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  11
+0.676923076923 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  11
+0.676923076923 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.676923076923 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.676923076923 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.676923076923 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  10
+0.661538461538 	2.0
+Running credit with fold:  2
+
+Running pruned dataset
+Length of boostedTrees:  11
+0.715384615385
+Total Number of clusters:  95
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  11
+0.715384615385 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  11
+0.715384615385 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  11
+0.715384615385 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  11
+0.715384615385 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  11
+0.715384615385 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  11
+0.715384615385 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  11
+0.715384615385 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  11
+0.715384615385 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  11
+0.715384615385 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  11
+0.715384615385 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  11
+0.715384615385 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  11
+0.715384615385 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  11
+0.715384615385 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  11
+0.715384615385 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  11
+0.715384615385 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  11
+0.715384615385 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.715384615385 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.715384615385 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.715384615385 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.715384615385 	2.0
+Running credit with fold:  3
+
+Running pruned dataset
+Length of boostedTrees:  11
+0.715384615385
+Total Number of clusters:  83
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  11
+0.646153846154 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  11
+0.646153846154 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  11
+0.646153846154 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  11
+0.646153846154 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  11
+0.646153846154 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  11
+0.646153846154 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  11
+0.646153846154 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  11
+0.646153846154 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  11
+0.646153846154 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  11
+0.646153846154 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  11
+0.646153846154 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  11
+0.646153846154 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  11
+0.646153846154 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  11
+0.646153846154 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  11
+0.646153846154 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  11
+0.646153846154 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.646153846154 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.646153846154 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.646153846154 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.646153846154 	2.0
+Running credit with fold:  4
+
+Running pruned dataset
+Length of boostedTrees:  11
+0.736842105263
+Total Number of clusters:  85
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  10
+0.706766917293 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  11
+0.729323308271 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  11
+0.736842105263 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  11
+0.759398496241 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  11
+0.736842105263 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  11
+0.744360902256 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  11
+0.751879699248 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  11
+0.751879699248 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  11
+0.751879699248 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  11
+0.751879699248 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  11
+0.759398496241 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  11
+0.759398496241 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  11
+0.759398496241 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  11
+0.759398496241 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  11
+0.759398496241 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  11
+0.759398496241 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.759398496241 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.759398496241 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.751879699248 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.751879699248 	2.0
+
+Normal Accuracy is 0.71044534413
+Stats for label:  0.0
+	Precision is:  0.663490337995
+	Recall is:  0.951833915396
+------------------------------
+Stats for label:  1.0
+	Precision is:  0.879818200144
+	Recall is:  0.415369848869
+------------------------------
+
+New Accuracy is:  0.705725853094 for alpha:  0.4
+Stats for label:  0.0
+	Precision for the chosen alpha is:  0.662888483766
+	Recall for the chosen alpha is:  0.936880467017
+------------------------------
+Stats for label:  1.0
+	Precision for the chosen alpha is:  0.85168324855
+	Recall for the chosen alpha is:  0.423981507557
+------------------------------
+
+
+########################################
+########################################
+Printing results for split:  3
+########################################
+########################################
+
+########################################
+Running credit:
+Running credit with fold:  0
+
+Running pruned dataset
+Length of boostedTrees:  11
+0.707692307692
+Total Number of clusters:  86
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  11
+0.676923076923 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  11
+0.692307692308 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  11
+0.692307692308 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  11
+0.692307692308 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  11
+0.692307692308 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  11
+0.692307692308 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  11
+0.692307692308 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  11
+0.692307692308 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  11
+0.684615384615 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  11
+0.684615384615 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  11
+0.684615384615 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  11
+0.684615384615 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  11
+0.7 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  11
+0.7 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  11
+0.7 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  11
+0.7 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.7 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.707692307692 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.7 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.7 	2.0
+Running credit with fold:  1
+
+Running pruned dataset
+Length of boostedTrees:  11
+0.707692307692
+Total Number of clusters:  85
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  11
+0.692307692308 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  11
+0.692307692308 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  10
+0.684615384615 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  11
+0.692307692308 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  11
+0.684615384615 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  11
+0.692307692308 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  11
+0.684615384615 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  11
+0.692307692308 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  11
+0.7 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  11
+0.707692307692 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  11
+0.692307692308 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  11
+0.692307692308 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  11
+0.692307692308 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  11
+0.7 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  11
+0.7 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  11
+0.7 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.692307692308 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.692307692308 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.692307692308 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.692307692308 	2.0
+Running credit with fold:  2
+
+Running pruned dataset
+Length of boostedTrees:  11
+0.753846153846
+Total Number of clusters:  84
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  11
+0.723076923077 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  11
+0.723076923077 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  11
+0.723076923077 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  11
+0.723076923077 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  11
+0.723076923077 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  11
+0.723076923077 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  11
+0.723076923077 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  11
+0.723076923077 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  11
+0.723076923077 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  11
+0.723076923077 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  11
+0.723076923077 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  11
+0.723076923077 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  11
+0.723076923077 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  11
+0.723076923077 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  11
+0.723076923077 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  11
+0.723076923077 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.723076923077 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.723076923077 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.723076923077 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.723076923077 	2.0
+Running credit with fold:  3
+
+Running pruned dataset
+Length of boostedTrees:  11
+0.676923076923
+Total Number of clusters:  91
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  11
+0.684615384615 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  11
+0.684615384615 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  11
+0.692307692308 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  11
+0.7 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  11
+0.7 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  11
+0.7 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  11
+0.7 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  11
+0.692307692308 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  11
+0.692307692308 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  11
+0.692307692308 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  11
+0.684615384615 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  11
+0.684615384615 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  11
+0.684615384615 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  11
+0.684615384615 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  11
+0.684615384615 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  11
+0.684615384615 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.684615384615 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.684615384615 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.684615384615 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.684615384615 	2.0
+Running credit with fold:  4
+
+Running pruned dataset
+Length of boostedTrees:  11
+0.699248120301
+Total Number of clusters:  86
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  11
+0.691729323308 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  11
+0.691729323308 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  11
+0.699248120301 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  11
+0.691729323308 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  11
+0.699248120301 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  11
+0.699248120301 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  11
+0.699248120301 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  12
+0.691729323308 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  11
+0.706766917293 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  11
+0.699248120301 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  11
+0.699248120301 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  11
+0.699248120301 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  11
+0.699248120301 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  11
+0.699248120301 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  11
+0.699248120301 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  11
+0.699248120301 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.699248120301 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.699248120301 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.699248120301 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.699248120301 	2.0
+
+Normal Accuracy is 0.709080393291
+Stats for label:  0.0
+	Precision is:  0.67185479611
+	Recall is:  0.91887788629
+------------------------------
+Stats for label:  1.0
+	Precision is:  0.829680241327
+	Recall is:  0.457733651441
+------------------------------
+
+New Accuracy is:  0.701388085599 for alpha:  0.6
+Stats for label:  0.0
+	Precision for the chosen alpha is:  0.662056816463
+	Recall for the chosen alpha is:  0.930460897873
+------------------------------
+Stats for label:  1.0
+	Precision for the chosen alpha is:  0.840150590151
+	Recall for the chosen alpha is:  0.426793081167
+------------------------------
+
+
+########################################
+########################################
+Printing results for split:  4
+########################################
+########################################
+
+########################################
+Running credit:
+Running credit with fold:  0
+
+Running pruned dataset
+Length of boostedTrees:  11
+0.784615384615
+Total Number of clusters:  80
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  11
+0.784615384615 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  11
+0.792307692308 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  11
+0.8 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  11
+0.8 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  11
+0.8 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  11
+0.807692307692 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  11
+0.807692307692 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  11
+0.8 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  11
+0.784615384615 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  11
+0.8 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  11
+0.8 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  11
+0.784615384615 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  11
+0.784615384615 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  11
+0.784615384615 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  11
+0.784615384615 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  11
+0.784615384615 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.792307692308 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  12
+0.792307692308 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  12
+0.792307692308 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  12
+0.792307692308 	2.0
+Running credit with fold:  1
+
+Running pruned dataset
+Length of boostedTrees:  11
+0.661538461538
+Total Number of clusters:  85
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  10
+0.661538461538 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  11
+0.684615384615 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  10
+0.623076923077 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  11
+0.692307692308 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  11
+0.692307692308 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  11
+0.669230769231 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  11
+0.684615384615 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  11
+0.684615384615 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  11
+0.676923076923 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  11
+0.676923076923 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  10
+0.653846153846 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  10
+0.653846153846 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  10
+0.653846153846 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  10
+0.653846153846 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  10
+0.653846153846 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  10
+0.653846153846 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  10
+0.653846153846 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  10
+0.653846153846 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  10
+0.653846153846 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  10
+0.653846153846 	2.0
+Running credit with fold:  2
+
+Running pruned dataset
+Length of boostedTrees:  11
+0.769230769231
+Total Number of clusters:  88
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  11
+0.784615384615 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  11
+0.761538461538 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  11
+0.761538461538 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  11
+0.761538461538 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  11
+0.761538461538 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  11
+0.761538461538 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  11
+0.761538461538 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  11
+0.761538461538 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  11
+0.761538461538 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  11
+0.761538461538 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  11
+0.761538461538 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  11
+0.761538461538 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  11
+0.746153846154 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  11
+0.746153846154 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  11
+0.746153846154 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  11
+0.746153846154 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.746153846154 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.746153846154 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.746153846154 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.746153846154 	2.0
+Running credit with fold:  3
+
+Running pruned dataset
+Length of boostedTrees:  11
+0.653846153846
+Total Number of clusters:  87
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  11
+0.646153846154 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  11
+0.646153846154 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  11
+0.646153846154 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  11
+0.646153846154 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  11
+0.646153846154 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  11
+0.646153846154 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  11
+0.646153846154 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  11
+0.646153846154 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  11
+0.646153846154 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  11
+0.646153846154 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  11
+0.646153846154 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  11
+0.646153846154 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  11
+0.646153846154 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  11
+0.646153846154 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  11
+0.646153846154 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  11
+0.646153846154 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.646153846154 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.646153846154 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.646153846154 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.646153846154 	2.0
+Running credit with fold:  4
+
+Running pruned dataset
+Length of boostedTrees:  11
+0.759398496241
+Total Number of clusters:  89
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  11
+0.759398496241 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  11
+0.759398496241 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  11
+0.759398496241 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  11
+0.759398496241 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  11
+0.759398496241 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  11
+0.759398496241 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  11
+0.759398496241 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  11
+0.759398496241 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  11
+0.759398496241 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  11
+0.759398496241 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  11
+0.759398496241 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  11
+0.759398496241 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  11
+0.759398496241 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  11
+0.759398496241 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  11
+0.759398496241 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  11
+0.759398496241 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.759398496241 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.759398496241 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.759398496241 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.759398496241 	2.0
+
+Normal Accuracy is 0.725725853094
+Stats for label:  0.0
+	Precision is:  0.68041913692
+	Recall is:  0.933885636621
+------------------------------
+Stats for label:  1.0
+	Precision is:  0.86035964036
+	Recall is:  0.476883736506
+------------------------------
+
+New Accuracy is:  0.731879699248 for alpha:  0.4
+Stats for label:  0.0
+	Precision for the chosen alpha is:  0.683550289681
+	Recall for the chosen alpha is:  0.943011700849
+------------------------------
+Stats for label:  1.0
+	Precision for the chosen alpha is:  0.875648496241
+	Recall for the chosen alpha is:  0.479706412518
+------------------------------
+----------------------------------------
+----------------------------------------
+----------------------------------------
+Printing Results for Dataset:  credit
+Avg Old Accuracy:  0.714 +-  0.0067
+Avg. New Accuracy:  0.7133 +-  0.0105
+Stats for label:  0.0
+	 Old Avg. Precision is:  0.6721 +-  0.0056
+	 New Avg. Precision is:  0.6713 +-  0.008
+
+	 Old Avg. Recall is:  0.9323 +-  0.011
+	 New Avg. Recall is:  0.9343 +-  0.0051
+
+Stats for label:  1.0
+	 Old Avg. Precision is:  0.8492 +-  0.0185
+	 New Avg. Precision is:  0.8515 +-  0.0135
+
+	 Old Avg. Recall is:  0.4518 +-  0.0203
+	 New Avg. Recall is:  0.449 +-  0.021
+

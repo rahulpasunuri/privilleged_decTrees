@@ -1,0 +1,1820 @@
+
+
+########################################
+########################################
+Printing results for split:  0
+########################################
+########################################
+
+########################################
+Running ecoli_binary:
+Running ecoli_binary with fold:  0
+
+Running pruned dataset
+Length of boostedTrees:  13
+0.925373134328
+Total Number of clusters:  34
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  13
+0.940298507463 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  13
+0.940298507463 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  13
+0.940298507463 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  13
+0.940298507463 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  13
+0.940298507463 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  13
+0.940298507463 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.940298507463 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.940298507463 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.940298507463 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.940298507463 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.940298507463 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.955223880597 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.955223880597 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  13
+0.955223880597 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  13
+0.940298507463 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  13
+0.940298507463 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  13
+0.940298507463 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  13
+0.940298507463 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  13
+0.955223880597 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  13
+0.955223880597 	2.0
+Running ecoli_binary with fold:  1
+
+Running pruned dataset
+Length of boostedTrees:  13
+0.955223880597
+Total Number of clusters:  34
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  13
+0.910447761194 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  13
+0.910447761194 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  13
+0.910447761194 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  13
+0.910447761194 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  13
+0.910447761194 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  13
+0.910447761194 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.910447761194 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.910447761194 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.910447761194 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.910447761194 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.910447761194 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.910447761194 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.910447761194 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  13
+0.910447761194 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  13
+0.910447761194 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  13
+0.910447761194 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  13
+0.910447761194 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  13
+0.910447761194 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  13
+0.910447761194 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  13
+0.910447761194 	2.0
+Running ecoli_binary with fold:  2
+
+Running pruned dataset
+Length of boostedTrees:  13
+0.880597014925
+Total Number of clusters:  36
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  13
+0.865671641791 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  13
+0.865671641791 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  13
+0.865671641791 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  13
+0.865671641791 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  13
+0.865671641791 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  13
+0.865671641791 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.865671641791 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.865671641791 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.865671641791 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.865671641791 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.865671641791 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.865671641791 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.865671641791 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  13
+0.865671641791 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  13
+0.865671641791 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  13
+0.865671641791 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  13
+0.865671641791 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  13
+0.865671641791 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  13
+0.865671641791 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  13
+0.865671641791 	2.0
+Running ecoli_binary with fold:  3
+
+Running pruned dataset
+Length of boostedTrees:  13
+0.955223880597
+Total Number of clusters:  30
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  13
+0.940298507463 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  13
+0.940298507463 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  13
+0.940298507463 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  13
+0.940298507463 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  13
+0.940298507463 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  13
+0.940298507463 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.940298507463 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.940298507463 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.940298507463 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.940298507463 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.940298507463 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.940298507463 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.940298507463 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  13
+0.940298507463 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  13
+0.940298507463 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  13
+0.940298507463 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  13
+0.940298507463 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  13
+0.940298507463 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  13
+0.940298507463 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  13
+0.940298507463 	2.0
+Running ecoli_binary with fold:  4
+
+Running pruned dataset
+Length of boostedTrees:  13
+0.911764705882
+Total Number of clusters:  31
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  13
+0.955882352941 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  13
+0.955882352941 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  13
+0.955882352941 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  13
+0.955882352941 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  13
+0.955882352941 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  13
+0.955882352941 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.955882352941 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.955882352941 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.955882352941 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.955882352941 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.955882352941 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.955882352941 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.955882352941 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  13
+0.955882352941 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  13
+0.955882352941 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  13
+0.955882352941 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  13
+0.955882352941 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  13
+0.955882352941 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  13
+0.955882352941 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  13
+0.955882352941 	2.0
+
+Normal Accuracy is 0.925636523266
+Stats for label:  0.0
+	Precision is:  0.911582848464
+	Recall is:  0.916413793103
+------------------------------
+Stats for label:  1.0
+	Precision is:  0.940596409723
+	Recall is:  0.934301971144
+------------------------------
+
+New Accuracy is:  0.925504828797 for alpha:  1.2
+Stats for label:  0.0
+	Precision for the chosen alpha is:  0.879449259328
+	Recall for the chosen alpha is:  0.957103448276
+------------------------------
+Stats for label:  1.0
+	Precision for the chosen alpha is:  0.967466767467
+	Recall for the chosen alpha is:  0.902797534376
+------------------------------
+
+
+########################################
+########################################
+Printing results for split:  1
+########################################
+########################################
+
+########################################
+Running ecoli_binary:
+Running ecoli_binary with fold:  0
+
+Running pruned dataset
+Length of boostedTrees:  13
+0.910447761194
+Total Number of clusters:  34
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  13
+0.925373134328 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  13
+0.925373134328 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  13
+0.925373134328 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  13
+0.925373134328 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  13
+0.925373134328 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  13
+0.925373134328 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.925373134328 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.925373134328 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.925373134328 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.925373134328 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.925373134328 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.925373134328 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.925373134328 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  13
+0.910447761194 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  13
+0.910447761194 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  13
+0.925373134328 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  13
+0.925373134328 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  13
+0.925373134328 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  13
+0.925373134328 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  13
+0.925373134328 	2.0
+Running ecoli_binary with fold:  1
+
+Running pruned dataset
+Length of boostedTrees:  13
+0.880597014925
+Total Number of clusters:  34
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  13
+0.880597014925 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  13
+0.880597014925 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  13
+0.880597014925 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  13
+0.880597014925 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  13
+0.880597014925 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  13
+0.880597014925 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.880597014925 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.880597014925 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.880597014925 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.880597014925 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.880597014925 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.880597014925 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.880597014925 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  13
+0.880597014925 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  13
+0.880597014925 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  13
+0.880597014925 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  13
+0.880597014925 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  13
+0.880597014925 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  13
+0.880597014925 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  13
+0.880597014925 	2.0
+Running ecoli_binary with fold:  2
+
+Running pruned dataset
+Length of boostedTrees:  13
+0.970149253731
+Total Number of clusters:  31
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  13
+0.940298507463 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  13
+0.940298507463 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  13
+0.940298507463 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  13
+0.940298507463 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  13
+0.940298507463 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  13
+0.940298507463 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.940298507463 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.940298507463 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.955223880597 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.955223880597 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.955223880597 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.955223880597 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.955223880597 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  13
+0.955223880597 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  13
+0.940298507463 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  13
+0.940298507463 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  13
+0.940298507463 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  13
+0.955223880597 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  13
+0.955223880597 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  13
+0.955223880597 	2.0
+Running ecoli_binary with fold:  3
+
+Running pruned dataset
+Length of boostedTrees:  12
+0.955223880597
+Total Number of clusters:  33
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  13
+0.940298507463 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  13
+0.940298507463 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  13
+0.940298507463 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  13
+0.940298507463 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  13
+0.940298507463 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  13
+0.940298507463 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.940298507463 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.940298507463 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.940298507463 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.940298507463 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.940298507463 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.940298507463 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.940298507463 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  13
+0.940298507463 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  13
+0.940298507463 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  13
+0.940298507463 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  13
+0.940298507463 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  13
+0.940298507463 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  13
+0.940298507463 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  13
+0.940298507463 	2.0
+Running ecoli_binary with fold:  4
+
+Running pruned dataset
+Length of boostedTrees:  13
+0.941176470588
+Total Number of clusters:  35
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  13
+0.970588235294 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  13
+0.970588235294 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  13
+0.970588235294 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  13
+0.970588235294 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  13
+0.970588235294 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  13
+0.970588235294 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.970588235294 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.970588235294 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.970588235294 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.970588235294 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.970588235294 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.970588235294 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.970588235294 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  13
+0.970588235294 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  13
+0.970588235294 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  13
+0.970588235294 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  13
+0.970588235294 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  13
+0.970588235294 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  13
+0.970588235294 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  13
+0.970588235294 	2.0
+
+Normal Accuracy is 0.931518876207
+Stats for label:  0.0
+	Precision is:  0.909715821813
+	Recall is:  0.935248868778
+------------------------------
+Stats for label:  1.0
+	Precision is:  0.94500867327
+	Recall is:  0.932508630887
+------------------------------
+
+New Accuracy is:  0.934416154522 for alpha:  0.9
+Stats for label:  0.0
+	Precision for the chosen alpha is:  0.902861654066
+	Recall for the chosen alpha is:  0.947013574661
+------------------------------
+Stats for label:  1.0
+	Precision for the chosen alpha is:  0.954938862307
+	Recall for the chosen alpha is:  0.927689949505
+------------------------------
+
+
+########################################
+########################################
+Printing results for split:  2
+########################################
+########################################
+
+########################################
+Running ecoli_binary:
+Running ecoli_binary with fold:  0
+
+Running pruned dataset
+Length of boostedTrees:  13
+0.925373134328
+Total Number of clusters:  32
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  13
+0.955223880597 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  13
+0.955223880597 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  13
+0.955223880597 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  13
+0.955223880597 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  13
+0.955223880597 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  13
+0.955223880597 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.955223880597 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.955223880597 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.955223880597 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.955223880597 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.955223880597 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.955223880597 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.955223880597 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  13
+0.955223880597 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  13
+0.955223880597 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  13
+0.955223880597 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  13
+0.955223880597 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  13
+0.955223880597 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  13
+0.955223880597 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  13
+0.955223880597 	2.0
+Running ecoli_binary with fold:  1
+
+Running pruned dataset
+Length of boostedTrees:  13
+0.925373134328
+Total Number of clusters:  35
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  13
+0.910447761194 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  13
+0.910447761194 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  13
+0.910447761194 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  13
+0.910447761194 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  13
+0.910447761194 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  13
+0.910447761194 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.910447761194 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.910447761194 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.910447761194 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.910447761194 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.910447761194 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.910447761194 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.910447761194 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  13
+0.910447761194 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  13
+0.910447761194 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  13
+0.910447761194 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  13
+0.910447761194 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  13
+0.910447761194 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  13
+0.910447761194 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  13
+0.910447761194 	2.0
+Running ecoli_binary with fold:  2
+
+Running pruned dataset
+Length of boostedTrees:  13
+0.880597014925
+Total Number of clusters:  33
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  13
+0.910447761194 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  13
+0.910447761194 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  13
+0.910447761194 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  13
+0.910447761194 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  13
+0.910447761194 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  13
+0.910447761194 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.910447761194 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.910447761194 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.910447761194 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.910447761194 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.910447761194 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.910447761194 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.910447761194 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  13
+0.910447761194 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  13
+0.910447761194 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  13
+0.910447761194 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  13
+0.910447761194 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  13
+0.910447761194 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  13
+0.910447761194 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  13
+0.910447761194 	2.0
+Running ecoli_binary with fold:  3
+
+Running pruned dataset
+Length of boostedTrees:  13
+0.970149253731
+Total Number of clusters:  35
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  13
+0.970149253731 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  13
+0.970149253731 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  13
+0.970149253731 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  13
+0.970149253731 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  13
+0.970149253731 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  13
+0.970149253731 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.970149253731 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.970149253731 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.970149253731 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.970149253731 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.970149253731 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.970149253731 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.970149253731 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  13
+0.970149253731 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  13
+0.970149253731 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  13
+0.970149253731 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  13
+0.970149253731 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  13
+0.970149253731 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  13
+0.970149253731 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  13
+0.970149253731 	2.0
+Running ecoli_binary with fold:  4
+
+Running pruned dataset
+Length of boostedTrees:  13
+0.941176470588
+Total Number of clusters:  32
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  13
+0.926470588235 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  13
+0.926470588235 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  13
+0.941176470588 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  13
+0.941176470588 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  13
+0.941176470588 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  13
+0.941176470588 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.941176470588 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.941176470588 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.941176470588 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.941176470588 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.941176470588 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.941176470588 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.941176470588 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  13
+0.941176470588 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  13
+0.941176470588 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  13
+0.941176470588 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  13
+0.941176470588 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  13
+0.941176470588 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  13
+0.941176470588 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  13
+0.941176470588 	2.0
+
+Normal Accuracy is 0.92853380158
+Stats for label:  0.0
+	Precision is:  0.893978000247
+	Recall is:  0.942533273178
+------------------------------
+Stats for label:  1.0
+	Precision is:  0.957829151378
+	Recall is:  0.917317085985
+------------------------------
+
+New Accuracy is:  0.937489025461 for alpha:  0.3
+Stats for label:  0.0
+	Precision for the chosen alpha is:  0.915906114697
+	Recall for the chosen alpha is:  0.942533273178
+------------------------------
+Stats for label:  1.0
+	Precision for the chosen alpha is:  0.958601398601
+	Recall for the chosen alpha is:  0.930493156187
+------------------------------
+
+
+########################################
+########################################
+Printing results for split:  3
+########################################
+########################################
+
+########################################
+Running ecoli_binary:
+Running ecoli_binary with fold:  0
+
+Running pruned dataset
+Length of boostedTrees:  13
+0.925373134328
+Total Number of clusters:  34
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  13
+0.955223880597 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  13
+0.955223880597 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  13
+0.955223880597 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  13
+0.955223880597 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  13
+0.955223880597 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  13
+0.955223880597 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.955223880597 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.955223880597 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.955223880597 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.955223880597 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.955223880597 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.955223880597 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.955223880597 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  13
+0.955223880597 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  13
+0.955223880597 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  13
+0.955223880597 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  13
+0.955223880597 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  13
+0.955223880597 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  13
+0.955223880597 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  13
+0.955223880597 	2.0
+Running ecoli_binary with fold:  1
+
+Running pruned dataset
+Length of boostedTrees:  13
+0.925373134328
+Total Number of clusters:  34
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  13
+0.925373134328 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  13
+0.925373134328 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  13
+0.925373134328 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  13
+0.925373134328 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  13
+0.925373134328 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  13
+0.925373134328 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.925373134328 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.925373134328 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.925373134328 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.925373134328 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.925373134328 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.925373134328 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.925373134328 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  13
+0.925373134328 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  13
+0.925373134328 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  13
+0.925373134328 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  13
+0.925373134328 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  13
+0.925373134328 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  13
+0.925373134328 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  13
+0.925373134328 	2.0
+Running ecoli_binary with fold:  2
+
+Running pruned dataset
+Length of boostedTrees:  13
+0.940298507463
+Total Number of clusters:  35
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  13
+0.925373134328 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  13
+0.925373134328 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  13
+0.925373134328 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  13
+0.925373134328 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  13
+0.925373134328 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  13
+0.925373134328 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.925373134328 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.925373134328 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.925373134328 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.925373134328 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.925373134328 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.925373134328 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.925373134328 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  13
+0.925373134328 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  13
+0.925373134328 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  13
+0.925373134328 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  13
+0.925373134328 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  13
+0.925373134328 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  13
+0.925373134328 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  13
+0.925373134328 	2.0
+Running ecoli_binary with fold:  3
+
+Running pruned dataset
+Length of boostedTrees:  13
+0.89552238806
+Total Number of clusters:  33
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  13
+0.910447761194 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  13
+0.910447761194 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  13
+0.910447761194 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  13
+0.910447761194 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  13
+0.910447761194 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  13
+0.910447761194 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.910447761194 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.910447761194 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.910447761194 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.910447761194 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.910447761194 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.910447761194 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.910447761194 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  13
+0.910447761194 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  13
+0.910447761194 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  13
+0.910447761194 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  13
+0.910447761194 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  13
+0.910447761194 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  13
+0.910447761194 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  13
+0.910447761194 	2.0
+Running ecoli_binary with fold:  4
+
+Running pruned dataset
+Length of boostedTrees:  13
+0.941176470588
+Total Number of clusters:  30
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  13
+0.926470588235 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  13
+0.926470588235 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  13
+0.926470588235 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  13
+0.926470588235 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  13
+0.926470588235 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  13
+0.926470588235 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.926470588235 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.926470588235 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.926470588235 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.926470588235 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.926470588235 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.926470588235 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.926470588235 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  13
+0.926470588235 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  13
+0.926470588235 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  13
+0.926470588235 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  13
+0.926470588235 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  13
+0.926470588235 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  13
+0.926470588235 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  13
+0.926470588235 	2.0
+
+Normal Accuracy is 0.925548726953
+Stats for label:  0.0
+	Precision is:  0.900962566845
+	Recall is:  0.926010080277
+------------------------------
+Stats for label:  1.0
+	Precision is:  0.939962642068
+	Recall is:  0.928125855419
+------------------------------
+
+New Accuracy is:  0.928577699737 for alpha:  0.1
+Stats for label:  0.0
+	Precision for the chosen alpha is:  0.891532724716
+	Recall for the chosen alpha is:  0.943313492063
+------------------------------
+Stats for label:  1.0
+	Precision for the chosen alpha is:  0.958152569994
+	Recall for the chosen alpha is:  0.917788664925
+------------------------------
+
+
+########################################
+########################################
+Printing results for split:  4
+########################################
+########################################
+
+########################################
+Running ecoli_binary:
+Running ecoli_binary with fold:  0
+
+Running pruned dataset
+Length of boostedTrees:  13
+0.880597014925
+Total Number of clusters:  30
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  13
+0.865671641791 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  13
+0.865671641791 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  13
+0.865671641791 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  13
+0.865671641791 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  13
+0.865671641791 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  13
+0.865671641791 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.865671641791 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.865671641791 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.865671641791 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.865671641791 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.865671641791 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.865671641791 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.865671641791 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  13
+0.865671641791 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  13
+0.865671641791 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  13
+0.865671641791 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  13
+0.865671641791 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  13
+0.865671641791 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  13
+0.865671641791 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  13
+0.865671641791 	2.0
+Running ecoli_binary with fold:  1
+
+Running pruned dataset
+Length of boostedTrees:  13
+0.925373134328
+Total Number of clusters:  34
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  13
+0.955223880597 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  13
+0.955223880597 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  13
+0.955223880597 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  13
+0.955223880597 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  13
+0.955223880597 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  13
+0.955223880597 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.955223880597 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.955223880597 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.955223880597 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.955223880597 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.955223880597 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.955223880597 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.955223880597 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  13
+0.955223880597 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  13
+0.955223880597 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  13
+0.955223880597 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  13
+0.955223880597 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  13
+0.955223880597 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  13
+0.955223880597 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  13
+0.955223880597 	2.0
+Running ecoli_binary with fold:  2
+
+Running pruned dataset
+Length of boostedTrees:  13
+0.89552238806
+Total Number of clusters:  35
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  13
+0.89552238806 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  13
+0.89552238806 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  13
+0.89552238806 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  13
+0.89552238806 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  13
+0.89552238806 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  13
+0.89552238806 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.89552238806 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.89552238806 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.89552238806 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.89552238806 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.89552238806 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.89552238806 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.89552238806 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  13
+0.89552238806 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  13
+0.89552238806 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  13
+0.89552238806 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  13
+0.89552238806 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  13
+0.89552238806 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  13
+0.89552238806 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  13
+0.89552238806 	2.0
+Running ecoli_binary with fold:  3
+
+Running pruned dataset
+Length of boostedTrees:  13
+0.970149253731
+Total Number of clusters:  32
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  13
+0.955223880597 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  13
+0.955223880597 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  13
+0.955223880597 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  13
+0.955223880597 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  13
+0.955223880597 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  13
+0.955223880597 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.955223880597 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.955223880597 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.955223880597 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.955223880597 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.955223880597 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.955223880597 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.955223880597 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  13
+0.955223880597 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  13
+0.955223880597 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  13
+0.955223880597 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  13
+0.955223880597 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  13
+0.955223880597 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  13
+0.955223880597 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  13
+0.955223880597 	2.0
+Running ecoli_binary with fold:  4
+
+Running pruned dataset
+Length of boostedTrees:  13
+0.926470588235
+Total Number of clusters:  34
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  13
+0.897058823529 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  13
+0.897058823529 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  13
+0.897058823529 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  13
+0.926470588235 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  13
+0.926470588235 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  13
+0.926470588235 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.926470588235 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.926470588235 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.926470588235 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.926470588235 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.926470588235 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.926470588235 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.926470588235 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  13
+0.926470588235 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  13
+0.926470588235 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  13
+0.926470588235 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  13
+0.926470588235 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  13
+0.926470588235 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  13
+0.926470588235 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  13
+0.926470588235 	2.0
+
+Normal Accuracy is 0.919622475856
+Stats for label:  0.0
+	Precision is:  0.893055555556
+	Recall is:  0.920112209629
+------------------------------
+Stats for label:  1.0
+	Precision is:  0.942691179788
+	Recall is:  0.91555853921
+------------------------------
+
+New Accuracy is:  0.919622475856 for alpha:  0.4
+Stats for label:  0.0
+	Precision for the chosen alpha is:  0.891251733016
+	Recall for the chosen alpha is:  0.920152399325
+------------------------------
+Stats for label:  1.0
+	Precision for the chosen alpha is:  0.942776412776
+	Recall for the chosen alpha is:  0.916035486746
+------------------------------
+----------------------------------------
+----------------------------------------
+----------------------------------------
+Printing Results for Dataset:  ecoli_binary
+Avg Old Accuracy:  0.9262 +-  0.0039
+Avg. New Accuracy:  0.9291 +-  0.0064
+Stats for label:  0.0
+	 Old Avg. Precision is:  0.9019 +-  0.0077
+	 New Avg. Precision is:  0.8962 +-  0.0123
+
+	 Old Avg. Recall is:  0.9281 +-  0.0096
+	 New Avg. Recall is:  0.942 +-  0.0121
+
+Stats for label:  1.0
+	 Old Avg. Precision is:  0.9452 +-  0.0065
+	 New Avg. Precision is:  0.9564 +-  0.008
+
+	 Old Avg. Recall is:  0.9256 +-  0.0077
+	 New Avg. Recall is:  0.919 +-  0.0098
+

@@ -14,16 +14,16 @@ datasets = []
 datasets.append("heart")
 #datasets.append("breast")
 #datasets.append("heart_multi")
-#datasets.append("iris")
-#datasets.append("diabetes")
+datasets.append("iris")
+datasets.append("diabetes")
 
 #----new datasets (yet to complete) ---
-#datasets.append("glass_binary")
-#datasets.append("car") #TODO: no difference with any kind of splits...
-#datasets.append("ecoli_binary")
+datasets.append("glass_binary")
+datasets.append("car") #TODO: no difference with any kind of splits...
+datasets.append("ecoli_binary")
 
 #datasets.append("census") #TODO: takes a lot of time..
-#datasets.append("credit")
+datasets.append("credit")
 #datasets.append("hepatitis") #TODO: has a lot of missing values.. how to support them ???
 
 

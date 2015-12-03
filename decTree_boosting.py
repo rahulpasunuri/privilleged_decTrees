@@ -4,53 +4,90 @@ from globalConstants import *
 import decTree
 import copy
 
-numBoostTrees = 5
+def computeOfflineGradient(tree, row, nominalColumns):
+    currValue = getLeafRegressionValueOfTree(tree, row, nominalColumns)
+    #compute the gradients..
+    return float(row[len(row)-1]) - stepSize*currValue
+    
 stepSize = 0.1
-def boosting(trainData, datasetName, clusters, isSimple, isOffline, nominalColumns, alpha = 0):
+iterativeStepSize = 0.4
+
+def boosting(trainData, datasetName, privTrainData, isSimple, isOffline, alpha = 0, isOnline = False):
     global stepSize
     prevError = 10000000000
     currError = None
     global prunedNominalColumns    
+    global privNominalColumns
     gradThreshold = 0.1
     origData = trainData
+    origPrivData = privTrainData
     boostedTrees = []
     treeCount = 0
+
     trainData = copy.deepcopy(trainData) # make a deep copy of the original data, so that we are not changing the original data..
+    if privTrainData != None:
+        privTrainData = copy.deepcopy(privTrainData) # make a deep copy of the original data, so that we are not changing the original data..
     stopBoosting = False
     classIndex = len(origData[0]) - 1
     predictions = [ 0 for p in range(len(origData))]
+
+    privTree = None
+    clusters = None        
+    
+    if isOffline:
+        privTree = decTree.createTree(privTrainData, nominalColumns = privNominalColumns[datasetName])
+        clusters = getPrivTreeClusters(privTrainData, privTree, trainData, datasetName)
+
     while not stopBoosting:
+        currPrivTree = None
+        currTree = None
         #print "Getting a new Tree: ", len(boostedTrees)
         stopBoosting = True
         if isSimple:
             currTree = decTree.createTree(trainData, depth = 4, isClassifier = False, nominalColumns = prunedNominalColumns[datasetName])
         elif isOffline:
-            #TODO//fix this..
             currTree = decTree.createTree(trainData, depth = 4, isClassifier = False, isPrivAvailable = True, cluster = clusters, nominalColumns = prunedNominalColumns[datasetName], alpha = alpha)
-        #printTree(currTree)
-        #compute the gradients with the new tree..
-        newData = []
-        count = 0
-        for row in trainData:
-            currValue = getRegressionValueOfTree(currTree, row, nominalColumns)
-            #compute the gradients..
+        elif isOnline:
+            currTree = decTree.createTree(trainData, depth = 4, isClassifier = False, isPrivAvailable = False, cluster = clusters, nominalColumns = prunedNominalColumns[datasetName], alpha = alpha)      
+            currPrivTree = decTree.createTree(privTrainData, depth = 4, isClassifier = False, isPrivAvailable = False, cluster = clusters, nominalColumns = privNominalColumns[datasetName], alpha = alpha)
 
-            row[len(row)-1] = float(row[len(row)-1]) - stepSize*currValue
-            predictions[count] += stepSize*currValue
-            '''
-            if row[len(row)-1] > gradThreshold:
-                stopBoosting = False
-            '''
-            newData.append(row)
-            count += 1
+        newData = []
+        #compute the gradients with the new tree..
+        newPrivData = []
+        
+        count = 0
+        for i in range(len(trainData)): 
+            row = trainData[i]
+            currValue = getLeafRegressionValueOfTree(currTree, row, prunedNominalColumns[datasetName])
+            if isOnline:
+                p_priv = getLeafRegressionValueOfTree(currPrivTree, privTrainData[i], privNominalColumns[datasetName])
+                
+                #trainData[i][len(trainData[i]) - 1] = float(trainData[i][len(trainData[i])-1]) - stepSize*(currValue + iterativeStepSize*(p_priv - currValue))
+                #privTrainData[i][len(privTrainData[i]) - 1] = float(privTrainData[i][len(privTrainData[i]) - 1]) - stepSize*(p_priv + iterativeStepSize*(currValue - p_priv))
+
+                trainData[i][len(trainData[i]) - 1] = float(trainData[i][len(trainData[i])-1]) - stepSize*(currValue + alpha*(p_priv - currValue))
+                privTrainData[i][len(privTrainData[i]) - 1] = float(privTrainData[i][len(privTrainData[i]) - 1]) - stepSize*(p_priv + alpha*(currValue - p_priv))
+
+                #make of a new copy for the new runs..
+                newData.append(trainData[i])
+                newPrivData.append(privTrainData[i])
+                
+            else:          
+                row[len(row)-1] = computeOfflineGradient(currTree, row, prunedNominalColumns[datasetName])
+                newData.append(row)
+            predictions[i] += stepSize*currValue
+            #predictions[i] += stepSize*row[len(row)-1]
+
         #update the variable used for learning..
         trainData = newData
-        
+        privTrainData = newPrivData
+
         #compute overall error..
         currError = 0
         for index in range(len(origData)):
+            #compute the MSE error..
             currError = currError + ((float(origData[index][classIndex]) - float(predictions[index]))*(float(origData[index][classIndex]) - float(predictions[index])))
-        #print currError
+        
         if abs(prevError - currError) > 0.01*len(origData):
             stopBoosting = False
         prevError = currError
@@ -61,28 +98,47 @@ def boosting(trainData, datasetName, clusters, isSimple, isOffline, nominalColum
 
 #just does the boosting on the training space, ignoring any kind of privileged information..
 def simpleBoost(trainData, datasetName):
-    global prunedNominalColumns
-    return boosting(trainData = trainData, datasetName = datasetName, isSimple = True, isOffline = False, clusters = [], nominalColumns = prunedNominalColumns[datasetName], alpha = 0)
+    return boosting(trainData = trainData, datasetName = datasetName, isSimple = True, isOffline = False, privTrainData = None, alpha = 0)
 
-def offlineClusterBoost(trainData, clusters, datasetName, alpha):
-    return boosting(trainData = trainData, datasetName = datasetName, isSimple = False, isOffline = True, nominalColumns = prunedNominalColumns[datasetName], clusters = clusters, alpha = alpha)
+def offlineClusterBoost(trainData, privTrainData, datasetName, alpha):
+    return boosting(trainData = trainData, datasetName = datasetName, isSimple = False, isOffline = True, privTrainData = privTrainData, alpha = alpha)
 
-def onlineClusterBoost(trainData, privTrainData):
-    boostedTrees = []
+def onlineClusterBoost(trainData, privTrainData, datasetName, alpha):
+    return boosting(trainData = trainData, datasetName = datasetName, isSimple = False, isOffline = False, isOnline = True, privTrainData = privTrainData, alpha = alpha)
 
-    return boostedTrees
-
-def getRegressionValueOfTree(tree, row, nominalColumns):
+def getLeafRegressionValueOfTree(tree, row, nominalColumns):
     leaf = decTree.getRelevantLeafNode(tree, row, nominalColumns)
     return numpy.mean(leaf.leafValues)
     
+def getPrivTreeClusters(privTrainData, privTree, trainData, datasetName):           
+    #get clusters for the training data using the privileged tree..                
+     #"\nConstructing the privileged tree.."
+    global privNominalColumns
+    global prunedNominalColumns
+    
+    decTree.assignClustersToLeaves(privTree)
+
+    clusters = {}
+    diffClusters = []
+    for rowIndex in range(len(trainData)):
+        prunedRow = trainData[rowIndex]
+        prunedRow = prunedRow[:-1] #remove the class label from the row..
+        clusters[",".join(prunedRow)] = decTree.getClusterValue(privTrainData[rowIndex], privTree, privNominalColumns[datasetName])
+
+
+    for key in clusters:
+        if clusters[key] not in diffClusters:
+            diffClusters.append(clusters[key])
+    print "Total Number of clusters: ", len(diffClusters)
+    return clusters
+
 def getBoostResults(testData, boostedTrees, totalLabels, nominalColumns):
     global stepSize
     predictions = []
     for row in testData:
         res = 0
         for tree in boostedTrees:
-           res += stepSize*getRegressionValueOfTree(tree, row, nominalColumns)
+           res += stepSize*getLeafRegressionValueOfTree(tree, row, nominalColumns)
         
         closestLabel = None
         closestDistance = 1000000000000000
@@ -107,6 +163,7 @@ def main():
     global classLabels
     global nominalColumns
     global privNominalColumns
+    global prunedNominalColumns
     
     splitOldAccuracy = {}
     splitOldPrecision = {}
@@ -128,6 +185,8 @@ def main():
     init() #inits some global variables required for the execution..
     #print prunedNominalColumns
     #print privNominalColumns 
+    print privNominalColumns
+    print prunedNominalColumns
     
     for split in range(splitCount):
         print "\n"
@@ -178,27 +237,9 @@ def main():
                         normalAccuracy[label] = 0
                     normalAccuracy[label] += accuracy[label]
 
-                isOffline = True
-                #construct the clusters for offline boosting..
-                
-                #get clusters for the training data using the privileged tree..                
-                 #"\nConstructing the privileged tree.."
+                isOffline = False
+                #read the priv training data..
                 privTrainData = readData(datasetName+"/"+dirName+"/priv_train_"+str(part)+".csv")
-                privTree = decTree.createTree(privTrainData, nominalColumns = privNominalColumns[datasetName])
-                decTree.assignClustersToLeaves(privTree)
-                
-                clusters = {}
-                diffClusters = []
-                for rowIndex in range(len(trainData)):
-                    prunedRow = trainData[rowIndex]
-                    prunedRow = prunedRow[:-1] #remove the class label from the row..
-                    clusters[",".join(prunedRow)] = decTree.getClusterValue(privTrainData[rowIndex], privTree, privNominalColumns[datasetName])
-                
-                
-                for key in clusters:
-                    if clusters[key] not in diffClusters:
-                        diffClusters.append(clusters[key])
-                print "Total Number of clusters: ", len(diffClusters)
                 
                 newAcc.append([])
                 newPrecision.append([])
@@ -207,12 +248,20 @@ def main():
                     alpha = (run+1)/10.0
                     print "Running the new logic with alpha = ",alpha
                     if isOffline:
-                        boostedTrees = offlineClusterBoost(trainData, clusters, datasetName, alpha)
+                        boostedTrees = offlineClusterBoost(trainData, privTrainData, datasetName, alpha)
                     else:
-                        boostedTrees = onlineClusterBoost(trainData, privTrainData, alpha)
+                        boostedTrees = onlineClusterBoost(trainData, privTrainData, datasetName, alpha)
 
                     currAcc, precision, recall, accuracy = getBoostResults(testData, boostedTrees, classLabels[datasetName], prunedNominalColumns[datasetName])   
                     print currAcc,"\t",alpha
+                    '''
+                    if not isOffline:
+                        for i in range(20):
+                            newAcc[part].append(currAcc)
+                            newPrecision[part].append(precision)
+                            newRecall[part].append(recall)
+                        break    
+                    '''
                     #break
                     newAcc[part].append(currAcc)
                     newPrecision[part].append(precision)
