@@ -173,7 +173,8 @@ def main():
     splitAccuracy = {}
     splitPrecision = {}
     splitRecall = {}
-
+    testAccuracy = {}
+    
     for datasetName in datasets:
         splitAccuracy[datasetName] = []
         splitPrecision[datasetName] = {}
@@ -182,13 +183,15 @@ def main():
         splitOldAccuracy[datasetName] = []
         splitOldPrecision[datasetName] = {}
         splitOldRecall[datasetName] = {}
+        
+        testAccuracy[datasetName] = []
 
     init() #inits some global variables required for the execution..
     #print prunedNominalColumns
     #print privNominalColumns 
     print privNominalColumns
     print prunedNominalColumns
-    
+
     for split in range(splitCount):
         print "\n"
         print "#"*40
@@ -220,7 +223,6 @@ def main():
                 #below are the train and test data in the pruned space..
                 trainData = readData(datasetName+"/"+dirName+"/pruned_train_"+str(part)+".csv")
                 testData = readData(datasetName+"/"+dirName+"/pruned_test_"+str(part)+".csv")
-
                 boostedTrees = simpleBoost(trainData, datasetName)
                 currNormalAcc, precision, recall, accuracy = getBoostResults(testData, boostedTrees, classLabels[datasetName], prunedNominalColumns[datasetName])
                 print currNormalAcc
@@ -245,6 +247,13 @@ def main():
                 newAcc.append([])
                 newPrecision.append([])
                 newRecall.append([])
+                
+                #create a new validation dataset!!!
+                validationLen = len(trainData)/5
+                validataData = trainData[ len(trainData) - validationLen:]
+                trainData = trainData[:len(trainData) - validationLen]
+
+                
                 for run in range(20):
                     alpha = (run+1)/10.0
                     print "Running the new logic with alpha = ",alpha
@@ -253,7 +262,7 @@ def main():
                     else:
                         boostedTrees = onlineClusterBoost(trainData, privTrainData, datasetName, alpha)
 
-                    currAcc, precision, recall, accuracy = getBoostResults(testData, boostedTrees, classLabels[datasetName], prunedNominalColumns[datasetName])   
+                    currAcc, precision, recall, accuracy = getBoostResults(validataData, boostedTrees, classLabels[datasetName], prunedNominalColumns[datasetName])   
                     print currAcc,"\t",alpha
                     '''
                     if not isOffline:
@@ -267,6 +276,7 @@ def main():
                     newAcc[part].append(currAcc)
                     newPrecision[part].append(precision)
                     newRecall[part].append(recall)
+                    
                 #print "#"*40
                 #print ""
             print "\nNormal Accuracy is", normalAcc/float(totalParts)
@@ -313,9 +323,24 @@ def main():
                     maxAlpha = float(i+1)/10
                     maxAvgAccuracy = avgAcc[i]
 
-            print "\nNew Accuracy is: ",maxAvgAccuracy/float(totalParts), "for alpha: ",maxAlpha
-            splitAccuracy[datasetName].append(maxAvgAccuracy/float(totalParts))
-            
+            print "\Validation Accuracy is: ",maxAvgAccuracy/float(totalParts), "for alpha: ",maxAlpha
+            #splitAccuracy[datasetName].append(maxAvgAccuracy/float(totalParts))
+            currTestAcc = []
+            for i in range(totalParts):
+                privTrainData = readData(datasetName+"/"+dirName+"/priv_train_"+str(part)+".csv")
+                trainData = readData(datasetName+"/"+dirName+"/pruned_train_"+str(part)+".csv")
+                testData = readData(datasetName+"/"+dirName+"/pruned_test_"+str(part)+".csv")
+
+                if isOffline:
+                    boostedTrees = offlineClusterBoost(trainData, privTrainData, datasetName, maxAlpha)
+                else:
+                    boostedTrees = onlineClusterBoost(trainData, privTrainData, datasetName, maxAlpha)
+
+                currAcc_test, precision_test, recall_test, accuracy_test = getBoostResults(testData, boostedTrees, classLabels[datasetName], prunedNominalColumns[datasetName]) 
+                currTestAcc.append(currAcc_test)
+            splitAccuracy[datasetName].append(numpy.average(currTestAcc))
+
+            '''
             for lbl in normalAccuracy:
                 print "Stats for label: ",lbl
                 print "\tPrecision for the chosen alpha is: ", avgPrecision[chosenI][lbl]/float(totalParts)
@@ -327,15 +352,17 @@ def main():
                     splitRecall[datasetName][lbl] = []
                 splitPrecision[datasetName][lbl].append(avgPrecision[chosenI][lbl]/float(totalParts))
                 splitRecall[datasetName][lbl].append(avgRecall[chosenI][lbl]/float(totalParts))
-               
+             '''
+
     print "-"*40
     print "-"*40
     print "-"*40            
     for datasetName in datasets:
         print "Printing Results for Dataset: ", datasetName
         print "Avg Old Accuracy: ", round(numpy.mean(splitOldAccuracy[datasetName]), 4), "+- ", round(numpy.std(splitOldAccuracy[datasetName]), 4)
-        print "Avg. New Accuracy: ", round(numpy.mean(splitAccuracy[datasetName]), 4), "+- ", round(numpy.std(splitAccuracy[datasetName]), 4)
-        
+        print "Avg. Test Accuracy: ", round(numpy.mean(splitAccuracy[datasetName]), 4), "+- ", round(numpy.std(splitAccuracy[datasetName]), 4)
+        print
+        '''
         for lbl in splitPrecision[datasetName]:
             print "Stats for label: ", lbl
             print "\t Old Avg. Precision is: ", round(numpy.mean(splitOldPrecision[datasetName][lbl]), 4), "+- ", round(numpy.std(splitOldPrecision[datasetName][lbl]), 4)
@@ -344,7 +371,8 @@ def main():
             print "\t Old Avg. Recall is: ", round(numpy.mean(splitOldRecall[datasetName][lbl]), 4), "+- ", round(numpy.std(splitOldRecall[datasetName][lbl]), 4)
             print "\t New Avg. Recall is: ", round(numpy.mean(splitRecall[datasetName][lbl]), 4), "+- ", round(numpy.std(splitRecall[datasetName][lbl]), 4)
             print
-        
+        '''
+
 #Execution begins here
 if __name__ == "__main__" : main() 
 
