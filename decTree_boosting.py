@@ -13,6 +13,7 @@ stepSize = 0.1
 iterativeStepSize = 0.4
 
 def boosting(trainData, datasetName, privTrainData, isSimple, isOffline, alpha = 0, isOnline = False):
+    global maxBoostingTrees
     global stepSize
     prevError = 10000000000
     currError = None
@@ -38,7 +39,7 @@ def boosting(trainData, datasetName, privTrainData, isSimple, isOffline, alpha =
         privTree = decTree.createTree(privTrainData, nominalColumns = privNominalColumns[datasetName])
         clusters = getPrivTreeClusters(privTrainData, privTree, trainData, datasetName)
 
-    while not stopBoosting:
+    while (not stopBoosting and len(boostedTrees) < maxBoostingTrees):
         currPrivTree = None
         currTree = None
         #print "Getting a new Tree: ", len(boostedTrees)

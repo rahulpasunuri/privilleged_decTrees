@@ -175,7 +175,22 @@ for datasetName in datasets:
                     print lineNum
                     print words
                     print "ERROR!!!!  "*4
-                    exit()                                        
+                    exit()
+            elif datasetName == "galaxy":
+                words = l.strip().split(",")
+                words = [ wor.strip() for wor in words]
+                classIndex = len(words) - 1
+                #TODO: fix this..
+                #convert the class index..
+                if words[classIndex] == "yes":
+                    words[classIndex] = '1'
+                elif words[classIndex] == "no":
+                    words[classIndex] = '0'
+                else:
+                    print lineNum
+                    print words
+                    print "ERROR!!!!  "*4
+                    exit()                                                           
                     
             else:
                 words = l.strip().split(",")
