@@ -299,19 +299,11 @@ def main():
                 splitOldRecall[datasetName][label].append(normalRecall[label]/float(totalParts))
                 
             avgAcc = [0 for i in range(20)]
-            avgPrecision = [ {} for i in range(20)]
-            avgRecall = [ {} for i in range(20) ]
+            avgPrecision = {}
+            avgRecall = {}
             for run in range(20):
                 for j in range(totalParts):
-                    avgAcc[run] += newAcc[j][run]
-                    for lbl in newPrecision[j][run]:
-                        if lbl not in avgPrecision[run]:
-                             avgPrecision[run][lbl] = 0
-                        avgPrecision[run][lbl] += newPrecision[j][run][lbl]
-                        
-                        if lbl not in avgRecall[run]:
-                             avgRecall[run][lbl] = 0
-                        avgRecall[run][lbl] += newRecall[j][run][lbl]     
+                    avgAcc[run] += newAcc[j][run]  
 
             maxAvgAccuracy = 0
             maxAlpha = 0
@@ -326,6 +318,8 @@ def main():
             print "\Validation Accuracy is: ",maxAvgAccuracy/float(totalParts), "for alpha: ",maxAlpha
             #splitAccuracy[datasetName].append(maxAvgAccuracy/float(totalParts))
             currTestAcc = []
+            currPrec = []
+            currRecall = []
             for i in range(totalParts):
                 privTrainData = readData(datasetName+"/"+dirName+"/priv_train_"+str(part)+".csv")
                 trainData = readData(datasetName+"/"+dirName+"/pruned_train_"+str(part)+".csv")
@@ -338,21 +332,36 @@ def main():
 
                 currAcc_test, precision_test, recall_test, accuracy_test = getBoostResults(testData, boostedTrees, classLabels[datasetName], prunedNominalColumns[datasetName]) 
                 currTestAcc.append(currAcc_test)
-            splitAccuracy[datasetName].append(numpy.average(currTestAcc))
+                currPrec.append(precision_test)
+                currRecall.append(recall_test)
 
-            '''
+
+            splitAccuracy[datasetName].append(numpy.average(currTestAcc))
+        
+            for j in range(totalParts):
+                for lbl in classLabels[datasetName]:
+                    if lbl not in avgPrecision:
+                         avgPrecision[lbl] = 0
+                    avgPrecision[lbl] += currPrec[j][lbl]
+                    
+                    if lbl not in avgRecall:
+                         avgRecall[lbl] = 0
+                    avgRecall[lbl] += currRecall[j][lbl]  
+
             for lbl in normalAccuracy:
+                '''
                 print "Stats for label: ",lbl
                 print "\tPrecision for the chosen alpha is: ", avgPrecision[chosenI][lbl]/float(totalParts)
                 print "\tRecall for the chosen alpha is: ", avgRecall[chosenI][lbl]/float(totalParts)
                 print "-"*30
+                '''
                 if lbl not in splitPrecision[datasetName]:
                     splitPrecision[datasetName][lbl] = []
                 if lbl not in splitRecall[datasetName]:
                     splitRecall[datasetName][lbl] = []
-                splitPrecision[datasetName][lbl].append(avgPrecision[chosenI][lbl]/float(totalParts))
-                splitRecall[datasetName][lbl].append(avgRecall[chosenI][lbl]/float(totalParts))
-             '''
+                splitPrecision[datasetName][lbl].append(avgPrecision[lbl]/float(totalParts))
+                splitRecall[datasetName][lbl].append(avgRecall[lbl]/float(totalParts))
+
 
     print "-"*40
     print "-"*40
@@ -362,7 +371,7 @@ def main():
         print "Avg Old Accuracy: ", round(numpy.mean(splitOldAccuracy[datasetName]), 4), "+- ", round(numpy.std(splitOldAccuracy[datasetName]), 4)
         print "Avg. Test Accuracy: ", round(numpy.mean(splitAccuracy[datasetName]), 4), "+- ", round(numpy.std(splitAccuracy[datasetName]), 4)
         print
-        '''
+        
         for lbl in splitPrecision[datasetName]:
             print "Stats for label: ", lbl
             print "\t Old Avg. Precision is: ", round(numpy.mean(splitOldPrecision[datasetName][lbl]), 4), "+- ", round(numpy.std(splitOldPrecision[datasetName][lbl]), 4)
@@ -371,7 +380,7 @@ def main():
             print "\t Old Avg. Recall is: ", round(numpy.mean(splitOldRecall[datasetName][lbl]), 4), "+- ", round(numpy.std(splitOldRecall[datasetName][lbl]), 4)
             print "\t New Avg. Recall is: ", round(numpy.mean(splitRecall[datasetName][lbl]), 4), "+- ", round(numpy.std(splitRecall[datasetName][lbl]), 4)
             print
-        '''
+        
 
 #Execution begins here
 if __name__ == "__main__" : main() 
