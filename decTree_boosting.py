@@ -19,6 +19,7 @@ def boosting(trainData, datasetName, privTrainData, isSimple, isOffline, alpha =
     currError = None
     global prunedNominalColumns    
     global privNominalColumns
+    
     gradThreshold = 0.1
     origData = trainData
     origPrivData = privTrainData
