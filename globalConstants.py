@@ -15,7 +15,7 @@ datasets = []
 #datasets.append("heart")
 #datasets.append("breast")
 #datasets.append("heart_multi")
-#datasets.append("iris")
+datasets.append("iris")
 #datasets.append("diabetes")
 
 #----new datasets (yet to complete) ---
@@ -28,7 +28,7 @@ datasets = []
 #datasets.append("hepatitis") #TODO: has a lot of missing values.. how to support them ???
 #datasets.append("galaxy") #total 148 columns in the dataset!!! ~3000 rows!!
 
-datasets.append("flags")
+#datasets.append("flags")
 #datasets.append("nursery")
 #datasets.append("fertility")
 
