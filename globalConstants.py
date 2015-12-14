@@ -12,21 +12,25 @@ maxBoostingTrees = 100
 
 datasets = []
 #datasets.append("random")
-datasets.append("heart")
-datasets.append("breast")
+#datasets.append("heart")
+#datasets.append("breast")
 #datasets.append("heart_multi")
-datasets.append("iris")
+#datasets.append("iris")
 #datasets.append("diabetes")
 
 #----new datasets (yet to complete) ---
-datasets.append("glass_binary")
-datasets.append("car") #TODO: no difference with any kind of splits...
-datasets.append("ecoli_binary")
+#datasets.append("glass_binary")
+#datasets.append("car") #TODO: no difference with any kind of splits...
+#datasets.append("ecoli_binary")
 
 #datasets.append("census") #TODO: takes a lot of time..
-datasets.append("credit")
+#datasets.append("credit")
 #datasets.append("hepatitis") #TODO: has a lot of missing values.. how to support them ???
 #datasets.append("galaxy") #total 148 columns in the dataset!!! ~3000 rows!!
+
+datasets.append("flags")
+#datasets.append("nursery")
+#datasets.append("fertility")
 
 classLabels = {}
 #TODO: check whether the below labels are assigned correctly or not..
@@ -53,6 +57,8 @@ classLabels["ecoli_binary"] = [0, 1]
 classLabels["hepatitis"] = [0, 1]
 
 classLabels["galaxy"] = [0, 1]
+
+classLabels["flags"] = [0, 1]
 
 splitCount = 5
 totalParts = 5
@@ -106,6 +112,7 @@ privilegedColumns["hepatitis"] = [1,2,3]
 
 privilegedColumns["galaxy"] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
+privilegedColumns["flags"] = [0, 1, 2, 3, 4, 5]
 
 #lists all the nominal columns in every dataset..
 #NOTE: ******The columns in the below variable must be ordered in an ascending order..
@@ -121,6 +128,7 @@ nominalColumns["census"] = [1,3,5,6,7,8,9,13] #on nominal columns
 nominalColumns["credit"] = [0, 3,4,5,6,8,9,11,12] #on nominal columns
 nominalColumns["ecoli_binary"] = [] #on nominal columns
 nominalColumns["galaxy"] = [] #on nominal columns
+nominalColumns["flags"] = [0, 1, 2, 5, 16, 27, 28] #on nominal columns
 
 prunedNominalColumns = {}
 privNominalColumns = {}

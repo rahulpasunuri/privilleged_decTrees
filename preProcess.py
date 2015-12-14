@@ -28,6 +28,7 @@ def split(orig, pruned, priv, privColumns):
         priv.write(",".join(privInfo)+"\n")
         pruned.write(",".join(pruneInfo)+"\n")
 
+countReligions = {}
 
 for datasetName in datasets:
     if isSimplificationEnabled:
@@ -180,7 +181,6 @@ for datasetName in datasets:
                 words = l.strip().split(",")
                 words = [ wor.strip() for wor in words]
                 classIndex = len(words) - 1
-                #TODO: fix this..
                 #convert the class index..
                 if words[classIndex] == "yes":
                     words[classIndex] = '1'
@@ -190,8 +190,28 @@ for datasetName in datasets:
                     print lineNum
                     print words
                     print "ERROR!!!!  "*4
-                    exit()                                                           
-                    
+                    exit()    
+            elif datasetName == "flags":
+                words = l.strip().split(",")
+                words = [ wor.strip() for wor in words]
+                newList = []
+                classIndex = 6
+                for col in range(len(words)):
+                    if col != classIndex: #col6 is the class index..
+                        newList.append(words[col])
+
+                if words[classIndex] not in countReligions:
+                    countReligions[words[classIndex]] = 1
+                else:
+                    countReligions[words[classIndex]] += 1
+                newList.append(words[classIndex])
+                words = newList
+                classIndex = len(words) - 1
+                #convert the class index..
+                if words[classIndex] == "1" or words[classIndex] == "0":
+                    words[classIndex] = '1'
+                else:
+                    words[classIndex] = '0'                                         
             else:
                 words = l.strip().split(",")
                 classIndex = len(words) - 1 
