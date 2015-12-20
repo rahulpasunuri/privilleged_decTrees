@@ -28,8 +28,7 @@ def split(orig, pruned, priv, privColumns):
         priv.write(",".join(privInfo)+"\n")
         pruned.write(",".join(pruneInfo)+"\n")
 
-countReligions = {}
-
+nominalValues = {}
 for datasetName in datasets:
     if isSimplificationEnabled:
         ##############################PART-1##############################
@@ -191,21 +190,70 @@ for datasetName in datasets:
                     print words
                     print "ERROR!!!!  "*4
                     exit()    
-            elif datasetName == "flags":
+            elif datasetName == "fertility":
                 words = l.strip().split(",")
                 words = [ wor.strip() for wor in words]
+                classIndex = len(words) - 1
+                #convert the class index..
+                if words[classIndex] == "N":
+                    words[classIndex] = '1'
+                elif words[classIndex] == "O":
+                    words[classIndex] = '0'
+
+            elif datasetName == "nursery":
+                words = l.strip().replace("more", "4").split(",")
+                words = [ wor.strip() for wor in words]
+                classIndex = len(words) - 1
+
+                #convert the class index..
+                if words[classIndex] == "not_recom" or words[classIndex] == "recommend" or words[classIndex] == "very_recom":
+                    words[classIndex] = '0'
+                else:
+                    words[classIndex] = '1'
+                
+                for colId in range(len(words)):
+                    if colId in nominalColumns[datasetName]:
+                        if colId not in nominalValues:
+                            nominalValues[colId] = []
+                        if words[colId] not in nominalValues[colId]:
+                            nominalValues[colId].append(words[colId])
+
+            elif datasetName == "seeds":
+                words = l.strip().split("\t")
+                words = [ wor.strip() for wor in words]
+                classIndex = len(words) - 1
+                
+                if classIndex != 7:
+                    continue
+                isSkipLine = False
+                for wor in words:
+                    if wor.strip() == "":
+                        isSkipLine = True
+                        break #missing values..ignore this line..
+                        
+                if isSkipLine:
+                    continue
+
+                #print words
+                #convert the class index..
+                if words[classIndex] == "1" or words[classIndex] == "2":
+                    words[classIndex] = '0'
+                else:
+                    words[classIndex] = '1'
+
+            elif datasetName == "flags":
+                words = l.strip().split(",")
+                words = [ wor.strip() for wor in words][1:] #ignore the country column (0th column..)
                 newList = []
                 classIndex = 6
                 for col in range(len(words)):
                     if col != classIndex: #col6 is the class index..
                         newList.append(words[col])
-
-                if words[classIndex] not in countReligions:
-                    countReligions[words[classIndex]] = 1
-                else:
-                    countReligions[words[classIndex]] += 1
+                    
                 newList.append(words[classIndex])
                 words = newList
+
+                
                 classIndex = len(words) - 1
                 #convert the class index..
                 if words[classIndex] == "1" or words[classIndex] == "0":
@@ -219,6 +267,9 @@ for datasetName in datasets:
             out.write(",".join(words)+"\n")
         out.close()
         print "Missing values in the Dataset: "+datasetName+" is: ", countMissing
+
+    for key in nominalValues:
+        print key, nominalValues[key]
 
     random.seed()
     for split_num in range(splitCount):

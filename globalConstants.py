@@ -12,25 +12,26 @@ maxBoostingTrees = 100
 
 datasets = []
 #datasets.append("random")
-#datasets.append("heart")
-#datasets.append("breast")
+datasets.append("heart")
+datasets.append("breast")
 #datasets.append("heart_multi")
 datasets.append("iris")
-#datasets.append("diabetes")
+datasets.append("diabetes")
 
 #----new datasets (yet to complete) ---
-#datasets.append("glass_binary")
-#datasets.append("car") #TODO: no difference with any kind of splits...
-#datasets.append("ecoli_binary")
+datasets.append("glass_binary")
+datasets.append("car") #TODO: no difference with any kind of splits...
+datasets.append("ecoli_binary")
 
 #datasets.append("census") #TODO: takes a lot of time..
-#datasets.append("credit")
+datasets.append("credit")
 #datasets.append("hepatitis") #TODO: has a lot of missing values.. how to support them ???
 #datasets.append("galaxy") #total 148 columns in the dataset!!! ~3000 rows!!
 
-#datasets.append("flags")
-#datasets.append("nursery")
-#datasets.append("fertility")
+datasets.append("flags")
+#datasets.append("nursery") # not significant improvements!!
+datasets.append("fertility")
+datasets.append("seeds")
 
 classLabels = {}
 #TODO: check whether the below labels are assigned correctly or not..
@@ -59,6 +60,12 @@ classLabels["hepatitis"] = [0, 1]
 classLabels["galaxy"] = [0, 1]
 
 classLabels["flags"] = [0, 1]
+
+classLabels["fertility"] = [0, 1]
+
+classLabels["nursery"] = [0, 1]
+
+classLabels["seeds"] = [0, 1]
 
 splitCount = 5
 totalParts = 5
@@ -112,7 +119,17 @@ privilegedColumns["hepatitis"] = [1,2,3]
 
 privilegedColumns["galaxy"] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-privilegedColumns["flags"] = [0, 1, 2, 3, 4, 5]
+#privilegedColumns["flags"] = [3, 5, 6, 16, 17, 22]
+privilegedColumns["flags"] = [3, 5, 6, 16, 17, 22]
+
+#privilegedColumns["fertility"] = [0, 1, 2]
+privilegedColumns["fertility"] = [3, 4, 5]
+
+#privilegedColumns["nursery"] = [3, 4, 5] ## gives percents in 90's
+privilegedColumns["nursery"] = [0, 1, 4, 5, 6] ## gives percents in 90's
+
+privilegedColumns["seeds"] = [0, 5, 6] ## gives percents in 90's
+
 
 #lists all the nominal columns in every dataset..
 #NOTE: ******The columns in the below variable must be ordered in an ascending order..
@@ -128,7 +145,10 @@ nominalColumns["census"] = [1,3,5,6,7,8,9,13] #on nominal columns
 nominalColumns["credit"] = [0, 3,4,5,6,8,9,11,12] #on nominal columns
 nominalColumns["ecoli_binary"] = [] #on nominal columns
 nominalColumns["galaxy"] = [] #on nominal columns
-nominalColumns["flags"] = [0, 1, 2, 5, 16, 27, 28] #on nominal columns
+nominalColumns["flags"] = [0,1, 4, 15, 26, 27] #on nominal columns
+nominalColumns["fertility"] = [] #no nominal columns!!
+nominalColumns["nursery"] = [0, 1, 2, 4, 5, 6, 7]
+nominalColumns["seeds"] = []
 
 prunedNominalColumns = {}
 privNominalColumns = {}
@@ -208,23 +228,22 @@ The method splitData takes a dataset as input and splits it into 2 based on the 
 Provide Column value as if counting from ZERO.
 '''	
 def splitData(subDataSet, column, criteria, nominalColumns):
-	subDataSet1=[] #All samples that match the criteria
-	subDataSet2=[] #All samples that do not match the criteria
-	for row in subDataSet:
-		#Doing a <= and > split..
-		if column not in nominalColumns:
-		    if float(row[column]) <= float(criteria):
-			    subDataSet1.append(row) 
-		    else:
-			    subDataSet2.append(row)
-		else:
-		    if row[column].strip() == criteria.strip():
-			    subDataSet1.append(row) 
-		    else:
-			    subDataSet2.append(row)
-	return (subDataSet2,subDataSet1)
-	
-	
+    subDataSet1=[] #All samples that match the criteria
+    subDataSet2=[] #All samples that do not match the criteria
+    for row in subDataSet:
+        #Doing a <= and > split..
+        if column not in nominalColumns:
+            if float(row[column]) <= float(criteria):
+                subDataSet1.append(row) 
+            else:
+                subDataSet2.append(row)
+        else:
+            if row[column].strip() == criteria.strip():
+                subDataSet1.append(row) 
+            else:
+                subDataSet2.append(row)
+    return (subDataSet2,subDataSet1)
+
 def numLeaves(tree):
     if tree.leftBranch == None and tree.rightBranch == None:
         return 1

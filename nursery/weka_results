@@ -1,0 +1,236 @@
+=== Run information ===
+
+Scheme:weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     data
+Instances:    12960
+Attributes:   9
+              att0
+              att1
+              att2
+              att3
+              att4
+              att5
+              att6
+              att7
+              Class
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+att7 = recommended
+|   att0 = usual
+|   |   att6 = nonprob
+|   |   |   att1 = proper
+|   |   |   |   att4 = convenient
+|   |   |   |   |   att5 = convenient: 0 (16.0)
+|   |   |   |   |   att5 = inconv
+|   |   |   |   |   |   att3 <= 2: 0 (8.0/3.0)
+|   |   |   |   |   |   att3 > 2: 1 (8.0)
+|   |   |   |   att4 = less_conv
+|   |   |   |   |   att3 <= 2
+|   |   |   |   |   |   att2 = complete: 0 (4.0)
+|   |   |   |   |   |   att2 = completed: 0 (4.0)
+|   |   |   |   |   |   att2 = incomplete
+|   |   |   |   |   |   |   att3 <= 1: 0 (2.0)
+|   |   |   |   |   |   |   att3 > 1: 1 (2.0)
+|   |   |   |   |   |   att2 = foster: 1 (4.0)
+|   |   |   |   |   att3 > 2: 1 (16.0)
+|   |   |   |   att4 = critical: 1 (32.0/2.0)
+|   |   |   att1 = less_proper
+|   |   |   |   att4 = convenient
+|   |   |   |   |   att5 = convenient: 0 (16.0)
+|   |   |   |   |   att5 = inconv
+|   |   |   |   |   |   att3 <= 2: 0 (8.0/3.0)
+|   |   |   |   |   |   att3 > 2: 1 (8.0)
+|   |   |   |   att4 = less_conv
+|   |   |   |   |   att3 <= 2
+|   |   |   |   |   |   att2 = complete: 0 (4.0)
+|   |   |   |   |   |   att2 = completed: 0 (4.0)
+|   |   |   |   |   |   att2 = incomplete
+|   |   |   |   |   |   |   att3 <= 1: 0 (2.0)
+|   |   |   |   |   |   |   att3 > 1: 1 (2.0)
+|   |   |   |   |   |   att2 = foster: 1 (4.0)
+|   |   |   |   |   att3 > 2: 1 (16.0)
+|   |   |   |   att4 = critical: 1 (32.0/2.0)
+|   |   |   att1 = improper
+|   |   |   |   att4 = convenient
+|   |   |   |   |   att5 = convenient: 0 (16.0)
+|   |   |   |   |   att5 = inconv
+|   |   |   |   |   |   att3 <= 2: 0 (8.0/3.0)
+|   |   |   |   |   |   att3 > 2: 1 (8.0)
+|   |   |   |   att4 = less_conv
+|   |   |   |   |   att3 <= 2
+|   |   |   |   |   |   att2 = complete: 0 (4.0)
+|   |   |   |   |   |   att2 = completed: 0 (4.0)
+|   |   |   |   |   |   att2 = incomplete
+|   |   |   |   |   |   |   att3 <= 1: 0 (2.0)
+|   |   |   |   |   |   |   att3 > 1: 1 (2.0)
+|   |   |   |   |   |   att2 = foster: 1 (4.0)
+|   |   |   |   |   att3 > 2: 1 (16.0)
+|   |   |   |   att4 = critical: 1 (32.0/2.0)
+|   |   |   att1 = critical: 1 (96.0)
+|   |   |   att1 = very_crit: 1 (96.0)
+|   |   att6 = slightly_prob
+|   |   |   att1 = proper
+|   |   |   |   att4 = convenient
+|   |   |   |   |   att5 = convenient: 0 (16.0)
+|   |   |   |   |   att5 = inconv
+|   |   |   |   |   |   att3 <= 2: 0 (8.0/3.0)
+|   |   |   |   |   |   att3 > 2: 1 (8.0)
+|   |   |   |   att4 = less_conv
+|   |   |   |   |   att3 <= 2
+|   |   |   |   |   |   att2 = complete: 0 (4.0)
+|   |   |   |   |   |   att2 = completed: 0 (4.0)
+|   |   |   |   |   |   att2 = incomplete
+|   |   |   |   |   |   |   att3 <= 1: 0 (2.0)
+|   |   |   |   |   |   |   att3 > 1: 1 (2.0)
+|   |   |   |   |   |   att2 = foster: 1 (4.0)
+|   |   |   |   |   att3 > 2: 1 (16.0)
+|   |   |   |   att4 = critical: 1 (32.0/2.0)
+|   |   |   att1 = less_proper
+|   |   |   |   att4 = convenient
+|   |   |   |   |   att5 = convenient: 0 (16.0)
+|   |   |   |   |   att5 = inconv
+|   |   |   |   |   |   att3 <= 2: 0 (8.0/3.0)
+|   |   |   |   |   |   att3 > 2: 1 (8.0)
+|   |   |   |   att4 = less_conv
+|   |   |   |   |   att3 <= 2
+|   |   |   |   |   |   att2 = complete: 0 (4.0)
+|   |   |   |   |   |   att2 = completed: 0 (4.0)
+|   |   |   |   |   |   att2 = incomplete
+|   |   |   |   |   |   |   att3 <= 1: 0 (2.0)
+|   |   |   |   |   |   |   att3 > 1: 1 (2.0)
+|   |   |   |   |   |   att2 = foster: 1 (4.0)
+|   |   |   |   |   att3 > 2: 1 (16.0)
+|   |   |   |   att4 = critical: 1 (32.0/2.0)
+|   |   |   att1 = improper
+|   |   |   |   att4 = convenient
+|   |   |   |   |   att5 = convenient: 0 (16.0)
+|   |   |   |   |   att5 = inconv
+|   |   |   |   |   |   att3 <= 2: 0 (8.0/3.0)
+|   |   |   |   |   |   att3 > 2: 1 (8.0)
+|   |   |   |   att4 = less_conv
+|   |   |   |   |   att3 <= 2
+|   |   |   |   |   |   att2 = complete: 0 (4.0)
+|   |   |   |   |   |   att2 = completed: 0 (4.0)
+|   |   |   |   |   |   att2 = incomplete
+|   |   |   |   |   |   |   att3 <= 1: 0 (2.0)
+|   |   |   |   |   |   |   att3 > 1: 1 (2.0)
+|   |   |   |   |   |   att2 = foster: 1 (4.0)
+|   |   |   |   |   att3 > 2: 1 (16.0)
+|   |   |   |   att4 = critical: 1 (32.0/2.0)
+|   |   |   att1 = critical: 1 (96.0)
+|   |   |   att1 = very_crit: 1 (96.0)
+|   |   att6 = problematic: 1 (480.0)
+|   att0 = pretentious
+|   |   att1 = proper
+|   |   |   att6 = nonprob
+|   |   |   |   att4 = convenient
+|   |   |   |   |   att5 = convenient: 0 (16.0)
+|   |   |   |   |   att5 = inconv
+|   |   |   |   |   |   att3 <= 2: 0 (8.0/3.0)
+|   |   |   |   |   |   att3 > 2: 1 (8.0)
+|   |   |   |   att4 = less_conv
+|   |   |   |   |   att3 <= 2
+|   |   |   |   |   |   att2 = complete: 0 (4.0)
+|   |   |   |   |   |   att2 = completed: 0 (4.0)
+|   |   |   |   |   |   att2 = incomplete
+|   |   |   |   |   |   |   att3 <= 1: 0 (2.0)
+|   |   |   |   |   |   |   att3 > 1: 1 (2.0)
+|   |   |   |   |   |   att2 = foster: 1 (4.0)
+|   |   |   |   |   att3 > 2: 1 (16.0)
+|   |   |   |   att4 = critical: 1 (32.0/2.0)
+|   |   |   att6 = slightly_prob
+|   |   |   |   att4 = convenient
+|   |   |   |   |   att5 = convenient: 0 (16.0)
+|   |   |   |   |   att5 = inconv
+|   |   |   |   |   |   att3 <= 2: 0 (8.0/3.0)
+|   |   |   |   |   |   att3 > 2: 1 (8.0)
+|   |   |   |   att4 = less_conv
+|   |   |   |   |   att3 <= 2
+|   |   |   |   |   |   att2 = complete: 0 (4.0)
+|   |   |   |   |   |   att2 = completed: 0 (4.0)
+|   |   |   |   |   |   att2 = incomplete
+|   |   |   |   |   |   |   att3 <= 1: 0 (2.0)
+|   |   |   |   |   |   |   att3 > 1: 1 (2.0)
+|   |   |   |   |   |   att2 = foster: 1 (4.0)
+|   |   |   |   |   att3 > 2: 1 (16.0)
+|   |   |   |   att4 = critical: 1 (32.0/2.0)
+|   |   |   att6 = problematic: 1 (96.0)
+|   |   att1 = less_proper
+|   |   |   att6 = nonprob
+|   |   |   |   att4 = convenient
+|   |   |   |   |   att5 = convenient: 0 (16.0)
+|   |   |   |   |   att5 = inconv
+|   |   |   |   |   |   att3 <= 2: 0 (8.0/3.0)
+|   |   |   |   |   |   att3 > 2: 1 (8.0)
+|   |   |   |   att4 = less_conv
+|   |   |   |   |   att3 <= 2
+|   |   |   |   |   |   att2 = complete: 0 (4.0)
+|   |   |   |   |   |   att2 = completed: 0 (4.0)
+|   |   |   |   |   |   att2 = incomplete
+|   |   |   |   |   |   |   att3 <= 1: 0 (2.0)
+|   |   |   |   |   |   |   att3 > 1: 1 (2.0)
+|   |   |   |   |   |   att2 = foster: 1 (4.0)
+|   |   |   |   |   att3 > 2: 1 (16.0)
+|   |   |   |   att4 = critical: 1 (32.0/2.0)
+|   |   |   att6 = slightly_prob
+|   |   |   |   att4 = convenient
+|   |   |   |   |   att5 = convenient: 0 (16.0)
+|   |   |   |   |   att5 = inconv
+|   |   |   |   |   |   att3 <= 2: 0 (8.0/3.0)
+|   |   |   |   |   |   att3 > 2: 1 (8.0)
+|   |   |   |   att4 = less_conv
+|   |   |   |   |   att3 <= 2
+|   |   |   |   |   |   att2 = complete: 0 (4.0)
+|   |   |   |   |   |   att2 = completed: 0 (4.0)
+|   |   |   |   |   |   att2 = incomplete
+|   |   |   |   |   |   |   att3 <= 1: 0 (2.0)
+|   |   |   |   |   |   |   att3 > 1: 1 (2.0)
+|   |   |   |   |   |   att2 = foster: 1 (4.0)
+|   |   |   |   |   att3 > 2: 1 (16.0)
+|   |   |   |   att4 = critical: 1 (32.0/2.0)
+|   |   |   att6 = problematic: 1 (96.0)
+|   |   att1 = improper: 1 (288.0)
+|   |   att1 = critical: 1 (288.0)
+|   |   att1 = very_crit: 1 (288.0)
+|   att0 = great_pret: 1 (1440.0)
+att7 = priority: 1 (4320.0)
+att7 = not_recom: 0 (4320.0)
+
+Number of Leaves  : 	113
+
+Size of the tree : 	181
+
+
+Time taken to build model: 0.06 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       12847               99.1281 %
+Incorrectly Classified Instances       113                0.8719 %
+Kappa statistic                          0.981 
+Mean absolute error                      0.0099
+Root mean squared error                  0.0811
+Relative absolute error                  2.1536 %
+Root relative squared error             16.8979 %
+Total Number of Instances            12960     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.987     0.006      0.989     0.987     0.988      0.998    0
+                 0.994     0.013      0.993     0.994     0.993      0.998    1
+Weighted Avg.    0.991     0.011      0.991     0.991     0.991      0.998
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 4588   62 |    a = 0
+   51 8259 |    b = 1
+
+

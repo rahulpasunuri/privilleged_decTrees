@@ -10,7 +10,11 @@ def computeStats(predictedLabels):
     
     for label in predictedLabels:
         actual = float(label[1])
+        predicted = float(label[0])
         
+        if predicted not in labels:
+            labels.append(predicted)        
+
         if actual not in labels:
             labels.append(actual)
 
