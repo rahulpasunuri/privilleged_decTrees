@@ -1,0 +1,18 @@
+Printing Results for Dataset:  seeds
+Avg Old Accuracy:  0.8934 +-  0.0087
+Avg. Test Accuracy:  0.9023 +-  0.0271
+
+Stats for label:  0.0
+	 Old Avg. Precision is:  0.9119 +-  0.0076
+	 New Avg. Precision is:  0.9052 +-  0.0412
+
+	 Old Avg. Recall is:  0.9286 +-  0.0146
+	 New Avg. Recall is:  0.9349 +-  0.0434
+
+Stats for label:  1.0
+	 Old Avg. Precision is:  0.8449 +-  0.0313
+	 New Avg. Precision is:  0.9094 +-  0.0517
+
+	 Old Avg. Recall is:  0.8324 +-  0.01
+	 New Avg. Recall is:  0.8327 +-  0.0726
+

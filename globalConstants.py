@@ -12,26 +12,26 @@ maxBoostingTrees = 100
 
 datasets = []
 #datasets.append("random")
-datasets.append("heart")
-datasets.append("breast")
+#datasets.append("heart")
+#datasets.append("breast")
 #datasets.append("heart_multi")
-datasets.append("iris")
-datasets.append("diabetes")
+#datasets.append("iris")
+#datasets.append("diabetes")
 
 #----new datasets (yet to complete) ---
-datasets.append("glass_binary")
-datasets.append("car") #TODO: no difference with any kind of splits...
-datasets.append("ecoli_binary")
+#datasets.append("glass_binary")
+#datasets.append("car") #TODO: no difference with any kind of splits...
+#datasets.append("ecoli_binary")
 
 #datasets.append("census") #TODO: takes a lot of time..
-datasets.append("credit")
+#datasets.append("credit")
 #datasets.append("hepatitis") #TODO: has a lot of missing values.. how to support them ???
 #datasets.append("galaxy") #total 148 columns in the dataset!!! ~3000 rows!!
 
-datasets.append("flags")
+#datasets.append("flags")
 #datasets.append("nursery") # not significant improvements!!
 datasets.append("fertility")
-datasets.append("seeds")
+#datasets.append("seeds")
 
 classLabels = {}
 #TODO: check whether the below labels are assigned correctly or not..
@@ -41,7 +41,8 @@ classLabels["breast"] = [0, 1]
 
 classLabels["random"] = [0, 1]
 
-classLabels["iris"] = [0, 1, 2]
+#classLabels["iris"] = [0, 1, 2]
+classLabels["iris"] = [0, 1]
 
 classLabels["diabetes"] = [0, 1]
 
@@ -117,7 +118,7 @@ privilegedColumns["ecoli_binary"] = [1, 2, 3]
 #TODO: get privileged columns for the hepatitis dataset..
 privilegedColumns["hepatitis"] = [1,2,3]
 
-privilegedColumns["galaxy"] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+privilegedColumns["galaxy"] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,20]
 
 #privilegedColumns["flags"] = [3, 5, 6, 16, 17, 22]
 privilegedColumns["flags"] = [3, 5, 6, 16, 17, 22]
@@ -128,7 +129,8 @@ privilegedColumns["fertility"] = [3, 4, 5]
 #privilegedColumns["nursery"] = [3, 4, 5] ## gives percents in 90's
 privilegedColumns["nursery"] = [0, 1, 4, 5, 6] ## gives percents in 90's
 
-privilegedColumns["seeds"] = [0, 5, 6] ## gives percents in 90's
+privilegedColumns["seeds"] =  [0, 1, 3, 5]
+#privilegedColumns["seeds"] =  [1, 3, 5]
 
 
 #lists all the nominal columns in every dataset..

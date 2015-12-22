@@ -79,7 +79,8 @@ for datasetName in datasets:
                 elif "virginica" in words[classIndex]:
                     words[classIndex] = '1'
                 elif "versicolor" in words[classIndex]:
-                    words[classIndex] = '2'
+                    #words[classIndex] = '2'
+                    words[classIndex] = '0'
 
             elif datasetName == "glass_binary":
                 words = l.strip().split(",")
