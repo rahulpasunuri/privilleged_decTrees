@@ -26,11 +26,11 @@ datasets = []
 #datasets.append("census") #TODO: takes a lot of time..
 #datasets.append("credit")
 #datasets.append("hepatitis") #TODO: has a lot of missing values.. how to support them ???
-#datasets.append("galaxy") #total 148 columns in the dataset!!! ~3000 rows!!
+datasets.append("galaxy") #total 148 columns in the dataset!!! ~3000 rows!!
 
 #datasets.append("flags")
 #datasets.append("nursery") # not significant improvements!!
-datasets.append("fertility")
+#datasets.append("fertility")
 #datasets.append("seeds")
 
 classLabels = {}
