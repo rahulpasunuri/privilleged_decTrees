@@ -24,14 +24,14 @@ def svmplusQP(X,Y,Xstar,C,Cstar):
     n = X.shape[0]
     Y.shape = n,1
     # Compute kernel matrices
-    #dk = CRBFKernel();
-    #dkstar = CRBFKernel();
-    #dK = dk.Dot(X, X)
-    #dKstar = dkstar.Dot(Xstar, Xstar)
-    #omega_K = 1.0 / np.median(dK.flatten())
-    #omega_Kstar = 1.0 / np.median(dKstar.flatten())	
-    kernel_K = CLinearKernel() #CGaussKernel(omega_K)
-    kernel_Kstar = CLinearKernel() #CGaussKernel(omega_Kstar)
+    dk = CRBFKernel();
+    dkstar = CRBFKernel();
+    dK = dk.Dot(X, X)
+    dKstar = dkstar.Dot(Xstar, Xstar)
+    omega_K = 1.0 / np.median(dK.flatten())
+    omega_Kstar = 1.0 / np.median(dKstar.flatten())	
+    kernel_K = CGaussKernel(omega_K)
+    kernel_Kstar = CGaussKernel(omega_Kstar)
     K = kernel_K.Dot(X,X) 
     Kstar = kernel_Kstar.Dot(Xstar,Xstar)
     #pdb.set_trace()
@@ -57,7 +57,7 @@ def svmplusQP(X,Y,Xstar,C,Cstar):
     #cvxopt.solvers.options['abstol'] = 1e-20	# <<<
     #cvxopt.solvers.options['reltol'] = 1e-20	# <<<
     #cvxopt.solvers.options['feastol'] = 1e-20	# <<<
-    print P
+    
     xyz = cvxopt.solvers.qp(matrix(P), matrix(Q), matrix(-1.0*G), matrix(h), matrix(A), matrix(b))
 
     sol = xyz['x']
@@ -124,8 +124,6 @@ if __name__ == "__main__":
     
     accuracy = {}
     for dataset in datasets:
-        if dataset != "galaxy":
-            continue #TODO:remove this!!
         accuracy[dataset] = []    
         print "*"*40
         print "Running Experiments on dataset: ",dataset
@@ -175,9 +173,8 @@ if __name__ == "__main__":
                     if predicted[rowIndex]*Ytest[rowIndex] > 0:
                         numCorrectPredictions+=1
                                 
-                #print "Accuracy is: ", (numCorrectPredictions*1.0)/len(Ytest)
+                print "Accuracy is: ", (numCorrectPredictions*1.0)/len(Ytest)
                 partAccuracy += (numCorrectPredictions*1.0)/len(Ytest)
-                exit()#TODO: remove this!!
                 '''
                 print "*"*40
                 print "Printing Predicted\n"

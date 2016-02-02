@@ -4,7 +4,8 @@ import random
 import decTree
 import os
 from globalConstants import * #file containing all the global constants..
-
+import sklearn
+from sklearn.preprocessing import *
 isSimplificationEnabled = True
 isSplitEnabled = True
 isPrivSplitEnabled = True
@@ -104,19 +105,20 @@ for datasetName in datasets:
                     words[classIndex] = '0'
                 else:
                     words[classIndex] = '1'
-                '''
-                elif words[classIndex] == "acc":
-                    words[classIndex] = '1'
-                elif words[classIndex] == "good":
-                    words[classIndex] = '2'
-                elif words[classIndex] == "vgood":
-                    words[classIndex] = '3'
+
+            elif datasetName == "car_continuous":
+                #data cleaning..replacing the below string to make the feature numeric..
+                l = l.replace("5more", "5")
+                l = l.replace("more", "5") # replcaing "more" string with the number 5 
+                words = l.strip().split(",")
+                classIndex = len(words) - 1
+                
+                #convert the class index..
+                if words[classIndex] == "unacc":
+                    words[classIndex] = '0'
                 else:
-                    print lineNum
-                    print words
-                    print "ERROR!!!!  "*4
-                    exit()                    
-                '''
+                    words[classIndex] = '1'
+                
             elif datasetName == "census":
                 words = l.strip().split(",")
                 words = [ wor.strip() for wor in words]
@@ -271,6 +273,12 @@ for datasetName in datasets:
 
     for key in nominalValues:
         print key, nominalValues[key]
+
+    if datasetName == "car_continuous":
+        enc = OneHotEncoder()
+        x = [ r.split(",") for r in open(datasetName+"/dataset_simplified.csv", "r").readlines()]
+        enc.fit(x)
+        x=enc.transform(x).tolist()
 
     random.seed()
     for split_num in range(splitCount):
