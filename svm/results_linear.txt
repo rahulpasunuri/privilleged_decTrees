@@ -1,0 +1,242 @@
+****************************************
+Running Experiments on dataset:  heart
+****************************************
+
+ Model : SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+[ 1.  1. -1.  1. -1.  1.  1.  1. -1.  1.  1.  1. -1.  1.  1. -1. -1. -1.
+ -1. -1. -1.  1. -1. -1. -1. -1. -1. -1. -1.  1.  1.  1. -1. -1. -1. -1.
+ -1. -1. -1.  1. -1. -1. -1. -1.  1.  1. -1.  1.  1. -1.  1. -1.  1.  1.
+  1. -1. -1. -1.  1.]
+Accuracy is:  0.796610169492
+
+ Model : SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+[-1. -1.  1. -1.  1. -1.  1. -1. -1.  1. -1.  1.  1. -1. -1. -1. -1. -1.
+ -1. -1. -1.  1. -1. -1. -1.  1. -1. -1. -1.  1.  1. -1.  1.  1. -1. -1.
+  1. -1.  1. -1. -1. -1. -1.  1. -1.  1. -1.  1. -1. -1. -1. -1. -1.  1.
+ -1.  1. -1. -1. -1.]
+Accuracy is:  0.830508474576
+
+ Model : SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+[-1. -1. -1. -1.  1. -1. -1.  1. -1. -1. -1. -1.  1.  1. -1. -1.  1. -1.
+ -1.  1. -1. -1.  1.  1. -1.  1. -1. -1. -1.  1.  1.  1.  1.  1. -1.  1.
+  1. -1. -1.  1. -1. -1. -1.  1.  1.  1. -1. -1. -1. -1. -1.  1. -1.  1.
+  1.  1. -1. -1. -1.]
+Accuracy is:  0.745762711864
+
+ Model : SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+[-1. -1. -1. -1. -1. -1.  1.  1.  1.  1. -1.  1. -1. -1. -1. -1.  1. -1.
+  1. -1. -1. -1. -1. -1.  1. -1.  1. -1. -1. -1. -1. -1. -1.  1.  1. -1.
+ -1.  1.  1.  1.  1. -1.  1.  1. -1.  1. -1. -1.  1. -1.  1.  1.  1.  1.
+ -1. -1. -1. -1. -1.]
+Accuracy is:  0.830508474576
+
+ Model : SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+[-1.  1. -1.  1. -1.  1. -1. -1. -1.  1. -1.  1. -1. -1. -1. -1.  1. -1.
+ -1.  1.  1. -1. -1. -1.  1. -1.  1.  1. -1. -1.  1. -1. -1.  1. -1. -1.
+  1.  1. -1.  1.  1.  1.  1. -1. -1.  1.  1. -1. -1. -1.  1. -1.  1.  1.
+  1.  1. -1.  1. -1. -1. -1.]
+Accuracy is:  0.803278688525
+
+ Model : SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+[-1. -1.  1. -1. -1.  1.  1. -1. -1.  1. -1.  1. -1. -1.  1.  1.  1.  1.
+  1. -1. -1. -1.  1. -1. -1. -1. -1.  1. -1.  1. -1. -1.  1.  1.  1. -1.
+ -1. -1. -1.  1.  1. -1.  1.  1. -1. -1. -1. -1. -1.  1. -1. -1. -1.  1.
+ -1. -1.  1. -1.  1.]
+Accuracy is:  0.762711864407
+
+ Model : SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+[ 1.  1. -1. -1.  1. -1. -1.  1. -1.  1. -1.  1. -1. -1. -1. -1.  1. -1.
+ -1. -1. -1. -1.  1.  1. -1.  1.  1. -1. -1. -1.  1.  1.  1. -1.  1.  1.
+ -1. -1. -1. -1. -1. -1.  1.  1.  1.  1. -1.  1. -1. -1. -1. -1.  1.  1.
+ -1. -1. -1. -1.  1.]
+Accuracy is:  0.796610169492
+
+ Model : SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+[ 1. -1. -1. -1. -1. -1.  1. -1. -1. -1.  1.  1. -1. -1. -1.  1. -1.  1.
+ -1. -1. -1.  1.  1. -1.  1.  1. -1. -1. -1. -1. -1. -1.  1. -1.  1. -1.
+  1. -1. -1. -1. -1. -1. -1.  1. -1. -1. -1.  1.  1.  1. -1.  1.  1.  1.
+  1. -1.  1. -1. -1.]
+Accuracy is:  0.796610169492
+
+ Model : SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+[-1.  1. -1.  1. -1.  1. -1.  1.  1.  1. -1.  1. -1. -1. -1. -1.  1.  1.
+ -1. -1. -1.  1.  1.  1.  1. -1.  1. -1. -1. -1. -1.  1.  1.  1. -1.  1.
+ -1.  1. -1.  1. -1. -1. -1.  1.  1. -1. -1. -1.  1. -1.  1.  1. -1.  1.
+ -1.  1.  1. -1.  1.]
+Accuracy is:  0.745762711864
+
+ Model : SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+[ 1.  1. -1. -1. -1. -1.  1. -1. -1. -1.  1. -1. -1.  1.  1. -1. -1. -1.
+  1. -1. -1.  1. -1.  1.  1. -1.  1. -1.  1.  1. -1. -1. -1.  1.  1. -1.
+ -1.  1.  1. -1. -1. -1. -1. -1. -1. -1.  1. -1. -1. -1.  1. -1. -1. -1.
+ -1. -1.  1. -1. -1. -1. -1.]
+Accuracy is:  0.852459016393
+
+ Model : SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+[ 1. -1. -1.  1.  1. -1. -1.  1.  1. -1. -1. -1.  1. -1.  1. -1. -1.  1.
+  1.  1. -1. -1. -1. -1.  1. -1. -1. -1.  1. -1. -1. -1. -1.  1. -1. -1.
+ -1.  1.  1. -1. -1. -1.  1. -1. -1. -1.  1. -1. -1. -1.  1.  1.  1. -1.
+ -1.  1.  1. -1.  1.]
+Accuracy is:  0.779661016949
+
+ Model : SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+[ 1.  1. -1. -1. -1. -1. -1.  1. -1. -1. -1. -1.  1. -1. -1. -1. -1. -1.
+  1.  1.  1.  1.  1. -1. -1. -1. -1. -1.  1. -1.  1. -1.  1. -1.  1. -1.
+ -1.  1.  1.  1.  1. -1. -1. -1.  1.  1.  1. -1.  1. -1. -1. -1. -1. -1.
+ -1. -1.  1.  1. -1.]
+Accuracy is:  0.847457627119
+
+ Model : SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+[-1. -1. -1. -1. -1. -1. -1.  1.  1. -1. -1.  1.  1.  1. -1. -1.  1. -1.
+ -1. -1. -1. -1. -1.  1.  1. -1. -1. -1. -1. -1.  1.  1.  1. -1. -1.  1.
+ -1.  1. -1.  1. -1. -1. -1. -1. -1.  1.  1. -1.  1. -1. -1.  1.  1.  1.
+  1. -1. -1. -1. -1.]
+Accuracy is:  0.813559322034
+
+ Model : SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+[ 1.  1. -1. -1. -1.  1. -1. -1. -1. -1.  1. -1. -1. -1. -1. -1.  1. -1.
+ -1. -1. -1.  1. -1. -1.  1. -1. -1. -1. -1.  1. -1.  1. -1.  1. -1. -1.
+  1.  1. -1.  1. -1.  1. -1.  1. -1.  1.  1. -1. -1. -1.  1.  1. -1.  1.
+ -1. -1.  1. -1.  1.]
+Accuracy is:  0.796610169492
+
+ Model : SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+[-1. -1. -1. -1.  1.  1.  1.  1.  1.  1.  1. -1.  1.  1. -1.  1. -1. -1.
+  1.  1.  1.  1.  1.  1. -1.  1. -1.  1.  1. -1. -1.  1.  1. -1. -1.  1.
+ -1.  1. -1.  1. -1.  1.  1.  1.  1. -1. -1. -1.  1. -1. -1.  1.  1.  1.
+ -1. -1. -1. -1.  1. -1. -1.]
+Accuracy is:  0.770491803279
+
+ Model : SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+[ 1.  1. -1. -1. -1. -1. -1. -1. -1.  1.  1.  1.  1. -1.  1. -1.  1. -1.
+ -1. -1. -1. -1. -1.  1. -1. -1. -1. -1. -1. -1. -1. -1.  1.  1.  1. -1.
+  1.  1. -1. -1. -1.  1. -1. -1.  1. -1.  1.  1. -1. -1. -1. -1. -1. -1.
+  1. -1.  1. -1. -1.]
+Accuracy is:  0.71186440678
+
+ Model : SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+[-1. -1.  1. -1. -1.  1. -1. -1. -1.  1. -1. -1. -1. -1.  1. -1.  1. -1.
+ -1.  1. -1. -1. -1.  1.  1. -1. -1.  1. -1. -1.  1.  1. -1.  1.  1.  1.
+ -1.  1. -1. -1. -1.  1.  1.  1.  1. -1.  1. -1. -1.  1. -1.  1.  1. -1.
+ -1.  1. -1.  1. -1.]
+Accuracy is:  0.796610169492
+
+ Model : SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+[-1.  1. -1. -1.  1. -1.  1.  1. -1. -1.  1.  1. -1.  1.  1.  1.  1. -1.
+ -1.  1. -1. -1. -1. -1. -1. -1. -1.  1. -1. -1. -1.  1. -1. -1. -1. -1.
+ -1. -1. -1. -1.  1. -1. -1. -1. -1.  1.  1. -1.  1.  1. -1. -1.  1.  1.
+  1.  1. -1.  1.  1.]
+Accuracy is:  0.830508474576
+
+ Model : SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+[ 1. -1.  1. -1. -1.  1. -1. -1.  1. -1.  1. -1.  1.  1.  1. -1.  1. -1.
+ -1. -1.  1. -1. -1. -1. -1.  1. -1. -1. -1. -1. -1. -1. -1. -1.  1. -1.
+  1.  1. -1.  1. -1.  1.  1.  1.  1.  1.  1. -1.  1.  1. -1. -1.  1. -1.
+  1. -1. -1. -1. -1.]
+Accuracy is:  0.813559322034
+
+ Model : SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+[-1. -1.  1. -1.  1. -1. -1. -1. -1. -1.  1.  1.  1.  1.  1.  1.  1.  1.
+  1.  1. -1. -1.  1.  1.  1.  1.  1.  1. -1. -1. -1. -1. -1.  1.  1. -1.
+ -1. -1.  1. -1.  1.  1. -1. -1.  1. -1.  1. -1.  1.  1. -1. -1. -1. -1.
+ -1. -1. -1.  1.  1. -1. -1.]
+Accuracy is:  0.770491803279
+
+ Model : SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+[-1. -1. -1. -1. -1. -1.  1.  1.  1.  1. -1. -1. -1. -1. -1.  1. -1.  1.
+  1.  1. -1. -1. -1.  1. -1.  1. -1.  1. -1.  1. -1. -1.  1. -1.  1.  1.
+ -1.  1.  1. -1. -1. -1. -1. -1. -1.  1.  1.  1. -1.  1.  1. -1.  1. -1.
+ -1. -1. -1. -1.  1.]
+Accuracy is:  0.728813559322
+
+ Model : SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+[-1.  1.  1. -1. -1. -1. -1. -1.  1. -1. -1. -1.  1. -1. -1. -1. -1.  1.
+ -1. -1.  1. -1. -1.  1.  1.  1.  1. -1.  1. -1.  1.  1.  1.  1.  1. -1.
+ -1. -1. -1. -1. -1.  1. -1. -1. -1. -1.  1. -1.  1.  1.  1. -1. -1.  1.
+ -1. -1. -1. -1.  1.]
+Accuracy is:  0.779661016949
+
+ Model : SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+[-1.  1. -1.  1. -1.  1. -1.  1. -1.  1. -1.  1.  1. -1.  1.  1.  1.  1.
+ -1.  1. -1.  1.  1. -1. -1.  1. -1. -1.  1. -1. -1. -1. -1. -1. -1. -1.
+ -1. -1.  1.  1.  1.  1. -1. -1. -1.  1.  1. -1.  1. -1.  1.  1. -1.  1.
+ -1. -1. -1. -1. -1.]
+Accuracy is:  0.847457627119
+
+ Model : SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+[-1.  1.  1.  1. -1.  1. -1.  1.  1.  1.  1.  1. -1.  1.  1. -1. -1. -1.
+ -1. -1.  1. -1. -1.  1. -1. -1.  1.  1. -1. -1. -1. -1. -1. -1. -1. -1.
+  1. -1. -1.  1.  1. -1.  1. -1.  1. -1. -1. -1.  1. -1. -1. -1. -1. -1.
+  1.  1.  1.  1. -1

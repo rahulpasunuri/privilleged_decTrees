@@ -26,12 +26,13 @@ datasets = []
 #datasets.append("census") #TODO: takes a lot of time..
 #datasets.append("credit")
 #datasets.append("hepatitis") #TODO: has a lot of missing values.. how to support them ???
-datasets.append("galaxy") #total 148 columns in the dataset!!! ~3000 rows!!
+#datasets.append("galaxy") #total 148 columns in the dataset!!! ~3000 rows!!
 
 #datasets.append("flags")
 #datasets.append("nursery") # not significant improvements!!
 #datasets.append("fertility")
 #datasets.append("seeds")
+datasets.append("car_continuous")
 
 classLabels = {}
 #TODO: check whether the below labels are assigned correctly or not..
@@ -67,6 +68,8 @@ classLabels["fertility"] = [0, 1]
 classLabels["nursery"] = [0, 1]
 
 classLabels["seeds"] = [0, 1]
+
+classLabels["car_continuous"] = [0,1]
 
 splitCount = 5
 totalParts = 5
@@ -132,6 +135,7 @@ privilegedColumns["nursery"] = [0, 1, 4, 5, 6] ## gives percents in 90's
 privilegedColumns["seeds"] =  [0, 1, 3, 5]
 #privilegedColumns["seeds"] =  [1, 3, 5]
 
+privilegedColumns["car_continuous"] = [3]
 
 #lists all the nominal columns in every dataset..
 #NOTE: ******The columns in the below variable must be ordered in an ascending order..
@@ -151,6 +155,7 @@ nominalColumns["flags"] = [0,1, 4, 15, 26, 27] #on nominal columns
 nominalColumns["fertility"] = [] #no nominal columns!!
 nominalColumns["nursery"] = [0, 1, 2, 4, 5, 6, 7]
 nominalColumns["seeds"] = []
+nominalColumns["car_continuous"] = []
 
 prunedNominalColumns = {}
 privNominalColumns = {}
