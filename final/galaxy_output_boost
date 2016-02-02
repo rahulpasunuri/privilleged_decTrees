@@ -1,0 +1,1797 @@
+{'galaxy': []}
+{'galaxy': []}
+
+
+########################################
+########################################
+Printing results for split:  0
+########################################
+########################################
+
+########################################
+Running galaxy:
+Running galaxy with fold:  0
+
+Running pruned dataset
+Length of boostedTrees:  14
+0.712871287129
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  14
+0.693069306931 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  15
+0.70297029703 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  15
+0.70297029703 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  13
+0.70297029703 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  14
+0.693069306931 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  13
+0.722772277228 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.683168316832 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.70297029703 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  12
+0.70297029703 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  12
+0.70297029703 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  12
+0.663366336634 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.683168316832 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.673267326733 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  13
+0.683168316832 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  12
+0.673267326733 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  12
+0.663366336634 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  12
+0.663366336634 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  12
+0.663366336634 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.663366336634 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.673267326733 	2.0
+Running galaxy with fold:  1
+
+Running pruned dataset
+Length of boostedTrees:  14
+0.683168316832
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  14
+0.683168316832 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  15
+0.673267326733 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  14
+0.673267326733 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  14
+0.683168316832 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  14
+0.693069306931 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  13
+0.693069306931 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.673267326733 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.693069306931 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.70297029703 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  12
+0.712871287129 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  12
+0.712871287129 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  12
+0.732673267327 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  12
+0.732673267327 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  12
+0.722772277228 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  11
+0.683168316832 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  11
+0.683168316832 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.712871287129 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.683168316832 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.653465346535 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  10
+0.643564356436 	2.0
+Running galaxy with fold:  2
+
+Running pruned dataset
+Length of boostedTrees:  14
+0.722772277228
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  14
+0.693069306931 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  15
+0.663366336634 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  14
+0.70297029703 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  15
+0.673267326733 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  15
+0.633663366337 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  15
+0.643564356436 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  14
+0.623762376238 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  14
+0.633663366337 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.633663366337 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.613861386139 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  12
+0.60396039604 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  12
+0.613861386139 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  12
+0.60396039604 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  12
+0.613861386139 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  12
+0.613861386139 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  11
+0.594059405941 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.594059405941 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.584158415842 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.584158415842 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.574257425743 	2.0
+Running galaxy with fold:  3
+
+Running pruned dataset
+Length of boostedTrees:  14
+0.732673267327
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  14
+0.712871287129 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  15
+0.752475247525 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  14
+0.762376237624 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  15
+0.732673267327 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  14
+0.693069306931 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  15
+0.722772277228 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  15
+0.732673267327 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  15
+0.782178217822 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  14
+0.772277227723 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  14
+0.782178217822 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  12
+0.792079207921 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  12
+0.772277227723 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  12
+0.752475247525 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  12
+0.752475247525 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  11
+0.762376237624 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  12
+0.742574257426 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.722772277228 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.752475247525 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.752475247525 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.742574257426 	2.0
+Running galaxy with fold:  4
+
+Running pruned dataset
+Length of boostedTrees:  14
+0.792079207921
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  14
+0.762376237624 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  14
+0.752475247525 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  14
+0.742574257426 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  14
+0.742574257426 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  14
+0.722772277228 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  15
+0.732673267327 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.70297029703 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  14
+0.712871287129 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  14
+0.732673267327 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.722772277228 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.732673267327 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.752475247525 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.693069306931 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  13
+0.693069306931 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  12
+0.712871287129 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  12
+0.712871287129 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  12
+0.722772277228 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.693069306931 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.693069306931 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.683168316832 	2.0
+
+Normal Accuracy is 0.728712871287
+Stats for label:  0.0
+	Precision is:  0.624674817777
+	Recall is:  0.753710249591
+------------------------------
+Stats for label:  1.0
+	Precision is:  0.821136739323
+	Recall is:  0.709581849602
+------------------------------
+
+New Accuracy is:  0.716831683168 for alpha:  0.3
+Stats for label:  0.0
+	Precision for the chosen alpha is:  0.617070579744
+	Recall for the chosen alpha is:  0.724913929948
+------------------------------
+Stats for label:  1.0
+	Precision for the chosen alpha is:  0.802589334202
+	Recall for the chosen alpha is:  0.708449384397
+------------------------------
+
+
+########################################
+########################################
+Printing results for split:  1
+########################################
+########################################
+
+########################################
+Running galaxy:
+Running galaxy with fold:  0
+
+Running pruned dataset
+Length of boostedTrees:  14
+0.70297029703
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  14
+0.722772277228 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  14
+0.70297029703 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  14
+0.673267326733 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  14
+0.693069306931 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  14
+0.693069306931 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  14
+0.673267326733 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  14
+0.70297029703 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.673267326733 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.663366336634 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.673267326733 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.683168316832 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.673267326733 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.683168316832 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  12
+0.673267326733 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  12
+0.693069306931 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  12
+0.683168316832 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  12
+0.663366336634 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.673267326733 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.623762376238 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.633663366337 	2.0
+Running galaxy with fold:  1
+
+Running pruned dataset
+Length of boostedTrees:  13
+0.732673267327
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  14
+0.732673267327 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  14
+0.683168316832 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  15
+0.683168316832 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  14
+0.693069306931 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  14
+0.683168316832 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  12
+0.70297029703 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  14
+0.683168316832 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  14
+0.653465346535 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.673267326733 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.673267326733 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.663366336634 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  12
+0.70297029703 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  12
+0.70297029703 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  12
+0.70297029703 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  12
+0.712871287129 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  12
+0.683168316832 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.712871287129 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.653465346535 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.663366336634 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.663366336634 	2.0
+Running galaxy with fold:  2
+
+Running pruned dataset
+Length of boostedTrees:  14
+0.752475247525
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  14
+0.762376237624 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  14
+0.742574257426 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  14
+0.732673267327 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  14
+0.742574257426 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  14
+0.762376237624 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  14
+0.742574257426 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  14
+0.693069306931 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  14
+0.742574257426 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  12
+0.732673267327 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  12
+0.732673267327 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.732673267327 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.712871287129 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  12
+0.742574257426 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  12
+0.722772277228 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  12
+0.732673267327 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  12
+0.70297029703 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.70297029703 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.673267326733 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.70297029703 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.70297029703 	2.0
+Running galaxy with fold:  3
+
+Running pruned dataset
+Length of boostedTrees:  14
+0.673267326733
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  14
+0.673267326733 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  13
+0.693069306931 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  14
+0.70297029703 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  14
+0.722772277228 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  15
+0.712871287129 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  15
+0.732673267327 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  14
+0.712871287129 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  14
+0.732673267327 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  14
+0.70297029703 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  14
+0.722772277228 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  14
+0.712871287129 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.693069306931 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.683168316832 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  12
+0.693069306931 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  12
+0.643564356436 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  12
+0.663366336634 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  12
+0.683168316832 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  12
+0.673267326733 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.663366336634 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.683168316832 	2.0
+Running galaxy with fold:  4
+
+Running pruned dataset
+Length of boostedTrees:  14
+0.693069306931
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  15
+0.693069306931 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  15
+0.683168316832 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  15
+0.683168316832 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  15
+0.683168316832 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  13
+0.673267326733 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  14
+0.712871287129 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.693069306931 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  12
+0.613861386139 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.653465346535 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.623762376238 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.623762376238 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.693069306931 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  12
+0.693069306931 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  12
+0.653465346535 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  12
+0.643564356436 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  11
+0.653465346535 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.643564356436 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.643564356436 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  10
+0.623762376238 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  10
+0.643564356436 	2.0
+
+Normal Accuracy is 0.710891089109
+Stats for label:  0.0
+	Precision is:  0.61705125341
+	Recall is:  0.709172932331
+------------------------------
+Stats for label:  1.0
+	Precision is:  0.790016876639
+	Recall is:  0.712615256683
+------------------------------
+
+New Accuracy is:  0.716831683168 for alpha:  0.1
+Stats for label:  0.0
+	Precision for the chosen alpha is:  0.620818474674
+	Recall for the chosen alpha is:  0.722957393484
+------------------------------
+Stats for label:  1.0
+	Precision for the chosen alpha is:  0.800034725462
+	Recall for the chosen alpha is:  0.712400029349
+------------------------------
+
+
+########################################
+########################################
+Printing results for split:  2
+########################################
+########################################
+
+########################################
+Running galaxy:
+Running galaxy with fold:  0
+
+Running pruned dataset
+Length of boostedTrees:  14
+0.722772277228
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  14
+0.712871287129 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  14
+0.70297029703 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  14
+0.70297029703 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  14
+0.683168316832 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  14
+0.673267326733 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  14
+0.663366336634 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  14
+0.673267326733 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  14
+0.643564356436 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  14
+0.683168316832 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.683168316832 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.683168316832 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.683168316832 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  12
+0.693069306931 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  12
+0.683168316832 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  12
+0.663366336634 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  12
+0.683168316832 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.673267326733 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.653465346535 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.693069306931 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  10
+0.653465346535 	2.0
+Running galaxy with fold:  1
+
+Running pruned dataset
+Length of boostedTrees:  14
+0.742574257426
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  14
+0.762376237624 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  14
+0.742574257426 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  14
+0.742574257426 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  14
+0.732673267327 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  14
+0.742574257426 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  14
+0.732673267327 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  14
+0.712871287129 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.693069306931 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.683168316832 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.70297029703 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.683168316832 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  12
+0.712871287129 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.70297029703 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  12
+0.663366336634 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  12
+0.633663366337 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  12
+0.653465346535 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  12
+0.653465346535 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  12
+0.613861386139 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.683168316832 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.683168316832 	2.0
+Running galaxy with fold:  2
+
+Running pruned dataset
+Length of boostedTrees:  14
+0.712871287129
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  14
+0.693069306931 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  14
+0.712871287129 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  14
+0.693069306931 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  14
+0.693069306931 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  14
+0.693069306931 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  14
+0.663366336634 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  14
+0.673267326733 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.673267326733 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  12
+0.70297029703 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  12
+0.693069306931 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  12
+0.693069306931 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  12
+0.693069306931 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  12
+0.70297029703 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  12
+0.693069306931 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  12
+0.70297029703 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  11
+0.693069306931 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.70297029703 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.70297029703 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.712871287129 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.732673267327 	2.0
+Running galaxy with fold:  3
+
+Running pruned dataset
+Length of boostedTrees:  13
+0.742574257426
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  13
+0.752475247525 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  14
+0.742574257426 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  14
+0.722772277228 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  15
+0.742574257426 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  15
+0.712871287129 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  14
+0.70297029703 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  14
+0.712871287129 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  14
+0.712871287129 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  14
+0.722772277228 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  14
+0.722772277228 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.693069306931 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.70297029703 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.673267326733 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  12
+0.673267326733 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  12
+0.70297029703 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  12
+0.693069306931 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  12
+0.663366336634 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  12
+0.693069306931 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.673267326733 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.70297029703 	2.0
+Running galaxy with fold:  4
+
+Running pruned dataset
+Length of boostedTrees:  13
+0.653465346535
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  14
+0.673267326733 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  14
+0.673267326733 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  14
+0.663366336634 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  14
+0.653465346535 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  14
+0.673267326733 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  14
+0.683168316832 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.712871287129 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  12
+0.70297029703 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  12
+0.70297029703 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  12
+0.70297029703 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  12
+0.663366336634 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  12
+0.673267326733 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  12
+0.673267326733 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  12
+0.663366336634 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  12
+0.623762376238 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  12
+0.653465346535 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.633663366337 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.683168316832 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.663366336634 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  10
+0.613861386139 	2.0
+
+Normal Accuracy is 0.714851485149
+Stats for label:  0.0
+	Precision is:  0.62561602547
+	Recall is:  0.727088144414
+------------------------------
+Stats for label:  1.0
+	Precision is:  0.802388732698
+	Recall is:  0.71323695815
+------------------------------
+
+New Accuracy is:  0.718811881188 for alpha:  0.1
+Stats for label:  0.0
+	Precision for the chosen alpha is:  0.629852077423
+	Recall for the chosen alpha is:  0.720899333225
+------------------------------
+Stats for label:  1.0
+	Precision for the chosen alpha is:  0.800299329885
+	Recall for the chosen alpha is:  0.72269024171
+------------------------------
+
+
+########################################
+########################################
+Printing results for split:  3
+########################################
+########################################
+
+########################################
+Running galaxy:
+Running galaxy with fold:  0
+
+Running pruned dataset
+Length of boostedTrees:  13
+0.683168316832
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  14
+0.673267326733 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  14
+0.683168316832 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  14
+0.70297029703 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  14
+0.70297029703 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  13
+0.663366336634 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  13
+0.673267326733 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.673267326733 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.683168316832 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  12
+0.643564356436 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  12
+0.653465346535 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  12
+0.663366336634 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  12
+0.663366336634 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  12
+0.683168316832 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  12
+0.693069306931 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  12
+0.643564356436 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  11
+0.673267326733 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.673267326733 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.673267326733 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.673267326733 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.673267326733 	2.0
+Running galaxy with fold:  1
+
+Running pruned dataset
+Length of boostedTrees:  14
+0.722772277228
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  14
+0.70297029703 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  14
+0.693069306931 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  14
+0.70297029703 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  14
+0.683168316832 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  14
+0.673267326733 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  14
+0.683168316832 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  14
+0.663366336634 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.653465346535 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.653465346535 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.673267326733 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.643564356436 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  12
+0.663366336634 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.653465346535 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  12
+0.643564356436 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  12
+0.623762376238 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  11
+0.633663366337 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.613861386139 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.60396039604 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.60396039604 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.60396039604 	2.0
+Running galaxy with fold:  2
+
+Running pruned dataset
+Length of boostedTrees:  14
+0.762376237624
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  14
+0.752475247525 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  14
+0.732673267327 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  14
+0.752475247525 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  14
+0.732673267327 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  15
+0.752475247525 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  14
+0.722772277228 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.722772277228 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.742574257426 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.772277227723 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  12
+0.742574257426 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  12
+0.742574257426 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  12
+0.772277227723 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  12
+0.772277227723 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  12
+0.732673267327 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  11
+0.742574257426 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  11
+0.742574257426 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.742574257426 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.742574257426 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.752475247525 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  10
+0.732673267327 	2.0
+Running galaxy with fold:  3
+
+Running pruned dataset
+Length of boostedTrees:  14
+0.732673267327
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  14
+0.712871287129 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  14
+0.712871287129 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  14
+0.742574257426 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  14
+0.732673267327 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  14
+0.693069306931 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  14
+0.70297029703 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  14
+0.683168316832 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  14
+0.693069306931 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  14
+0.693069306931 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  14
+0.712871287129 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.653465346535 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.693069306931 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  12
+0.683168316832 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  12
+0.673267326733 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  12
+0.683168316832 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  12
+0.693069306931 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.693069306931 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.683168316832 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.70297029703 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.732673267327 	2.0
+Running galaxy with fold:  4
+
+Running pruned dataset
+Length of boostedTrees:  15
+0.752475247525
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  13
+0.782178217822 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  15
+0.782178217822 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  15
+0.722772277228 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  14
+0.762376237624 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  14
+0.732673267327 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  14
+0.712871287129 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  14
+0.722772277228 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  13
+0.693069306931 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.673267326733 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.673267326733 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.673267326733 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  12
+0.693069306931 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  12
+0.673267326733 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  12
+0.663366336634 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  12
+0.663366336634 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  11
+0.633663366337 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.653465346535 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.643564356436 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.643564356436 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  10
+0.594059405941 	2.0
+
+Normal Accuracy is 0.730693069307
+Stats for label:  0.0
+	Precision is:  0.635450247152
+	Recall is:  0.749862156128
+------------------------------
+Stats for label:  1.0
+	Precision is:  0.813337389367
+	Recall is:  0.717648997898
+------------------------------
+
+New Accuracy is:  0.724752475248 for alpha:  0.1
+Stats for label:  0.0
+	Precision for the chosen alpha is:  0.632519556401
+	Recall for the chosen alpha is:  0.735320883447
+------------------------------
+Stats for label:  1.0
+	Precision for the chosen alpha is:  0.804223235393
+	Recall for the chosen alpha is:  0.718048286311
+------------------------------
+
+
+########################################
+########################################
+Printing results for split:  4
+########################################
+########################################
+
+########################################
+Running galaxy:
+Running galaxy with fold:  0
+
+Running pruned dataset
+Length of boostedTrees:  14
+0.70297029703
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  15
+0.693069306931 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  14
+0.70297029703 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  14
+0.673267326733 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  14
+0.673267326733 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  14
+0.613861386139 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  13
+0.623762376238 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  14
+0.60396039604 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  14
+0.613861386139 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  14
+0.623762376238 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.653465346535 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.594059405941 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  12
+0.574257425743 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  12
+0.574257425743 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  12
+0.60396039604 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  12
+0.584158415842 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  12
+0.594059405941 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.584158415842 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  12
+0.574257425743 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.584158415842 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.584158415842 	2.0
+Running galaxy with fold:  1
+
+Running pruned dataset
+Length of boostedTrees:  14
+0.722772277228
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  14
+0.70297029703 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  14
+0.732673267327 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  14
+0.722772277228 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  14
+0.70297029703 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  14
+0.70297029703 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  14
+0.732673267327 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  14
+0.693069306931 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  14
+0.712871287129 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.683168316832 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.732673267327 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  14
+0.683168316832 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.683168316832 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  13
+0.673267326733 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  12
+0.693069306931 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  12
+0.693069306931 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  12
+0.732673267327 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.693069306931 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.673267326733 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.712871287129 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.663366336634 	2.0
+Running galaxy with fold:  2
+
+Running pruned dataset
+Length of boostedTrees:  14
+0.683168316832
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  14
+0.693069306931 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  14
+0.70297029703 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  14
+0.693069306931 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  13
+0.693069306931 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  13
+0.70297029703 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  14
+0.70297029703 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  14
+0.722772277228 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  14
+0.732673267327 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  12
+0.732673267327 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  12
+0.712871287129 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  12
+0.693069306931 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  12
+0.673267326733 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  12
+0.643564356436 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  12
+0.643564356436 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  12
+0.673267326733 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  12
+0.683168316832 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.653465346535 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.653465346535 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.673267326733 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.633663366337 	2.0
+Running galaxy with fold:  3
+
+Running pruned dataset
+Length of boostedTrees:  13
+0.732673267327
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  14
+0.683168316832 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  15
+0.722772277228 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  14
+0.742574257426 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  13
+0.742574257426 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  13
+0.722772277228 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  13
+0.732673267327 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  13
+0.722772277228 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  14
+0.742574257426 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.712871287129 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.742574257426 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.752475247525 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  12
+0.693069306931 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  12
+0.732673267327 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  12
+0.782178217822 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  12
+0.782178217822 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  12
+0.732673267327 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.742574257426 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.762376237624 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.742574257426 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.752475247525 	2.0
+Running galaxy with fold:  4
+
+Running pruned dataset
+Length of boostedTrees:  14
+0.732673267327
+Running the new logic with alpha =  0.1
+Length of boostedTrees:  15
+0.732673267327 	0.1
+Running the new logic with alpha =  0.2
+Length of boostedTrees:  13
+0.693069306931 	0.2
+Running the new logic with alpha =  0.3
+Length of boostedTrees:  15
+0.732673267327 	0.3
+Running the new logic with alpha =  0.4
+Length of boostedTrees:  14
+0.742574257426 	0.4
+Running the new logic with alpha =  0.5
+Length of boostedTrees:  14
+0.683168316832 	0.5
+Running the new logic with alpha =  0.6
+Length of boostedTrees:  14
+0.683168316832 	0.6
+Running the new logic with alpha =  0.7
+Length of boostedTrees:  14
+0.683168316832 	0.7
+Running the new logic with alpha =  0.8
+Length of boostedTrees:  14
+0.683168316832 	0.8
+Running the new logic with alpha =  0.9
+Length of boostedTrees:  13
+0.673267326733 	0.9
+Running the new logic with alpha =  1.0
+Length of boostedTrees:  13
+0.653465346535 	1.0
+Running the new logic with alpha =  1.1
+Length of boostedTrees:  13
+0.643564356436 	1.1
+Running the new logic with alpha =  1.2
+Length of boostedTrees:  13
+0.663366336634 	1.2
+Running the new logic with alpha =  1.3
+Length of boostedTrees:  12
+0.683168316832 	1.3
+Running the new logic with alpha =  1.4
+Length of boostedTrees:  12
+0.693069306931 	1.4
+Running the new logic with alpha =  1.5
+Length of boostedTrees:  12
+0.693069306931 	1.5
+Running the new logic with alpha =  1.6
+Length of boostedTrees:  11
+0.722772277228 	1.6
+Running the new logic with alpha =  1.7
+Length of boostedTrees:  11
+0.722772277228 	1.7
+Running the new logic with alpha =  1.8
+Length of boostedTrees:  11
+0.722772277228 	1.8
+Running the new logic with alpha =  1.9
+Length of boostedTrees:  11
+0.732673267327 	1.9
+Running the new logic with alpha =  2.0
+Length of boostedTrees:  11
+0.722772277228 	2.0
+
+Normal Accuracy is 0.714851485149
+Stats for label:  0.0
+	Precision is:  0.611433950988
+	Recall is:  0.740582442908
+------------------------------
+Stats for label:  1.0
+	Precision is:  0.80774437603
+	Recall is:  0.694837493137
+------------------------------
+
+New Accuracy is:  0.712871287129 for alpha:  0.3
+Stats for label:  0.0
+	Precision for the chosen alpha is:  0.608333333333
+	Recall for the chosen alpha is:  0.74534434767
+------------------------------
+Stats for label:  1.0
+	Precision for the chosen alpha is:  0.809290134133
+	Recall for the chosen alpha is:  0.687617665551
+------------------------------
+----------------------------------------
+----------------------------------------
+----------------------------------------
+Printing Results for Dataset:  galaxy
+Avg Old Accuracy:  0.72 +-  0.0081
+Avg. New Accuracy:  0.718 +-  0.0039
+Stats for label:  0.0
+	 Old Avg. Precision is:  0.6228 +-  0.0082
+	 New Avg. Precision is:  0.6217 +-  0.0088
+
+	 Old Avg. Recall is:  0.7361 +-  0.0163
+	 New Avg. Recall is:  0.7299 +-  0.0092
+
+Stats for label:  1.0
+	 Old Avg. Precision is:  0.8069 +-  0.0105
+	 New Avg. Precision is:  0.8033 +-  0.0034
+
+	 Old Avg. Recall is:  0.7096 +-  0.0078
+	 New Avg. Recall is:  0.7098 +-  0.0121
+
