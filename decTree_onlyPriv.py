@@ -432,9 +432,8 @@ def main():
     splitAccuracy = {}
     splitPrecision = {}
     splitRecall = {}
-    alpha_values = {}
+
     for datasetName in datasets:
-        alpha_values[datasetName] = []
         splitAccuracy[datasetName] = []
         splitPrecision[datasetName] = {}
         splitRecall[datasetName] = {}
@@ -471,117 +470,21 @@ def main():
             #normalAccuracy = {}
             
             for part in range(totalParts):
-                
-                #if part != 1:
-                    #continue #TODO: remove this..
-                #'''
-                #print ""
-                #print "#"*40
                 print "Running "+datasetName+" with fold: ", part
-                
-                #print "\nRunning entire dataset"
-                #checkDecisionTree(datasetName+"/"+dirName+"/complete_train_"+str(part)+".csv", datasetName+"/"+dirName+"/complete_test_"+str(part)+".csv")
-                
-                #print "\nRunning only privileged information"
-                #privAccHolder, precision, recall, accuracy = checkDecisionTree(datasetName+"/"+dirName+"/priv_train_"+str(part)+".csv", datasetName+"/"+dirName+"/priv_test_"+str(part)+".csv")
-                #privAcc += privAccHolder
-                            
-                #print "\nRunning only privileged information with max depth = 3"
-                #checkDecisionTree(datasetName+"/"+dirName+"/priv_train_"+str(part)+".csv", datasetName+"/"+dirName+"/priv_test_"+str(part)+".csv", 3, False)
-                
-                #'''
+
                 print "\nRunning pruned dataset"
-                currNormalAcc, precision, recall, accuracy = checkDecisionTree(datasetName+"/"+dirName+"/pruned_train_"+str(part)+".csv", datasetName+"/"+dirName+"/pruned_test_"+str(part)+".csv", nominalColumns = prunedNominalColumns[datasetName])
+                currNormalAcc, precision, recall, accuracy = checkDecisionTree(datasetName+"/"+dirName+"/priv_train_"+str(part)+".csv", datasetName+"/"+dirName+"/priv_test_"+str(part)+".csv", nominalColumns = prunedNominalColumns[datasetName])
                 print currNormalAcc
                 normalAcc += currNormalAcc
                 for label in precision:
-                    if label not in normalPrecision:
-                        normalPrecision[label] = 0
-                    normalPrecision[label] += precision[label]
-                    
-                    if label not in normalRecall:
-                        normalRecall[label] = 0
-                    normalRecall[label] += recall[label]
-                    
                     if label not in normalAccuracy:
                         normalAccuracy[label] = 0
                     normalAccuracy[label] += accuracy[label]
 
-
-                #print currNormalAcc," ##" 
-                newAcc.append([])
-                newPrecision.append([])
-                newRecall.append([])
-                for run in range(20):
-                    alpha = (run+1)/10.0
-                    print "Running the new logic with alpha = ",alpha
-                    currAcc, precision, recall, accuracy = newLogic(datasetName+"/"+dirName+"/pruned_train_"+str(part)+".csv", datasetName+"/"+dirName+"/pruned_test_"+str(part)+".csv", datasetName+"/"+dirName+"/priv_train_"+str(part)+".csv", 3, privNominalColumns = privNominalColumns[datasetName], prunedNominalColumns = prunedNominalColumns[datasetName], alpha = alpha)     
-                    print currAcc,"\t",alpha
-                    #break
-                    newAcc[part].append(currAcc)
-                    newPrecision[part].append(precision)
-                    newRecall[part].append(recall)
                 #print "#"*40
                 #print ""
             print "\nNormal Accuracy is", normalAcc/float(totalParts)
             splitOldAccuracy[datasetName].append(normalAcc/float(totalParts))
-            
-            #print "Privileged Accuracy is", privAcc/float(totalParts)
-            for label in normalPrecision:
-                print "Stats for label: ",label
-                print "\tPrecision is: ", normalPrecision[label]/float(totalParts)
-                print "\tRecall is: ", normalRecall[label]/float(totalParts)
-
-                print "-"*30
-                
-                if label not in splitPrecision[datasetName]:
-                    splitOldPrecision[datasetName][label] = []
-                if label not in splitRecall[datasetName]:
-                    splitOldRecall[datasetName][label] = []
-                
-                splitOldPrecision[datasetName][label].append(normalPrecision[label]/float(totalParts))
-                splitOldRecall[datasetName][label].append(normalRecall[label]/float(totalParts))
-                
-            avgAcc = [0 for i in range(20)]
-            avgPrecision = [ {} for i in range(20)]
-            avgRecall = [ {} for i in range(20) ]
-            for run in range(20):
-                for j in range(totalParts):
-                    avgAcc[run] += newAcc[j][run]
-                    for lbl in newPrecision[j][run]:
-                        if lbl not in avgPrecision[run]:
-                             avgPrecision[run][lbl] = 0
-                        avgPrecision[run][lbl] += newPrecision[j][run][lbl]
-                        
-                        if lbl not in avgRecall[run]:
-                             avgRecall[run][lbl] = 0
-                        avgRecall[run][lbl] += newRecall[j][run][lbl]     
-
-            maxAvgAccuracy = 0
-            maxAlpha = 0
-            chosenI = 0
-            for i in range(20):
-                #print "Accuracy for run - ",i,": ", avgAcc[i] 
-                if  maxAvgAccuracy < avgAcc[i]:
-                    chosenI = i
-                    maxAlpha = float(i+1)/10
-                    maxAvgAccuracy = avgAcc[i]
-
-            print "\nNew Accuracy is: ",maxAvgAccuracy/float(totalParts), "for alpha: ",maxAlpha
-            alpha_values[datasetName].append(maxAlpha)
-            splitAccuracy[datasetName].append(maxAvgAccuracy/float(totalParts))
-            
-            for lbl in normalAccuracy:
-                print "Stats for label: ",lbl
-                print "\tPrecision for the chosen alpha is: ", avgPrecision[chosenI][lbl]/float(totalParts)
-                print "\tRecall for the chosen alpha is: ", avgRecall[chosenI][lbl]/float(totalParts)
-                print "-"*30
-                if lbl not in splitPrecision[datasetName]:
-                    splitPrecision[datasetName][lbl] = []
-                if lbl not in splitRecall[datasetName]:
-                    splitRecall[datasetName][lbl] = []
-                splitPrecision[datasetName][lbl].append(avgPrecision[chosenI][lbl]/float(totalParts))
-                splitRecall[datasetName][lbl].append(avgRecall[chosenI][lbl]/float(totalParts))
                
     print "-"*40
     print "-"*40
@@ -589,16 +492,6 @@ def main():
     for datasetName in datasets:
         print "Printing Results for Dataset: ", datasetName
         print "Avg Old Accuracy: ", round(numpy.mean(splitOldAccuracy[datasetName]), 4), "+- ", round(numpy.std(splitOldAccuracy[datasetName]), 4)
-        print "Avg. New Accuracy: ", round(numpy.mean(splitAccuracy[datasetName]), 4), "+- ", round(numpy.std(splitAccuracy[datasetName]), 4)
-        print "Alpha value picked is:  ", round(numpy.mean(alpha_values[datasetName]), 4)
-        
-        for lbl in splitPrecision[datasetName]:
-            print "Stats for label: ", lbl
-            print "\t Old Avg. Precision is: ", round(numpy.mean(splitOldPrecision[datasetName][lbl]), 4), "+- ", round(numpy.std(splitOldPrecision[datasetName][lbl]), 4)
-            print "\t New Avg. Precision is: ", round(numpy.mean(splitPrecision[datasetName][lbl]), 4), "+- ", round(numpy.std(splitPrecision[datasetName][lbl]), 4)
-            print
-            print "\t Old Avg. Recall is: ", round(numpy.mean(splitOldRecall[datasetName][lbl]), 4), "+- ", round(numpy.std(splitOldRecall[datasetName][lbl]), 4)
-            print "\t New Avg. Recall is: ", round(numpy.mean(splitRecall[datasetName][lbl]), 4), "+- ", round(numpy.std(splitRecall[datasetName][lbl]), 4)
-            print
+
 #Execution begins here
 if __name__ == "__main__" : main()

@@ -29,6 +29,7 @@ def split(orig, pruned, priv, privColumns):
         priv.write(",".join(privInfo)+"\n")
         pruned.write(",".join(pruneInfo)+"\n")
 
+missingFeatures = {}
 nominalValues = {}
 for datasetName in datasets:
     if isSimplificationEnabled:
@@ -45,7 +46,7 @@ for datasetName in datasets:
             l = l.strip()
             if l == "":
                 continue # skip empty lines..
-            if datasetName == "heart":
+            if datasetName == "heart" or datasetName == "heart1" or datasetName == "heart2" or datasetName == "heart3" or datasetName == "heart4":
                 words = l.strip().split(",")
                 classIndex = len(words) - 1 
                 if '?' in l:
@@ -83,7 +84,7 @@ for datasetName in datasets:
                     #words[classIndex] = '2'
                     words[classIndex] = '0'
 
-            elif datasetName == "glass_binary":
+            elif "glass_binary" in datasetName:
                 words = l.strip().split(",")
                 #ignore the first columns, which is just the id of the rows..
                 words = words[1:]
@@ -110,6 +111,14 @@ for datasetName in datasets:
                 #data cleaning..replacing the below string to make the feature numeric..
                 l = l.replace("5more", "5")
                 l = l.replace("more", "5") # replcaing "more" string with the number 5 
+                
+                l = l.replace("vhigh", "13") 
+                l = l.replace("high", "12") 
+                l = l.replace("big", "11") 
+                l = l.replace("med", "10") 
+                l = l.replace("small", "10") 
+                l = l.replace("low", "9")
+                
                 words = l.strip().split(",")
                 classIndex = len(words) - 1
                 
@@ -137,6 +146,7 @@ for datasetName in datasets:
                 words = l.strip().split(",")
                 words = [ wor.strip() for wor in words]
                 classIndex = len(words) - 1
+
                 #convert the class index..
                 if words[classIndex] == "+":
                     words[classIndex] = '1'
@@ -165,15 +175,42 @@ for datasetName in datasets:
                     words[classIndex] = '1'
 
             elif datasetName == "hepatitis":
+
                 words = l.strip().split(",")
                 words = [ wor.strip() for wor in words]
-                classIndex = len(words) - 1
+                
+                #take the class from first to last column of the row..
+                cl = words[0]
+                words = words[1:]
+                words.append(cl)
+                
+                classIndex = len(words) - 1                
+                for i in range(classIndex):
+                    if words[i] == "?":
+                        if i not in missingFeatures:
+                            missingFeatures[i] = 1
+                        else:
+                            missingFeatures[i] = missingFeatures[i] + 1
+                     
+                #ignore features with missing values here!!!
+                currMissingFeatures = [7, 8, 14, 16, 17]
+                newWords = []
+                for i in range(len(words)):
+                    if i not in currMissingFeatures:
+                        newWords.append(words[i])
+                tempMissingString = ",".join(newWords)
+                words = newWords
+                classIndex = len(words) - 1  
+                if "?" in tempMissingString:
+                    countMissing += 1     
+                    continue
+
                 #TODO: fix this..
                 #convert the class index..
-                if words[classIndex] == "<=50K":
-                    words[classIndex] = '0'
-                elif words[classIndex] == ">50K":
+                if words[classIndex] == "1":
                     words[classIndex] = '1'
+                elif words[classIndex] == "2":
+                    words[classIndex] = '0'
                 else:
                     print lineNum
                     print words
@@ -270,16 +307,35 @@ for datasetName in datasets:
             out.write(",".join(words)+"\n")
         out.close()
         print "Missing values in the Dataset: "+datasetName+" is: ", countMissing
-
+        print "Missing Features in the Dataset: "+datasetName+"is: ", missingFeatures
+    
     for key in nominalValues:
         print key, nominalValues[key]
 
     if datasetName == "car_continuous":
+        #enc = OneHotEncoder(categorical_features=[0, 1, 4, 5])
         enc = OneHotEncoder()
-        x = [ r.split(",") for r in open(datasetName+"/dataset_simplified.csv", "r").readlines()]
-        enc.fit(x)
-        x=enc.transform(x).tolist()
-
+        x = [ r.strip().split(",") for r in open(datasetName+"/dataset_simplified.csv", "r").readlines()]
+        data = []
+        for row_actual in x:
+            nominalRow = []
+            for colIndex in nominalColumns["car"]:
+                nominalRow.append(row_actual[colIndex])
+            data.append(nominalRow)
+        #print data
+        enc.fit(data)
+        data=enc.transform(data)
+        #print len(data)
+        data = data.toarray().tolist()
+        out = open(datasetName+"/dataset_simplified.csv", "w")
+        for rowIndex in range(len(data)):
+            newRow = data[rowIndex]
+            for colIndex in range(len(x[rowIndex])):
+                if colIndex not in nominalColumns["car"]:
+                    newRow.append(x[rowIndex][colIndex])
+            words = [ str(r) for r in newRow]
+            out.write(",".join(words)+"\n")
+        out.close()
     random.seed()
     for split_num in range(splitCount):
         dirName = getSplitName(split_num)

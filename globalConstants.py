@@ -12,15 +12,26 @@ maxBoostingTrees = 100
 
 datasets = []
 
-datasets.append("heart")
-datasets.append("glass_binary")
+#varying the number of features!!!
+#datasets.append("heart1")
+#datasets.append("heart2")
+#datasets.append("heart3")
+#datasets.append("heart4")
+
+#datasets.append("glass_binary1")
+#datasets.append("glass_binary2")
+#datasets.append("glass_binary3")
+#datasets.append("glass_binary4")
+
+#datasets.append("heart")
+#datasets.append("glass_binary")
 #datasets.append("car")
 #datasets.append("car_continuous")
-datasets.append("ecoli_binary")
-datasets.append("fertility")
-datasets.append("diabetes")
-datasets.append("seeds")
-datasets.append("galaxy") #total 148 columns in the dataset!!! ~3000 rows!!
+#datasets.append("ecoli_binary")
+#datasets.append("fertility")
+#datasets.append("diabetes")
+#datasets.append("seeds")
+#datasets.append("galaxy") #total 148 columns in the dataset!!! ~3000 rows!!
 
 #datasets.append("random")
 #datasets.append("breast")
@@ -29,48 +40,14 @@ datasets.append("galaxy") #total 148 columns in the dataset!!! ~3000 rows!!
 
 #datasets.append("census") #TODO: takes a lot of time..
 #datasets.append("credit")
-#datasets.append("hepatitis") #TODO: has a lot of missing values.. how to support them ???
+datasets.append("hepatitis") #TODO: has a lot of missing values.. how to support them ???
 
 #datasets.append("flags")
 #datasets.append("nursery") # not significant improvements!!
 
-
 classLabels = {}
-#TODO: check whether the below labels are assigned correctly or not..
-classLabels["heart"] = [0, 1]
-
-classLabels["breast"] = [0, 1]
-
-classLabels["random"] = [0, 1]
-
-#classLabels["iris"] = [0, 1, 2]
-classLabels["iris"] = [0, 1]
-
-classLabels["diabetes"] = [0, 1]
-
-classLabels["glass_binary"] = [0, 1]
-
-classLabels["car"] = [0, 1]
-
-classLabels["census"] = [0, 1]
-
-classLabels["credit"] = [0, 1]
-
-classLabels["ecoli_binary"] = [0, 1]
-
-classLabels["hepatitis"] = [0, 1]
-
-classLabels["galaxy"] = [0, 1]
-
-classLabels["flags"] = [0, 1]
-
-classLabels["fertility"] = [0, 1]
-
-classLabels["nursery"] = [0, 1]
-
-classLabels["seeds"] = [0, 1]
-
-classLabels["car_continuous"] = [0,1]
+for lbl in datasets:
+    classLabels[lbl] = [0, 1]
 
 splitCount = 5
 totalParts = 5
@@ -83,6 +60,11 @@ privilegedColumns = {}
 
 #privilegedColumns["heart"] = [1, 2, 3, 4, 5, 6, 7, 8]
 privilegedColumns["heart"] = [1, 3, 4, 6, 9, 10, 12]
+privilegedColumns["heart1"] = [2, 3, 9, 11]
+#privilegedColumns["heart1"] = [1, 2, 3, 4]
+privilegedColumns["heart2"] = [2, 3, 4, 5, 9, 11]
+privilegedColumns["heart3"] = [1, 2, 3,4, 5, 6, 7, 9, 11]
+privilegedColumns["heart4"] = [1, 2, 3,4, 5, 6, 7, 9, 10, 11, 12, 13]
 
 #below three give good results..
 #privilegedColumns["heart"] = [1, 2, 3, 11, 12]
@@ -109,6 +91,11 @@ privilegedColumns["diabetes"] = [0, 3, 4, 6]
 
 privilegedColumns["glass_binary"] = [5, 6, 7, 8]
 
+privilegedColumns["glass_binary1"] = [8]
+privilegedColumns["glass_binary2"] = [6, 8]
+privilegedColumns["glass_binary3"] = [6, 7, 8]
+privilegedColumns["glass_binary4"] = [5, 6, 7, 8]
+
 #TODO: get privileged columns for the car dataset..
 privilegedColumns["car"] = [ 3]
 
@@ -120,8 +107,9 @@ privilegedColumns["credit"] = [1, 3, 6, 8, 9, 13, 10] # reduces acc..
 privilegedColumns["ecoli_binary"] = [1, 2, 3]
 
 #TODO: get privileged columns for the hepatitis dataset..
-privilegedColumns["hepatitis"] = [1,2,3]
-
+privilegedColumns["hepatitis"] = [0, 1,2,3,4,5, 6, 7]
+#privilegedColumns["hepatitis"] = [0, 6,7,8, 10,11, 12]
+#privilegedColumns["hepatitis"] = []
 privilegedColumns["galaxy"] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,20]
 
 #privilegedColumns["flags"] = [3, 5, 6, 16, 17, 22]
@@ -142,11 +130,19 @@ privilegedColumns["car_continuous"] = [3]
 #NOTE: ******The columns in the below variable must be ordered in an ascending order..
 nominalColumns = {}
 nominalColumns["heart"] = [] #on nominal columns
+nominalColumns["heart1"] = [] #on nominal columns
+nominalColumns["heart2"] = [] #on nominal columns
+nominalColumns["heart3"] = [] #on nominal columns
+nominalColumns["heart4"] = [] #on nominal columns
 nominalColumns["heart_multi"] = [] #on nominal columns
 nominalColumns["breast"] = [] #on nominal columns
 nominalColumns["iris"] = [] #on nominal columns
 nominalColumns["diabetes"] = [] #on nominal columns
 nominalColumns["glass_binary"] = [] #on nominal columns
+nominalColumns["glass_binary1"] = [] #on nominal columns
+nominalColumns["glass_binary2"] = [] #on nominal columns
+nominalColumns["glass_binary3"] = [] #on nominal columns
+nominalColumns["glass_binary4"] = [] #on nominal columns
 nominalColumns["car"] = [0, 1, 4, 5] #on nominal columns
 nominalColumns["census"] = [1,3,5,6,7,8,9,13] #on nominal columns
 nominalColumns["credit"] = [0, 3,4,5,6,8,9,11,12] #on nominal columns
@@ -157,7 +153,8 @@ nominalColumns["fertility"] = [] #no nominal columns!!
 nominalColumns["nursery"] = [0, 1, 2, 4, 5, 6, 7]
 nominalColumns["seeds"] = []
 nominalColumns["car_continuous"] = []
-
+#nominalColumns["hepatitis"] = [1,2,3,4,5,6,7,8,9,10,13]
+nominalColumns["hepatitis"] = []
 prunedNominalColumns = {}
 privNominalColumns = {}
 

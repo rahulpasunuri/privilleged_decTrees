@@ -5,7 +5,8 @@ from math import *
 from Node import Node
 from computeStats import *
 from globalConstants import *#file containing all the global constants..
-
+import random
+import string
 
 def calcPrivInfoGain(currentEntropy, clusterEntropy, subDataSet1,subDataSet2, isClassifier, cluster, alpha):
     global numClusters
@@ -366,7 +367,7 @@ def assignClustersToLeaves(privTree):
     
     return index
 
-def newLogic(train, test, priv_train, priv_depth, privNominalColumns, prunedNominalColumns, alpha):
+def newLogic(trainData, testData, priv_train, priv_depth, privNominalColumns, prunedNominalColumns, alpha):
     global numClusters
 
     #construct a tree using priv information..
@@ -376,8 +377,8 @@ def newLogic(train, test, priv_train, priv_depth, privNominalColumns, prunedNomi
     
     index = assignClustersToLeaves(privTree)
     #print "Total clusters is: ", index
-    trainData = readData(train)
-    testData = readData(test)
+    
+    #testData = readData(test)
     privData = readData(priv_train)
     cluster = {} #clear the previous cluster global variable..
     numRows = len(trainData)
@@ -389,7 +390,7 @@ def newLogic(train, test, priv_train, priv_depth, privNominalColumns, prunedNomi
     tree = createTree(trainData, 15, threshold, True, cluster = cluster, nominalColumns = prunedNominalColumns, alpha = alpha)
 
     #Now that we have the tree built,lets predict output on the test data
-    fileName="results/"+"PredictionOf"+test.split('/')[1]
+    fileName="results/"+''.join(random.choice(string.lowercase) for x in range(10))
     precision, recall, accuracy = classifyNewSample(tree=tree, testData=testData, fileName=fileName, nominalColumns = prunedNominalColumns)
     #print "Accuracy is: ",(1 - computeMisClassfication(fileName))
     #print "Number of Leaves in the tree is: ", numLeaves(tree)   
@@ -416,7 +417,7 @@ def combineGain(normalGain, privGain, isClassifier, alpha):
 
 #The main function that calls all other functions, execution begins here
 def main():
-
+    random.seed()
     global prunedNominalColumns
     global privNominalColumns
 
@@ -432,9 +433,8 @@ def main():
     splitAccuracy = {}
     splitPrecision = {}
     splitRecall = {}
-    alpha_values = {}
+
     for datasetName in datasets:
-        alpha_values[datasetName] = []
         splitAccuracy[datasetName] = []
         splitPrecision[datasetName] = {}
         splitRecall[datasetName] = {}
@@ -508,6 +508,13 @@ def main():
                     normalAccuracy[label] += accuracy[label]
 
 
+                #create a new validation dataset!!!
+                trainData = readData(datasetName+"/"+dirName+"/pruned_train_"+str(part)+".csv")
+                #testData = readData(datasetName+"/"+dirName+"/pruned_test_"+str(part)+".csv")
+                validationLen = len(trainData)/5
+                validataData = trainData[ len(trainData) - validationLen:]
+                trainData = trainData[:len(trainData) - validationLen]
+
                 #print currNormalAcc," ##" 
                 newAcc.append([])
                 newPrecision.append([])
@@ -515,7 +522,7 @@ def main():
                 for run in range(20):
                     alpha = (run+1)/10.0
                     print "Running the new logic with alpha = ",alpha
-                    currAcc, precision, recall, accuracy = newLogic(datasetName+"/"+dirName+"/pruned_train_"+str(part)+".csv", datasetName+"/"+dirName+"/pruned_test_"+str(part)+".csv", datasetName+"/"+dirName+"/priv_train_"+str(part)+".csv", 3, privNominalColumns = privNominalColumns[datasetName], prunedNominalColumns = prunedNominalColumns[datasetName], alpha = alpha)     
+                    currAcc, precision, recall, accuracy = newLogic( trainData, validataData, datasetName+"/"+dirName+"/priv_train_"+str(part)+".csv", 3, privNominalColumns = privNominalColumns[datasetName], prunedNominalColumns = prunedNominalColumns[datasetName], alpha = alpha)     
                     print currAcc,"\t",alpha
                     #break
                     newAcc[part].append(currAcc)
@@ -543,11 +550,12 @@ def main():
                 splitOldRecall[datasetName][label].append(normalRecall[label]/float(totalParts))
                 
             avgAcc = [0 for i in range(20)]
-            avgPrecision = [ {} for i in range(20)]
-            avgRecall = [ {} for i in range(20) ]
+            #avgPrecision = [ {} for i in range(20)]
+            #avgRecall = [ {} for i in range(20) ]
             for run in range(20):
                 for j in range(totalParts):
                     avgAcc[run] += newAcc[j][run]
+                    '''
                     for lbl in newPrecision[j][run]:
                         if lbl not in avgPrecision[run]:
                              avgPrecision[run][lbl] = 0
@@ -556,6 +564,7 @@ def main():
                         if lbl not in avgRecall[run]:
                              avgRecall[run][lbl] = 0
                         avgRecall[run][lbl] += newRecall[j][run][lbl]     
+                    '''
 
             maxAvgAccuracy = 0
             maxAlpha = 0
@@ -567,21 +576,39 @@ def main():
                     maxAlpha = float(i+1)/10
                     maxAvgAccuracy = avgAcc[i]
 
+            maxAvgAccuracy = 0
+            avgPrecision = {}
+            avgRecall = {}
+            for part in range(totalParts):
+                trainData = readData(datasetName+"/"+dirName+"/pruned_train_"+str(part)+".csv")
+                testData = readData(datasetName+"/"+dirName+"/pruned_test_"+str(part)+".csv")
+                currAcc, precision, recall, accuracy = newLogic( trainData, testData, datasetName+"/"+dirName+"/priv_train_"+str(part)+".csv", 3, privNominalColumns = privNominalColumns[datasetName], prunedNominalColumns = prunedNominalColumns[datasetName], alpha = maxAlpha)
+                maxAvgAccuracy += currAcc
+                for lbl in precision:
+                    if lbl not in avgPrecision:
+                         avgPrecision[lbl] = 0
+                    avgPrecision[lbl] += precision[lbl]
+
+                for lbl in recall:
+                    if lbl not in avgRecall:
+                         avgRecall[lbl] = 0
+                    avgRecall[lbl] += recall[lbl]  
+                
+                 
             print "\nNew Accuracy is: ",maxAvgAccuracy/float(totalParts), "for alpha: ",maxAlpha
-            alpha_values[datasetName].append(maxAlpha)
             splitAccuracy[datasetName].append(maxAvgAccuracy/float(totalParts))
             
             for lbl in normalAccuracy:
                 print "Stats for label: ",lbl
-                print "\tPrecision for the chosen alpha is: ", avgPrecision[chosenI][lbl]/float(totalParts)
-                print "\tRecall for the chosen alpha is: ", avgRecall[chosenI][lbl]/float(totalParts)
+                print "\tPrecision for the chosen alpha is: ", avgPrecision[lbl]/float(totalParts)
+                print "\tRecall for the chosen alpha is: ", avgRecall[lbl]/float(totalParts)
                 print "-"*30
                 if lbl not in splitPrecision[datasetName]:
                     splitPrecision[datasetName][lbl] = []
                 if lbl not in splitRecall[datasetName]:
                     splitRecall[datasetName][lbl] = []
-                splitPrecision[datasetName][lbl].append(avgPrecision[chosenI][lbl]/float(totalParts))
-                splitRecall[datasetName][lbl].append(avgRecall[chosenI][lbl]/float(totalParts))
+                splitPrecision[datasetName][lbl].append(avgPrecision[lbl]/float(totalParts))
+                splitRecall[datasetName][lbl].append(avgRecall[lbl]/float(totalParts))
                
     print "-"*40
     print "-"*40
@@ -590,7 +617,6 @@ def main():
         print "Printing Results for Dataset: ", datasetName
         print "Avg Old Accuracy: ", round(numpy.mean(splitOldAccuracy[datasetName]), 4), "+- ", round(numpy.std(splitOldAccuracy[datasetName]), 4)
         print "Avg. New Accuracy: ", round(numpy.mean(splitAccuracy[datasetName]), 4), "+- ", round(numpy.std(splitAccuracy[datasetName]), 4)
-        print "Alpha value picked is:  ", round(numpy.mean(alpha_values[datasetName]), 4)
         
         for lbl in splitPrecision[datasetName]:
             print "Stats for label: ", lbl
